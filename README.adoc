@@ -1,5 +1,43 @@
 = Slides for DHBW lectures
 
-== at github pages
+== View at github pages
 
-== how to build on your own
+== Build on your own
+
+You need https://www.ruby-lang.org/en/documentation/installation[ruby] and http://bundler.io[bundler] installed. This processing is completely inspired by https://github.com/nfrankel[Nicolas Fraenkel]. See also his blog post: https://blog.frankel.ch/automating-generation-asciidoctor-output
+
+=== Setup Ruby
+
+I used http://github.com/Homebrew/homebrew[Homebrew] for MacOsX. Start via 
+----
+$ brew update
+$ brew install rbenv rbenv-gemset
+----
+
+and proceed like in the instructions at
+
+* https://github.com/rbenv/rbenv[rbenv] 
+* https://github.com/jf/rbenv-gemset[rbenv-gemset]
+
+==== Setup bundler
+
+Install and configure http://bundler.io[bundler]
+
+----
+$ gem install bundler
+$ bundle config --local github.https true
+$ bundle --path=.bundle/gems --binstubs=.bundle/.bin
+----
+
+==== Clone this repo
+----
+$ git clone https://github.com/barclay-reg/dhbw-slides.git
+----
+==== Generate the Slides
+
+* using http://asciidoctor.org/docs/asciidoctor-revealjs/[Asciidoctor Reveal.js]
+----
+bundle exec asciidoctor-revealjs -D output/ -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0 */*.adoc
+----
+
+
