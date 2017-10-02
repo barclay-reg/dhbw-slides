@@ -1,0 +1,5 @@
+= Slides for DHBW lectures
+
+== at github pages
+
+== how to build on your own
