@@ -1,5 +1,7 @@
 = Slides for DHBW lectures
 
+include::license.adoc[]
+
 == View at github pages
 
 == Build on your own
