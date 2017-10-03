@@ -1,15 +1,78 @@
-= Start of our tour
+= Nicht-Triviale Software Entwicklung
 
+:imagesdir: ../images/01-start
 :revealjs_slideNumber:
+:revealjs_history:
 
-== Slide 1
+[.small]#Robert Kleinschmager  |  github.com/barclay-reg#
 
-some text
+[background-color="cornflowerblue"]
+[transition=convex]
+== Wieso nicht-trivial?
 
-=== Slide 1.1
+[%notitle]
+=== Mehr als nur Codieren
 
-more text
+[.stretch]
+image::not-only-coding-alpha.png[]
 
-much more text
+=== Legacy Code
 
-=== Slide 1.2
+[.stretch]
+image::legacy-code-wall.png[]
+
+=== Legacy Code - Umfrage
+
+[.stretch]
+image::legacy-survey.png[]
+
+=== Rahmenbedingungen
+
+* Funktionale Requirements
+* Nicht-Funktionale Requirements
+* (alte) Werkzeuge
+** IDE
+** Bibliotheken 
+
+=== Team
+
+[.stretch]
+image::team.jpg[]
+
+
+[transition=convex]
+== Konsequenzen
+
+[%notitle]
+[state=complex]
+== Kompliziert vs. Komplex
+
+[cols="1a,.^1a"] 
+|=== 
+| 
+==== Kompliziert
+* das Maß an Ungewissheit
+* Wissen fehlt
+* Kompliziertes System
+** zuverlässig, exakt
+** von außen steuerbar
+** konstantes Verhalten
+| 
+==== Komplex
+* das Maß der Menge an Überaschungen
+* Kontext-abhängig
+* Komplexes System
+** "lebendig", erzeugt Überaschungen
+** von außen nur beobachtbar
+** dynamisches Verhalten
+|==
+
+
+== Quellen
+
+* Legacy Wall
+https://raw.githubusercontent.com/bettercodehub/pitch/master/assets/legacy-code.png
+* Legacy Survey
+http://www.karolikl.com/2015/10/your-definition-of-legacy-impacts-how.html
+* Team
+http://scrumbook.org.datasenter.no/images/SmallTeam_Pre.jpg
