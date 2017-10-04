@@ -3,6 +3,7 @@
 :imagesdir: ../images/01-start
 :revealjs_slideNumber:
 :revealjs_history:
+:idprefix: slide_
 
 [.small]#Robert Kleinschmager  |  github.com/barclay-reg#
 
@@ -45,7 +46,7 @@ image::team.jpg[]
 
 [%notitle]
 [state=complex]
-== Kompliziert vs. Komplex
+=== Kompliziert vs. Komplex
 
 [cols="1a,.^1a"] 
 |=== 
@@ -65,14 +66,21 @@ image::team.jpg[]
 ** "lebendig", erzeugt Überaschungen
 ** von außen nur beobachtbar
 ** dynamisches Verhalten
-|==
+|===
 
+=== more
+
+test
 
 == Quellen
 
+=== Bilder
+
 * Legacy Wall
-https://raw.githubusercontent.com/bettercodehub/pitch/master/assets/legacy-code.png
+[.small]#https://raw.githubusercontent.com/bettercodehub/pitch/master/assets/legacy-code.png#
 * Legacy Survey
-http://www.karolikl.com/2015/10/your-definition-of-legacy-impacts-how.html
+[.small]#http://www.karolikl.com/2015/10/your-definition-of-legacy-impacts-how.html#
 * Team
-http://scrumbook.org.datasenter.no/images/SmallTeam_Pre.jpg
+[.small]#http://scrumbook.org.datasenter.no/images/SmallTeam_Pre.jpg#
+
+=== Zitate

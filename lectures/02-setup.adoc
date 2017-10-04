@@ -1,0 +1,29 @@
+= Initial Setup
+
+:idprefix: slide_
+:revealjs_slideNumber:
+:revealjs_history:
+
+== Bildet Gruppen
+
+Maximal 3 Personen pro Gruppe
+
+== Github Account
+
+. https://github.com/join
+. Username und Gruppe an mich melden
+
+== Java
+
+. Download http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html[Java JDK 1.8.0_144]
+. Installieren
+  * [.blue]#Public JRE# nur installieren, wenn noch kein JRE installiert ist
+
+
+== Eclipse
+
+. Download http://www.eclipse.org/downloads/[Eclipse Installer]
+  * Wenn Sie Windows 32bit haben, dann Vorsicht! und melden
+. [.blue]#Eclipse IDE for Java EE Developers# auswählen
+. restliche Fragen selbst entscheiden; Install
+
