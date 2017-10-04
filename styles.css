@@ -15,3 +15,13 @@
 
    color: cornflowerblue;
 }
+
+.reveal .left  {
+
+   text-align: left;
+}
+
+.reveal .underline  {
+
+   text-decoration: underline;
+}

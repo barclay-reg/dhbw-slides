@@ -33,3 +33,32 @@ Maximal 3 Personen pro Gruppe
 . restliche Fragen selbst entscheiden; Install; warten
 . das Installierte Eclipse starten
 . beim [.blue]#Popup#: den vorhin erzeugten Ordner `dhbw/workspace` angeben
+
+== Git-Client
+
+. Go to https://git-scm.com/downloads
+. Installieren
+
+Oder
+
+. Go to http://www.sourcetreeapp.com
+  * erfordert registrierung bei atlassian.com während der Installation
+  * ggf. .Net installieren
+
+== Git Konfiguration
+
+
+== Projekt importieren
+
+. Git Bash
+----
+git config --global user.name "Mona Lisa"
+git config --global user.email "email@example.com"
+----
+----
+cd dhbw/checkout
+git clone https://github.com/fn-tfe15-2-g<nummer der gruppe>/dhbw-painground.git
+----
+. Eclipse
+  * _Import_ -> _Existing Maven Projects_
+
