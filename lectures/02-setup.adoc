@@ -45,9 +45,6 @@ Oder
   * erfordert registrierung bei atlassian.com während der Installation
   * ggf. .Net installieren
 
-== Git Konfiguration
-
-
 == Projekt importieren
 
 . Git Bash
@@ -61,4 +58,5 @@ git clone https://github.com/fn-tfe15-2-g<nummer der gruppe>/dhbw-painground.git
 ----
 . Eclipse
   * _Import_ -> _Existing Maven Projects_
+
 

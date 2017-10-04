@@ -69,6 +69,55 @@ image::team.jpg[]
 |===
 
 [%notitle]
+=== K&K Quiz
+
+image::lego-nxt1.jpg[background, size=auto auto]
+
+[.dark-background]
+* Komliziert oder Komplex?
+
+[%notitle]
+=== K&K Quiz
+
+image::lego-nxt1.jpg[background, size=auto auto]
+
+[.dark-background]
+* Komliziert
+
+[%notitle]
+=== K&K Quiz
+
+image::sheldon-cooper.jpg[background, size=auto auto]
+
+[.dark-background]
+* Komliziert oder Komplex?
+
+[%notitle]
+=== K&K Quiz
+
+image::sheldon-cooper.jpg[background, size=auto auto]
+
+[.dark-background]
+* Komplex
+
+[%notitle]
+=== K&K Quiz
+
+image::R2-D2.jpg[background, size=auto auto]
+
+[.dark-background]
+* Komliziert oder Komplex?
+
+[%notitle]
+=== K&K Quiz
+
+image::R2-D2.jpg[background, size=auto auto]
+
+[.dark-background]
+* ????????
+
+
+[%notitle]
 === Spannungsfeld
 
 Software wächst in der "freien Wildbahn" in einem [.blue]#Spannungsfeld#
