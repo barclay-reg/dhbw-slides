@@ -19,11 +19,17 @@ Maximal 3 Personen pro Gruppe
 . Installieren
   * [.blue]#Public JRE# nur installieren, wenn noch kein JRE installiert ist
 
+== Ordner Vorbereiten
+
+. Erzeuge zwei Ordner - egal wo
+.. `dhbw/checkout`
+.. `dhbw/workspace`
 
 == Eclipse
 
 . Download http://www.eclipse.org/downloads/[Eclipse Installer]
   * Wenn Sie Windows 32bit haben, dann Vorsicht! und melden
 . [.blue]#Eclipse IDE for Java EE Developers# auswählen
-. restliche Fragen selbst entscheiden; Install
-
+. restliche Fragen selbst entscheiden; Install; warten
+. das Installierte Eclipse starten
+. beim [.blue]#Popup#: den vorhin erzeugten Ordner `dhbw/workspace` angeben
