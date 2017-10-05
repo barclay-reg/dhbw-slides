@@ -1,0 +1,14 @@
+= Robert Kleinschmager
+
+:idprefix: slide_
+:revealjs_slideNumber:
+:revealjs_history:
+
+[%notitle]
+== Robert
+
+* Dipl. Ing. (BA) - [.blue]#2004#
+* Developer, Projektleiter, Berater
+
+* Folien
+https://github.com/barclay-reg/dhbw-slides

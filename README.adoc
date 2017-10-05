@@ -4,6 +4,8 @@ include::license.adoc[]
 
 == View at github pages
 
+
+https://barclay-reg.github.io/dhbw-slides/lectures/00-me.html#/[00-me]
 https://barclay-reg.github.io/dhbw-slides/lectures/01-start.html#/[01-start]
 https://barclay-reg.github.io/dhbw-slides/lectures/02-setup.html#/[02-setup]
 https://barclay-reg.github.io/dhbw-slides/lectures/03-java.html#/[03-java]

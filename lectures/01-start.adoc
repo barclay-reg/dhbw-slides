@@ -218,9 +218,21 @@ _ohne_
 
 image::refactoring-is-key.jpg[]
 
+=== Contiuous Integration
+
+* Compiliere
+* Paketieren
+* (automatisiert) Testen
+* Validieren
+* Verifizieren
+
+=== Nachvollziehbarkeit
+
+Analyse -> Anforderung -> Aufgabe -> Code -> Test -> Auslieferung
+
 === Metriken
 
-* Messen des Status-Quo der Software-Komplexität
+* Messen des [.blue]#Status-Quo# der Software-Komplexität
 ** Wird sie schlechter oder besser?
 
 * Identifikation der größten Risiken
