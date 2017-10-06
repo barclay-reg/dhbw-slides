@@ -1,19 +1,22 @@
 language: ruby
-
 before_install: mkdir -p output
-
 install:
-  - bundle config --local github.https true
-  - bundle --path=.bundle/gems --binstubs=.bundle/.bin
-
+- bundle config --local github.https true
+- bundle --path=.bundle/gems --binstubs=.bundle/.bin
 script:
-  - bundle exec asciidoctor-revealjs -D output/lectures -a customcss=../styles.css -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0 lectures/*.adoc
-  - bundle exec asciidoctor -D output README.adoc
+- bundle exec asciidoctor-revealjs -D output/lectures -a customcss=../styles.css -a
+  revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0 lectures/*.adoc
+- bundle exec asciidoctor -D output README.adoc
+after_success:
+- cd output ; mv README.html ; cp -R ../images . ; cp ../style.css .
 
-after_success:      
-  - cd output ; mv README.html ; cp -R ../images . ; cp ../style.css .
-  - git init
-  - git config user.name "${GH_USER_NAME}"
-  - git config user.email "${GH_USER_EMAIL}"
-  - git add . ; git commit -m "Deploy to GitHub Pages"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  on:
+    branch: master
+
+env:
+  global:
+    secure: kbUV/iT7ByaoJ2C99DUQ5jph72kk1HzestHgxpMuME/Af8/mg/EWZc0SHQfEHo8friHeohtYoGpcWmKYqGcictoayjQmeeahKJ5qJxfVW8rakm/Fl4timBHHiOd12CTisdCcktUl+4A1S8JGYAFk5T2IWo7j3nWeOotoTvMJMOje+Ubib0LnWKNpMlt5sqvVmk+1Z+8NrzYAajLsJIMxsmwSuBlY7kcKyXLa8oD7ejmItWcnoQKZGMdezz+ktOgwF7DdqFStUjow5wBnRe57T4Xh9TAc5YnP9NQgQ2NOREi0s/9xYYwiZLi+43YEPud8w47my3IZy2g1OJJxFiKahxVQu3k84Em5s1nzbZjY/gvW3U8WmHpTsJe85LtOUYSjQGMurNS1BnCVP33o4lRourPgC5FWq15aAhHzMQLC223RC/7Ndvgyf6RDeQE64FcUbctcxW/TXygQ8cXGavdyuHmOYgF4jBbbFuYcNRO+ZAbmKVrai0n+qzeS9I2EIcjW3Pz009SxSHvYue5QvEN0LAch1jSnu4RsXqJ19mu3oylCazT2eKncL7cvTtxgE/CX4i0j459pwXEHfrK+kZwVdknPu60pi0/gcoVtNvtCQ8S2RxgQRjXl7Ezty/iZWxtZMgzO4rhDG0qTKUdvUhtb2xvwqIOY5uthKpnzrY5YRBY=
