@@ -218,7 +218,7 @@ _ohne_
 
 image::refactoring-is-key.jpg[]
 
-=== Contiuous Integration
+=== Continuous Integration
 
 * Compiliere
 * Paketieren
