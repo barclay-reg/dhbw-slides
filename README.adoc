@@ -9,11 +9,11 @@ All documents within the repository are available under the license http://creat
 == View at github pages
 
 
-=== Kapitel
-* https://barclay-reg.github.io/dhbw-slides/lectures/00-me.html#/[00-me]
-* https://barclay-reg.github.io/dhbw-slides/lectures/01-start.html#/[01-start]
-* https://barclay-reg.github.io/dhbw-slides/lectures/02-setup.html#/[02-setup]
-* https://barclay-reg.github.io/dhbw-slides/lectures/03-java.html#/[03-java]
+=== Chapters
+* https://barclay-reg.github.io/dhbw-slides/lectures/00-me.html#/[00-me - About me]
+* https://barclay-reg.github.io/dhbw-slides/lectures/01-start.html#/[01-start - Lecture Introduction]
+* https://barclay-reg.github.io/dhbw-slides/lectures/02-setup.html#/[02-setup - Setup Project]
+* https://barclay-reg.github.io/dhbw-slides/lectures/03-java.html#/[03-java - Java Introduction]
 
 
 == Build on your own
