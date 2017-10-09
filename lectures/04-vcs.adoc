@@ -1,0 +1,32 @@
+= Versionsverwaltung
+
+== VCS
+
+Hier [.blue]#GIT# und [.blue]#SubVersion#
+
+:imagesdir: ../images/04-vcs
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+== Warum?
+
+[%notitle]
+=== adsas
+
+Zwischenstände Aufgeben
+
+[%steps]
+* `Bachelorarbeit-v0.1.docx`
+* `Bachelorarbeit-v0.9.docx`
+
+----
+\-- Bachelorarbeit-vFinal.docx
+----
+----
+\-- Bachelorarbeit-vFinal-2.docx
+----
+----
+\-- Bachelorarbeit-vFinal-FINAL.docx
+----
+
