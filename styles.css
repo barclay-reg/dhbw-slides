@@ -1,33 +1,39 @@
-.reveal section.title h1 {
-    text-transform: none;
-}
+// own classes
 
 .reveal .small {
    font-size: 32px;
 }
 
 .reveal section[data-state="complex"] p {
-
    line-height: 1.0;
 }
 
 .reveal .blue  {
-
    color: cornflowerblue;
 }
 
 .reveal .left  {
-
    text-align: left;
 }
 
 .reveal .underline  {
-
    text-decoration: underline;
 }
 
 .reveal .dark-background  {
-
    margin: 10px;
    background-color: black;
+}
+
+// overriding default stuff from reveal
+
+.reveal section.title h1 {
+    text-transform: none;
+}
+
+
+.reveal .slide-number {
+    z-index: 29;
+    font-size: 28px;
+    font-weight: bold;
 }
