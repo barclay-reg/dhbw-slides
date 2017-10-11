@@ -1,0 +1,88 @@
+= Painground
+
+:imagesdir: ../images/05-painground
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+== Peoples Knowledge
+
+* Verwalten der Profile von Mitarbeiter / Studenten / ...
+* Welche Fähigkeiten hat jemand, z.B.
+** Excel
+** Java
+** Matlab 
+* Soll Kollegen unterstützen, wenn sie Hilfe suchen
+
+== User Stories
+
+=== Story 1
+
+[quote]
+____
+Ich möchte für alle (meine) Mitarbeiter ein Profil anlegen: dies soll den Namen, den Geburtstag und ein Bild beinhalten.
+____
+
+=== Story 2
+
+[quote]
+____
+Ich möchte, dass sich jeder Mitarbeiter mit Namen anmelden kann und nur sein eigenes Profile bearbeiten kann.
+____
+
+=== Story 3
+
+[quote]
+____
+Ich möchte, dass das Profile auch Felder für die private Adresse, private Telefonnummer und Hobbies enthält.
+____
+
+=== Story 4
+[quote]
+____
+Ich möchte, dass ein Mitarbeiter in seinem Profi seine "Skills" pflegen kann, in ein Textfeld - ein Wort == ein skil
+____
+
+=== Story 5
+
+[quote]
+____
+Ich möchte, dass die Skills gewichtet werden können - Gewichtungen: Novize, Erfahrener, Experte
+____
+
+=== Story 6
+
+[quote]
+____
+Ich möchte, dass beim Erfassen eines weiteren Skills an einem Profile eine Liste an passenden - bereits erfassten Skills angezeigt werden soll (suggest)
+____
+
+=== Story 7
+
+[quote]
+____
+Ich möchte eine Liste aller erfasster Skills sehen, dazu die Anzahl der Mitarbeiter, die dieses Skill "haben"
+____
+
+=== Story 8
+
+[quote]
+____
+Ich möchte, dass ein Mitarbeiter den Skill (inkl. dessen gewichtung) eines Kollegen bestätigen kann. Im Profil des Mitarbeiters kann man dann sehen, wie viele "Kollegen" den Skill & Bewertung bestätigt haben.
+____
+
+=== Story 9
+
+[quote]
+____
+Ich möchte, dass ein Mitarbeiter seine Bewertung eines Skills ändern kann - diese Änderung soll mit Zeitstempel gespeichert werden sodass später die "Entwicklung" dieses Skills beobachtet werden kann.
+____
+
+=== Story 10
+
+[quote]
+____
+Ich möchte, dass die Bewertungen der Kollegen ebenfalls mit Zeitstempel gespeichert werden - so kann man später eine "Entwicklung" der Bewertungen & Bestätigungen aufzeigen.
+____
+
+
