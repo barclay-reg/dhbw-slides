@@ -221,14 +221,20 @@ $ git merge origin/master
 === Bilder
 
 * Git Remote Control
-[.small]#https://cdn.duzun.me/images/tips/git_remotes.png#
+[.small]#http://jlord.us/git-it/assets/imgs/remotes.png#
 * Git Fork and Clones
-[.small]#https://cdn.duzun.me/images/tips/git_clone.png#
+[.small]#http://jlord.us/git-it/assets/imgs/clone.png#
 
 
 === Tipps
 
-. Tutorial
+. Buch _Pro Git_ (frei, online)
+https://git-scm.com/book/en/v2
+. anderes Tutorial
+http://jlord.us/git-it/index.html
+. anderes Buch
+https://www.git-tower.com/learn/git/ebook/en/command-line/introduction
+. Git Tipps
 https://duzun.me/tips/git
 
 

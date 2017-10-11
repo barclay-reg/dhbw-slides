@@ -1,5 +1,6 @@
 = Slides for DHBW lectures
 
+[link=https://travis-ci.org/barclay-reg/dhbw-slides]
 image:https://travis-ci.org/barclay-reg/dhbw-slides.svg?branch=master[]
 
 image:https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png[Licence Creative Commons, role="left", link="http://creativecommons.org/licenses/by-nc-sa/4.0/"]
