@@ -86,6 +86,6 @@ in [.blue]#SourceTree#
 . Eclipse
   * _Import_ -> _Existing Maven Projects_
   * den vorhin erzeugten Ordern `checkout` auswählen
-  * abwarten bis _Progress_ (unten rechtes im Eclipse) fertig ist
+  * abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
 
 

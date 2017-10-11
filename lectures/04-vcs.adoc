@@ -1,32 +1,251 @@
-= Versionsverwaltung
-
-== VCS
-
-Hier [.blue]#GIT# und [.blue]#SubVersion#
+= Versions- verwaltung
 
 :imagesdir: ../images/04-vcs
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
 
-== Warum?
+== VCS
 
-[%notitle]
-=== adsas
+[.blue]#V# ersion [.blue]#C# ontrol [.blue]#S# ystem
 
-Zwischenstände Aufgeben
 
-[%steps]
+[.small]
+Hier [.blue]#GIT# und [.blue]#SubVersion#
+
+== Warum VCS benutzen?
+
+=== Beispiel
+
+[%step]
 * `Bachelorarbeit-v0.1.docx`
 * `Bachelorarbeit-v0.9.docx`
+* `Bachelorarbeit-vFinal.docx`
+* `Bachelorarbeit-vFinal-2.docx`
+* `Bachelorarbeit-vFinal-FINAL.docx`
+
+=== Gute Gründe
+
+. Zwischenstände Protokollieren 
+  * Wer - Wann - Was
+. _UnDo_ von Änderungen
+. Gruppenarbeit vereinfacht (Synchronisierung)
+  * inkl. Berechtigungen
+. gleichzeitiges Arbeit an mehreren Entwicklungszweigen
+. für jede Art von Datei 
+
+=== Begriffe
+
+[.small]
+Workcopy:: Dateien, die ich momentan _sehen_ und bearbeiten kann (_Arbeitskopie_)
+Repository:: Behälter für alle Datei-Versionen, die das VCS kennt
+checkout:: Übertragen einer Version aus dem [.blue]#Repository# in die [.blue]#Workcopy#
+commit:: Übertragen einer Version von der [.blue]#Workcopy# in das [.blue]#Repository#
+
+[%notitle]
+=== Begriffe
+
+Branch:: Parallel entwicklete Version 
+
+image::basic_branching_vcs_svn.jpg[]
+
+=== Zentral vs. Verteilt
+
+image::central-vs-distributed.png[]
+
+== GIT
+
+* Verteiltes VCS
+* vom [.blue]#Linux# Erfinder Linus Torwalds
+* seit 2005
+* _a stupid content tracker_
+* Buch: https://git-scm.com/book/en/v2[Pro Git - online]
+
+[%notitle]
+=== Git Transport
+
+[.small]
+eine weitere Ebene - Stage/Index
+
+image::git-transport.png[]
+
+=== Befehle - clone
+
+[.strech]
+----
+git clone \
+ https://github.com/fn-tfe15-2-g1/dhbw-painground.git
+----
+
+. Kopiert das ganze Repository in das lokale Repo
+. speichert Referenz auf das Original unter [.blue]#origin#
+. checkout des Hauptbranch mit Namen [.blue]#master#
+
+=== Befehle - status
+
+[.strech]
+----
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+----
+
+[.strech]
+----
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+ 
+   modified:   lectures/04-vcs.adoc
+ 
+Untracked files:
+ 
+   images/04-vcs/
+
+no changes added to commit
+----
+
+=== Befehle - add
+
+[.strech]
+----
+$ echo 'Plumper Inhalt für die neue Datei' > NeueDatei.txt
+$ git add NeueDatei.txt
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+
+   new file:   NeueDatei.txt
+----
+
+* fügt neue Datei zum Index/Stage hinzu
+* nur Dateien, die im Index sind, können commited werden
+
+=== Befehle - commit
+
+[.strech]
+----
+$ git commit -m 'Erster eigener Commit'
+[master e98194b] Erster eigener Commit
+ 1 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 NeueDatei.txt
+----
+
+* [.blue]#e98194b# ist die eindeutige ID des Commits
+
+
+=== Befehle - log
+
+[.strech]
+----
+$ git log --graph --pretty=oneline --abbrev-commit
+----
+
+image::git-log-graph.png[]
+
+=== Remotes 
+
+[.strech]
+----
+$ git remote -v
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (push) 
+----
+
+image::remotes-1.png[]
+
+=== Remote Control
+
+image::git-remote-control.png[]
+
+=== Remotes 
+
+[.strech]
+----
+$ git remote add upstream \
+https://github.com/barclay-reg/dhbw-painground.git
+$ git remote -v
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (push) 
+upstream   github.com/barclay-reg/dhbw-painground.git (fetch)
+upstream   github.com/barclay-reg/dhbw-painground.git (push) 
+----
+
+image::remotes-2.png[]
+
+=== Remotes - Fork
+
+Wieso funktioniert das?
+
+Repo 
+
+github.com/fn-tfe15-2-g1/dhbw-painground.git 
+
+ist ein 
+
+[.blue]#Fork# 
+
+von 
+
+github.com/barclay-reg/dhbw-painground.git
+
+[%notitle]
+=== Remote Fork
+
+image::git-fork-clone.png[]
+
+=== Remote Fork
+
+image::github-example.png[]
+
+
+=== Befehle - fetch & merge & pull
 
 ----
-\-- Bachelorarbeit-vFinal.docx
+$ git fetch origin
 ----
+
+* lädt alle Änderungen von Remote _origin_ in lokales Repo
+** *nicht* in eure Workcopy
+
 ----
-\-- Bachelorarbeit-vFinal-2.docx
+$ git merge origin/master
 ----
-----
-\-- Bachelorarbeit-vFinal-FINAL.docx
-----
+
+* Merged alle Änderungen Repo [.blue]#origin#, Branch [.blue]#master# in eure Workcopy
+* `git pull` == `git fetch` & `git merge`
+
+=== Bilder
+
+* Git Remote Control
+[.small]#https://cdn.duzun.me/images/tips/git_remotes.png#
+* Git Fork and Clones
+[.small]#https://cdn.duzun.me/images/tips/git_clone.png#
+
+
+=== Tipps
+
+. Tutorial
+https://duzun.me/tips/git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

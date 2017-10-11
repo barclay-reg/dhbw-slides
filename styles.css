@@ -4,6 +4,10 @@
    font-size: 32px;
 }
 
+.reveal .small dl {
+   font-size: 32px;
+}
+
 .reveal section[data-state="complex"] p {
    line-height: 1.0;
 }
