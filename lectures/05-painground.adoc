@@ -38,47 +38,55 @@ Ich möchte, dass das Profile auch Felder für die private Adresse, private Tele
 ____
 
 === Story 4
+
+[quote]
+____
+Die PersonalAbteilung will die Skills jedes Mitarbeiters per REST-Schnittstelle in ihr eigenes System importieren.
+____
+
+
+=== Story 5
 [quote]
 ____
 Ich möchte, dass ein Mitarbeiter in seinem Profi seine "Skills" pflegen kann, in ein Textfeld - ein Wort == ein skil
-____
-
-=== Story 5
-
-[quote]
-____
-Ich möchte, dass die Skills gewichtet werden können - Gewichtungen: Novize, Erfahrener, Experte
 ____
 
 === Story 6
 
 [quote]
 ____
-Ich möchte, dass beim Erfassen eines weiteren Skills an einem Profile eine Liste an passenden - bereits erfassten Skills angezeigt werden soll (suggest)
+Ich möchte, dass die Skills gewichtet werden können - Gewichtungen: Novize, Erfahrener, Experte
 ____
 
 === Story 7
 
 [quote]
 ____
-Ich möchte eine Liste aller erfasster Skills sehen, dazu die Anzahl der Mitarbeiter, die dieses Skill "haben"
+Ich möchte, dass beim Erfassen eines weiteren Skills an einem Profile eine Liste an passenden - bereits erfassten Skills angezeigt werden soll (suggest)
 ____
 
 === Story 8
 
 [quote]
 ____
-Ich möchte, dass ein Mitarbeiter den Skill (inkl. dessen gewichtung) eines Kollegen bestätigen kann. Im Profil des Mitarbeiters kann man dann sehen, wie viele "Kollegen" den Skill & Bewertung bestätigt haben.
+Ich möchte eine Liste aller erfasster Skills sehen, dazu die Anzahl der Mitarbeiter, die dieses Skill "haben"
 ____
 
 === Story 9
 
 [quote]
 ____
-Ich möchte, dass ein Mitarbeiter seine Bewertung eines Skills ändern kann - diese Änderung soll mit Zeitstempel gespeichert werden sodass später die "Entwicklung" dieses Skills beobachtet werden kann.
+Ich möchte, dass ein Mitarbeiter den Skill (inkl. dessen gewichtung) eines Kollegen bestätigen kann. Im Profil des Mitarbeiters kann man dann sehen, wie viele "Kollegen" den Skill & Bewertung bestätigt haben.
 ____
 
 === Story 10
+
+[quote]
+____
+Ich möchte, dass ein Mitarbeiter seine Bewertung eines Skills ändern kann - diese Änderung soll mit Zeitstempel gespeichert werden sodass später die "Entwicklung" dieses Skills beobachtet werden kann.
+____
+
+=== Story 11
 
 [quote]
 ____
