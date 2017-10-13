@@ -12,6 +12,13 @@
 . Änderungen von _upstream_ abholen und lokal _mergen_
 . alles zu [.blue]#github# hochladen
 
+[NOTE.speaker]
+--
+git add remote upstream https://github.com/barclay-reg/dhbw-painground.git
+git fetch upstream
+git merge upstream/master
+git push
+--
 
 [background-color="cornflowerblue"]
 == Demo Git mit Eclipse

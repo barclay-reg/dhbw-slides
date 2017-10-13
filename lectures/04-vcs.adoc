@@ -215,8 +215,8 @@ $ git fetch origin
 $ git merge origin/master
 ----
 
-* Merged alle Änderungen Repo [.blue]#origin#, Branch [.blue]#master# in eure Workcopy
-* `git pull` == `git fetch` & `git merge`
+* Merged alle Änderungen von Repo [.blue]#origin#, Branch [.blue]#master# in euer lokales Repo
+* `git pull` ist das gleiche wie `git fetch` & `git merge`
 
 === Bilder
 
