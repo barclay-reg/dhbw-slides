@@ -1,0 +1,282 @@
+= VCS 2
+
+:imagesdir: ../images/07-vcs2
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+== Recapitulation
+
+[state=complex]
+=== Git Kommandos
+
+. Interaktion [.blue]#lokalem Repo# - [.blue]#WorkCopy#
+  * `git checkout master`
+  * `git add README.md`
+  * `git commit -M "Neuer Code"`
+. Interaktion [.blue]#lokalem Repo# - [.blue]#remote Repo#
+  * `git fetch origin/master`
+  * `git merge origin/master`
+  * `git pull origin/master`
+  * `git push origin/master`
+
+=== Git Kommandos 2
+
+. Hilfe
+  * `git -help`
+  * `git commit -help`
+. Graphische Darstellung
+  * `gitk`
+  * `log --all --decorate --oneline --graph`
+  * SourceTree
+
+=== Git Speicher
+
+Commit:: 
+* Enthält alle Dateien zu dem Zeitpunkt
+* Enthält einen Verweis auf den Vorgänger-Commit
+
+Branch::
+* Zeiger auf einen Commit
+
+[NOTE.speaker]
+--
+Die Historie, die in GIT gespeichert wird, ist nur die Abfolge der Commits (inkl. der Dateien zu diesem Zeitpunkt). Diese Abfolge kann beliebig manipuliert werden.
+--
+
+=== Branch
+
+* Branch `master` zeigt momentan auf neuesten Commit
+
+[.stretch]
+image::branch1.png[]
+
+[NOTE.speaker]
+--
+Ein Branch in Git ist nichts anderes als ein simpler Zeiger auf einen dieser Commits. Der Standardname eines Git-Branches lautet master. Mit jedem Commit bewegt sicher der Zeiger sich automatisch vorwärts.
+--
+
+[%notitle]
+=== Another Branch
+
+* Erstelle einen neuen Branch
+----
+$ git branch testing
+----
+
+[.stretch]
+image::neuerbranch.png[]
+
+[NOTE.speaker]
+--
+Dies erzeugt einen neuen Zeiger, der auf den gleichen Commit zeigt, auf dem Du gerade arbeitest.
+--
+
+=== HEAD
+
+`HEAD` ist ein spezieller Zeiger
+
+* zeigt auf den Branch, der in der Workcopy liegt
+
+[.stretch]
+image::head-on-master.png[]
+
+[%notitle]
+=== HEAD
+
+Auschecken eines anderen Branches
+
+----
+$ git checkout testing
+----
+
+[.stretch]
+image::head-on-testing.png[]
+
+[%notitle]
+=== Branch entwickeln
+
+Ein weiterer Commit ...
+
+----
+$ echo 'neuer Text' > neue-datei.txt
+$ git commit -a -m 'Neue Datei für git-test'
+----
+
+[.stretch]
+image::commit-on-testing.png[]
+
+[%notitle]
+=== Branch auseinander
+
+Die Historie läuft auseinander
+
+[.stretch]
+image::historie-auseinander.png[]
+
+=== Aufgabe vom letzten Mal
+
+. jemand anderes ändert `README.md`
+  * inkl. `commit` und `push` auf gemeinsames [.blue]#Remote Repo#
+. ich ändere ebenfalls `README.md`
+  * inkl. `commit` auf mein [.blue]#lokales Repo#  
+
+=== Git Log
+
+image::gitlog-ausgangsbasis.png[]
+
+=== SourceTree
+
+image::sourcetree-ausgangsbasis.png[]
+
+== Dateikonflikte
+
+* wenn `git` nicht selbst mergen kann
+
+[.stretch]
+----
+   // save a couple of profiles
+   repository.save(new MemberProfile("robkle", "Kleinschmager"));
+   repository.save(new MemberProfile("mickni", "Knight"));
+   repository.save(new MemberProfile("geolaf", "Laforge"));
+<<<<<<< HEAD
+   repository.save(new MemberProfile("mate1", "Kollege A"));
+=======
+   repository.save(new MemberProfile("mate2", "Kollege B"));
+>>>>>>> refs/remotes/origin/master
+
+----
+
+== Mergen
+
+* Zusammenfügen von Branches
+  . Fast-Forward-Merge 
+  . 3-Way-Merge
+
+ODER
+
+* Zusammenfügen von Dateiversionen
+** sog. [.blue]#Konflikten#
+
+[NOTE.speaker]
+--
+Beim mergen von Branches ist es egal, ob diese Branches Remote oder Lokal sind, hauptsache sie haben die gleichen Vorfahren.
+-- 
+
+=== Fast-Forward-Merge
+
+image::ff-before-merge.png[]
+
+=== Fast-Forward-Merge
+
+* verändert niemals Dateien
+* Vorrausetzung: Linearer Pfad zwischen den Zeigern
+
+[%notitle]
+=== Fast-Forward-Merge
+
+image::ff-after-merge.png[]
+
+=== 3-Way-Merge
+
+image::3wm-before-merge.png[]
+
+[%notitle]
+=== 3-Way-Merge
+
+* verändert Dateien nur, wenn es Änderung in beiden Branches gab
+* erzeugt einen [.blue]#zusätzlichen# Commit
+  * wird als _unsauber_ empfunden -> `rebase`
+
+[%notitle]
+=== 3-Way-Merge
+
+image::3wm-after-merge.png[]
+
+== Rebase
+
+* Alternative zu `merge`
+* _Umschreiben_ der Historie
+* erzeugt _alternativen_ Commit
+* sieht final aus wie ein _Fast-Forward-Merge_
+
+=== Rebase Start
+
+[.stretch]
+image::rebase-before.png[]
+
+[%notitle]
+=== Rebase Alternative
+
+So würde ein _3-Way-Merge_ aussehen
+
+----
+$ git merge master
+----
+
+[.stretch]
+image::rebase-alternative-merge.png[]
+
+
+[%notitle]
+=== Rebase
+
+Stattdessen: _rebase_
+
+----
+$ git checkout experiment
+$ git rebase master
+----
+
+[.stretch]
+image::rebase.png[]
+
+
+[%notitle]
+=== Rebase
+
+gefolgt von: _fast-forward_
+
+----
+$ git merge master
+----
+
+[.stretch]
+image::ff-after-rebase.png[]
+
+
+=== Rebase Vorteile
+
+* kein unnötiger commit _C5_
+* klar lesbare Historie
+* Wenn jmd. anderes deine Änderung integrieren soll, dann ist es einfacher, wenn du einen Rebase machst, anstatt dass er einen 3-Way-Merge machen muss.
+
+== Quellen
+
+* Atlassian Tutorials
+[.small]#https://www.atlassian.com/git/tutorials/using-branches#
+* Git Pro Buch - Was ist ein Branch
+[.small]#https://git-scm.com/book/de/v1/Git-Branching-Was-ist-ein-Branch#
+* Git Pro Buch - Rebasing
+[.small]#https://git-scm.com/book/de/v1/Git-Branching-Rebasing#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

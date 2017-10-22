@@ -1,0 +1,35 @@
+= Aufgaben 3
+
+:idprefix: slide_
+:revealjs_slideNumber:
+:revealjs_history:
+
+== Branches
+
+=== Fast Forward
+
+. (lokal) neuen Branch erzeugen
+  * Name: `branch-for-ff`
+. eine Datei in diesem Branch ändern, commiten
+. die Änderung auf `master` mergen
+. Git graph ansehen / speichern
+
+=== 3-Way-Merge
+
+. (lokal) neuen Branch erzeugen
+  * Name: `branch-for-3wm`
+. eine Datei in diesem Branch ändern, commiten
+. auf Branch `master` wechseln
+. eine (andere) Datei ändern, commiten
+. beide Branches auf `master` mergen
+. Git graph ansehen / speichern
+
+=== Rebase
+
+. (lokal) neuen Branch erzeugen
+  * Name: `branch-for-rebase`
+. eine Datei in diesem Branch ändern, commiten
+. auf Branch `master` wechseln
+. eine (andere) Datei ändern, commiten
+. beide Branches auf `master` rebasen und mergen
+. Git graph ansehen / speichern
