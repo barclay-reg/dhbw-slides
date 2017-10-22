@@ -10,6 +10,7 @@
 
 .reveal section[data-state="complex"] p {
    line-height: 1.0;
+   margin: 0px;
 }
 
 .reveal .blue  {
@@ -27,6 +28,10 @@
 .reveal .dark-background  {
    margin: 10px;
    background-color: black;
+}
+
+.reveal .dark-background-color-image {
+   background-color:  white;
 }
 
 // overriding default stuff from reveal

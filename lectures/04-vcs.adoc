@@ -218,14 +218,6 @@ $ git merge origin/master
 * Merged alle Änderungen von Repo [.blue]#origin#, Branch [.blue]#master# in euer lokales Repo
 * `git pull` ist das gleiche wie `git fetch` & `git merge`
 
-=== Bilder
-
-* Git Remote Control
-[.small]#http://jlord.us/git-it/assets/imgs/remotes.png#
-* Git Fork and Clones
-[.small]#http://jlord.us/git-it/assets/imgs/clone.png#
-
-
 === Tipps
 
 . Buch _Pro Git_ (frei, online)
@@ -236,6 +228,14 @@ http://jlord.us/git-it/index.html
 https://www.git-tower.com/learn/git/ebook/en/command-line/introduction
 . Git Tipps
 https://duzun.me/tips/git
+
+
+=== Bilderverzeichnis
+
+* Git Remote Control
+[.small]#http://jlord.us/git-it/assets/imgs/remotes.png#
+* Git Fork and Clones
+[.small]#http://jlord.us/git-it/assets/imgs/clone.png#
 
 
 

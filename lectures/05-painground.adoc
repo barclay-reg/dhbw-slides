@@ -76,7 +76,7 @@ ____
 
 [quote]
 ____
-Ich möchte, dass ein Mitarbeiter den Skill (inkl. dessen gewichtung) eines Kollegen bestätigen kann. Im Profil des Mitarbeiters kann man dann sehen, wie viele "Kollegen" den Skill & Bewertung bestätigt haben.
+Ich möchte, dass ein Mitarbeiter den Skill (inkl. dessen Gewichtung) eines Kollegen bestätigen kann. Im Profil des Mitarbeiters kann man dann sehen, wie viele "Kollegen" den Skill & Bewertung bestätigt haben.
 ____
 
 === Story 10
