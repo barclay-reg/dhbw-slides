@@ -7,14 +7,19 @@
 
 == Recapitulation
 
+=== Git Kommandos
+
+[.dark-background-color-image]
+image::git-transport.png[]
+
 [state=complex]
 === Git Kommandos
 
-. Interaktion [.blue]#lokalem Repo# - [.blue]#WorkCopy#
+. Interaktion [.blue]#lokalem Repo# mit [.blue]#WorkCopy#
   * `git checkout master`
   * `git add README.md`
   * `git commit -M "Neuer Code"`
-. Interaktion [.blue]#lokalem Repo# - [.blue]#remote Repo#
+. Interaktion [.blue]#lokalem Repo# mit [.blue]#remote Repo#
   * `git fetch origin/master`
   * `git merge origin/master`
   * `git pull origin/master`
