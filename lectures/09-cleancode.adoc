@@ -439,7 +439,7 @@ class Assert {
 === Nebeneffekte vermeiden
 
 ----
-public boolean checkPassword(String userName, Sting password){
+public boolean checkPassword(String userName, String password){
    User user = UserGateway.findByName(userName);
    if (user != User.NULL) {
       if (user.password.equals(password)) {
@@ -477,7 +477,7 @@ public boolean set(String attribut, Sting value){
 
 [NOTE.speaker]
 --
-Verwendung ist nicht klar, was die methode macht
+Verwendung ist nicht klar, was die Methode macht
 set im Kontext von if könnte auch als Adjektiv verstanden werden.
 --
 
