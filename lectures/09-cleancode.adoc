@@ -185,6 +185,19 @@ class DtaRcrd102 {
 ymdhms::
 Year, Month, Day, Hours ...
 
+%notitle]
+=== Aussprechbare Namen verwenden
+
+----
+class DtaRcrd102 {
+   private Timestamp genymdhms;
+   private Timestamp modymdhms;
+}
+----
+
+ymdhms::
+Year, Month, Day, Hours ...
+
 ----
 class Customer {
    private Timestamp generationTimestamp;
@@ -410,8 +423,8 @@ class Renderer {
 
 * Funktionen mit 2 Argumenten
 * Verwender muss die Reihenfolge und Bedeutung kennen
-** oder Definition nachschlagen
-* oft unvermeidbar und akzeptabel
+** oder Definition nachschlagen -> Aufwand!
+* oft unvermeidbar
 
 ----
 // Aufruf
