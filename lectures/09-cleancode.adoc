@@ -98,7 +98,7 @@ public List<int[]> getThem() {
 === Zweckbeschreibende Namen
 
 * Kontext geht nicht aus dem Code hervor
-* Code ist implizit
+* Code ist implizit, sollte aber explizit sein
 
 [%notitle]
 === Zweckbeschreibende Namen
@@ -339,7 +339,7 @@ public static String renderPageWithSetupsAndTeardowns(
 [.blue]#Wie kann das erreicht werden?#
 
 * keine verschachtelten Strukturen
-* die eine _erlaubte_ Einrückungstiefe sollte dann möglichst nur eine Anweisung enthalten
+* die _eine erlaubte_ Einrückungstiefe sollte dann möglichst nur eine Anweisung enthalten
 
 [%notitle]
 === Klein
@@ -464,7 +464,7 @@ Evlt. is login nur möglich, wenn user nicht bereits eingeloggt ist ... (zeitlic
 ** etwas antworten
 
 ----
-public boolean set(String attribut, Sting value){
+public boolean set(String attribut, String value){
    if (internalList.contains(attribut)) {
       internalList.set(attribute, value);
       return true;

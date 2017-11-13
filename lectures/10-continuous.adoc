@@ -1,0 +1,34 @@
+= Continuous Integration
+
+:imagesdir: ../images/10-continuous
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+* fehler früher finden
+* feedback für das Entwickler-Team
+
+
+* Vorraussetzungen
+
+** zentrales source code repository
+** automatisierter Build-prozess
+
+
+Continuous Integration doesn’t get rid of bugs, but it does make them dramatically easier to find and remove.
+Martin Fowler, Chief Scientist, ThoughtWorks
+
+* 10er regel der Fehlerkosten
+
+
+Continous Delivery
+
+"Continuous Delivery is a software development discipline where you build software in such a way that the software can be released to production at any time." Martin Fowler
+
+You’re doing continuous delivery when: [1]
+
+Your software is deployable throughout its lifecycle
+Your team prioritizes keeping the software deployable over working on new features
+Anybody can get fast, automated feedback on the production readiness of their systems any time somebody makes a change to them
+You can perform push-button deployments of any version of the software to any environment on demand.
+
