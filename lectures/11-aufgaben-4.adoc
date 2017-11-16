@@ -63,15 +63,15 @@ Continuous Integration::
 === Travis Account
 
 * 1x pro Gruppe
-* account bei travis-ci.org anlegen
+* Account bei travis-ci.org anlegen
 ** _merken_ wer diesen Account angelegt hat
 ** nur dieser User ist _Admin_, Alle haben Lese-Zugriff
-** ggf. während der registrierung unbedingt den Zugriff auf die Github Organisation (eure Gruppe, z.B fn-tfe15-2-g1) beantragen
+** ggf. während der Registrierung unbedingt den Zugriff auf die github Organisation (eure Gruppe, z.B fn-tfe15-2-g1) beantragen
 ** mich direkt ansprechen, diese freizugeben
 
 === Erster Travis Build
 
-* mit github repository verbinden
+* mit github Repository verbinden
 ** siehe nächste Folie 
 * build starten
 ** ggf. durch einen extra commit
@@ -84,7 +84,7 @@ image::travis-ci-setup.png[]
 === Sonarcloud
 
 * 1x pro Gruppe
-* account bei sonarcloud.io anlegen
+* Account bei sonarcloud.io anlegen
 ** _merken_ wer diesen Account angelegt hat
 ** nur dieser User ist _Admin_, Alle haben Lese-Zugriff
 * organisations-key merken
