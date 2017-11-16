@@ -1,0 +1,107 @@
+= Aufgabe 4
+
+:imagesdir: ../images/11-aufgaben-4
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+== Automatisierung
+
+Build-Tool::
+maven, maven-wrapper, junit, selenium
+
+Continuous Integration::
+. https://github.com 
+. https://travis-ci.org 
+. https://sonarcloud.io
+
+=== Maven
+
+* Laden und Verwaltet von Bibliotheken
+* Kompilieren des Code
+* Ausführen der Tests
+
+=== Maven Wrapper
+
+* Laden der (konfigurierten) Maven version
+** d.h. einzige Vorrausetzung für Setup bleibt
+*** Git
+*** JDK
+*** Google Chrome (für UI-Tests)
+
+=== JUnit / Selenium
+
+* JUnit
+** Java-Bibliothek, API
+** komfortable API zum Testen von Java-Klassen
+* Selenium
+** API Erweiterung für JUnit
+** komfortable API zum Testen von Webseiten
+
+=== Travis-CI
+
+* Cloud-CI system
+* ein Build pro Commit
+* für jeden Build wird eine neue Linux-VM erzeugt
+** immer eine "grüne Wiese"
+
+=== Sonarcloud
+
+* Code analyse
+** statisch
+** dynamisch
+* Metriken
+* Quality Gates
+
+== Aufgaben
+
+=== Repo Aktualisieren
+
+* 1x pro Gruppe
+* bringt euer Remote-Repo auf den neuesten Stand
+
+=== Travis Account
+
+* 1x pro Gruppe
+* account bei travis-ci.org anlegen
+** ggf. während der registrierung unbedingt den Zugriff auf die Github Organisation (eure Gruppe, z.B fn-tfe15-2-g1) beantragen
+** mich direkt ansprechen, diese freizugeben
+
+=== Erster Travis Build
+
+* mit github repository verbinden
+** siehe nächste Folie 
+* build starten
+** ggf. durch einen extra commit
+* Fehler bzgl. Sonar abwarten
+
+=== Erster Travis Build
+
+image::travis-ci-setup.png[]
+
+=== Sonarcloud
+
+* registrieren bei sonarcloud
+** nur einer pro gruppe
+** organisations-key merken
+** neues security token anlegen, kopieren
+
+* _Demo_ siehe nächste Folie
+
+[%notitle]
+[background-video="https://media.giphy.com/media/3ohjV953ANHdCAOQqQ/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+=== Sonarcloud
+
+=== Travis-CI Konfigurieren
+
+* 3 neue Umgebungsvariablen anlegen
+** SONAR_TOKEN --> security token einfügen
+** SONAR_ORGANIZATION --> den organisations-key von vorhin
+** SONAR_ALTERNATIVE_PROJECTKEY --> Gruppen-Key verwenden
+*** net.kleinschmager.dhbw.tfe15:g [.blue]#1#-painground
+
+* _Demo_ siehe nächste Folie
+
+[%notitle]
+[background-video="https://media.giphy.com/media/3o6nVcbVMiLSmzWgO4/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+=== Travis-CI Konfigurieren
