@@ -24,6 +24,9 @@ All documents within the repository are available under the license http://creat
 * https://barclay-reg.github.io/dhbw-slides/lectures/11-aufgaben-4.html#/[11-aufgaben-4 - Aufgaben für den 4. Praxisteil]
 
 
+* https://barclay-reg.github.io/dhbw-slides/lectures/99-tipps.html#/[99-tipps - Weitergehende Tipps]
+
+
 == Build on your own
 
 You need https://www.ruby-lang.org/en/documentation/installation[ruby] and http://bundler.io[bundler] installed. This processing is completely inspired by https://github.com/nfrankel[Nicolas Fraenkel]. See also his blog post: https://blog.frankel.ch/automating-generation-asciidoctor-output
