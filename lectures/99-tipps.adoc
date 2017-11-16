@@ -1,0 +1,18 @@
+= Tipps
+
+:imagesdir: ../images/99-tipps
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+== Git
+
+=== Editor für Commit-Nachrichten
+
+* Windows & Notepad++
+** _erspart_ Editor in der Konsole
+** bei `git commit` kann das [.blue]#-m# nun weggelassen werden
+
+----
+$ git config --global core.editor 'C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+----

@@ -64,6 +64,8 @@ Continuous Integration::
 
 * 1x pro Gruppe
 * account bei travis-ci.org anlegen
+** _merken_ wer diesen Account angelegt hat
+** nur dieser User ist _Admin_, Alle haben Lese-Zugriff
 ** ggf. während der registrierung unbedingt den Zugriff auf die Github Organisation (eure Gruppe, z.B fn-tfe15-2-g1) beantragen
 ** mich direkt ansprechen, diese freizugeben
 
@@ -81,10 +83,12 @@ image::travis-ci-setup.png[]
 
 === Sonarcloud
 
-* registrieren bei sonarcloud
-** nur einer pro gruppe
-** organisations-key merken
-** neues security token anlegen, kopieren
+* 1x pro Gruppe
+* account bei sonarcloud.io anlegen
+** _merken_ wer diesen Account angelegt hat
+** nur dieser User ist _Admin_, Alle haben Lese-Zugriff
+* organisations-key merken
+* neues security token anlegen & kopieren
 
 * _Demo_ siehe nächste Folie
 
