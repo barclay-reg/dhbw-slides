@@ -20,8 +20,8 @@ All documents within the repository are available under the license http://creat
 * https://barclay-reg.github.io/dhbw-slides/lectures/07-vcs2.html#/[07-vcs2 - VersionControlSystems - Vertiefung]
 * https://barclay-reg.github.io/dhbw-slides/lectures/08-aufgaben-3.html#/[08-aufgaben-3 - Aufgaben für den 3. Praxisteil]
 * https://barclay-reg.github.io/dhbw-slides/lectures/09-cleancode.html#/[09-cleancode - Clean Code]
-* https://barclay-reg.github.io/dhbw-slides/lectures/09-cleancode.html#/[10-continuous - Continuous Integration|Delivery]
-* https://barclay-reg.github.io/dhbw-slides/lectures/09-cleancode.html#/[11-aufgaben-4 - Aufgaben für den 4. Praxisteil]
+* https://barclay-reg.github.io/dhbw-slides/lectures/10-continuous.html#/[10-continuous - Continuous Integration|Delivery]
+* https://barclay-reg.github.io/dhbw-slides/lectures/11-aufgaben-4.html#/[11-aufgaben-4 - Aufgaben für den 4. Praxisteil]
 
 
 == Build on your own
