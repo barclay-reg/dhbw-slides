@@ -1,0 +1,68 @@
+= Aufgaben 5
+
+:imagesdir: ../images/13-aufgaben-5
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+== Tests schreiben
+
+=== Anforderungen
+
+* CSV Import
+
+** CSV Datei mit
+*** [.blue]#;# als Spaltentrenner
+*** [.blue]#"# als Feldbegrenzer
+*** kein Maskierungszeichen
+** Datumsformat dd.MM.yyyy
+
+[state=complex]
+=== Code
+
+* [.blue]#Fachlichkeit#
+** `MemberProfileCsvImporter.java`
+** `MemberProfileCsvTransformator.java`
+* [.blue]#Verwendung#
+** `PaingroundApplication.java`
+* [.blue]#Tests#
+** `MemberProfileCsvImporterTest.java`
+** `MemberProfileCsvTransformatorTest.java`
+*** komlizierter
+
+[state=complex]
+=== Code Hinweise
+
+* Eindimensionales Array von Strings mit 5 Elementen
+** `String[] array = new String[5]`
+* Zweidimensionales Array von Strings mit 5x2 Elementen
+** `String[][] array = new String[5][2]`
+* Überprüfungen 
+** im `//THEN` Teil
+** mit Methoden `assertEquals` oder `assertTrue`
+
+=== Eclipse Hinweise
+
+Test Ausführen
+
+[%notitle]
+[background-video="https://media.giphy.com/media/3o6nV8NCJefDqXj6s8/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+=== Test Ausführen
+
+=== Eclipse Hinweise
+
+Code Coverage Messen
+
+[%notitle]
+[background-video="https://media.giphy.com/media/xUNd9BYtninL2vDjB6/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+=== Code Coverage Messen
+
+=== Aufgaben
+
+. bringt euer Remote-Repo auf den neuesten Stand
+. Testfälle für CSV Import überlegen
+. Tests schreiben und Coverage Messen
+  * zuerst `@Ignore` entfernen
+  * eine Testmethode pro Testfall
+
+
