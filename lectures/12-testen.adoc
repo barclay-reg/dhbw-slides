@@ -64,7 +64,7 @@ image::test-pyramid.png[]
 [transition=convex]
 == Testtechniken
 
-=== Black % White
+=== Black & White
 
 Wie kommen wir zu unseren Testfällen?
 
@@ -72,6 +72,36 @@ Wie kommen wir zu unseren Testfällen?
 ** aus der Spezifikation/Anforderungen
 * Whitebox Tests
 ** durch Analyse der Codestruktur
+
+
+[state=complex]
+=== Test Driven Development
+
+* Test First
+* Anforderungen werden sofort in Testfällen ausgedrückt
+* nur den Code schreiben, um Test zu bestehen
+
+KISS:: Keep it simple, stupid
+YAGNI:: You aren't gonna need it
+
+[%notitle]
+=== Test Driven Development
+
+image::TDD_Global_Lifecycle.png[background]
+
+[state=complex]
+=== Test Driven Development
+
+[%step]
+* Vorteile
+  . Code beschreibt sich selbst
+  . fördert kleine Module
+  . fördert [.blue]#testbare# Software
+  . Code-Design wird modularer, flexibler
+* Nachteile
+  . Blinde Flecken werden vom Coder & Tester nicht gesehen (gleiche Person)
+  . spätere Änderungen an Architektur sind aufwendig
+  . Testcode muss auch gewartet werden
 
 === Testabdeckung
 
@@ -128,7 +158,9 @@ C3: vier Testfälle
 
 === Quellen
 
-* Bild: test pyramid
+* Bild: TDD Lifecycle; CC BY-SA 4.0
+[.small]#https://en.wikipedia.org/wiki/Test-driven_development#
+* Bild: test pyramid; Martin Fowler
 [.small]#https://www.martinfowler.com/bliki/TestPyramid.html#
 [.small]#https://www.martinfowler.com/bliki/images/testPyramid/test-pyramid.png#
 
