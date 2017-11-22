@@ -163,9 +163,3 @@ C3: vier Testfälle
 * Bild: test pyramid; Martin Fowler
 [.small]#https://www.martinfowler.com/bliki/TestPyramid.html#
 [.small]#https://www.martinfowler.com/bliki/images/testPyramid/test-pyramid.png#
-
-
-* test technik
-** whitebox / glasbox test
-** blackbox test
-
