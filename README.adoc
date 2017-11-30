@@ -23,7 +23,7 @@ All documents within the repository are available under the license http://creat
 * https://barclay-reg.github.io/dhbw-slides/lectures/11-aufgaben-4.html#/[11-aufgaben-4 - Aufgaben für den 4. Praxisteil]
 * https://barclay-reg.github.io/dhbw-slides/lectures/12-testen.html#/[12-testen - Testen]
 * https://barclay-reg.github.io/dhbw-slides/lectures/13-aufgaben-5.html#/[13-aufgaben-5 - Aufgaben für den 5. Praxisteil]
-* https://barclay-reg.github.io/dhbw-slides/lectures/13-aufgaben-5.html#/[14-refactoring - Refactoring]
+* https://barclay-reg.github.io/dhbw-slides/lectures/14-refactoring.html#/[14-refactoring - Refactoring]
 
 * https://barclay-reg.github.io/dhbw-slides/lectures/99-tipps.html#/[99-tipps - Weitergehende Tipps]
 
