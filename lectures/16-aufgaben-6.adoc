@@ -13,7 +13,7 @@
 * folgendes überschreibt eure eigenen Änderungen
 ----
 $ git fetch upstream
-$ git merge -s theirs upstream/master
+$ git merge -s recursive -Xtheirs upstream/master
 $ git push
 ----
 * Verwendung von CSVParser

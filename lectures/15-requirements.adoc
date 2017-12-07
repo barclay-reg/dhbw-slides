@@ -9,6 +9,11 @@
 [transition=convex]
 == Begriffe
 
+[NOTE.speaker]
+--
+sehr viel schon bekannt
+-- 
+
 [%notitle]
 === Anforderung
 
@@ -29,7 +34,7 @@ Qualitätsanforderungen::
 * Performance, Verfügbarkeit, Zuverlässigkeit, ...
 Rahmenbedingungen::
 * können (von den Beteiligten) nicht verändert werden
-* werden nicht umgesetzt, sondern schänken die Umsetzungmöglichkeiten ein
+* werden nicht umgesetzt, sondern schränken die Umsetzungmöglichkeiten ein
 
 
 
@@ -127,7 +132,7 @@ image::KANO.jpg[]
 
 Welche Bedeutung hat ein Anforderung für die Zufriedenheit eines Stakeholders?
 
-* Untescheidung: unterbewusst, unbewusst, bewusst
+* Unterscheidung: unterbewusst, unbewusst, bewusst
 * mit der Zeit werden [.blue]#Begeisterungsanforderungen# zu [.blue]#Leistungsanforderungen# und später zu [.blue]#Basisanforderungen#
 
 === Detektiv sein
@@ -177,7 +182,7 @@ Anforderungsdokument muss::
 === Wie dokumentieren ?
 
 Natürliche Sprache::
-* Transformatin im Kopf bedenken
+* "Transformation im Kopf" findet immer statt
 * ggf. Satzschablonen verwenden
 * Kurze Sätze, kurze Absätze
 * nur eine Anforderung pro Satz
