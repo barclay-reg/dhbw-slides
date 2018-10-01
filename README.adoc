@@ -22,8 +22,7 @@
 
 //* https://barclay-reg.github.io/dhbw-slides/lectures/99-tipps.html#/[99-tipps - Weitergehende Tipps]
 
-image:https://travis-ci.org/barclay-reg/dhbw-slides.svg?branch=master[link=https://travis-ci.org/barclay-reg/dhbw-slides]
-image:https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png[Licence Creative Commons, role="left", link="http://creativecommons.org/licenses/by-nc-sa/4.0/"]
+image:https://travis-ci.org/barclay-reg/dhbw-slides.svg?branch=master[link=https://travis-ci.org/barclay-reg/dhbw-slides] image:https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png[Licence Creative Commons, role="left", link="http://creativecommons.org/licenses/by-nc-sa/4.0/"]
 
 All documents within the repository are available under the license http://creativecommons.org/licenses/by-nc-sa/4.0/[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)].
 
