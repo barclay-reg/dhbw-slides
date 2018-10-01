@@ -1,14 +1,7 @@
 = Slides for DHBW lectures
 
-image:https://travis-ci.org/barclay-reg/dhbw-slides.svg?branch=master[link=https://travis-ci.org/barclay-reg/dhbw-slides]
-
-image:https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png[Licence Creative Commons, role="left", link="http://creativecommons.org/licenses/by-nc-sa/4.0/"]
-
-All documents within the repository are available under the license http://creativecommons.org/licenses/by-nc-sa/4.0/[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)].
-
 == View online at github pages
 
-=== Chapters
 * https://barclay-reg.github.io/dhbw-slides/lectures/00-me.html#/[00-me - About me]
 * https://barclay-reg.github.io/dhbw-slides/lectures/01-start.html#/[01-start - Lecture Introduction]
 //* https://barclay-reg.github.io/dhbw-slides/lectures/02-setup.html#/[02-setup - Setup Project]
@@ -29,8 +22,12 @@ All documents within the repository are available under the license http://creat
 
 //* https://barclay-reg.github.io/dhbw-slides/lectures/99-tipps.html#/[99-tipps - Weitergehende Tipps]
 
+image:https://travis-ci.org/barclay-reg/dhbw-slides.svg?branch=master[link=https://travis-ci.org/barclay-reg/dhbw-slides]
+image:https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png[Licence Creative Commons, role="left", link="http://creativecommons.org/licenses/by-nc-sa/4.0/"]
 
-== Generate HTML on your own
+All documents within the repository are available under the license http://creativecommons.org/licenses/by-nc-sa/4.0/[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)].
+
+== Generate HTML on your own (locally)
 
 You need https://www.ruby-lang.org/en/documentation/installation[ruby] and http://bundler.io[bundler] installed. This processing is completely inspired by https://github.com/nfrankel[Nicolas Fraenkel]. See also his blog post: https://blog.frankel.ch/automating-generation-asciidoctor-output
 
