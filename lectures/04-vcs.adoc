@@ -71,7 +71,7 @@ image::git-transport.png[]
 
 === Befehle - clone
 
-[.strech]
+[.stretch]
 ----
 git clone \
  https://github.com/fn-tfe15-2-g1/dhbw-painground.git
@@ -83,7 +83,7 @@ git clone \
 
 === Befehle - status
 
-[.strech]
+[.stretch]
 ----
 $ git status
 On branch master
@@ -91,7 +91,7 @@ Your branch is up-to-date with 'origin/master'.
 nothing to commit, working tree clean
 ----
 
-[.strech]
+[.stretch]
 ----
 $ git status
 On branch master
@@ -109,7 +109,7 @@ no changes added to commit
 
 === Befehle - add
 
-[.strech]
+[.stretch]
 ----
 $ echo 'Plumper Inhalt für die neue Datei' > NeueDatei.txt
 $ git add NeueDatei.txt
@@ -126,7 +126,7 @@ Changes to be committed:
 
 === Befehle - commit
 
-[.strech]
+[.stretch]
 ----
 $ git commit -m 'Erster eigener Commit'
 [master e98194b] Erster eigener Commit
@@ -139,7 +139,7 @@ $ git commit -m 'Erster eigener Commit'
 
 === Befehle - log
 
-[.strech]
+[.stretch]
 ----
 $ git log --graph --pretty=oneline --abbrev-commit
 ----
@@ -148,7 +148,7 @@ image::git-log-graph.png[]
 
 === Remotes 
 
-[.strech]
+[.stretch]
 ----
 $ git remote -v
 origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
@@ -163,7 +163,7 @@ image::git-remote-control.png[]
 
 === Remotes 
 
-[.strech]
+[.stretch]
 ----
 $ git remote add upstream \
 https://github.com/barclay-reg/dhbw-painground.git

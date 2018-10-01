@@ -124,9 +124,10 @@ Software wächst in der "freien Wildbahn" in einem [.blue]#Spannungsfeld#
 
 image::spannungsfeld-alpha.png[]
 
+[%notitle]
 === Vorstellungskraft
 
-[.strech]
+[.stretch]
 image::vorstellungskraft.jpg[]
 
 [%notitle]
@@ -187,12 +188,13 @@ ____
 [%notitle]
 === Clean Code 3
 
-[.strech]
+[.stretch]
 image::programmers_hardest_tasks.jpg[]
 
 [%notitle]
 === Clean Code 4
 
+[.stretch]
 image::naming-is-key.jpg[]
 
 === Dokumentation
@@ -216,6 +218,7 @@ _ohne_
 [%notitle]
 === Refactoring
 
+[.stretch]
 image::refactoring-is-key.jpg[]
 
 === Continuous Integration
@@ -255,12 +258,13 @@ ____
 [%notitle]
 === Selbstkritik
 
-[.strech]
+[.stretch]
 image::development-of-knowledge.jpg[Development of Knowledge,100%]
 
 [%notitle]
 === Arbeitsweise & Fähigkeiten
 
+[.stretch]
 image::bugfixing.jpg[]
 
 === Analytisches Talent
