@@ -74,7 +74,7 @@ image::team.jpg[]
 image::lego-nxt1.jpg[background, size=auto auto]
 
 [.dark-background]
-* Komliziert oder Komplex?
+* Kompliziert oder Komplex?
 
 [%notitle]
 === K&K Quiz
@@ -82,7 +82,7 @@ image::lego-nxt1.jpg[background, size=auto auto]
 image::lego-nxt1.jpg[background, size=auto auto]
 
 [.dark-background]
-* Komliziert
+* Kompliziert
 
 [%notitle]
 === K&K Quiz
@@ -90,7 +90,7 @@ image::lego-nxt1.jpg[background, size=auto auto]
 image::sheldon-cooper.jpg[background, size=auto auto]
 
 [.dark-background]
-* Komliziert oder Komplex?
+* Kompliziert oder Komplex?
 
 [%notitle]
 === K&K Quiz
@@ -106,7 +106,7 @@ image::sheldon-cooper.jpg[background, size=auto auto]
 image::R2-D2.jpg[background, size=auto auto]
 
 [.dark-background]
-* Komliziert oder Komplex?
+* Kompliziert oder Komplex?
 
 [%notitle]
 === K&K Quiz

@@ -28,7 +28,7 @@
 * [.blue]#Tests#
 ** `MemberProfileCsvImporterTest.java`
 ** `MemberProfileCsvTransformatorTest.java`
-*** komlizierter
+*** Komplizierter
 
 [state=complex]
 === Code Hinweise
