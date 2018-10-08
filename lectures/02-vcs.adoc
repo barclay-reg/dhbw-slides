@@ -1,9 +1,10 @@
 = Versions- verwaltung
 
-:imagesdir: ../images/04-vcs
+:imagesdir: ../images/02-vcs
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
+:source-highlighter: highlightjs
 
 == VCS
 
@@ -45,13 +46,24 @@ commit:: Übertragen einer Version von der [.blue]#Workcopy# in das [.blue]#Repo
 [%notitle]
 === Begriffe
 
-Branch:: Parallel entwicklete Version 
+Branch:: Parallel entwicklete Version
 
 image::basic_branching_vcs_svn.jpg[]
 
 === Zentral vs. Verteilt
 
-image::central-vs-distributed.png[]
+[.stretch.invert]
+image::central-vs-distributed-2.png[]
+
+[NOTE.speaker]
+--
+* auf dem lokalen Rechner sind ist nur die aktuelle Version aller Dateien
+* für alle anderen Funktionen muss das Remote-Repo (auf einem Server) kontaktiert werden, z.B.
+** alte Version Anzeigen/Wiederherstellen
+** Blame-Funktion - Wer hat wann welche Zeile hinzugefügt, inkl. des zugehöringen Kommentars
+** Wechsel auf einen anderen Branch
+** Mergen von zwei Branches
+--
 
 == GIT
 
@@ -60,6 +72,156 @@ image::central-vs-distributed.png[]
 * seit 2005
 * _a stupid content tracker_
 * Buch: https://git-scm.com/book/en/v2[Pro Git - online]
+
+
+=== Zentral Dezentralisiert
+
+[.blue]#Zentral# -> Server
+
+[.blue]#Dezentral# -> kein Server?
+
+[state=complex]
+=== Zentral Dezentralisiert
+
+Zusätzlicher zentraler Server hat sich bewährt
+
+[.blue]#blessed Repository#
+
+[%step]
+* Zugriffskontrolle
+* Gemeinsamer Ursprung für neue Kopien
+* Backup
+* Basis für Zusatzfunktionen
+** Repo-Browser im Web
+** Konzept: Pull-Requests
+** Web-Editor für Inhalte
+** README.md Rendering
+
+[%notitle]
+=== Zentral Dezentralisiert
+
+[.stretch.invert]
+image::distributed.png[]
+
+
+=== A Stupid Content Tracker
+
+* Repository
+** == effizienter Objektspeicher
+** für alle Inhalte werden Hash-Werte als Schlüssel berechnet (SHA, 160 bit)
+** Trennung von Dateiinhalt und Dateiname
+** Inhalte werden nur einmal gespeichert (keine Duplikate)
+** Git versioniert immer das ganze Projekt
+* HASH Beispiel: a544751ae3de9965c35b88958b0d219e29f7295d
+
+
+=== A Stupid Content Tracker
+
+* Interne Datenstuktur von GIT
+** [.blue]#Blob# [.small]#(sha, packed binary)#
+** [.blue]#Tree# [.small]#(sha, Liste von Dateien oder Sub-Trees: sha, Zugriffsrechte, Name)#
+** [.blue]#Commit# [.small]#(sha, Liste von Parents: sha, Tree, Author, Datum, Message)#
+** [.blue]#Tag# [.small]#(sha, commit-sha, Author, Message)#
+** [.blue]#Reference# [.small]#(name, commit-sha)#
+*** z.B. Branch, HEAD, Tag
+
+
+=== A Stupid Content Tracker
+
+[.stretch]
+image::vorschau-tree-blob.png[]
+
+=== A Stupid Content Tracker
+
+[.stretch]
+image::vorschau-commit-tree-blob.png[]
+
+=== A Stupid Content Tracker
+
+[%step]
+* GIT Datenstruktur ist sehr einfach zu verstehen. 
+* Alle GIT-Kommandos helfen nur, diese Daten zu manipulieren.
+* Um mit GIT zu arbeiten ist das Verständnis dieser Struktur PFLICHT.
+
+=== GIT Kommandos
+
+[quote]
+____
+Git is fundamentally a content-addressable filesystem with a VCS user interface written on top of it
+____
+
+=== GIT Kommandos
+
+. Plumbing
+** Low-level Aufgaben
+** Stabile API (Parameter, Output)
+** Designed für UNIX-artige Verkettung (pipes) und Skripte
+** z.B. `git merge-base`, `git ls-tree`, `git cat-file`
+. Porcelain
+** High-Level Aufgaben
+** benutzerfreundliche API (Parameter, Output)
+** z.B. `git merge`, `git status`
+
+[%notitle]
+=== Internes Datenmodell
+
+Abbildung eines Dateisystems
+
+* [.blue]#tree#-Objekt
+** eigener SHA-Schlüssel
+** Liste von Kind-Einträgen ([sub]-tree oder blob) mit jeweils:
+*** Datei-Modus (UNIX Benutzerrechte, Executable-Flag)
+*** Typ (blob | tree)
+*** SHA-Schlüssel
+*** Name
+* [.blue]#blob#-Objekt
+** eigener SHA-Schlüssel
+** Inhalt
+
+=== Abbildung eines Dateisystems
+
+image::tree-blob-filesystem.png[]
+
+=== VCS Features
+
+* [.blue]#commit#-Objekt
+** eigener SHA-Schlüssel
+** SHA-Schlüssel der Vorgänger-Commits
+** SHA-Schlüssel des root-tree, der den Zustand des Projektes beschreibt
+** Commit-Nachricht
+** Author, Zeitstempel
+
+* SHA kann oft abgekürzt werden
+
+[source, shell]
+----
+$ git show 1c002dd4b536e7479fe34593e72e6c6c1819e53b
+$ git show 1c002d
+----
+
+=== VCS Features
+
+image::commit-flow-1.png[]
+
+=== VCS Features
+
+image::commit-flow-2.png[]
+
+=== VCS Features
+
+image::commit-flow-3.png[]
+
+=== VCS Features
+
+image::commit-flow-4.png[]
+
+=== VCS Features
+
+image::commit-flow-5.png[]
+
+=== VCS Features
+
+image::commit-flow-6.png[]
 
 [%notitle]
 === Git Transport
