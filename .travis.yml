@@ -7,11 +7,12 @@ install:
   - bundle config --local github.https true
   - bundle --path=.bundle/gems --binstubs=.bundle/.bin
 script:
-  - bundle exec asciidoctor-revealjs -D output/lectures -a customcss=../styles.css -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0 lectures/*.adoc
+  - tree -d
+  - bundle exec asciidoctor-revealjs -D output/ -a customcss=../styles.css -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0 */*.adoc
   - bundle exec asciidoctor -D output README.adoc
 after_success:
   - cd output ; mv ../README.adoc . ; cp -R ../images . ; cp ../styles.css .
-  - tree -d .
+  - tree -d
 
 deploy:
   provider: pages
