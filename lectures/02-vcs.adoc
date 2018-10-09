@@ -182,7 +182,7 @@ Abbildung eines Dateisystems
 
 image::tree-blob-filesystem.png[]
 
-=== VCS Features
+=== VCS Features - Commit
 
 * [.blue]#commit#-Objekt
 ** eigener SHA-Schlüssel
@@ -199,207 +199,209 @@ $ git show 1c002dd4b536e7479fe34593e72e6c6c1819e53b
 $ git show 1c002d
 ----
 
-=== VCS Features
+=== VCS Features - Commit
 
 image::commit-flow-1.png[]
 
-=== VCS Features
+[transition=fade]
+=== VCS Features - Commit
 
 image::commit-flow-2.png[]
 
-=== VCS Features
+[transition=fade]
+=== VCS Features - Commit
 
 image::commit-flow-3.png[]
 
-=== VCS Features
+[transition=fade]
+=== VCS Features - Commit
 
 image::commit-flow-4.png[]
 
-=== VCS Features
+[transition=fade]
+=== VCS Features - Commit
 
 image::commit-flow-5.png[]
 
-=== VCS Features
+[transition=fade]
+=== VCS Features - Commit
 
 image::commit-flow-6.png[]
 
-[%notitle]
-=== Git Transport
+=== VCS Features - Commit
 
-[.small]
-eine weitere Ebene - Stage/Index
+Doppelbedeutung [.blue]#commit#
 
-image::git-transport.png[]
+. das Objekt in der GIT Daten-Struktur
+** stellt den Zustand des gesamten Projektes (== Datei- und Ordner-Struktur) zu einem bestimmten Zeitpunkt dar
+. der Befehl, einen Commit zu erstellen 
+** auch als Verb: "Ich committe jetzt"
 
-=== Befehle - clone
+=== VCS Features - Stage | Index
 
-[.stretch]
-----
-git clone \
- https://github.com/fn-tfe15-2-g1/dhbw-painground.git
-----
+image::git-transport-local.png[]
 
-. Kopiert das ganze Repository in das lokale Repo
-. speichert Referenz auf das Original unter [.blue]#origin#
-. checkout des Hauptbranch mit Namen [.blue]#master#
+[NOTE.speaker]
+--
+* Stage:
+** _Vorhof_ um einen Commit zu Komponieren
+** existiert nur lokal - in der Work-Copy; niemals im lokalen Repo, niemals im Remote-Repo
+--
+
+=== VCS Features - Stage | Index
+
+image::staging-flow-1.png[]
+
+[transition=fade]
+=== VCS Features - Stage | Index
+
+image::staging-flow-2.png[]
+
+[transition=fade]
+=== VCS Features - Stage | Index
+
+image::staging-flow-3.png[]
+
+[transition=fade]
+=== VCS Features - Stage | Index
+
+image::staging-flow-4.png[]
+
+[transition=fade]
+=== VCS Features - Stage | Index
+
+image::staging-flow-5.png[]
+
+[transition=fade]
+=== VCS Features - Stage | Index
+
+image::staging-flow-6.png[]
 
 === Befehle - status
 
-[.stretch]
+`git status`
+
+image::git-status.png[]
+
+=== HEAD, ORIG_HEAD, HEAD@{1}
+
+* Zeiger
+** HEAD
+*** Zeigen auf den aktuellen Commit
+*** Genauer:
+**** Referenz auf den Commit, mit dem der aktuelle Working-Tree / Workcopy assoziiert wird
+** ORIG_HEAD
+*** Zeiger auf einen commit
+*** Alter Wert von HEAD, der immer dann gesetzt wird, wenn HEAD verändert wird (z.B. `git commit`)
+** Nützlich bei allen Kommandos, die eine commit-ID als Input nehmen , z.B.
+*** `git log HEAD`
+*** `git reset –hard HEAD`
+
+[NOTE.speaker]
+--
+* Viele GIT Befehle erwarten eine Commit-ID als Parameter - oft _commit-ish_ genannt
+* Zeiger wie HEAD sind eine Abkürzung
+* wenn keine Commit-ID angegeben wird, wird automatisch HEAD verwendet
+--
+
+=== HEAD, ORIG_HEAD, HEAD@{1}
+
+* Zeiger dereferenzieren 
+** (https://git-scm.com/docs/gitrevisions)
+** „Navigation“ von einem Commit ausgehend, z.B
+*** `HEAD~3` -> dritter Vorfahr von HEAD
+*** `HEAD^` -> erster Vorfahr von HEAD (unter Windows: `HEAD^^`)
+*** `HEAD^1` -> erster vorfahr von HEAD
+*** `HEAD^^` -> zweiter Vorfahr von HEAD, == `HEAD^2` oder `HEAD\^1^1`
+*** `HEAD@{2}` -> zweiter Vorfahr von HEAD
+*** `HEAD@{5.minutes.ago}`
+
+=== Änderungen verwerfen
+
+* Der pure reset-Befehl entfernt die Änderungen aus dem Stage-Bereich
+** Der Workcopy bleibt unverändert
+*** außer bei `--hard`
+** Das Argument HEAD muss angegeben werden
+
+[source, shell]
 ----
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-nothing to commit, working tree clean
-----
-
-[.stretch]
-----
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes not staged for commit:
- 
-   modified:   lectures/04-vcs.adoc
- 
-Untracked files:
- 
-   images/04-vcs/
-
-no changes added to commit
-----
-
-=== Befehle - add
-
-[.stretch]
-----
-$ echo 'Plumper Inhalt für die neue Datei' > NeueDatei.txt
-$ git add NeueDatei.txt
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-
-   new file:   NeueDatei.txt
-----
-
-* fügt neue Datei zum Index/Stage hinzu
-* nur Dateien, die im Index sind, können commited werden
-
-=== Befehle - commit
-
-[.stretch]
-----
-$ git commit -m 'Erster eigener Commit'
-[master e98194b] Erster eigener Commit
- 1 files changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 NeueDatei.txt
-----
-
-* [.blue]#e98194b# ist die eindeutige ID des Commits
-
-
-=== Befehle - log
-
-[.stretch]
-----
-$ git log --graph --pretty=oneline --abbrev-commit
+## Änderungen im Stage-Bereichs von foo.txt verwerfen
+$ git reset HEAD foo.txt 
+## Alle Änderungen im Stage-Bereichs verwerfen
+$ git reset HEAD 
+## Alle Änderungen im Stage-Bereichs & Workcopy verwerfen
+$ git reset --hard HEAD 
 ----
 
-image::git-log-graph.png[]
+=== Änderungen verwerfen
 
-=== Remotes 
+* Der checkout-Befehl verwirft die Änderungen des Workspace und holt die Version aus dem aktuell gültigen Commit
 
-[.stretch]
+[source, shell]
 ----
-$ git remote -v
-origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
-origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (push) 
-----
-
-image::remotes-1.png[]
-
-=== Remote Control
-
-image::git-remote-control.png[]
-
-=== Remotes 
-
-[.stretch]
-----
-$ git remote add upstream \
-https://github.com/barclay-reg/dhbw-painground.git
-$ git remote -v
-origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
-origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (push) 
-upstream   github.com/barclay-reg/dhbw-painground.git (fetch)
-upstream   github.com/barclay-reg/dhbw-painground.git (push) 
+## Änderungen der kompletten Workcopy verwerfen
+$ git checkout
+## Änderungen einer Datei verwerfen
+$ git checkout -- foo.txt
+## Änderungen einer Datei verwerfen - anders
+$ git checkout HEAD foo.txt
 ----
 
-image::remotes-2.png[]
+=== Änderungen verwerfen
 
-=== Remotes - Fork
+* Ein bereits erfolgter Commit kann Rückgängig gemacht werden
+** entweder: Commit entfernen & Änderungen behalten
+** oder: Commit entfernen & Änderungen zurücknehmen
 
-Wieso funktioniert das?
-
-Repo 
-
-github.com/fn-tfe15-2-g1/dhbw-painground.git 
-
-ist ein 
-
-[.blue]#Fork# 
-
-von 
-
-github.com/barclay-reg/dhbw-painground.git
-
-[%notitle]
-=== Remote Fork
-
-image::git-fork-clone.png[]
-
-=== Remote Fork
-
-image::github-example.png[]
-
-
-=== Befehle - fetch & merge & pull
-
+[source, shell]
 ----
-$ git fetch origin
+## Commit-Änderung bleiben nur im Workspace
+$ git reset HEAD^
+## Änderungen bleiben im Stage-Bereich und im Workspace
+$ git reset –-soft HEAD^
+## Commit-Änderungen werden verworfen
+$ git reset –-hard HEAD^
 ----
 
-* lädt alle Änderungen von Remote _origin_ in lokales Repo
-** *nicht* in eure Workcopy
+=== Commits ansehen
 
+* Anzeige aller bisherigen Commits
+** `git log`
+* Schönere Anzeige
+** `git log --graph --oneline`
+
+== Tipps
+
+=== Links
+* https://git-scm.com/book/en/v2
+* https://learngitbranching.js.org/
+* https://medium.freecodecamp.org/understanding-git-for-real-by-exploring-the-git-directory-1e079c15b807
+
+=== Editor für Commit-Nachrichten
+
+* Windows & Notepad++
+** _erspart_ Editor in der Konsole
+** bei `git commit` kann das [.blue]#-m# nun weggelassen werden
+
+[source, shell]
 ----
-$ git merge origin/master
+$ git config --global core.editor 'C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin
 ----
 
-* Merged alle Änderungen von Repo [.blue]#origin#, Branch [.blue]#master# in euer lokales Repo
-* `git pull` ist das gleiche wie `git fetch` & `git merge`
+=== Alias für Historie
 
-=== Tipps
+* Folgenden Befehl eingeben, um `git hist` verwenden zu können
 
-. Buch _Pro Git_ (frei, online)
-https://git-scm.com/book/en/v2
-. anderes Tutorial
-http://jlord.us/git-it/index.html
-. anderes Buch
-https://www.git-tower.com/learn/git/ebook/en/command-line/introduction
-. Git Tipps
-https://duzun.me/tips/git
+[source, shell]
+----
+$ git config --global alias.hist "log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short"
+----
 
+=== Kommandozeile
 
-=== Bilderverzeichnis
-
-* Git Remote Control
-[.small]#http://jlord.us/git-it/assets/imgs/remotes.png#
-* Git Fork and Clones
-[.small]#http://jlord.us/git-it/assets/imgs/clone.png#
-
-
+* `cd ordern1` -> Wechsel in des Unterverzeichnis _ordner1_
+* `cd ..` -> Wechsel in das nächsthöhere Verzeichnis
+* `mkdir ordern2` -> Erstellen eines neuen Unterverzeichnisses
 
 
 

@@ -1,0 +1,46 @@
+= Aufgaben 1
+
+:idprefix: slide_
+:revealjs_slideNumber:
+:revealjs_history:
+
+[state=complex]
+== Ziel
+
+* Verständnis der GIT Datenstruktur
+* Sicherer Umgang mit den Befehlen:
+** `git status`
+** `git add`
+** `git reset`
+** `git checkout`
+** `git commit`
+** `git log`
+** `git hist` (== ein Alias)
+* Zusatzbefehle
+** `git cat-file`, `git ls-tree`, `git show`
+
+== Aufgabe
+
+=== Setup
+
+. Setup GIT
+** Windows: http://cmder.net (Full Edition)
+** Mac: https://git-scm.com/download/mac
+** schön Bunt:
+*** https://www.sourcetreeapp.com
+
+=== Übungen 1/2
+. lege einen neuen Ordner an und führe darin git init aus
+. Spiele folgende Szenarien durch; nach jedem Szenario sollte git status folgenden Text ausgeben "nothing to commit, working tree clean", mit git-cat und ggf. git ls-tree können die Git-Objekte betrachtet werden
+.. Erstellen einer neuen Datei, Hinzufügen zum Index, danach diesen Commiten
+.. Ändern einer bestehenden Datei, Hinzufügen zum Index, danach diesen Commiten
+.. Hinzufügen einer neuen Datei in einem Unterordner, Hinzufügen zum Index, Commiten
+
+=== Übungen 2/2
+
+* Fortsetzung Szenarien
+[start=4]
+.. Umbenennen einer bestehenden Datei, Hinzufügen zum Index, Commiten
+.. Ändern einer bestehenden Datei, alte Version der Datei wieder herstellen 
+.. Ändern einer bestehenden Datei, Hinzufügen zum Index, Entfernen aus dem Index, Datei nochmals Ändern, Hinzufügen zum Index, Commited
+.. Ändern einer bestehenden Datei, Hinzufügen zum Index, Datei nochmals Ändern, Abermals Hinzufügen zum Index, Commiten

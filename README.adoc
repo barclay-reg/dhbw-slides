@@ -4,7 +4,8 @@
 
 * https://barclay-reg.github.io/dhbw-slides/lectures/00-me.html#/[00-me - About me]
 * https://barclay-reg.github.io/dhbw-slides/lectures/01-start.html#/[01-start - Lecture Introduction]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/02-setup.html#/[02-setup - Setup Project]
+* https://barclay-reg.github.io/dhbw-slides/lectures/02-vcs.html#/[02-vcs - Version Control Systems]
+* https://barclay-reg.github.io/dhbw-slides/lectures/03-aufgaben-1.html#/[03-aufgaben-1 - Aufgaben für den 1. Praxisteil]
 //* https://barclay-reg.github.io/dhbw-slides/lectures/03-java.html#/[03-java - Java Introduction]
 //* https://barclay-reg.github.io/dhbw-slides/lectures/04-vcs.html#/[04-vcs - VersionControlSystems]
 //* https://barclay-reg.github.io/dhbw-slides/lectures/05-painground.html#/[05-painground - User Stories]
