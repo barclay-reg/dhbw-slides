@@ -1,0 +1,91 @@
+= Initial Setup
+
+:idprefix: slide_
+:revealjs_slideNumber:
+:revealjs_history:
+
+== Download 
+
+=== Java
+
+. Download http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html[Java JDK 1.8.0_144]
+. Installieren
+  * [.blue]#Public JRE# nur installieren, wenn noch kein JRE installiert ist
+
+=== Eclipse
+
+. Download http://www.eclipse.org/downloads/[Eclipse Installer]
+  * Wenn Sie Windows 32bit haben, dann Vorsicht! und melden
+. [.blue]#Eclipse IDE for Java EE Developers# auswählen
+. restliche Fragen selbst entscheiden; Install; warten
+. das Installierte Eclipse starten
+. beim [.blue]#Popup#: den vorhin erzeugten Ordner `workspace` angeben
+
+=== Git
+
+. Download von https://git-scm.com/downloads
+. Installieren
+  * Verlangt zwar Admin-Rechte (Windows), kommt aber auch ohne weiter
+
+Oder
+
+. Go to http://www.sourcetreeapp.com
+  * erfordert Registrierung bei atlassian.com während der Installation
+  * ggf. .Net installieren
+
+== Vorbereitung
+
+[.blue]#während downloads laufen#
+
+=== Bildet Gruppen
+
+Maximal 3 Personen pro Gruppe
+
+=== Github Account
+
+. https://github.com/join
+. Username und Gruppe an mich melden
+
+=== Ordner Erstellen
+
+Erzeuge zwei Ordner - egal wo, z.B.
+----
+<my folder>
+|  \-- dhbw
+|  |  \-- checkout
+|  |  \-- workspace
+----
+
+== Projekt einrichten
+
+=== git clone
+
+in [.blue]#Git Bash#
+  * [.small]#die Email muss mit der Email bei der Github Registrierung übereinstimmen#
+  * [.small]#der Platzhalter `<gruppe>` muss durch eine Ziffer ersetzt werden#
+----
+git config --global user.name "Mona Lisa"
+git config --global user.email "email@example.com"
+----
+[.stretch]
+----
+cd dhbw/checkout
+git clone \
+ https://github.com/fn-tfe15-2-g<gruppe>/dhbw-painground.git
+----
+
+[%notitle]
+=== git clone
+
+in [.blue]#SourceTree#
+  
+  T B D
+
+=== Eclipse Import
+
+. Eclipse
+  * _Import_ -> _Existing Maven Projects_
+  * den vorhin erzeugten Ordern `checkout` auswählen
+  * abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
+
+

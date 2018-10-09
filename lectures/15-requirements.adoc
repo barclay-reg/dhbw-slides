@@ -1,0 +1,297 @@
+= Requirements Engineering
+
+:imagesdir: ../images/15-requirements
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+[background-color="cornflowerblue"]
+[transition=convex]
+== Begriffe
+
+[NOTE.speaker]
+--
+sehr viel schon bekannt
+-- 
+
+[%notitle]
+=== Anforderung
+
+[.blue]#Anforderung# ist eine Bedingung oder Fähigkeit ...::
+* die von einer Person zur [.blue]#Lösung eines Problems# oder zur [.blue]#Erreichung eines Ziels# benötigt wird
+* die ein System oder Systemteile erfüllen oder besitzen muss, um einen Vertrag zu erfüllen oder [.blue]#einer Norm#, einer Spezifikation oder anderen, formell vorgegebenen Dokumenten zu entsprechen
+
+[state=complex]
+[%notitle]
+=== Arten von Anforderungen
+
+Funktionale Anforderungen::
+* [.blue]#Was# soll ein Produkt tun
+** Funktionen, Verhalten, Strukturen (Daten, Abhängigkeiten in einem System)
+Qualitätsanforderungen::
+* [.blue]#Wie gut# soll ein Produkt seine Leistung erbringen
+* [.blue]#non-functional-requirement# 
+* Performance, Verfügbarkeit, Zuverlässigkeit, ...
+Rahmenbedingungen::
+* können (von den Beteiligten) nicht verändert werden
+* werden nicht umgesetzt, sondern schränken die Umsetzungmöglichkeiten ein
+
+
+
+[%notitle]
+=== Stakeholder
+
+Stakeholder::
+* [.blue]#Projektbetroffener#
+* Quelle für Anforderungen
+* direkt: Nutzer, Adminstratoren 
+* indirekt: Management, Hacker, Gesetze
+
+[%notitle]
+=== Requirements Engineering
+
+Requirements Engineering::
+[%step]
+* Hauptaufgaben
+[%step]
+** [.blue]#Ermitteln# der Anforderungen
+** [.blue]#Dokumentieren# der Anforderungen
+** [.blue]#Prüfen# und Abstimmen der Anforderungen
+** [.blue]#Verwalten# der Anforderungen
+* Vorgehensweise
+** kooperativ, iterativ, inkrementell
+** während des [.blue]#gesamten Lebenszyklus# des Systems
+
+
+=== Ziele des Requirements Engineering
+
+[%step]
+* alle relevanten Anforderungn sind [.blue]#bekannt# und [.blue]#verstanden#
+* alle Stakeholder [.blue]#stimmen# allen Anforderungen [.blue]#zu# (Übereinstimmung)
+* Alle Anforderungen sind
+** standardkonform [.blue]#dokumentiert#
+** standardkonform [.blue]#spezifiziert#
+
+[%notitle]
+=== Gutes RE
+
+Warum gutes Requirements Engineering?
+
+[quote, B. Boehm]
+____
+60% der Fehler in Softwareentwicklungsprojekten enstehen bereits im Requirements Engineering
+____
+
+=== Ursachen für Fehler
+
+[%step]
+* Anforderungen fehlen
+* Anforderungen sind unklar formuliert
+* Fehlerhafte Anforderungen erscheinen (trotz der Fehler) subjektiv schlüssig (für den Entwickler) oder werden (vom Entwickler) unbewusst vervollständigt
+
+=== Gegenmaßnahmen
+
+. Grenzen kennen
+. Fallen vermeiden
+. Detektiv sein
+. gemeinsame Sprache entwickeln
+. strukturiert arbeiten
+. Qualitätsprüfung der Anforderungen
+. ein Rahmen für das Ganze
+
+[background-color="cornflowerblue"]
+[transition=convex]
+== Requirements Engineering
+
+=== Grenzen kennen
+
+Systemkontext::
+Alle Aspekte, die eine Beziehung zu dem System haben
+* Personen
+* Systeme (Hardware oder andere Software)
+* Prozesse, Geschäftsprozesse
+* Ereignisse
+* Dokumente (Gesetze, Standards)
+
+=== System- und Kontextgrenzen
+
+image::Bereiche_Kontextabgrenzung.png[]
+
+=== Fallen vermeiden
+
+* Stakeholder systematisch identifizieren und einbeziehen
+* aus [.blue]#Projektbetroffenen# sollen [.blue]#Projektbeteiligte# werden
+** Individuelle "Verträge"
+
+[%notitle]
+=== Fallen vermeiden - Kano
+
+image::KANO.jpg[]
+
+=== Fallen vermeiden - Kano
+
+Welche Bedeutung hat ein Anforderung für die Zufriedenheit eines Stakeholders?
+
+* Unterscheidung: unterbewusst, unbewusst, bewusst
+* mit der Zeit werden [.blue]#Begeisterungsanforderungen# zu [.blue]#Leistungsanforderungen# und später zu [.blue]#Basisanforderungen#
+
+=== Detektiv sein
+
+* Kommunikations-Geschick im Umgang mit dem Stakeholder
+* Auswahl der richtigen [.blue]#Ermittlungstechnik#
+** Befragungstechniken (Interview, Fragebogen)
+** Kreativitätstechniken (Brainstorming, Brainstorming Paradox, Perspektivenwechsel, Analogietechnik/Bisoziation)
+** Beobachtungstechniken (Feldbeobachtung, Apprenticing)
+
+=== Gemeinsame Sprache 
+
+[%step]
+* Erstellung eines Glossars
+[%step]
+** Fachbegriffe, Abkürzungen, Synonyme
+** alltägliche Begriffe, die im Kontext eine andere Bedeutung haben
+* Verwalten des Glossars
+** [.blue]#ein# Verantwortlicher
+** zentral zugänglich
+
+=== Struktur & Dokumentation
+
+Was muss dokumentiert werden?
+
+[%step]
+* Stakeholder
+* Systemkontext
+* Glossar
+* Nutzer und Zielgruppen
+* Annahmen
+* Alle Anforderungen
+
+[state=complex]
+=== Qualitätskriterien
+
+Anforderungsdokument muss::
+* Eindeutig und Konsistent sein
+** jede einzelne Anforderung
+** [.blue]#kein Widerspruch# zwischen den Anforderungen
+** [.blue]#identifizierbar# (Dokument & jede Anforderung)
+* Klare Struktur haben
+* Modifizierbar und Erweiterbar sein
+* Vollständig
+* Verfolgbar sein
+
+=== Wie dokumentieren ?
+
+Natürliche Sprache::
+* "Transformation im Kopf" findet immer statt
+* ggf. Satzschablonen verwenden
+* Kurze Sätze, kurze Absätze
+* nur eine Anforderung pro Satz
+** Aktiv formulieren, nur ein Prozesswort (Verb)
+
+=== Natürliche Sprache - Beispiel
+
+----
+Zur Anmeldung des Benutzers werden die Login-Daten eingegeben
+----
+
+----
+Das System soll dem Benutzer ermöglichen, 
+seinen Usernamen und sein Passwort 
+über die Tastatur 
+am Terminal einzugeben.
+----
+
+=== Satzschablonen - Beispiel
+
+----
+Als <Rolle> möchte ich <Ziel/Wunsch>, um <Nutzen>
+----
+
+=== Wie dokumentieren ?
+
+Modellbasiert::
+* UML
+** Use-Case-Diagrame
+** Datenflussdiagramme
+** Aktivitätsdiagramme
+
+
+[%notitle]
+=== Use-Case-Diagram
+
+[.dark-background-color-image]
+image::Use_case_restaurant_model-alpha.png[size: auto]
+
+=== Datenflussdiagram
+
+[.dark-background-color-image]
+image::datenflussdiagram-aplha.gif[size: auto]
+
+=== Aktivitätsdiagram
+
+[.dark-background-color-image]
+image::500px-Uml-Activity-Beispiel2.svg.png[size: auto]
+
+[state=complex]
+=== Qualitätskriterien für Anforderungen
+
+Kriterien nach IEEE 830-1998::
+* Bewertet
+* Eindeutig
+* Gültig und aktuell
+* Korrekt
+* Konsistent
+* Prüfbar
+* Realisierbar
+* Verfolgbar
+* Vollständig
+* Verständlich
+
+=== Requirements-Management als Rahmen
+
+Verwalten und Kontrollieren aller Aufgaben des Requirements Engineering während der komplette Lebenszeit des Produktes.
+
+* [.blue]#Attributierung# der Anforderungen
+* [.blue]#Priorisierung# der Anforderungen
+* [.blue]#Verfolgbarkeit# der Anforderungen
+* [.blue]#Versionierung# der Anforderungen
+
+=== Attributierung Beispiel
+
+image::attributierung-anforderungen.png[]
+
+=== Verfolgbarkeit
+
+____
+Eine Anforderung ist nachvollziehbar,
+wenn sowohl deren Ursprung 
+als auch deren Umsetzung und
+die Beziehung zu anderen Dokumenten
+nachvollziehbar ist.
+____
+
+Andere Dokumente: Commit-Hostorie, Testplan, Testprotokoll
+
+=== Vorteile Verfolgbarkeit
+
+* Nachweisbarkeit
+* Identifikation von Goldrandlösung
+* Auswirkungsanalyse
+* Zuordnung von Entwicklungsaufwänden
+
+== Quellen Bilder
+
+* Kontextabgrenzung
+[.small]#http://docplayer.org/docs-images/24/4428614/images/7-0.png#
+* Kano Modell [.small]#http://smallthingsmatter.ch/kano/#
+* UseCase Diagram [.small]#https://en.wikipedia.org/wiki/Use_case_diagram#
+* Datenflussdiagram [.small]#http://www.ritz-dv.de/beratungsangebot/systemanalyseabb.php#
+* Aktivitätsdiagram [.small]#https://de.wikipedia.org/wiki/Aktivitätsdiagramm#
+* Attributierung von Anforderungen "Basiswissen Requirements Engineering" - Pohl, Rupp
+
+
+
+
+
+
+

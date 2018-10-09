@@ -1,0 +1,57 @@
+// own classes
+
+.reveal .small {
+   font-size: 32px;
+}
+
+.reveal span.small {
+   font-size: 32px;
+}
+
+
+.reveal .small dl {
+   font-size: 32px;
+}
+
+.reveal section p {
+   line-height: 1.0;
+   margin: 0px;
+}
+
+.reveal .blue  {
+   color: cornflowerblue;
+}
+
+.reveal .left  {
+   text-align: left;
+}
+
+.reveal .underline  {
+   text-decoration: underline;
+}
+
+.reveal .dark-background  {
+   margin: 10px;
+   background-color: black;
+}
+
+.reveal .dark-background-color-image {
+   background-color:  white;
+}
+
+// overriding default stuff from reveal
+
+.reveal section.title h1 {
+    text-transform: none;
+}
+
+.reveal .invert img {
+  filter: invert(100%);
+}
+
+
+.reveal .slide-number {
+    z-index: 29;
+    font-size: 28px;
+    font-weight: bold;
+}

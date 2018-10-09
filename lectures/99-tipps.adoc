@@ -1,0 +1,46 @@
+= Tipps
+
+:imagesdir: ../images/99-tipps
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+== Git
+
+=== Editor für Commit-Nachrichten
+
+* Windows & Notepad++
+** _erspart_ Editor in der Konsole
+** bei `git commit` kann das [.blue]#-m# nun weggelassen werden
+
+----
+$ git config --global core.editor 'C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+----
+
+=== Lösungen
+
+für Aufgabe [.blue]#bringt euer Remote-Repo auf den neuesten Stand#
+
+----
+$ git fetch upstream
+$ git merge upstream/master
+$ git push
+----
+
+=== Lösungen
+
+falls das [.blue]#mergen# nicht automatisch funktioniert
+
+* Datei manuell bearbeiten, danach
+----
+$ git add <dateiname>
+$ git commit -m "<informative nachricht>"
+
+* Hilfe: http://genomewiki.ucsc.edu/index.php/Resolving_merge_conflicts_in_Git
+
+
+== Eclipse
+
+* Suche nach Dateien
+** `strg-shift-r` (Windows, Linux)
+** `command-shift-r` (Mac)

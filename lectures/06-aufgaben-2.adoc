@@ -1,0 +1,47 @@
+= Aufgaben 2
+
+:idprefix: slide_
+:revealjs_slideNumber:
+:revealjs_history:
+
+== Remote Repo synchronsieren
+
+[.blue]#nur 1x pro Gruppe#
+
+. Upstream Repo hinzufügen
+. Änderungen von _upstream_ abholen und lokal _mergen_
+. alles zu [.blue]#github# hochladen
+
+[NOTE.speaker]
+--
+git add remote upstream https://github.com/barclay-reg/dhbw-painground.git
+git fetch upstream
+git merge upstream/master
+git push
+--
+
+[background-color="cornflowerblue"]
+== Demo Git mit Eclipse
+
+
+== Java Tutorial
+
+Für uns :: http://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html[http://docs.oracle.com/javase/.../win32.html]
+
+. Tutorial so durchführen, wie beschrieben
+. Tutorial in Eclipse wiederholen
+.. Neues Java Projekt
+.. Neue Klasse
+.. Inhalt einfügen
+.. Rechtsklick ... Ausführen als _Java Applikation_
+  * Launcher ansehen
+
+== Testdaten anpassen
+
+[.blue]#jeder in der Gruppe#
+
+. weiteres Profil hinzufügen
+  * siehe `PaingroundApplication.java` Methode `loadData`
+. lokale Änderung _commiten_
+. lokale Änderung _pushen_
+  * ggf. remote Änderungen _mergen_

@@ -1,0 +1,238 @@
+= Continuous Integration
+
+:imagesdir: ../images/10-continuous
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+[background-color="cornflowerblue"]
+[transition=convex]
+== Integrations Probleme
+
+=== Integration
+
+Wenn mehrere Entwickler parallel an einem System arbeiten.
+
+[.blue]#Wie kann die Software, die jeder separiert erstellt hat, miteinander integriert werden?#
+
+=== Problem Bereiche
+
+Merge-Konflikte::
+Entwickler haben [.blue]#gleichzeitig# die gleiche Datei bearbeitet
+
+Kompilier-Konflikte::
+keine Merge-Konflikte, aber die [.blue]#merged# Codebasis kompiliert nicht
+
+Test-Konflikte::
+keine Merge-Konflikte, keine Kompilier-Konflikte, aber die [.blue]#Tests# laufen nicht mehr erfolgreich
+
+[background-color="cornflowerblue"]
+[transition=convex]
+== Automatisierungs Probleme
+
+=== Pur
+
+[.left]
+HelloWorldApp.java
+----
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+----
+
+[.left]
+Kompilieren
+----
+javac HelloWorldApp.java
+----
+
+[.left]
+Ausführen
+----
+java -cp . HelloWorldApp
+java -classpath . HelloWorldApp
+----
+
+=== Pur + Bibliothek
+
+[.left]
+HelloWorldApp.java
+----
+import org.apache.commons.lang3.StringUtils;
+class HelloWorldApp {
+    public static void main(String[] args) {
+        String msg = "Hello World!";
+        msg = StringUtils.substring(msg, 6)
+        System.out.println(msg);
+    }
+}
+----
+
+[.left]
+Kompilieren
+----
+javac -cp lib/commons-lang.jar HelloWorldApp.java
+----
+
+[.left]
+Ausführen
+----
+java -cp lib/commons-lang.jar;. HelloWorldApp
+----
+
+[NOTE.speaker]
+--
+Bei Ausführen unter UNIX: java -cp lib/commons-lang.jar:. HelloWorldApp
+--
+
+=== Komplizierter
+
+[%step]
+* Woher kommt `commons-lang.jar`?
+* Welche Version von `commons-lang.jar` wird verwendet?
+* Wie viele Bibliotheken verwendet `dhbw-painground`?
+* Antwort: [.blue]#112#
+
+[background-color="cornflowerblue"]
+[transition=convex]
+== Automatisierung
+
+=== Kompilieren
+
+[.left]
+Kommandozeile:
+----
+javac src/main/java/net/kleinschmager/dhbw/tfe15/painground/PaingroundApplication.java \ 
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/ui/MainUI.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/ui/views/MemberProfileList.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/persistence/model/MemberProfile.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/persistence/repository/MemberProfileRepository.java
+----
+
+[.left]
+IDE:
+Menü _Projekt_ > _Bereinigen_
+
+
+=== Verpacken
+
+[.left]
+Kommandozeile
+----
+jar cvmf painground.jar src/main/java/net/kleinschmager/dhbw/tfe15/painground/PaingroundApplication.java \ 
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/ui/MainUI.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/ui/views/MemberProfileList.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/persistence/model/MemberProfile.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/persistence/repository/MemberProfileRepository.java
+----
+
+[.left]
+IDE
+
+* siehe nächste Folie
+
+
+[%notitle]
+[background-video="https://media.giphy.com/media/xUNd9KYIG40h6ImAg0/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+=== Verpacken IDE
+
+=== Nachteile
+
+
+[cols="1a,.^1a"] 
+|=== 
+| 
+==== Kommandozeile
+* nicht übersichtlich
+* unkomfortabel
+* Abhängig von Umgebung
+** javac version
+** Bibliotheken
+* _Works on my machine_
+| 
+==== IDE
+* Abhängig von Umgebung
+** javac version
+** Bibliotheken
+** IDE Konfiguration
+* _Works on my machine_
+|===
+
+=== Weitere Aufgaben
+
+[%step]
+* Testen
+* Dokumentation erzeugen
+** Word zu PDF?
+** _xyz_ zu HTML?
+* Upload zum Kunden
+* Bereitstellen DEMO System 
+
+=== Lösung: Automatisierung
+
+* Build-Tools
+** Ant | Maven | Gradle
+* Continuous Integration
+** Mindset
+
+[background-color="cornflowerblue"]
+[transition=convex]
+== Continuous Integration
+
+=== Motivation
+
+[quote, David Farley]
+____
+In software, when something is painful, the way to reduce the pain is to do it more frequently, not less.
+____
+
+=== Elemente
+
+[%step]
+. Code (und Konfiguration) stehen unter [.blue]#Versionsverwaltung#
+. Build-Prozess ist [.blue]#automatisiert#
+. Regelmäßiges [.blue]#einchecken|commit#
+  * mind. täglich
+
+=== Elemente
+
+[start=4]  
+. [.blue]#Tests# werden gleichzeitig entwicklt (als Code)
+. Wichtige Tests sollten [.blue]#immer# ausgeführt werden
+. eine [.blue]#produktionsnahe# Testumgebung steht immer bereit
+. Einfacher Zugriff auf Ergebnisse auch für [.blue]#Nicht-Entwickler#
+
+
+[%notitle]
+=== Vorteile
+
+[.stretch]
+image::zehner-10er-regel-der-fehlerkosten.png[]
+
+=== Vorteile
+
+[quote, Martin Fowler]
+____
+Continuous Integration doesn’t get rid of bugs, but it does make them dramatically easier to find and remove.
+____
+
+=== Vorteile
+
+* Fehler früher finden (Konflikte vermeiden)
+* Feedback für das Entwickler-Team
+* Feedback für das Qualitäts-Management
+* Feedback für die Tester
+
+=== Continuous Delivery
+
+[quote, Martin Fowler]
+____
+Continuous Delivery is a software development discipline where you build software in such a way that the software can be released to production at any time.
+____
+
+[quote, David Farley]
+____
+There should be two tasks for a human being to perform to deploy software into a development, test, or production environment: to pick the version and environment and to press the “deploy” button.
+____

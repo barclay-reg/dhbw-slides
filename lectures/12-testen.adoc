@@ -1,0 +1,165 @@
+= Testen
+
+:imagesdir: ../images/12-testen
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+
+[background-color="cornflowerblue"]
+[transition=convex]
+== Testarten
+
+=== Unterscheidung
+
+* _Größe_ des Prüflings
+* Aufwand für Testumgebung
+* Anzahl der Anforderungen
+** Anzahl der Testfälle
+
+=== Details Testen
+
+[%step]
+. Unit Testing
+  * _Modul_ wird [.blue]#isoliert# getestet
+  * eine Klasse oder 
+  * eine Gruppe zusammenhängender Klassen
+. Integration Testing
+  * _Service-Test_
+  * Zusammenspiel mehrerer Module
+  * z.B. Datenbank & Importer-Modul
+
+=== Smoke Testing
+
+[%step]
+* Herkunft: Prüfen, dass das Gerät beim ersten Einschalten nicht brennt.
+* alle wesentlichen Funktionen kurz ausprobieren
+* *keine* Detail-Tests
+
+=== Exploratory Testing
+
+[%step]
+* Tester lernt die Software beim Testen kennen
+** ad-hoc Entscheidungen, was getestet werden soll
+* sinnvoll, wenn 
+** keine/schlechte Spezifikation
+** wenig Zeit
+
+=== End-to-End Testing
+
+[%step]
+* Perspektive des [.blue]#Nutzers#
+  * Zusammenspiel aller Module
+* sehr umfangreiche Testumgebung
+* Nachteile
+[%step]
+** langsam; spätes Feedback
+** (meist) instabil
+** gefundene Fehler sind schwer zu lokalisieren
+
+=== Testpyramide
+
+image::test-pyramid.png[]
+
+[background-color="cornflowerblue"]
+[transition=convex]
+== Testtechniken
+
+=== Black & White
+
+Wie kommen wir zu unseren Testfällen?
+
+* Blackbox Tests
+** aus der Spezifikation/Anforderungen
+* Whitebox Tests
+** durch Analyse der Codestruktur
+
+
+[state=complex]
+=== Test Driven Development
+
+* Test First
+* Anforderungen werden sofort in Testfällen ausgedrückt
+* nur den Code schreiben, um Test zu bestehen
+
+KISS:: Keep it simple, stupid
+YAGNI:: You aren't gonna need it
+
+[%notitle]
+=== Test Driven Development
+
+image::TDD_Global_Lifecycle.png[background]
+
+[state=complex]
+=== Test Driven Development
+
+[%step]
+* Vorteile
+  . Code beschreibt sich selbst
+  . fördert kleine Module
+  . fördert [.blue]#testbare# Software
+  . Code-Design wird modularer, flexibler
+* Nachteile
+  . Blinde Flecken werden vom Coder & Tester nicht gesehen (gleiche Person)
+  . spätere Änderungen an Architektur sind aufwendig
+  . Testcode muss auch gewartet werden
+
+=== Testabdeckung
+
+[.left]
+C0:: Durchlauf jeder Anweisung
+C1:: Durchlauf jedes Zweiges, auch der leeren
+
+----
+int z = x;
+if (y > x) {
+   z = y;
+}
+z = z * 2;
+----
+
+[NOTE.speaker]
+--
+C0: ein Testfalle reicht aus
+C0: zwei Testfälle
+--
+
+=== Testabdeckung
+
+[.left]
+C2:: Durchlauf aller möglichen Pfade 
+C3:: Durchlauf mit allen möglichen Bedingungen
+
+----
+if (y > x) {
+   z = y;
+} else {
+   z = x;   
+}
+if (x == 2 | y == 2 ) {
+   z = z * 2;
+} else {
+   z = z * 4;
+}
+----
+
+[NOTE.speaker]
+--
+C0: zwei Testfälle
+C1: zwei Testfälle
+C2: vier Testfälle
+C3: vier Testfälle
+--
+
+=== Testabdeckung
+
+* 100% Coverage kein gutes Ziel
+* Messen allein reicht nicht aus
+** Tests müssen den Rückgabewert verifizieren
+
+=== Quellen
+
+* Bild: TDD Lifecycle; CC BY-SA 4.0
+[.small]#https://en.wikipedia.org/wiki/Test-driven_development#
+* Bild: test pyramid; Martin Fowler
+[.small]#https://www.martinfowler.com/bliki/TestPyramid.html#
+[.small]#https://www.martinfowler.com/bliki/images/testPyramid/test-pyramid.png#
