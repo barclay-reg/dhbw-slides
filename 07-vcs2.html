@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>VCS 2</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>VCS 2</h1></section><section><section id="slide_recapitulation"><h2>Recapitulation</h2></section><section id="slide_git_kommandos"><h2>Git Kommandos</h2><div class="imageblock dark-background-color-image" style=""><img src="../images/07-vcs2/git-transport.png" alt="git transport"></div></section><section id="slide_git_kommandos_2" data-state="complex"><h2>Git Kommandos</h2><div class="olist arabic"><ol class="arabic"><li><p>Interaktion <span class="blue">lokalem Repo</span> mit <span class="blue">WorkCopy</span></p><div class="ulist"><ul><li><p><code>git checkout master</code></p></li><li><p><code>git add README.md</code></p></li><li><p><code>git commit -M "Neuer Code"</code></p></li></ul></div></li><li><p>Interaktion <span class="blue">lokalem Repo</span> mit <span class="blue">remote Repo</span></p><div class="ulist"><ul><li><p><code>git fetch origin/master</code></p></li><li><p><code>git merge origin/master</code></p></li><li><p><code>git pull origin/master</code></p></li><li><p><code>git push origin/master</code></p></li></ul></div></li></ol></div></section><section id="slide_git_kommandos_2_2"><h2>Git Kommandos 2</h2><div class="olist arabic"><ol class="arabic"><li><p>Hilfe</p><div class="ulist"><ul><li><p><code>git -help</code></p></li><li><p><code>git commit -help</code></p></li></ul></div></li><li><p>Graphische Darstellung</p><div class="ulist"><ul><li><p><code>gitk</code></p></li><li><p><code>log --all --decorate --oneline --graph</code></p></li><li><p>SourceTree</p></li></ul></div></li></ol></div></section><section id="slide_git_speicher"><h2>Git Speicher</h2><div class="dlist"><dl><dt class="hdlist1">Commit</dt><dd><div class="ulist"><ul><li><p>Enthält alle Dateien zu dem Zeitpunkt</p></li><li><p>Enthält einen Verweis auf den Vorgänger-Commit</p></li></ul></div></dd><dt class="hdlist1">Branch</dt><dd><div class="ulist"><ul><li><p>Zeiger auf einen Commit</p></li></ul></div></dd></dl></div>
+<aside class="notes"><div class="paragraph"><p>Die Historie, die in GIT gespeichert wird, ist nur die Abfolge der Commits (inkl. der Dateien zu diesem Zeitpunkt). Diese Abfolge kann beliebig manipuliert werden.</p></div></aside></section><section id="slide_branch"><h2>Branch</h2><div class="ulist"><ul><li><p>Branch <code>master</code> zeigt momentan auf neuesten Commit</p></li></ul></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/branch1.png" alt="branch1" height="100%"></div>
+<aside class="notes"><div class="paragraph"><p>Ein Branch in Git ist nichts anderes als ein simpler Zeiger auf einen dieser Commits. Der Standardname eines Git-Branches lautet master. Mit jedem Commit bewegt sicher der Zeiger sich automatisch vorwärts.</p></div></aside></section><section id="slide_another_branch"><div class="ulist"><ul><li><p>Erstelle einen neuen Branch</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>$ git branch testing</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/neuerbranch.png" alt="neuerbranch" height="100%"></div>
+<aside class="notes"><div class="paragraph"><p>Dies erzeugt einen neuen Zeiger, der auf den gleichen Commit zeigt, auf dem Du gerade arbeitest.</p></div></aside></section><section id="slide_head"><h2>HEAD</h2><div class="paragraph"><p><code>HEAD</code> ist ein spezieller Zeiger</p></div>
+<div class="ulist"><ul><li><p>zeigt auf den Branch, der in der Workcopy liegt</p></li></ul></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/head-on-master.png" alt="head on master" height="100%"></div></section><section id="slide_head_2"><div class="paragraph"><p>Auschecken eines anderen Branches</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>$ git checkout testing</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/head-on-testing.png" alt="head on testing" height="100%"></div></section><section id="slide_branch_entwickeln"><div class="paragraph"><p>Ein weiterer Commit &#8230;&#8203;</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>$ echo 'neuer Text' &gt; neue-datei.txt
+$ git commit -a -m 'Neue Datei für git-test'</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/commit-on-testing.png" alt="commit on testing" height="100%"></div></section><section id="slide_branch_auseinander"><div class="paragraph"><p>Die Historie läuft auseinander</p></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/historie-auseinander.png" alt="historie auseinander" height="100%"></div></section><section id="slide_aufgabe_vom_letzten_mal"><h2>Aufgabe vom letzten Mal</h2><div class="olist arabic"><ol class="arabic"><li><p>jemand anderes ändert <code>README.md</code></p><div class="ulist"><ul><li><p>inkl. <code>commit</code> und <code>push</code> auf gemeinsames <span class="blue">Remote Repo</span></p></li></ul></div></li><li><p>ich ändere ebenfalls <code>README.md</code></p><div class="ulist"><ul><li><p>inkl. <code>commit</code> auf mein <span class="blue">lokales Repo</span></p></li></ul></div></li></ol></div></section><section id="slide_git_log"><h2>Git Log</h2><div class="imageblock" style=""><img src="../images/07-vcs2/gitlog-ausgangsbasis.png" alt="gitlog ausgangsbasis"></div></section><section id="slide_sourcetree"><h2>SourceTree</h2><div class="imageblock" style=""><img src="../images/07-vcs2/sourcetree-ausgangsbasis.png" alt="sourcetree ausgangsbasis"></div></section></section>
+<section id="slide_dateikonflikte"><h2>Dateikonflikte</h2><div class="ulist"><ul><li><p>wenn <code>git</code> nicht selbst mergen kann</p></li></ul></div>
+<div class="listingblock stretch"><div class="content"><pre class="highlight"><code>   // save a couple of profiles
+   repository.save(new MemberProfile("robkle", "Kleinschmager"));
+   repository.save(new MemberProfile("mickni", "Knight"));
+   repository.save(new MemberProfile("geolaf", "Laforge"));
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+   repository.save(new MemberProfile("mate1", "Kollege A"));
+=======
+   repository.save(new MemberProfile("mate2", "Kollege B"));
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; refs/remotes/origin/master</code></pre></div></div></section>
+<section><section id="slide_mergen"><h2>Mergen</h2><div class="ulist"><ul><li><p>Zusammenfügen von Branches</p><div class="olist arabic"><ol class="arabic"><li><p>Fast-Forward-Merge</p></li><li><p>3-Way-Merge</p></li></ol></div></li></ul></div><div class="paragraph"><p>ODER</p></div><div class="ulist"><ul><li><p>Zusammenfügen von Dateiversionen</p><div class="ulist"><ul><li><p>sog. <span class="blue">Konflikten</span></p></li></ul></div></li></ul></div><aside class="notes"><div class="paragraph"><p>Beim mergen von Branches ist es egal, ob diese Branches Remote oder Lokal sind, hauptsache sie haben die gleichen Vorfahren.</p></div></aside></section><section id="slide_fast_forward_merge"><h2>Fast-Forward-Merge</h2><div class="imageblock" style=""><img src="../images/07-vcs2/ff-before-merge.png" alt="ff before merge"></div></section><section id="slide_fast_forward_merge_2"><h2>Fast-Forward-Merge</h2><div class="ulist"><ul><li><p>verändert niemals Dateien</p></li><li><p>Vorrausetzung: Linearer Pfad zwischen den Zeigern</p></li></ul></div></section><section id="slide_fast_forward_merge_3"><div class="imageblock" style=""><img src="../images/07-vcs2/ff-after-merge.png" alt="ff after merge"></div></section><section id="slide_3_way_merge"><h2>3-Way-Merge</h2><div class="imageblock" style=""><img src="../images/07-vcs2/3wm-before-merge.png" alt="3wm before merge"></div></section><section id="slide_3_way_merge_2"><div class="ulist"><ul><li><p>verändert Dateien nur, wenn es Änderung in beiden Branches gab</p></li><li><p>erzeugt einen <span class="blue">zusätzlichen</span> Commit</p></li><li><p>wird als <em>unsauber</em> empfunden &#8594; <code>rebase</code></p></li></ul></div></section><section id="slide_3_way_merge_3"><div class="imageblock" style=""><img src="../images/07-vcs2/3wm-after-merge.png" alt="3wm after merge"></div></section></section>
+<section><section id="slide_rebase"><h2>Rebase</h2><div class="ulist"><ul><li><p>Alternative zu <code>merge</code></p></li><li><p><em>Umschreiben</em> der Historie</p></li><li><p>erzeugt <em>alternativen</em> Commit</p></li><li><p>sieht final aus wie ein <em>Fast-Forward-Merge</em></p></li></ul></div></section><section id="slide_rebase_start"><h2>Rebase Start</h2><div class="imageblock stretch" style=""><img src="../images/07-vcs2/rebase-before.png" alt="rebase before" height="100%"></div></section><section id="slide_rebase_alternative"><div class="paragraph"><p>So würde ein <em>3-Way-Merge</em> aussehen</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>$ git merge master</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/rebase-alternative-merge.png" alt="rebase alternative merge" height="100%"></div></section><section id="slide_rebase_2"><div class="paragraph"><p>Stattdessen: <em>rebase</em></p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>$ git checkout experiment
+$ git rebase master</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/rebase.png" alt="rebase" height="100%"></div></section><section id="slide_rebase_3"><div class="paragraph"><p>gefolgt von: <em>fast-forward</em></p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>$ git merge master</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/07-vcs2/ff-after-rebase.png" alt="ff after rebase" height="100%"></div></section><section id="slide_rebase_vorteile"><h2>Rebase Vorteile</h2><div class="ulist"><ul><li><p>kein unnötiger commit <em>C5</em></p></li><li><p>klar lesbare Historie</p></li><li><p>Wenn jmd. anderes deine Änderung integrieren soll, dann ist es einfacher, wenn du einen Rebase machst, anstatt dass er einen 3-Way-Merge machen muss.</p></li></ul></div></section></section>
+<section id="slide_quellen"><h2>Quellen</h2><div class="ulist"><ul><li><p>Atlassian Tutorials
+<span class="small"><a href="https://www.atlassian.com/git/tutorials/using-branches" class="bare">https://www.atlassian.com/git/tutorials/using-branches</a></span></p></li><li><p>Git Pro Buch - Was ist ein Branch
+<span class="small"><a href="https://git-scm.com/book/de/v1/Git-Branching-Was-ist-ein-Branch" class="bare">https://git-scm.com/book/de/v1/Git-Branching-Was-ist-ein-Branch</a></span></p></li><li><p>Git Pro Buch - Rebasing
+<span class="small"><a href="https://git-scm.com/book/de/v1/Git-Branching-Rebasing" class="bare">https://git-scm.com/book/de/v1/Git-Branching-Rebasing</a></span></p></li></ul></div></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>

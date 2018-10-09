@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Continuous Integration</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Continuous Integration</h1></section><section><section id="slide_integrations_probleme" data-transition="convex" data-background-color="cornflowerblue"><h2>Integrations Probleme</h2></section><section id="slide_integration"><h2>Integration</h2><div class="paragraph"><p>Wenn mehrere Entwickler parallel an einem System arbeiten.</p></div>
+<div class="paragraph"><p><span class="blue">Wie kann die Software, die jeder separiert erstellt hat, miteinander integriert werden?</span></p></div></section><section id="slide_problem_bereiche"><h2>Problem Bereiche</h2><div class="dlist"><dl><dt class="hdlist1">Merge-Konflikte</dt><dd><p>Entwickler haben <span class="blue">gleichzeitig</span> die gleiche Datei bearbeitet</p></dd><dt class="hdlist1">Kompilier-Konflikte</dt><dd><p>keine Merge-Konflikte, aber die <span class="blue">merged</span> Codebasis kompiliert nicht</p></dd><dt class="hdlist1">Test-Konflikte</dt><dd><p>keine Merge-Konflikte, keine Kompilier-Konflikte, aber die <span class="blue">Tests</span> laufen nicht mehr erfolgreich</p></dd></dl></div></section></section>
+<section><section id="slide_automatisierungs_probleme" data-transition="convex" data-background-color="cornflowerblue"><h2>Automatisierungs Probleme</h2></section><section id="slide_pur"><h2>Pur</h2><div class="paragraph left"><p>HelloWorldApp.java</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}</code></pre></div></div>
+<div class="paragraph left"><p>Kompilieren</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>javac HelloWorldApp.java</code></pre></div></div>
+<div class="paragraph left"><p>Ausführen</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>java -cp . HelloWorldApp
+java -classpath . HelloWorldApp</code></pre></div></div></section><section id="slide_pur_bibliothek"><h2>Pur + Bibliothek</h2><div class="paragraph left"><p>HelloWorldApp.java</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>import org.apache.commons.lang3.StringUtils;
+class HelloWorldApp {
+    public static void main(String[] args) {
+        String msg = "Hello World!";
+        msg = StringUtils.substring(msg, 6)
+        System.out.println(msg);
+    }
+}</code></pre></div></div>
+<div class="paragraph left"><p>Kompilieren</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>javac -cp lib/commons-lang.jar HelloWorldApp.java</code></pre></div></div>
+<div class="paragraph left"><p>Ausführen</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>java -cp lib/commons-lang.jar;. HelloWorldApp</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Bei Ausführen unter UNIX: java -cp lib/commons-lang.jar:. HelloWorldApp</p></div></aside></section><section id="slide_komplizierter"><h2>Komplizierter</h2><div class="ulist"><ul><li class="fragment"><p>Woher kommt <code>commons-lang.jar</code>?</p></li><li class="fragment"><p>Welche Version von <code>commons-lang.jar</code> wird verwendet?</p></li><li class="fragment"><p>Wie viele Bibliotheken verwendet <code>dhbw-painground</code>?</p></li><li class="fragment"><p>Antwort: <span class="blue">112</span></p></li></ul></div></section></section>
+<section><section id="slide_automatisierung" data-transition="convex" data-background-color="cornflowerblue"><h2>Automatisierung</h2></section><section id="slide_kompilieren"><h2>Kompilieren</h2><div class="paragraph left"><p>Kommandozeile:</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>javac src/main/java/net/kleinschmager/dhbw/tfe15/painground/PaingroundApplication.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/ui/MainUI.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/ui/views/MemberProfileList.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/persistence/model/MemberProfile.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/persistence/repository/MemberProfileRepository.java</code></pre></div></div>
+<div class="paragraph left"><p>IDE:
+Menü <em>Projekt</em> &gt; <em>Bereinigen</em></p></div></section><section id="slide_verpacken"><h2>Verpacken</h2><div class="paragraph left"><p>Kommandozeile</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>jar cvmf painground.jar src/main/java/net/kleinschmager/dhbw/tfe15/painground/PaingroundApplication.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/ui/MainUI.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/ui/views/MemberProfileList.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/persistence/model/MemberProfile.java \
+src/main/java/net/kleinschmager/dhbw/tfe15/painground/persistence/repository/MemberProfileRepository.java</code></pre></div></div>
+<div class="paragraph left"><p>IDE</p></div>
+<div class="ulist"><ul><li><p>siehe nächste Folie</p></li></ul></div></section><section id="slide_verpacken_ide" data-background-video="https://media.giphy.com/media/xUNd9KYIG40h6ImAg0/giphy-hd.mp4" data-background-video-loop data-background-video-muted></section><section id="slide_nachteile"><h2>Nachteile</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><h3>Kommandozeile</h3><div class="ulist"><ul><li><p>nicht übersichtlich</p></li><li><p>unkomfortabel</p></li><li><p>Abhängig von Umgebung</p><div class="ulist"><ul><li><p>javac version</p></li><li><p>Bibliotheken</p></li></ul></div></li><li><p><em>Works on my machine</em></p></li></ul></div></div></td><td class="tableblock halign-left valign-middle"><div><h3>IDE</h3><div class="ulist"><ul><li><p>Abhängig von Umgebung</p><div class="ulist"><ul><li><p>javac version</p></li><li><p>Bibliotheken</p></li><li><p>IDE Konfiguration</p></li></ul></div></li><li><p><em>Works on my machine</em></p></li></ul></div></div></td></tr></table></section><section id="slide_weitere_aufgaben"><h2>Weitere Aufgaben</h2><div class="ulist"><ul><li class="fragment"><p>Testen</p></li><li class="fragment"><p>Dokumentation erzeugen</p><div class="ulist"><ul><li><p>Word zu PDF?</p></li><li><p><em>xyz</em> zu HTML?</p></li></ul></div></li><li class="fragment"><p>Upload zum Kunden</p></li><li class="fragment"><p>Bereitstellen DEMO System</p></li></ul></div></section><section id="slide_lsung_automatisierung"><h2>Lösung: Automatisierung</h2><div class="ulist"><ul><li><p>Build-Tools</p><div class="ulist"><ul><li><p>Ant | Maven | Gradle</p></li></ul></div></li><li><p>Continuous Integration</p><div class="ulist"><ul><li><p>Mindset</p></li></ul></div></li></ul></div></section></section>
+<section><section id="slide_continuous_integration" data-transition="convex" data-background-color="cornflowerblue"><h2>Continuous Integration</h2></section><section id="slide_motivation"><h2>Motivation</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>In software, when something is painful, the way to reduce the pain is to do it more frequently, not less.</p></div></blockquote><div class="attribution">&#8212; David Farley</div></div></section><section id="slide_elemente"><h2>Elemente</h2><div class="olist arabic"><ol class="arabic"><li class="fragment"><p>Code (und Konfiguration) stehen unter <span class="blue">Versionsverwaltung</span></p></li><li class="fragment"><p>Build-Prozess ist <span class="blue">automatisiert</span></p></li><li class="fragment"><p>Regelmäßiges <span class="blue">einchecken|commit</span></p><div class="ulist"><ul><li><p>mind. täglich</p></li></ul></div></li></ol></div></section><section id="slide_elemente_2"><h2>Elemente</h2><div class="olist arabic"><ol class="arabic" start="4"><li><p><span class="blue">Tests</span> werden gleichzeitig entwicklt (als Code)</p></li><li><p>Wichtige Tests sollten <span class="blue">immer</span> ausgeführt werden</p></li><li><p>eine <span class="blue">produktionsnahe</span> Testumgebung steht immer bereit</p></li><li><p>Einfacher Zugriff auf Ergebnisse auch für <span class="blue">Nicht-Entwickler</span></p></li></ol></div></section><section id="slide_vorteile"><div class="imageblock stretch" style=""><img src="../images/10-continuous/zehner-10er-regel-der-fehlerkosten.png" alt="zehner 10er regel der fehlerkosten" height="100%"></div></section><section id="slide_vorteile_2"><h2>Vorteile</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Continuous Integration doesn’t get rid of bugs, but it does make them dramatically easier to find and remove.</p></div></blockquote><div class="attribution">&#8212; Martin Fowler</div></div></section><section id="slide_vorteile_3"><h2>Vorteile</h2><div class="ulist"><ul><li><p>Fehler früher finden (Konflikte vermeiden)</p></li><li><p>Feedback für das Entwickler-Team</p></li><li><p>Feedback für das Qualitäts-Management</p></li><li><p>Feedback für die Tester</p></li></ul></div></section><section id="slide_continuous_delivery"><h2>Continuous Delivery</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Continuous Delivery is a software development discipline where you build software in such a way that the software can be released to production at any time.</p></div></blockquote><div class="attribution">&#8212; Martin Fowler</div></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>There should be two tasks for a human being to perform to deploy software into a development, test, or production environment: to pick the version and environment and to press the “deploy” button.</p></div></blockquote><div class="attribution">&#8212; David Farley</div></div></section></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>

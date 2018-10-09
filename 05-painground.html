@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Painground</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Painground</h1></section><section id="slide_peoples_knowledge"><h2>Peoples Knowledge</h2><div class="ulist"><ul><li><p>Verwalten der Profile von Mitarbeiter / Studenten / &#8230;&#8203;</p></li><li><p>Welche Fähigkeiten hat jemand, z.B.</p><div class="ulist"><ul><li><p>Excel</p></li><li><p>Java</p></li><li><p>Matlab</p></li></ul></div></li><li><p>Soll Kollegen unterstützen, wenn sie Hilfe suchen</p></li></ul></div></section>
+<section><section id="slide_user_stories"><h2>User Stories</h2></section><section id="slide_story_1"><h2>Story 1</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte für alle (meine) Mitarbeiter ein Profil anlegen: dies soll den Namen, den Geburtstag und ein Bild beinhalten.</p></div></blockquote></div></section><section id="slide_story_2"><h2>Story 2</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte, dass sich jeder Mitarbeiter mit Namen anmelden kann und nur sein eigenes Profile bearbeiten kann.</p></div></blockquote></div></section><section id="slide_story_3"><h2>Story 3</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte, dass das Profile auch Felder für die private Adresse, private Telefonnummer und Hobbies enthält.</p></div></blockquote></div></section><section id="slide_story_4"><h2>Story 4</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Die PersonalAbteilung will die Skills jedes Mitarbeiters per REST-Schnittstelle in ihr eigenes System importieren.</p></div></blockquote></div></section><section id="slide_story_5"><h2>Story 5</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte, dass ein Mitarbeiter in seinem Profi seine "Skills" pflegen kann, in ein Textfeld - ein Wort == ein skil</p></div></blockquote></div></section><section id="slide_story_6"><h2>Story 6</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte, dass die Skills gewichtet werden können - Gewichtungen: Novize, Erfahrener, Experte</p></div></blockquote></div></section><section id="slide_story_7"><h2>Story 7</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte, dass beim Erfassen eines weiteren Skills an einem Profile eine Liste an passenden - bereits erfassten Skills angezeigt werden soll (suggest)</p></div></blockquote></div></section><section id="slide_story_8"><h2>Story 8</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte eine Liste aller erfasster Skills sehen, dazu die Anzahl der Mitarbeiter, die dieses Skill "haben"</p></div></blockquote></div></section><section id="slide_story_9"><h2>Story 9</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte, dass ein Mitarbeiter den Skill (inkl. dessen Gewichtung) eines Kollegen bestätigen kann. Im Profil des Mitarbeiters kann man dann sehen, wie viele "Kollegen" den Skill &amp; Bewertung bestätigt haben.</p></div></blockquote></div></section><section id="slide_story_10"><h2>Story 10</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte, dass ein Mitarbeiter seine Bewertung eines Skills ändern kann - diese Änderung soll mit Zeitstempel gespeichert werden sodass später die "Entwicklung" dieses Skills beobachtet werden kann.</p></div></blockquote></div></section><section id="slide_story_11"><h2>Story 11</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Ich möchte, dass die Bewertungen der Kollegen ebenfalls mit Zeitstempel gespeichert werden - so kann man später eine "Entwicklung" der Bewertungen &amp; Bestätigungen aufzeigen.</p></div></blockquote></div></section></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>

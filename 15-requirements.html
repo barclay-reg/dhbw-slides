@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Requirements Engineering</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Requirements Engineering</h1></section><section><section id="slide_begriffe" data-transition="convex" data-background-color="cornflowerblue"><h2>Begriffe</h2><aside class="notes"><div class="paragraph"><p>sehr viel schon bekannt</p></div></aside></section><section id="slide_anforderung"><div class="dlist"><dl><dt class="hdlist1"><span class="blue">Anforderung</span> ist eine Bedingung oder Fähigkeit &#8230;&#8203;</dt><dd><div class="ulist"><ul><li><p>die von einer Person zur <span class="blue">Lösung eines Problems</span> oder zur <span class="blue">Erreichung eines Ziels</span> benötigt wird</p></li><li><p>die ein System oder Systemteile erfüllen oder besitzen muss, um einen Vertrag zu erfüllen oder <span class="blue">einer Norm</span>, einer Spezifikation oder anderen, formell vorgegebenen Dokumenten zu entsprechen</p></li></ul></div></dd></dl></div></section><section id="slide_arten_von_anforderungen" data-state="complex"><div class="dlist"><dl><dt class="hdlist1">Funktionale Anforderungen</dt><dd><div class="ulist"><ul><li><p><span class="blue">Was</span> soll ein Produkt tun</p><div class="ulist"><ul><li><p>Funktionen, Verhalten, Strukturen (Daten, Abhängigkeiten in einem System)</p></li></ul></div></li></ul></div></dd><dt class="hdlist1">Qualitätsanforderungen</dt><dd><div class="ulist"><ul><li><p><span class="blue">Wie gut</span> soll ein Produkt seine Leistung erbringen</p></li><li><p><span class="blue">non-functional-requirement</span></p></li><li><p>Performance, Verfügbarkeit, Zuverlässigkeit, &#8230;&#8203;</p></li></ul></div></dd><dt class="hdlist1">Rahmenbedingungen</dt><dd><div class="ulist"><ul><li><p>können (von den Beteiligten) nicht verändert werden</p></li><li><p>werden nicht umgesetzt, sondern schränken die Umsetzungmöglichkeiten ein</p></li></ul></div></dd></dl></div></section><section id="slide_stakeholder"><div class="dlist"><dl><dt class="hdlist1">Stakeholder</dt><dd><div class="ulist"><ul><li><p><span class="blue">Projektbetroffener</span></p></li><li><p>Quelle für Anforderungen</p></li><li><p>direkt: Nutzer, Adminstratoren</p></li><li><p>indirekt: Management, Hacker, Gesetze</p></li></ul></div></dd></dl></div></section><section id="slide_requirements_engineering"><div class="dlist"><dl><dt class="hdlist1">Requirements Engineering</dt></dl></div>
+<div class="ulist"><ul><li class="fragment"><p>Hauptaufgaben</p><div class="ulist"><ul><li class="fragment"><p><span class="blue">Ermitteln</span> der Anforderungen</p></li><li class="fragment"><p><span class="blue">Dokumentieren</span> der Anforderungen</p></li><li class="fragment"><p><span class="blue">Prüfen</span> und Abstimmen der Anforderungen</p></li><li class="fragment"><p><span class="blue">Verwalten</span> der Anforderungen</p></li></ul></div></li><li class="fragment"><p>Vorgehensweise</p><div class="ulist"><ul><li><p>kooperativ, iterativ, inkrementell</p></li><li><p>während des <span class="blue">gesamten Lebenszyklus</span> des Systems</p></li></ul></div></li></ul></div></section><section id="slide_ziele_des_requirements_engineering"><h2>Ziele des Requirements Engineering</h2><div class="ulist"><ul><li class="fragment"><p>alle relevanten Anforderungn sind <span class="blue">bekannt</span> und <span class="blue">verstanden</span></p></li><li class="fragment"><p>alle Stakeholder <span class="blue">stimmen</span> allen Anforderungen <span class="blue">zu</span> (Übereinstimmung)</p></li><li class="fragment"><p>Alle Anforderungen sind</p><div class="ulist"><ul><li><p>standardkonform <span class="blue">dokumentiert</span></p></li><li><p>standardkonform <span class="blue">spezifiziert</span></p></li></ul></div></li></ul></div></section><section id="slide_gutes_re"><div class="paragraph"><p>Warum gutes Requirements Engineering?</p></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>60% der Fehler in Softwareentwicklungsprojekten enstehen bereits im Requirements Engineering</p></div></blockquote><div class="attribution">&#8212; B. Boehm</div></div></section><section id="slide_ursachen_fr_fehler"><h2>Ursachen für Fehler</h2><div class="ulist"><ul><li class="fragment"><p>Anforderungen fehlen</p></li><li class="fragment"><p>Anforderungen sind unklar formuliert</p></li><li class="fragment"><p>Fehlerhafte Anforderungen erscheinen (trotz der Fehler) subjektiv schlüssig (für den Entwickler) oder werden (vom Entwickler) unbewusst vervollständigt</p></li></ul></div></section><section id="slide_gegenmanahmen"><h2>Gegenmaßnahmen</h2><div class="olist arabic"><ol class="arabic"><li><p>Grenzen kennen</p></li><li><p>Fallen vermeiden</p></li><li><p>Detektiv sein</p></li><li><p>gemeinsame Sprache entwickeln</p></li><li><p>strukturiert arbeiten</p></li><li><p>Qualitätsprüfung der Anforderungen</p></li><li><p>ein Rahmen für das Ganze</p></li></ol></div></section></section>
+<section><section id="slide_requirements_engineering_2" data-transition="convex" data-background-color="cornflowerblue"><h2>Requirements Engineering</h2></section><section id="slide_grenzen_kennen"><h2>Grenzen kennen</h2><div class="dlist"><dl><dt class="hdlist1">Systemkontext</dt><dd><p>Alle Aspekte, die eine Beziehung zu dem System haben</p><div class="ulist"><ul><li><p>Personen</p></li><li><p>Systeme (Hardware oder andere Software)</p></li><li><p>Prozesse, Geschäftsprozesse</p></li><li><p>Ereignisse</p></li><li><p>Dokumente (Gesetze, Standards)</p></li></ul></div></dd></dl></div></section><section id="slide_system_und_kontextgrenzen"><h2>System- und Kontextgrenzen</h2><div class="imageblock" style=""><img src="../images/15-requirements/Bereiche_Kontextabgrenzung.png" alt="Bereiche Kontextabgrenzung"></div></section><section id="slide_fallen_vermeiden"><h2>Fallen vermeiden</h2><div class="ulist"><ul><li><p>Stakeholder systematisch identifizieren und einbeziehen</p></li><li><p>aus <span class="blue">Projektbetroffenen</span> sollen <span class="blue">Projektbeteiligte</span> werden</p><div class="ulist"><ul><li><p>Individuelle "Verträge"</p></li></ul></div></li></ul></div></section><section id="slide_fallen_vermeiden_kano"><div class="imageblock" style=""><img src="../images/15-requirements/KANO.jpg" alt="KANO"></div></section><section id="slide_fallen_vermeiden_kano_2"><h2>Fallen vermeiden - Kano</h2><div class="paragraph"><p>Welche Bedeutung hat ein Anforderung für die Zufriedenheit eines Stakeholders?</p></div>
+<div class="ulist"><ul><li><p>Unterscheidung: unterbewusst, unbewusst, bewusst</p></li><li><p>mit der Zeit werden <span class="blue">Begeisterungsanforderungen</span> zu <span class="blue">Leistungsanforderungen</span> und später zu <span class="blue">Basisanforderungen</span></p></li></ul></div></section><section id="slide_detektiv_sein"><h2>Detektiv sein</h2><div class="ulist"><ul><li><p>Kommunikations-Geschick im Umgang mit dem Stakeholder</p></li><li><p>Auswahl der richtigen <span class="blue">Ermittlungstechnik</span></p><div class="ulist"><ul><li><p>Befragungstechniken (Interview, Fragebogen)</p></li><li><p>Kreativitätstechniken (Brainstorming, Brainstorming Paradox, Perspektivenwechsel, Analogietechnik/Bisoziation)</p></li><li><p>Beobachtungstechniken (Feldbeobachtung, Apprenticing)</p></li></ul></div></li></ul></div></section><section id="slide_gemeinsame_sprache"><h2>Gemeinsame Sprache</h2><div class="ulist"><ul><li class="fragment"><p>Erstellung eines Glossars</p><div class="ulist"><ul><li class="fragment"><p>Fachbegriffe, Abkürzungen, Synonyme</p></li><li class="fragment"><p>alltägliche Begriffe, die im Kontext eine andere Bedeutung haben</p></li></ul></div></li><li class="fragment"><p>Verwalten des Glossars</p><div class="ulist"><ul><li><p><span class="blue">ein</span> Verantwortlicher</p></li><li><p>zentral zugänglich</p></li></ul></div></li></ul></div></section><section id="slide_struktur_dokumentation"><h2>Struktur &amp; Dokumentation</h2><div class="paragraph"><p>Was muss dokumentiert werden?</p></div>
+<div class="ulist"><ul><li class="fragment"><p>Stakeholder</p></li><li class="fragment"><p>Systemkontext</p></li><li class="fragment"><p>Glossar</p></li><li class="fragment"><p>Nutzer und Zielgruppen</p></li><li class="fragment"><p>Annahmen</p></li><li class="fragment"><p>Alle Anforderungen</p></li></ul></div></section><section id="slide_qualittskriterien" data-state="complex"><h2>Qualitätskriterien</h2><div class="dlist"><dl><dt class="hdlist1">Anforderungsdokument muss</dt><dd><div class="ulist"><ul><li><p>Eindeutig und Konsistent sein</p><div class="ulist"><ul><li><p>jede einzelne Anforderung</p></li><li><p><span class="blue">kein Widerspruch</span> zwischen den Anforderungen</p></li><li><p><span class="blue">identifizierbar</span> (Dokument &amp; jede Anforderung)</p></li></ul></div></li><li><p>Klare Struktur haben</p></li><li><p>Modifizierbar und Erweiterbar sein</p></li><li><p>Vollständig</p></li><li><p>Verfolgbar sein</p></li></ul></div></dd></dl></div></section><section id="slide_wie_dokumentieren"><h2>Wie dokumentieren ?</h2><div class="dlist"><dl><dt class="hdlist1">Natürliche Sprache</dt><dd><div class="ulist"><ul><li><p>"Transformation im Kopf" findet immer statt</p></li><li><p>ggf. Satzschablonen verwenden</p></li><li><p>Kurze Sätze, kurze Absätze</p></li><li><p>nur eine Anforderung pro Satz</p><div class="ulist"><ul><li><p>Aktiv formulieren, nur ein Prozesswort (Verb)</p></li></ul></div></li></ul></div></dd></dl></div></section><section id="slide_natrliche_sprache_beispiel"><h2>Natürliche Sprache - Beispiel</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>Zur Anmeldung des Benutzers werden die Login-Daten eingegeben</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>Das System soll dem Benutzer ermöglichen,
+seinen Usernamen und sein Passwort
+über die Tastatur
+am Terminal einzugeben.</code></pre></div></div></section><section id="slide_satzschablonen_beispiel"><h2>Satzschablonen - Beispiel</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>Als &lt;Rolle&gt; möchte ich &lt;Ziel/Wunsch&gt;, um &lt;Nutzen&gt;</code></pre></div></div></section><section id="slide_wie_dokumentieren_2"><h2>Wie dokumentieren ?</h2><div class="dlist"><dl><dt class="hdlist1">Modellbasiert</dt><dd><div class="ulist"><ul><li><p>UML</p><div class="ulist"><ul><li><p>Use-Case-Diagrame</p></li><li><p>Datenflussdiagramme</p></li><li><p>Aktivitätsdiagramme</p></li></ul></div></li></ul></div></dd></dl></div></section><section id="slide_use_case_diagram"><div class="imageblock dark-background-color-image" style=""><img src="../images/15-requirements/Use_case_restaurant_model-alpha.png" alt="size: auto"></div></section><section id="slide_datenflussdiagram"><h2>Datenflussdiagram</h2><div class="imageblock dark-background-color-image" style=""><img src="../images/15-requirements/datenflussdiagram-aplha.gif" alt="size: auto"></div></section><section id="slide_aktivittsdiagram"><h2>Aktivitätsdiagram</h2><div class="imageblock dark-background-color-image" style=""><img src="../images/15-requirements/500px-Uml-Activity-Beispiel2.svg.png" alt="size: auto"></div></section><section id="slide_qualittskriterien_fr_anforderungen" data-state="complex"><h2>Qualitätskriterien für Anforderungen</h2><div class="dlist"><dl><dt class="hdlist1">Kriterien nach IEEE 830-1998</dt><dd><div class="ulist"><ul><li><p>Bewertet</p></li><li><p>Eindeutig</p></li><li><p>Gültig und aktuell</p></li><li><p>Korrekt</p></li><li><p>Konsistent</p></li><li><p>Prüfbar</p></li><li><p>Realisierbar</p></li><li><p>Verfolgbar</p></li><li><p>Vollständig</p></li><li><p>Verständlich</p></li></ul></div></dd></dl></div></section><section id="slide_requirements_management_als_rahmen"><h2>Requirements-Management als Rahmen</h2><div class="paragraph"><p>Verwalten und Kontrollieren aller Aufgaben des Requirements Engineering während der komplette Lebenszeit des Produktes.</p></div>
+<div class="ulist"><ul><li><p><span class="blue">Attributierung</span> der Anforderungen</p></li><li><p><span class="blue">Priorisierung</span> der Anforderungen</p></li><li><p><span class="blue">Verfolgbarkeit</span> der Anforderungen</p></li><li><p><span class="blue">Versionierung</span> der Anforderungen</p></li></ul></div></section><section id="slide_attributierung_beispiel"><h2>Attributierung Beispiel</h2><div class="imageblock" style=""><img src="../images/15-requirements/attributierung-anforderungen.png" alt="attributierung anforderungen"></div></section><section id="slide_verfolgbarkeit"><h2>Verfolgbarkeit</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Eine Anforderung ist nachvollziehbar,
+wenn sowohl deren Ursprung
+als auch deren Umsetzung und
+die Beziehung zu anderen Dokumenten
+nachvollziehbar ist.</p></div></blockquote></div>
+<div class="paragraph"><p>Andere Dokumente: Commit-Hostorie, Testplan, Testprotokoll</p></div></section><section id="slide_vorteile_verfolgbarkeit"><h2>Vorteile Verfolgbarkeit</h2><div class="ulist"><ul><li><p>Nachweisbarkeit</p></li><li><p>Identifikation von Goldrandlösung</p></li><li><p>Auswirkungsanalyse</p></li><li><p>Zuordnung von Entwicklungsaufwänden</p></li></ul></div></section></section>
+<section id="slide_quellen_bilder"><h2>Quellen Bilder</h2><div class="ulist"><ul><li><p>Kontextabgrenzung
+<span class="small"><a href="http://docplayer.org/docs-images/24/4428614/images/7-0.png" class="bare">http://docplayer.org/docs-images/24/4428614/images/7-0.png</a></span></p></li><li><p>Kano Modell <span class="small"><a href="http://smallthingsmatter.ch/kano/" class="bare">http://smallthingsmatter.ch/kano/</a></span></p></li><li><p>UseCase Diagram <span class="small"><a href="https://en.wikipedia.org/wiki/Use_case_diagram" class="bare">https://en.wikipedia.org/wiki/Use_case_diagram</a></span></p></li><li><p>Datenflussdiagram <span class="small"><a href="http://www.ritz-dv.de/beratungsangebot/systemanalyseabb.php" class="bare">http://www.ritz-dv.de/beratungsangebot/systemanalyseabb.php</a></span></p></li><li><p>Aktivitätsdiagram <span class="small"><a href="https://de.wikipedia.org/wiki/Aktivitätsdiagramm" class="bare">https://de.wikipedia.org/wiki/Aktivitätsdiagramm</a></span></p></li><li><p>Attributierung von Anforderungen "Basiswissen Requirements Engineering" - Pohl, Rupp</p></li></ul></div></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>

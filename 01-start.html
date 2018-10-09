@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Nicht-Triviale Software Entwicklung</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Nicht-Triviale Software Entwicklung</h1><div class="preamble"><div class="paragraph"><p><span class="small">Robert Kleinschmager  |  github.com/barclay-reg</span></p></div></div></section>
+<section><section id="slide_wieso_nicht_trivial" data-transition="convex" data-background-color="cornflowerblue"><h2>Wieso nicht-trivial?</h2></section><section id="slide_mehr_als_nur_codieren"><div class="imageblock stretch" style=""><img src="../images/01-start/not-only-coding-alpha.png" alt="not only coding alpha" height="100%"></div></section><section id="slide_legacy_code"><h2>Legacy Code</h2><div class="imageblock stretch" style=""><img src="../images/01-start/legacy-code-wall.png" alt="legacy code wall" height="100%"></div></section><section id="slide_legacy_code_umfrage"><h2>Legacy Code - Umfrage</h2><div class="imageblock stretch" style=""><img src="../images/01-start/legacy-survey.png" alt="legacy survey" height="100%"></div></section><section id="slide_rahmenbedingungen"><h2>Rahmenbedingungen</h2><div class="ulist"><ul><li><p>Funktionale Requirements</p></li><li><p>Nicht-Funktionale Requirements</p></li><li><p>(alte) Werkzeuge</p><div class="ulist"><ul><li><p>IDE</p></li><li><p>Bibliotheken</p></li></ul></div></li></ul></div></section><section id="slide_team"><h2>Team</h2><div class="imageblock stretch" style=""><img src="../images/01-start/team.jpg" alt="team" height="100%"></div></section></section>
+<section><section id="slide_konsequenzen" data-transition="convex" data-background-color="cornflowerblue"><h2>Konsequenzen</h2></section><section id="slide_kompliziert_vs_komplex" data-state="complex"><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><h3>Kompliziert</h3><div class="ulist"><ul><li><p>das Maß an Ungewissheit</p></li><li><p>Wissen fehlt</p></li><li><p>Kompliziertes System</p><div class="ulist"><ul><li><p>zuverlässig, exakt</p></li><li><p>von außen steuerbar</p></li><li><p>konstantes Verhalten</p></li></ul></div></li></ul></div></div></td><td class="tableblock halign-left valign-middle"><div><h3>Komplex</h3><div class="ulist"><ul><li><p>das Maß der Menge an Überaschungen</p></li><li><p>Kontext-abhängig</p></li><li><p>Komplexes System</p><div class="ulist"><ul><li><p>"lebendig", erzeugt Überaschungen</p></li><li><p>von außen nur beobachtbar</p></li><li><p>dynamisches Verhalten</p></li></ul></div></li></ul></div></div></td></tr></table></section><section id="slide_kk_quiz" data-background-image="../images/01-start/lego-nxt1.jpg" data-background-size="auto auto">
+<div class="ulist dark-background"><ul><li><p>Kompliziert oder Komplex?</p></li></ul></div></section><section id="slide_kk_quiz_2" data-background-image="../images/01-start/lego-nxt1.jpg" data-background-size="auto auto">
+<div class="ulist dark-background"><ul><li><p>Kompliziert</p></li></ul></div></section><section id="slide_kk_quiz_3" data-background-image="../images/01-start/sheldon-cooper.jpg" data-background-size="auto auto">
+<div class="ulist dark-background"><ul><li><p>Kompliziert oder Komplex?</p></li></ul></div></section><section id="slide_kk_quiz_4" data-background-image="../images/01-start/sheldon-cooper.jpg" data-background-size="auto auto">
+<div class="ulist dark-background"><ul><li><p>Komplex</p></li></ul></div></section><section id="slide_kk_quiz_5" data-background-image="../images/01-start/R2-D2.jpg" data-background-size="auto auto">
+<div class="ulist dark-background"><ul><li><p>Kompliziert oder Komplex?</p></li></ul></div></section><section id="slide_kk_quiz_6" data-background-image="../images/01-start/R2-D2.jpg" data-background-size="auto auto">
+<div class="ulist dark-background"><ul><li><p>????????</p></li></ul></div></section><section id="slide_spannungsfeld"><div class="paragraph"><p>Software wächst in der "freien Wildbahn" in einem <span class="blue">Spannungsfeld</span></p></div>
+<div class="imageblock" style=""><img src="../images/01-start/spannungsfeld-alpha.png" alt="spannungsfeld alpha"></div></section><section id="slide_vorstellungskraft"><div class="imageblock stretch" style=""><img src="../images/01-start/vorstellungskraft.jpg" alt="vorstellungskraft" height="100%"></div></section><section id="slide_komplex_wird_kompliziert"><div class="ulist"><ul><li><p>Coding <span class="blue">wird</span> zunehmen schwerer</p></li></ul></div>
+<h3>Übergang von kompliziert zu komplex</h3><div class="ulist"><ul><li><p>Schätzungen <span class="blue">werden</span> ungenauer</p></li><li><p>Analysen <span class="blue">werden</span> umfangreicher</p></li><li><p>Test <span class="blue">werden</span> aufwändiger, vielfältiger</p></li><li><p>Dokumentation <span class="blue">wird</span> umfassender</p></li><li><p>Technische Schulden <span class="blue">entstehen</span></p></li></ul></div></section><section id="slide_komplexitt_in_der_softwareentwicklung"><h2>Komplexität in der Softwareentwicklung</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>software systems grow faster in size and complexity than methods to handle complexity are invented</p></div></blockquote><div class="attribution">&#8212; Wirth‘s Law</div></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>Programming is still a stone-age crafts</p></div></blockquote></div>
+<aside class="notes"><div class="paragraph"><p>Wir müssen unseren Umgang mit der Komplexität kontinuierlich verbessern</p></div></aside></section></section>
+<section><section id="slide_gegenmanahmen" data-transition="convex" data-background-color="cornflowerblue"><h2>Gegenmaßnahmen</h2></section><section id="slide_clean_code"><h2>Clean Code</h2><div class="ulist"><ul><li><p>Code wird nur einmal <span class="blue">geschrieben</span>, aber viele male <span class="blue">gelesen</span></p></li><li><p>Keine Code-Magneten schreiben;</p><div class="ulist"><ul><li><p>Single Responsibility Principle (Theorie)</p></li><li><p>Main Purpose Principle (Praxis)</p></li></ul></div></li><li><p><span class="blue">Komposition</span> over <span class="blue">Inheritance</span></p></li></ul></div></section><section id="slide_clean_code_2"><div class="quoteblock"><blockquote><div class="paragraph"><p>Broken Window Principle</p></div></blockquote><div class="attribution">&#8212; Robert “Uncle Bob” Martin</div></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>Leave the campground cleaner than you found it</p></div></blockquote><div class="attribution">&#8212; Robert “Uncle Bob” Martin</div></div></section><section id="slide_clean_code_3"><div class="imageblock stretch" style=""><img src="../images/01-start/programmers_hardest_tasks.jpg" alt="programmers hardest tasks" height="100%"></div></section><section id="slide_clean_code_4"><div class="imageblock stretch" style=""><img src="../images/01-start/naming-is-key.jpg" alt="naming is key" height="100%"></div></section><section id="slide_dokumentation"><h2>Dokumentation</h2><div class="ulist"><ul><li><p>Nur Konzepte &amp; Ideen</p><div class="ulist"><ul><li><p>diese möglichst nahe am Code
+(== gut erreichbar für den Entwickler)</p></li></ul></div></li><li><p>Nicht WAS, sondern WARUM</p></li><li><p>Je expressiver der Code, desto weniger Dokumentation ist nötig</p></li></ul></div></section><section id="slide_refactoring"><h2>Refactoring</h2><div class="paragraph"><p><span class="blue">Struktur</span> verändern</p></div>
+<div class="paragraph"><p><em>ohne</em></p></div>
+<div class="paragraph"><p><span class="blue">Verhalten</span> zu ändern</p></div></section><section id="slide_refactoring_2"><div class="imageblock stretch" style=""><img src="../images/01-start/refactoring-is-key.jpg" alt="refactoring is key" height="100%"></div></section><section id="slide_continuous_integration"><h2>Continuous Integration</h2><div class="ulist"><ul><li><p>Compiliere</p></li><li><p>Paketieren</p></li><li><p>(automatisiert) Testen</p></li><li><p>Validieren</p></li><li><p>Verifizieren</p></li></ul></div></section><section id="slide_nachvollziehbarkeit"><h2>Nachvollziehbarkeit</h2><div class="paragraph"><p>Analyse &#8594; Anforderung &#8594; Aufgabe &#8594; Code &#8594; Test &#8594; Auslieferung</p></div></section><section id="slide_metriken"><h2>Metriken</h2><div class="ulist"><ul><li><p>Messen des <span class="blue">Status-Quo</span> der Software-Komplexität</p><div class="ulist"><ul><li><p>Wird sie schlechter oder besser?</p></li></ul></div></li><li><p>Identifikation der größten Risiken</p><div class="ulist"><ul><li><p>Wichtig für Priorisierung bei limitiertem Budget/Zeit</p></li></ul></div></li></ul></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>The only valid code metric is WTFs per minute.</p></div></blockquote><div class="attribution">&#8212; Robert “Uncle Bob” Martin</div></div></section><section id="slide_selbstkritik"><h2>Selbstkritik</h2><div class="ulist"><ul><li><p>Regelmäßig den eigenen Code überprüfen</p></li></ul></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>The worst programmer in the world is you – one year ago.</p></div></blockquote><div class="attribution">&#8212; Andy Hunt</div></div></section><section id="slide_selbstkritik_2"><div class="imageblock stretch" style=""><img src="../images/01-start/development-of-knowledge.jpg" alt="Development of Knowledge" width="100%"></div></section><section id="slide_arbeitsweise_fhigkeiten"><div class="imageblock stretch" style=""><img src="../images/01-start/bugfixing.jpg" alt="bugfixing" height="100%"></div></section><section id="slide_analytisches_talent"><h2>Analytisches Talent</h2><div class="ulist left"><ul><li><p>Analyse von Kundenwüschen</p><div class="ulist"><ul><li><p>Was will der Kunde und WARUM?</p></li></ul></div></li><li><p>Analyse von Fehlern/Bugs</p></li><li><p>Debugging</p></li><li><p>Aufstellen und Verifizieren von Hypothesen</p></li><li><p>Bewertung von Hypothesen</p><div class="ulist"><ul><li><p>== Erfahrung</p></li></ul></div></li><li><p>Schritt-für-Schritt Vorgehen</p></li><li><p>Zyklisch verfeinern</p></li></ul></div></section></section>
+<section><section id="slide_fazit" data-transition="convex"><h2>Fazit</h2></section><section id="slide_fazit_2"><div class="paragraph"><p><span class="underline"><em>Kontinuierliches</em></span>
+<strong>Anwenden</strong> und <strong>Verbessern</strong>
+dieser Maßnahmen
+ist unsere beste <span class="underline"><em>Waffe</em></span>
+gegen die zunehmende
+<strong>Komplexität</strong></p></div></section></section>
+<section><section id="slide_quellen" data-transition="convex"><h2>Quellen</h2></section><section id="slide_bilder"><h2>Bilder</h2><div class="ulist"><ul><li><p>Legacy Wall
+<span class="small"><a href="https://raw.githubusercontent.com/bettercodehub/pitch/master/assets/legacy-code.png" class="bare">https://raw.githubusercontent.com/bettercodehub/pitch/master/assets/legacy-code.png</a></span></p></li><li><p>Legacy Survey
+<span class="small"><a href="http://www.karolikl.com/2015/10/your-definition-of-legacy-impacts-how.html" class="bare">http://www.karolikl.com/2015/10/your-definition-of-legacy-impacts-how.html</a></span></p></li><li><p>Team
+<span class="small"><a href="http://scrumbook.org.datasenter.no/images/SmallTeam_Pre.jpg" class="bare">http://scrumbook.org.datasenter.no/images/SmallTeam_Pre.jpg</a></span></p></li><li><p>Programmers hardest task
+<span class="small"><a href="https://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html" class="bare">https://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html</a></span></p></li><li><p>Naming is Key
+<span class="small"><a href="http://geek-and-poke.com/geekandpoke/2013/8/20/naming-is-key" class="bare">http://geek-and-poke.com/geekandpoke/2013/8/20/naming-is-key</a></span></p></li><li><p>Refactoring is Key
+<span class="small"><a href="http://geek-and-poke.com/geekandpoke/2013/8/26/refactoring-is-key" class="bare">http://geek-and-poke.com/geekandpoke/2013/8/26/refactoring-is-key</a></span></p></li></ul></div></section><section id="slide_buchtipps"><h2>Buchtipps</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>The Pragmatic Programmer, From Journeyman To Master</p></div></blockquote><div class="attribution">&#8212; Andy Hunt</div></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>Clean Coder / Clean Coder</p></div></blockquote><div class="attribution">&#8212; Robert “Uncle Bob” Martin</div></div></section></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>

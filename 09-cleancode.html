@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Clean Code 1</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Clean Code 1</h1></section><section><section id="slide_herkunft" data-transition="convex" data-background-color="cornflowerblue"><h2>Herkunft</h2></section><section id="slide_tpm"><h2>TPM</h2><div class="paragraph"><p>Total Productive Maintenance</p></div>
+<div class="ulist"><ul><li><p>Qualitätsansatz</p></li><li><p>~1960, japanische Autoindustrie</p></li><li><p>Konzentration auf <span class="blue">Instandhaltung</span> des Arbeitsplatzes</p></li><li><p>ähnlich Lean Produktion</p></li><li><p>Fundament: <span class="blue">5S</span>-Prinzipien</p></li></ul></div></section><section id="slide_5s"><div class="dlist small"><dl><dt class="hdlist1">Seiri</dt><dd><p>Aussortieren; Übersicht schaffen - wo finde ich Dinge wieder, Namensgebung</p></dd><dt class="hdlist1">Seiton</dt><dd><p>Ordentlichkeit; Code sollte da stehen, wo ich ihn erwarte</p></dd><dt class="hdlist1">Seiso</dt><dd><p>Säubern; Abfall und Einzelteile entfernen</p></dd><dt class="hdlist1">Seiketsu</dt><dd><p>Standardisierung; konsistenter Codierstil</p></dd><dt class="hdlist1">Shutsuke</dt><dd><p>(Selbst-) Disziplin &amp; ständige Verbesserung</p></dd></dl></div></section><section id="slide_inspiration"><div class="quoteblock"><blockquote><div class="paragraph"><p>Qualität ist das Ergebnis einer Million selbstloser Akte der Sorgfalt.</p></div></blockquote></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>Sauberer Code kann von anderen Entwicklern gelesen und verbessert werden.</p></div></blockquote></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>Wir (Entwickler) sind Autoren. Ein Merkmal von Autoren ist es, dass sie Leser haben.</p></div></blockquote></div>
+<aside class="notes"><div class="paragraph"><p>Quellen:
+1. Robert “Uncle Bob” Martin
+2. Dave Thomas
+3. Robert “Uncle Bob” Martin</p></div></aside></section><section id="slide_chaos_im_code"><h2>Chaos im Code</h2><div class="ulist"><ul><li><p>je älter ein Projekt, desto geringer die Produktivität</p></li><li><p>Code verrottet, weil Fokus auf Erhöhen der Produktivität liegt</p></li><li><p>Gesetz von LeBlanc: <span class="blue">Später gleich niemals.</span></p></li><li><p>Schlussfolgerung:</p><div class="ulist"><ul><li><p>es reicht nicht aus, guten Code zu schreiben</p></li><li><p>Code muss auch <em>sauber gehalten</em> werden</p></li></ul></div></li></ul></div></section><section id="slide_chaos_im_code_2"><div class="quoteblock"><blockquote><div class="paragraph"><p>Leave the campground cleaner than you found it</p></div></blockquote><div class="attribution">&#8212; Robert “Uncle Bob” Martin</div></div></section></section>
+<section><section id="slide_aussagekrftige_namen" data-transition="convex" data-background-color="cornflowerblue"><h2>Aussagekräftige Namen</h2></section><section id="slide_zweckbeschreibende_namen"><h2>Zweckbeschreibende Namen</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>public List&lt;int[]&gt; getThem() {
+   List&lt;int[]&gt; list1 = new ArrayList&lt;int[]();
+   for (int[] x : theList)
+      if (x[0] == 4)
+         list1.add(x);
+   return list1;
+}</code></pre></div></div></section><section id="slide_zweckbeschreibende_namen_2"><div class="ulist"><ul><li><p>Kontext geht nicht aus dem Code hervor</p></li><li><p>Code ist implizit, sollte aber explizit sein</p></li></ul></div></section><section id="slide_zweckbeschreibende_namen_3"><div class="listingblock"><div class="content"><pre class="highlight"><code>public List&lt;int[]&gt; getFlaggedCells() {
+   List&lt;int[]&gt; flaggedCells = new ArrayList&lt;int[]();
+   for (int[] cell : gameBoard)
+      if (cell[STATUS_VALUE == FLAGGED)
+         flaggedCells.add(cell);
+   return list1;
+}</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Ist ein Teil eines Mine-Sweeper Spieles</p></div></aside></section><section id="slide_fehlinformationen_vermeiden" class="stretch"><h2>Fehlinformationen vermeiden</h2><div class="ulist"><ul><li><p>keine irreführenden Hinweise, z.B. für eine Gruppe von Konten:</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>private Map accountList;</code></pre></div></div>
+<div class="ulist"><ul><li><p>zwei Namen sollten sich nicht geringfügig unterscheiden, z.B.</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>XYZControllerForEfficientHandlingOfStrings
+XYZControllerForEfficientStorageOfStrings</code></pre></div></div></section><section id="slide_unterschiede_deutlich_machen"><h2>Unterschiede deutlich machen</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>public static void copyChars(char c1[], char c2[]) {
+   for (int i=0; i &lt; c1.length; i++) {
+      c2[i] = c1[i];
+   }
+}</code></pre></div></div></section><section id="slide_unterschiede_deutlich_machen_2"><div class="listingblock"><div class="content"><pre class="highlight"><code>public static void copyChars(char source[], char destination[]) {
+   for (int i=0; i &lt; source.length; i++) {
+      destination[i] = source[i];
+   }
+}</code></pre></div></div></section><section id="slide_unterschiede_deutlich_machen_3"><div class="ulist"><ul><li><p>Namen wie <code>c1</code> sind <strong>nicht</strong> irreführend, sondern <strong>informationsleer</strong></p></li><li><p>zusammengesetzte Klassennamen können auch informationsleer sein</p><div class="ulist"><ul><li><p><code>Product</code></p></li><li><p><code>ProductInfo</code></p></li><li><p><code>ProductData</code></p></li></ul></div></li></ul></div></section><section id="slide_aussprechbare_namen_verwenden"><h2>Aussprechbare Namen verwenden</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>class DtaRcrd102 {
+   private Timestamp genymdhms;
+   private Timestamp modymdhms;
+}</code></pre></div></div></section><section id="slide_aussprechbare_namen_verwenden_2"><div class="listingblock"><div class="content"><pre class="highlight"><code>class DtaRcrd102 {
+   private Timestamp genymdhms;
+   private Timestamp modymdhms;
+}</code></pre></div></div>
+<div class="dlist"><dl><dt class="hdlist1">ymdhms</dt><dd><p>Year, Month, Day, Hours &#8230;&#8203;</p></dd></dl></div>
+<div class="paragraph"><p>%notitle]
+=== Aussprechbare Namen verwenden</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>class DtaRcrd102 {
+   private Timestamp genymdhms;
+   private Timestamp modymdhms;
+}</code></pre></div></div>
+<div class="dlist"><dl><dt class="hdlist1">ymdhms</dt><dd><p>Year, Month, Day, Hours &#8230;&#8203;</p></dd></dl></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>class Customer {
+   private Timestamp generationTimestamp;
+   private Timestamp modificationTimestamp;
+}</code></pre></div></div></section><section id="slide_suchbare_namen_verwenden"><h2>Suchbare Namen verwenden</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>for (int j=0; j&lt;34; j++) {
+   s += (t[j]*4)/5;
+}</code></pre></div></div>
+<div class="ulist"><ul><li><p>Die Länge eines Namens sollte der Größe seines Geltungsbereichs entsprechen</p></li><li><p>Suche nach <em>t</em> oder <em>5</em> ergibt sicher viele Treffer</p></li></ul></div></section><section id="slide_suchbare_namen_verwenden_2"><div class="listingblock"><div class="content"><pre class="highlight"><code>int realDaysPerIdealDay = 4;
+const int WORK_DAYS_PER_WEEK = 5;
+int sum = 0;
+for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
+   int realTaskDays = taslEstimate[j] * realDaysPerIdealDay;
+   int realTaskWeeks = (realTaskDays / WORK_DAYS_PER_WEEK);
+   sum += realTaskWeeks;
+}</code></pre></div></div></section><section id="slide_codierungen_vermeiden"><h2>Codierungen vermeiden</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>// Datentypen
+private String s_vorname;
+private Integer i_id;
+// Geltungsbereich
+private String pri_vorname;
+public Integer pub_id;</code></pre></div></div></section><section id="slide_codierung_vermeiden"><div class="ulist"><ul><li><p>Codierung von Informationen in Namen war früher Pflicht</p><div class="ulist"><ul><li><p>Datentyp oder Geltungsbereich</p></li><li><p>Ungarische Notation</p></li><li><p>Sprachen, ohne Typprüfung im Compiler</p></li></ul></div></li><li><p>Änderungen müssen nachgezogen werden</p></li><li><p>Präfixe und Suffixe werden bald vom Entwickler ignoriert</p></li></ul></div></section><section id="slide_methodennamen"><h2>Methodennamen</h2><div class="ulist"><ul><li><p>Verben</p><div class="ulist"><ul><li><p><code>downloadEmailAttachments()</code></p></li></ul></div></li><li><p>nur ein Wort pro Konzept</p><div class="ulist"><ul><li><p><em>fetch</em>, <em>retieve</em>, <em>get</em> &#8230;&#8203; sind Synonyme</p></li></ul></div></li></ul></div></section><section id="slide_domnen_namen"><h2>Domänen Namen</h2><div class="ulist"><ul><li><p>Lösungsdomäne</p><div class="ulist"><ul><li><p>Begriffe/Konzepte der Informatik, Algorithmen, Pattern</p></li><li><p>z.B. <code>AccountVisitor</code></p></li><li><p>Bezug auf Visitor-Pattern</p></li></ul></div></li><li><p>Problemdomäne</p><div class="ulist"><ul><li><p>Begriffe/Konzepte des Bereichs, für den die Software bestimmt ist</p></li><li><p>z.B. <code>BeneficialOwner</code></p></li><li><p>Bezug auf wirtschaftlich Berechtigten eines Bankkontos</p></li></ul></div></li></ul></div></section></section>
+<section><section id="slide_funktionen" data-transition="convex" data-background-color="cornflowerblue"><h2>Funktionen</h2></section><section id="slide_beispiel"><h2>Beispiel</h2><div class="paragraph"><p><a href="https://github.com/ludwiggj/CleanCode/blob/master/src/clean/code/chapter03/HtmlUnit.java">HtmlUtil.java</a>
+<a href="https://github.com/ludwiggj/CleanCode/blob/master/src/clean/code/chapter03/SetupTeardownIncluder.java">SetupTeardownIncluder.java</a></p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>public class HtmlUnit {
+  public static String testableHtml(
+     PageData pageData,
+     boolean includeSuiteSetup
+   ) throws Exception {
+     WikiPage wikiPage = pageData.getWikiPage();
+     StringBuffer buffer = new StringBuffer();
+     if (pageData.hasAttribute("Test")) {
+       if (includeSuiteSetup) {
+         WikiPage suiteSetup =
+           PageCrawlerImpl.getInheritedPage(
+               SuiteResponder.SUITE_SETUP_NAME, wikiPage
+           );</code></pre></div></div></section><section id="slide_beispiel_2" data-state="complex"><div class="ulist"><ul><li><p>Beispiel aus <a href="http://fitnesse.org">Fitnesse</a></p><div class="ulist"><ul><li><p>FitNesse begann als ein HTML und Wiki "front-end" für FIT ("Framework for Integrated Testing")</p></li><li><p>Wiki Seite == Page</p></li><li><p>Test-Suite == Zusammenfassung mehrere Tests</p></li><li><p>Teststruktur</p><div class="ulist"><ul><li><p>ggf. Suite Setup</p></li><li><p>Setup</p></li><li><p>Test (== pageDate)</p></li><li><p>TearDown</p></li><li><p>ggf. Suite TearDown</p></li></ul></div></li></ul></div></li></ul></div></section><section id="slide_erste_verbesserung"><h2>Erste Verbesserung</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>public static String renderPageWithSetupsAndTeardowns(
+   PageData pageData, bool isSuite
+) throws Exception {
+
+   boolean isTestPage = pageData.hasAttribute("Test");
+   if (isTestPage) {
+      WikiPage testPage = pageData.getWikiPage();
+      StringBuffer newPageContent = new StringBuffer();
+      includeSetupPages(testPage, newPageContent, isSuite);
+      newPageContent.append(pageData.getContent());
+      includeTearDownPages(testPage, newPageContent, isSuite);
+      pageData.setContent(newPageContent.toString());
+
+   }
+
+   return pageData.getHtml();
+}</code></pre></div></div></section><section id="slide_klein"><h2>Klein</h2><div class="ulist"><ul><li><p>Funktionen sollten klein sein</p></li></ul></div>
+<div class="paragraph"><p><span class="blue">Wie kann das erreicht werden?</span></p></div>
+<div class="ulist"><ul><li><p>keine verschachtelten Strukturen</p></li><li><p>die <em>eine erlaubte</em> Einrückungstiefe sollte dann möglichst nur eine Anweisung enthalten</p></li></ul></div></section><section id="slide_klein_2"><div class="listingblock"><div class="content"><pre class="highlight"><code>public static String renderPageWithSetupsAndTeardowns(
+   PageData pageData, bool isSuite
+) throws Exception {
+   if (isTestPage(pageData)) {
+      includeSetupAndTeardownPages(pageData, isSuite)
+   }
+   return pageData.getHtml();
+}</code></pre></div></div></section><section id="slide_eine_aufgabe_erfllen"><h2>Eine Aufgabe erfüllen</h2><div class="ulist"><ul><li><p><strong>eine</strong> Aufgabe</p><div class="ulist"><ul><li><p>Wenn alle Schritte einer Funktion eine Abstraktionsebene <span class="blue">unter</span> dem Zweck liegen, der durch den Namen ausgedrückt wird</p></li></ul></div></li><li><p>Hilfsmittel</p><div class="ulist"><ul><li><p>einen <span class="blue">UM-ZU</span>-Absatz formulieren</p></li></ul></div></li></ul></div>
+<div class="listingblock"><div class="content"><pre>UM RenderPageWithSetupsAndTeardowns ausZUführen,
+prüfen wir, ob eine Seite eine Testseite ist, und wenn dies der Fall ist,
+schließen wir die Setups und Teardowns ein.
+In beiden Fällen stellen wie die Seite in HTML dar.</pre></div></div></section><section id="slide_beschreibende_namen" data-state="complex"><h2>Beschreibende Namen</h2><div class="ulist"><ul><li><p>gute Namen für kleine Funktionen finden, die <strong>eine</strong> Aufgabe erledigen</p></li><li><p><span class="blue">lange beschreibende</span> Namen sind besser als <span class="blue">kurze geheimnisvolle</span> Namen</p></li><li><p>lange <span class="blue">Namen</span> sind besser als lange <span class="blue">Kommentare</span></p></li><li><p>mehrere Wörter per Konvention trennen</p><div class="ulist"><ul><li><p>CamelCaseSchreibweise</p></li></ul></div></li><li><p>verschiedene Namen ausprobieren und Code lesen</p><div class="ulist"><ul><li><p>IDE unterstützt das</p></li></ul></div></li><li><p>Namen sollten in einem Modul konsistent sein</p><div class="ulist"><ul><li><p>z.B. immer <code>include</code> verwenden</p></li></ul></div></li></ul></div></section><section id="slide_funktionsargumente"><h2>Funktionsargumente</h2><div class="ulist"><ul><li><p>jedes Argument erfordert konzeptionelle Kraft beim Lesen</p></li><li><p>Name und Typ des Arguments könnten zu anderer Abstraktionsebene gehören</p></li><li><p>das <span class="blue">Testen</span> einer Funktion wird aufwändiger</p><div class="ulist"><ul><li><p>alle Kombinationen der Argumente</p></li></ul></div></li><li><p>Output-Argumente vermeiden, da ungewohnt</p><div class="ulist"><ul><li><p>Input: Argumente</p></li><li><p>Output: Rückgabewert</p></li></ul></div></li></ul></div></section><section id="slide_flag_argumente"><h2>Flag-Argumente</h2><div class="ulist"><ul><li><p>Hinweis darauf, dass mehrere Aufgaben erfüllt werden</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>// Aufruf
+  render(true);
+// Definition
+class Renderer {
+   void render(boolean isSuite) {}
+}</code></pre></div></div></section><section id="slide_flag_argumente_2"><h2>Flag-Argumente</h2><div class="ulist"><ul><li><p>Besser mehrere Methoden</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>// Definition
+class Renderer {
+   void renderForSuite() {}
+   void renderForSingleTest() {}
+}</code></pre></div></div></section><section id="slide_dyadische_funktionen"><h2>Dyadische Funktionen</h2><div class="ulist"><ul><li><p>Funktionen mit 2 Argumenten</p></li><li><p>Verwender muss die Reihenfolge und Bedeutung kennen</p><div class="ulist"><ul><li><p>oder Definition nachschlagen &#8594; Aufwand!</p></li></ul></div></li><li><p>oft unvermeidbar</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>// Aufruf
+  int result = getResult(); // 24
+  assertEquals(24, result);
+// Definition
+class Assert {
+   void assertEquals(int expected, int actual) {}
+}</code></pre></div></div></section><section id="slide_nebeneffekte_vermeiden"><h2>Nebeneffekte vermeiden</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>public boolean checkPassword(String userName, String password){
+   User user = UserGateway.findByName(userName);
+   if (user != User.NULL) {
+      if (user.password.equals(password)) {
+         Application.loginUser(user);
+         return true;
+      }
+   }
+   return false;
+}</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Application.loginUser(user) wird hier nicht erwartet.
+Evlt. is login nur möglich, wenn user nicht bereits eingeloggt ist &#8230;&#8203; (zeitliche Kopplung)</p></div></aside></section><section id="slide_anweisung_oder_abfrage"><h2>Anweisung oder Abfrage</h2><div class="ulist"><ul><li><p>Funktion sollte entweder</p><div class="ulist"><ul><li><p>etwas tun, oder</p></li><li><p>etwas antworten</p></li></ul></div></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>public boolean set(String attribut, String value){
+   if (internalList.contains(attribut)) {
+      internalList.set(attribute, value);
+      return true;
+   } else {
+      return false;
+   }}
+// mögliche Verwendung
+  if (set("username", "robkle")) ...</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Verwendung ist nicht klar, was die Methode macht
+set im Kontext von if könnte auch als Adjektiv verstanden werden.</p></div></aside></section><section id="slide_fehlercode_vs_exceptions"><h2>Fehlercode vs Exceptions</h2><div class="ulist"><ul><li><p>Fehlercode</p><div class="ulist"><ul><li><p>muss sofort geprüft werden</p></li></ul></div></li><li><p>Exception</p><div class="ulist"><ul><li><p>kann am Ende behandelt werden</p></li><li><p>ist ebenfalls eine Aufgabe &#8594; in separate Funktion</p></li></ul></div></li></ul></div></section><section id="slide_fehlercode_vs_exceptions_2"><div class="paragraph"><p>Fehlercode</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>if (deletePage(page) == E_OK) {
+   if (registry.deleteReference(page.name) == E_OK) {
+      if (ConfigKeys.deleteKey(page.name.makeKey()) == E_OK) {
+         logger.log("page deleted");
+      } else {
+         logger.log("config key not deleted");
+      }
+   } else {
+      logger.log("deleteReferences from registry failed");
+   }
+} else {
+   logger.log("delete failed");
+}</code></pre></div></div></section><section id="slide_fehlercode_vs_exceptions_3"><div class="paragraph"><p>Exceptions</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>try {
+   deletePage(page);
+   registry.deleteReference(page.name);
+   ConfigKeys.deleteKey(page.name.makeKey());
+}
+catch (Exception e)
+{
+   logger.log(e.getMessage());
+}</code></pre></div></div></section><section id="slide_fehlercode_vs_exceptions_4"><div class="paragraph"><p>Exceptionsbehandlung auslagern</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>public void delete(Page page) {
+   try {
+      deletePageAndAllReferences();
+   }
+   catch (Exception e)
+   {
+      logError(e);
+   }
+}
+
+public void deletePageAndAllReferences(Page page) {...}
+public void logError(Exception e) {...}</code></pre></div></div></section><section id="slide_dont_repeat_yourself"><h2>Don&#8217;t Repeat Yourself</h2><div class="ulist"><ul><li><p>Viele Innovationen der Software-Entwicklung haben nur ein Ziel</p><div class="ulist"><ul><li><p>Duplizierung zu vermeiden</p></li><li><p>Wiederverwendung fördern</p></li></ul></div></li><li><p>Duplikate könnten bei einem Umbau vergessen werden</p></li><li><p>Beispiel</p><div class="ulist"><ul><li><p><a href="https://github.com/ludwiggj/CleanCode/blob/master/src/clean/code/chapter03/HtmlUnit.java">HtmlUtil.java</a></p></li></ul></div></li></ul></div></section></section>
+<section><section id="slide_kommentare" data-transition="convex" data-background-color="cornflowerblue"><h2>Kommentare</h2></section><section id="slide_ber_kommentare"><h2>Über Kommentare</h2><div class="ulist"><ul><li><p>Kommentare sind kein Ersatz für schlechten code</p></li><li><p>Kommentare vermeiden durch <span class="blue">selbsterklärenden</span> Code</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>// Check to see, if the employee is eligible for full benefits
+if ((employee.flaggs &amp; HOURLY_FLAG) &amp;&amp;
+   employee.age &gt; 65)
+   ...</code></pre></div></div>
+<div class="paragraph"><p>Alternative</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>if (employee.isEligibleForFullBenefits())
+   ...</code></pre></div></div></section><section id="slide_gute_kommentare"><h2>Gute Kommentare</h2><div class="ulist"><ul><li class="fragment"><p>Copyright Header</p></li><li class="fragment"><p>nicht-triviale Methoden-Beschreibung</p></li><li class="fragment"><p>nicht-triviale Klassen-Beschreibung</p></li><li class="fragment"><p>Erklärung der Absichten</p></li><li class="fragment"><p>Klarstellungen</p></li><li class="fragment"><p>Warnung vor Konsequenzen</p></li><li class="fragment"><p>TODO-Kommentare</p></li><li class="fragment"><p>Verstärkung</p></li></ul></div></section><section id="slide_schlechte_kommentare"><h2>Schlechte Kommentare</h2><div class="ulist"><ul><li class="fragment"><p>Geraune</p></li><li class="fragment"><p>Redundante Kommentare</p><div class="ulist"><ul><li><p><em>wiederholung</em> des Codes</p></li></ul></div></li><li class="fragment"><p>irreführende Kommentare</p></li><li class="fragment"><p>Positionsbezeichner</p></li><li class="fragment"><p>Kommentare hinter schließenden Klammern</p></li><li class="fragment"><p>Auskommentierter Code</p></li></ul></div></section></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>
