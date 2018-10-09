@@ -12,7 +12,7 @@
 
 
 [.small]
-Hier [.blue]#GIT# und [.blue]#SubVersion#
+Hier [.blue]#GIT# 
 
 == Warum VCS benutzen?
 
