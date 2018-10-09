@@ -8,7 +8,7 @@ script:
   revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0 lectures/*.adoc
 - bundle exec asciidoctor -D output README.adoc
 after_success:
-- cd output ; mv ../README.adoc . ; cp -R ../images . ; cp ../styles.css . ; cp -R ../video .
+- cd output ; mv ../README.adoc . ; cp -R ../images . ; cp ../styles.css .
 
 deploy:
   provider: pages
