@@ -285,13 +285,10 @@ image::git-status.png[]
 
 === HEAD, ORIG_HEAD, HEAD@{1}
 
-* Zeiger
+* Zeiger auf Commits
 ** HEAD
-*** Zeigen auf den aktuellen Commit
-*** Genauer:
-**** Referenz auf den Commit, mit dem der aktuelle Working-Tree / Workcopy assoziiert wird
+*** Referenz auf den Commit, mit dem der aktuelle Working-Tree / Workcopy assoziiert wird
 ** ORIG_HEAD
-*** Zeiger auf einen commit
 *** Alter Wert von HEAD, der immer dann gesetzt wird, wenn HEAD verändert wird (z.B. `git commit`)
 ** Nützlich bei allen Kommandos, die eine commit-ID als Input nehmen , z.B.
 *** `git log HEAD`
