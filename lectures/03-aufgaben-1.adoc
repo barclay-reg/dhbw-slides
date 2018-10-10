@@ -10,7 +10,7 @@
 * Verständnis der GIT Datenstruktur
 * Sicherer Umgang mit den Befehlen:
 ** `git status`
-** `git add`
+** `git add`, `git rm`, `git mv`
 ** `git reset`
 ** `git checkout`
 ** `git commit`
