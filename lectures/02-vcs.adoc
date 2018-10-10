@@ -319,6 +319,7 @@ image::git-status.png[]
 ** Der Workcopy bleibt unverändert
 *** außer bei `--hard`
 ** Das Argument HEAD muss angegeben werden
+* https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified
 
 [source, shell]
 ----
@@ -371,6 +372,7 @@ $ git reset –-hard HEAD^
 * https://git-scm.com/book/en/v2
 * https://learngitbranching.js.org/
 * https://medium.freecodecamp.org/understanding-git-for-real-by-exploring-the-git-directory-1e079c15b807
+* https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified
 
 === Editor für Commit-Nachrichten
 
