@@ -24,9 +24,7 @@ $ git reset HEAD foo.txt
 $ git reset HEAD
 ## Alle Änderungen im Stage-Bereichs &amp; Workcopy verwerfen
 $ git reset --hard HEAD</code></pre></div></div></section><section id="slide_nderungen_verwerfen_2"><h2>Änderungen verwerfen</h2><div class="ulist"><ul><li><p>Der checkout-Befehl verwirft die Änderungen des Workspace und holt die Version aus dem aktuell gültigen Commit</p></li></ul></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Änderungen der kompletten Workcopy verwerfen
-$ git checkout
-## Änderungen einer Datei verwerfen
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Änderungen einer Datei verwerfen
 $ git checkout -- foo.txt
 ## Änderungen einer Datei verwerfen - anders
 $ git checkout HEAD foo.txt</code></pre></div></div></section><section id="slide_nderungen_verwerfen_3"><h2>Änderungen verwerfen</h2><div class="ulist"><ul><li><p>Ein bereits erfolgter Commit kann Rückgängig gemacht werden</p><div class="ulist"><ul><li><p>entweder: Commit entfernen &amp; Änderungen behalten</p></li><li><p>oder: Commit entfernen &amp; Änderungen zurücknehmen</p></li></ul></div></li></ul></div>
