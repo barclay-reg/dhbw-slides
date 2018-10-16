@@ -1,0 +1,41 @@
+= Aufgaben 3
+
+:idprefix: slide_
+:revealjs_slideNumber:
+:revealjs_history:
+
+[state=complex]
+== Ziel
+
+* Verständis von 3-Way-Merge, Fast-Forward-Merge und Rebasing
+* Sicherer Umgang mit den Befehlen
+** `git merge`
+** `git rebase`
+** `git checkout`
+** `git reset`
+* Zusatzbefehle
+** `git mergtool`
+** `git merge-base`
+
+== Aufgabe
+
+=== Übungen 
+
+. Spiele alle 4 Szenarien durch, beobachte den Commit-Graph
+.. 3-Way-Merge
+.. 3-Way-Merge mit manueller Konfliktbehebung
+.. Fast-Forward-Merge
+.. Rebase mit anschließendem Fast-Forward-Merge
+
+=== Übungen Zusatz
+
+. Nutze den Befehl `git mergetool` um dir die manuelle Konflikt-Lösung zu vereinfachen
+** konfiguriere ein tool deiner Wahl, z.B. kdiff3 (gibt es für Windows) oder DiffMerge (für Mac)
+. Nutze den Befehl `git merge-base` um den gemeinsamen Vorfahren bei einem anstehenden 3-Way-Merge manuell zu bestimmen
+
+== Hilfen
+
+* https://www.atlassian.com/git/tutorials/using-branches/git-merge
+* https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+* https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+

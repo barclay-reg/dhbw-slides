@@ -1,0 +1,305 @@
+= VCS 2
+
+:imagesdir: ../images/04-vcs2
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+:source-highlighter: highlightjs
+
+== Recapitulation
+
+=== Git Kommandos
+
+[.stretch]
+image::git-transport-local.png[]
+
+[state=complex]
+=== Git Kommandos
+
+. Interaktion zwischem [.blue]#lokalem Repository# und [.blue]#WorkCopy#
+  * `git checkout master`
+  * `git add README.md`
+  * `git commit -m "Neuer Code"`
+  * `git checkout -- README.md`
+  * `git reset --hard HEAD`
+
+=== Git Kommandos 2
+
+. Hilfe
+  * `git --help`
+  * `git commit --help`
+  * https://git-scm.com/docs
+. Graphische Darstellung
+  * `gitk`
+  * `log --all --decorate --oneline --graph`
+  * SourceTree, GitKraken
+
+=== Git Speicher
+
+Commit:: 
+* Enthält Verweise auf alle Dateien zu einem bestimmten Zeitpunkt
+* Enthält einen Verweis auf den Vorgänger-Commit
+
+[NOTE.speaker]
+--
+Die Historie, die in GIT gespeichert wird, ist nur die Abfolge der Commits (inkl. der Dateien zu diesem Zeitpunkt). Diese Abfolge kann beliebig manipuliert werden.
+--
+
+== Branch
+
+=== Branching
+
+[quote]
+____
+Branching means you diverge from the main line of development and continue to do work without messing with that main line.
+____
+
+=== Branch
+
+* Branch [.lightgreen]#`master`# zeigt momentan auf neuesten Commit
+
+[.stretch]
+image::branch1.png[]
+
+[NOTE.speaker]
+--
+Ein Branch in Git ist nichts anderes als ein simpler Zeiger auf einen dieser Commits. Der Name der ersten Branches lautet per Default: master. Mit jedem Commit bewegt sicher der Zeiger automatisch vorwärts.
+--
+
+[%notitle]
+=== Another Branch
+
+* Erstelle einen neuen Branch, der (momentan) gleich ist, wie `master`
+
+[source, shell]
+----
+$ git branch testing master
+----
+
+[.stretch]
+image::neuerbranch.png[]
+
+[NOTE.speaker]
+--
+Dies erzeugt einen neuen Zeiger, der auf den gleichen Commit zeigt, auf dem Du gerade arbeitest.
+--
+
+=== HEAD
+
+`HEAD` ist ein spezieller Zeiger
+
+* zeigt auf den Branch, mit dem die Workcopy verbunden ist
+
+[.stretch]
+image::head-on-master.png[]
+
+[%notitle]
+=== Checkout branch
+
+Auschecken eines anderen Branches
+
+[source, shell]
+----
+$ git checkout testing
+----
+
+[.stretch]
+image::head-on-testing.png[]
+
+[%notitle]
+=== List branches
+
+Anzeige aller Branches
+
+[source, shell]
+----
+$ git branch 
+  feature-24
+* master
+  my-branch-1
+  my-branch-2
+$ git status
+On branch master
+...
+----
+
+[NOTE.speaker]
+--
+Listet alle lokalen Branches auf. Die aktive Branch wird mit einem *-Stern gekennzeichnet. git status zeigt ebenfalls den aktiven Branch an.
+--
+
+[%notitle]
+=== Branch entwickeln
+
+Ein weiterer Commit ...
+
+[source, shell]
+----
+$ echo 'neuer Text' > neue-datei.txt
+$ git commit -a -m 'Neue Datei auf branch testing'
+----
+
+[.stretch]
+image::commit-on-testing.png[]
+
+[NOTE.speaker]
+--
+Dies erzeugt einen neuen Commit. Gleichzeitig wird der Branchzeiger des aktuell aktiven Branches weitergeschoben.
+--
+
+[%notitle]
+=== Branch auseinander
+
+Die Historie läuft auseinander
+
+[.stretch]
+image::historie-auseinander.png[]
+
+=== Branch Sichtweisen
+
+[.stretch]
+image::branch-sichtweisen-1.png[]
+
+[NOTE.speaker]
+--
+Ein anderes Bild für zwei Branches, die auseinandergelaufen (diverged) sind.
+--
+
+=== Branch Sichtweisen
+
+[.stretch]
+image::branch-sichtweisen-2.png[]
+
+[NOTE.speaker]
+--
+Eine weitere Darstellung (verkürzt) von zwei Branches, die auseinandergelaufen (diverged) sind.
+--
+
+== Tag
+
+. Leichtgewichtiger Tag
+** == Referenz (genau wie ein Branch)
+. Annotated Tag
+** eigener Objekt-Typ im Git Datenmodel
+*** enthält
+*** SHA eines Commits
+*** Datum & Author
+*** Nachricht
+*** ggf. PGP Signatur
+
+=== Tag erzeugen
+
+[source, shell]
+----
+## leichtgewichten Tag erstellen
+$ git tag test-tag-1
+## alle Tags anzeigen
+$ git tag
+release-1
+release-2
+test-tag-1
+## annotated Tag erstellen
+$ git tag -a -m "Noch ein Test tag" test-tag-2
+## Alle Tags inkl. Message anzeigen
+$ git tag -n
+release-1   Commit-Message ...
+release-2   Commit-Message ...
+test-tag-1  Commit-Message ...
+test-tag-2  Noch ein Test tag
+----
+
+== Referenzen
+
+. [.lightgreen]#`reference`#
+** eine Datei
+** Dateiname entspricht dem Namen der Referenz
+** Inhalt ist der SHA des Commits, auf den die Referenz verweist
+. [.lightgreen]#`symbolic reference`#
+** eine Datei
+** Dateiname entspricht dem Namen der Referenz
+** Inhalt ist der Name einer anderen Referenz
+** eigentlich gibt es hier nur [.blue]#`HEAD`#
+. ORIG_HEAD, FETCH_HEAD sind Sonderfälle
+
+=== Referenzen
+
+[source, shell]
+----
+## Auflistung aller Dateien im Ordner .git/refs
+$ find .git/refs
+.git/refs
+.git/refs/heads
+.git/refs/heads/master
+.git/refs/heads/my-branch-1
+.git/refs/tags
+.git/refs/tags/test-tag-0
+.git/refs/tags/test-tag-1
+.git/refs/remotes
+.git/refs/remotes/origin
+.git/refs/remotes/origin/master
+----
+
+=== Symbolische Referenzen
+
+[source, shell]
+----
+## Ausgabe des Inhalts der Datei .git/HEAD
+$ cat .git/HEAD
+ref: refs/heads/master
+----
+
+[%notitle]
+=== Tag und Branch Referenzen
+
+. Branches == Referenzen, die unter `.git/refs/heads` gespeichert werden
+. Tags == Referenzen, die unter `.git/ref/tags` gespeichert werden
+** nur lightweight Tags
+. [.blue]#Ref-Log# 
+** Log für alle Änderungen, die an den Referenzen gemacht wurden (nur lokal)
+
+
+=== Reflog
+
+[source, shell]
+----
+## zeigt die Historie von HEAD
+$ git reflog
+## zeigt den 5. letzten Commit beginnend bei HEAD          
+$ git show HEAD@{5}
+## zeigt den letzten Commit von gestern
+$ git show HEAD@{yesterday}
+## zeigt die Logausgaben mit der reflog Syntax
+$ git log –g
+----
+
+== Stashing
+
+* Verstecken der aktuellen Änderungen
+.. alle Änderungen an der Workcopy
+.. alles im Stage-Bereich (Index)
+* Workspace und Stage-Bereich sind danach wieder auf dem Stand des letzten Commits (siehe HEAD)
+* Neue Dateien (untracked) werden per default ignoriert 
+* Man kann unzählig viele Stashes anlegen
+
+[NOTE.speaker]
+--
+* Sinnvoll, um kurfristig auf einen anderen Branch zu wechseln, ohne die aktuelle Arbeit commiten zu müssen
+--
+
+=== Stash Kommandos
+
+[source, shell]
+----
+## Änderungen auf Stash-Stack verschieben
+$ git stash
+## Änderungen in benannten Stash verschieben
+$ git stash push –m „mein zweiter Stash“
+## Alle Stashes auflisten
+$ git stash list
+## Stash Nr 0 auf den aktuellen Workspace anwenden, 
+## aber Stash nicht löschen
+$ git stash apply stash@{0}
+## Stash Nr 0 auf den aktuellen Workspace anwenden 
+## und Stash von Stack löschen
+$ git stash pop stash@{0}                 
+----

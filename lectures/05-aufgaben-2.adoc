@@ -1,0 +1,63 @@
+= Aufgaben 2
+
+:idprefix: slide_
+:revealjs_slideNumber:
+:revealjs_history:
+
+[state=complex]
+== Ziel
+
+* Sicherer Umgang mit den Befehlen:
+** `git branch`
+** `git checkout`
+** `git reset`
+** `git stash`
+* Zusatzbefehle
+** `git reflog`
+
+== Aufgabe
+
+=== Übungen  Branch 1/2
+. Erzeuge einen neuen Branch ohne diesen zu aktivieren
+. Erzeuge zwei neue Commits auf den Branch `master`
+. Aktiviere den Branch aus Schritt 1
+. Erzeuge zwei neue Commits auf den Branch aus Schritt 1
+. Sieh dir mit den Graph der beiden Branches an
+** mit `git log`, `git hist`, `gitk` oder Sourcetree
+
+=== Übungen  Branch 2/2
+
+[start=6]
+. Ändere den Branch aus Schritt 1, sodass er auf den gleichen Commit wie "master" zeigt
+. lösche den Branch aus Schritt 1
+. Versuche dir mit Hilfe des Reflogs einen neuen Branch zu erstellen, der wieder die beiden Commits enthält, die auf dem soeben gelöschten Branch waren
+
+=== Übungen Tag
+
+. Erzeuge zwei Branches, auf jedem Branch drei Commits
+. Erzeuge zwei Tags, die jeweils auf den zweiten Commit eines der Branches zeigen
+** Erzeuge beide Arten von Tags
+
+=== Übungen Stash 
+
+. Erzeuge einen neuen Branch und aktiviere ihn sofort
+. Mache Änderungen in deinem Workspace
+. Füge die Änderungen zum Index hinzu
+. Stashe alle beiden Änderungen
+. Wechsle in den Branch master
+. Änderere hier Dateien und erstelle einen neuen Commit
+. Wechsle zurück auf den Branch aus Schritt 8
+. Hole deine Änderungen aus dem Stash und commite diese auf dem aktuellen Branch
+
+=== Übungen Zusatz
+
+. Erstelle drei Commits auf `master`
+. Erzeuge dann einen neuen Branch
+. Erzeuge drei weitere Commits auf diesem neuen Branch
+. Finde den korrekten `git log` Befehl, der alle Commits des neuen Branches auflistet, die nicht gleichzeitig auf dem Branch `master` enthalten sind
+
+== Hilfen
+
+* https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+* https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning
+* https://www.atlassian.com/git/tutorials/using-branches

@@ -399,20 +399,3 @@ $ git config --global alias.hist "log --pretty=format:'%C(yellow)[%ad]%C(reset) 
 * `cd ordern1` -> Wechsel in des Unterverzeichnis _ordner1_
 * `cd ..` -> Wechsel in das nächsthöhere Verzeichnis
 * `mkdir ordern2` -> Erstellen eines neuen Unterverzeichnisses
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
