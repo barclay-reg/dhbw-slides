@@ -252,7 +252,7 @@ ref: refs/heads/master
 === Tag und Branch Referenzen
 
 . Branches == Referenzen, die unter `.git/refs/heads` gespeichert werden
-. Tags == Referenzen, die unter `.git/ref/tags` gespeichert werden
+. Tags == Referenzen, die unter `.git/refs/tags` gespeichert werden
 ** nur lightweight Tags
 . [.blue]#Ref-Log# 
 ** Log für alle Änderungen, die an den Referenzen gemacht wurden (nur lokal)
