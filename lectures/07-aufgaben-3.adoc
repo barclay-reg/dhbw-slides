@@ -14,7 +14,7 @@
 ** `git checkout`
 ** `git reset`
 * Zusatzbefehle
-** `git mergtool`
+** `git mergetool`
 ** `git merge-base`
 
 == Aufgabe

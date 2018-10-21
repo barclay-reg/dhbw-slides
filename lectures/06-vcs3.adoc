@@ -87,7 +87,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ** mit sog. Standard [.blue]#Konflikt-Markern#
 * `git add datei.txt` Markiert die Datei als "Konflikte gelöst"
 * `git merge --abort` Versetz alles in den Zustand vorher
-* `git mergtool` kann eine bessere Sicht auf die Konflikte liefern
+* `git mergetool` kann eine bessere Sicht auf die Konflikte liefern
 
 === Manuelle Dateikonflikte
 [source, shell]
