@@ -1,0 +1,182 @@
+= VCS 4
+
+:imagesdir: ../images/08-vcs4
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+:source-highlighter: highlightjs
+
+== Remotes
+
+[%notitle]
+=== Einführung Remotes
+
+GIT :: Stupid Content Tracker, effizienter Objekt-Speicher mit der Fähigkeit zwei Objektspeicher miteinander zu Synchronisieren.
+
+[%notitle]
+=== Einführung Remotes
+
+Synchronsation bei Daten == Replikation
+
+---
+
+Synchronistion der Git-Objekte == Replikation aller Git-Objekte
+
+=== Remotes
+
+* Das letzte verbliebene Element in der Liste der Git-Objekte
+* Ein lokales Repository mit vielen verschiedenen Remote Repositories verbunden sein
+* wenn Repo durch `git clone` entstanden ist, gibt es genau ein Remote mit dem Namen [.blue]#`origin`#
+
+[source, shell]
+----
+## Zeigt alle konfigurierten Remotes an
+$ git remote -v
+origin   https://github.com/barclay-reg/dhbw-slides.git (fetch)
+origin   https://github.com/barclay-reg/dhbw-slides.git (push)
+----
+
+=== Branches Synchronisieren
+
+* Sync bei GIT-Objekten relativ einfach
+* Sync bei Referenzen etwas komplexer
+** Problem: Referenz wurde auf beiden Seiten verändert
+** Lösung:
+*** Speichern aller lokalen und remote Referenzen
+*** Speichern der Verbindung zwischen lokaler und remote Referenz 
+
+=== Remote Referenzen
+[source, shell]
+----
+## Auflistung aller Dateien im Ordner .git/refs
+$ find .git/refs
+.git/refs
+.git/refs/heads
+.git/refs/heads/master
+.git/refs/heads/my-branch-1
+.git/refs/tags
+.git/refs/tags/test-tag-0
+.git/refs/tags/test-tag-1
+.git/refs/remotes
+.git/refs/remotes/origin
+.git/refs/remotes/origin/master
+.git/refs/remotes/origin/other-branch-2
+----
+[NOTE.speaker]
+--
+* unter refs/remotes wird der Stand eines Branch-Zeigers auf Remote abgelegt
+** diese Zeiger können lokal nicht verändert werden
+* Branch my-branch-1 existiert nur bei mir loka
+* Brnach other-branch-2 existiert nur bei origin
+--
+
+=== Remote Tracking Branches
+
+* Name der remote Branches setzt sich aus dem Namen des Remote Repository plus dem Namen des Branches zusammen
+** z.B. `origin/feature-1`
+* Wenn ein lokaler Branch mit einem remote Branch verbunden ist, dann spricht man von einem sog.: Remote-Tracking-Branch 
+** manchmal auch von _Upstream_ Branch
+** der Branch [.blue]#`origin/master`# wird von [.lightgreen]#`master`# getracked
+
+[NOTE.speaker]
+--
+* Dies sind die Vorraussetzungen, damit Git eine Synchronisierung durchführen kann
+--
+
+=== Kommandos
+
+[source, shell]
+----
+## Zeigt alle Remote Branches an
+$ git branch –r
+origin/master
+origin/feature-1
+## Legt neuen Branch an, der origin/feature-1 trackt
+$ git branch feature-1 origin/feature-1
+## Shortcut, legt automatisch lokalen Branch an, falls ein 
+## Branch `origin/feature-1` existiert
+$ git checkout feature-1
+## Definiert für den aktuellen lokalen Branch dem 
+## Namen des Remote Branches
+$ git branch --set-upstream-to origin/neues-feature
+----
+
+=== Transportwege
+
+[.stretch]
+image::git-transport.png[]
+
+=== Fetch und Pull
+
+* `git fetch`
+** Holt alle Commits von den remote Repository(ies)
+** keine Änderung an der Workcopy
+** oft ist danach ein Merge notwendig (3WM oder FF)
+* `git pull`
+** Shortcut für `git fetch` & `git merge`
+
+[source, shell]
+----
+## ohne die Angabe von `origin` werden alle Remotes abgefragt
+$ git fetch origin
+## merge des Remote-Branches auf den aktuellen lokalen Branch
+$ git merge origin/master     
+## Shortcut für die beiden oberen Befehle
+## auch hier kann `origin` weggelassen werden
+$ git pull origin
+----
+
+=== Fetch und Pull
+
+[.stretch]
+image::git-fetch-before.png[]
+
+[transition=fade]
+=== Fetch und Pull
+
+[.stretch]
+image::git-fetch-after.png[]
+
+[NOTE.speaker]
+--
+* Alle commits der beiden Remote Branches wurden übertragen. Auch die Branchzeiger wurden übertragen, aber der Tracking-Branch (master) wurde nicht verändert - nun ist sichtbar, dass dieser von orign/master abweicht (diverged) - die Lösung dafür ist entweder ein 3WM oder ein Rebase+FF-Merge
+--
+
+=== Push
+
+* `git push`
+** überträgt alle lokalen Commits zu dem Remote Repository
+** Nur erlaubt, wenn (remote) ein [.blue]#Fast-Forward-Merge# möglich ist, ansonstten vorher `git pull`
+** danach ist [.blue]#KEIN Ändern# der Historie/Commits empfohlen
+*** Kein Commit-Amend, Reset von Branches, Rebasing
+** je nach Konfiguration wird nur der lokale Branch oder alle Branches synchronisiert
+*** `config: push.default=simple`
+
+=== Push
+
+[.stretch]
+image::git-push-before.png[]
+
+[transition=fade]
+=== Push
+
+[.stretch]
+image::git-push-after.png[]
+
+[NOTE.speaker]
+--
+* Alle commits des lokalen Branches wurden übertragen - nur für den aktiven Branch.
+--
+
+=== Clone & Fork
+
+* `git clone`
+** kopieren eines remote Repositories auf den eigenen Rechner
+** "erste Synchronisieren" plus "Checkout"
+** kein `git init` mehr nötig
+
+* `fork`
+** kein Git Befehl
+** Findet auf einem Git-Server statt, z.B. auf https://github.com
+** im Hintergrund wird auch `git clone` ausgeführt
+

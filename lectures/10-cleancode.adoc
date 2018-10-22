@@ -64,7 +64,7 @@ Quellen:
 
 * je älter ein Projekt, desto geringer die Produktivität
 * Code verrottet, weil Fokus auf Erhöhen der Produktivität liegt
-* Gesetz von LeBlanc: [.blue]#Später gleich niemals.#
+* Gesetz von LeBlanc: [.blue]#Später heißt niemals.#
 * Schlussfolgerung:
 ** es reicht nicht aus, guten Code zu schreiben
 ** Code muss auch _sauber gehalten_ werden
