@@ -1,16 +1,21 @@
 // own classes
 
 .reveal .small {
-   font-size: 32px;
+   font-size: 26px;
 }
 
+.reveal .small p {
+   font-size: 26px;
+}
+
+
 .reveal span.small {
-   font-size: 32px;
+   font-size: 26px;
 }
 
 
 .reveal .small dl {
-   font-size: 32px;
+   font-size: 26px;
 }
 
 .reveal section p {

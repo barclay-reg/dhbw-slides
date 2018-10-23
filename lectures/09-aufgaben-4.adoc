@@ -13,26 +13,57 @@
 ** `git pull`
 ** `git push`
 ** `git clone`
+* Beherrschen des Konzeptes Pull-Request
 
 == Aufgabe
 
-=== Übungen 
+=== Übungen - Vorbereitungen
 
-. Spiele alle 4 Szenarien durch, beobachte den Commit-Graph
-.. 3-Way-Merge
-.. 3-Way-Merge mit manueller Konfliktbehebung
-.. Fast-Forward-Merge
-.. Rebase mit anschließendem Fast-Forward-Merge
+. Teilt euch in Teams ein (2 pro Team)
+.. Registrieren bei https://github.com
+.. UserId od. Name PLUS Teammitglied mir mitteilen
+. Ich weise euch auf Github einer _Organisation_ zu
+. jeder _clont_ (nicht _forken_) das Repository `progit2` aus seiner Organisation
+** nehmt den Link `https://github.com/...` , *nicht* `git@github.com:...`
+** `git clone` in einen Ordner ausführen, der bisher *nicht* mit Git genutzt wurde
 
-=== Übungen Zusatz
+=== Übungen 1
 
-. Nutze den Befehl `git mergetool` um dir die manuelle Konflikt-Lösung zu vereinfachen
-** konfiguriere ein tool deiner Wahl, z.B. kdiff3 (gibt es für Windows) oder DiffMerge (für Mac)
-. Nutze den Befehl `git merge-base` um den gemeinsamen Vorfahren bei einem anstehenden 3-Way-Merge manuell zu bestimmen
+. Mitglied 1: ändere mehrere Dateien auf `master` und publiziere diese Änderungen, sodass sie auf github sichtbar sind
+. Mitglied 2: hole diese Änderungen auf in deine Workcopy
+. Mitglied 1 & 2: ändert gleichzeitig mehrere Dateien auf `master` und publiziere diese Änderungen, sodass sie auf github sichtbar sind
+. Mitglied 1 & 2: ändert gleichzeitig die gleiche Dateien, die gleiche Zeile auf `master` und publiziere diese Änderungen, sodass sie auf github Sichtbar sind
 
-== Hilfen
+=== Übungen 2
 
-* https://www.atlassian.com/git/tutorials/using-branches/git-merge
-* https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
-* https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+[.small]
+. Mitglied 1 & 2: jeder erstellt (auf github) einen neuen Branch von `master` (siehe https://help.github.com/articles/creating-and-deleting-branches-within-your-repository[help.github.com])
+. Mitglied 1 & 2: jeder aktiviert lokal seinen erstellten Branch (vorher `git fetch` nötig)
+. Mitglied 1 & 2: jeder erstellt mehrere Commits auf seinem Branch und publiziere diese Änderungen, sodass sie auf github sichtbar sind
+. Mitglied 1 & 2: gemeinsam - integriert die Änderungen eines Branches auf `master` 
+** provoziert einen 3WM per `git merge --no-ff`
+. Mitglied 1 & 2: gemeinsam - macht auf dem zweiten Branch einen Rebase auf die neue Spitze von `master` damit ein späterer Merge diese Branches auf `master` mit einem Fast-Forward-Merge erfolgen kann
+** führt nach dem Rebase einen Merge auf `master` per `git merge --ff-only` aus
 
+=== Übungen 3
+
+[.small]
+. Mitglied 1 & 2: gemeinsam
+.. erstellt einen neuen Branch
+.. aktiviert lokal diesen erstellten Branch (vorher `git fetch` nötig)
+.. erstellt mehrere Commits auf diesem Branch und publiziere diese Änderungen, sodass sie auf github sichtbar sind
+. Mitglied 1: erstelle von diesem Branch einen Pull-Request
+** siehe https://help.github.com/articles/creating-a-pull-request/
+. Mitglied 2: Reviewe diesen Pull-Request, kommentiere ggf. einzelne Änderungen, nachdem alles geklärt wurde, nimm diesen Pull-Request an
+
+== Gruppen
+
+[.small]
+. https://github.com/fn-tfe16-g1
+. https://github.com/fn-tfe16-g2
+. https://github.com/fn-tfe16-g3
+. https://github.com/fn-tfe16-g4
+. https://github.com/fn-tfe16-g5
+. https://github.com/fn-tfe16-g6
+. https://github.com/fn-tfe16-g7
+. https://github.com/fn-tfe16-g8

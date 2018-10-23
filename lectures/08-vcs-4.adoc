@@ -101,6 +101,8 @@ $ git checkout feature-1
 $ git branch --set-upstream-to origin/neues-feature
 ----
 
+== Arbeiten mit Remotes
+
 === Transportwege
 
 [.stretch]
@@ -179,4 +181,23 @@ image::git-push-after.png[]
 ** kein Git Befehl
 ** Findet auf einem Git-Server statt, z.B. auf https://github.com
 ** im Hintergrund wird auch `git clone` ausgeführt
+
+== Pull Request
+
+* Antrag, ein oder mehrere Commits von einem Branch in einen anderen Branch zu mergen
+* kann jemandem _zugewiesen_ werden
+* Erlaubt Code-Review, Code-Diskussion
+* wenn Antrag akzeptiert ist, wird ein [.blue]#Pull# (fetch & merge) gemacht
+* Kann per `git request-pull` gestartet werden, aber
+* besser per Web-Interface (Github, Bitbucket, Gitlab)
+
+== Wieso PR
+
+* Warum nicht einfach Mergen?
+[.step]
+** (Feature)-Branches können länger leben
+*** Niemand außer dem Author weiß, wann das Feature _fertig_ ist
+** Erstellend es [.blue]#PR# ist ein eindeutiger Trigger für
+*** Start des Code-Reviews
+*** Start von aufwändigeren automatisierten Tests
 
