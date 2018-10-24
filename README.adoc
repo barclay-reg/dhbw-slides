@@ -10,7 +10,7 @@
 * https://barclay-reg.github.io/dhbw-slides/lectures/05-aufgaben-2.html#/[05-aufgaben-2 - Aufgaben für den 2. Praxisteil]
 * https://barclay-reg.github.io/dhbw-slides/lectures/06-vcs3.html#/[06-vcs3 - Version Control Systems - 3]
 * https://barclay-reg.github.io/dhbw-slides/lectures/07-aufgaben-3.html#/[07-aufgaben-3 - Aufgaben für den 3. Praxisteil]
-* https://barclay-reg.github.io/dhbw-slides/lectures/08-vcs4.html#/[08-vcs4 - Version Control Systems - 4]
+* https://barclay-reg.github.io/dhbw-slides/lectures/08-vcs-4.html#/[08-vcs-4 - Version Control Systems - 4]
 * https://barclay-reg.github.io/dhbw-slides/lectures/09-aufgaben-4.html#/[09-aufgaben-4 - Aufgaben für den 4. Praxisteil]
 * https://barclay-reg.github.io/dhbw-slides/lectures/0x-java.html#/[0x-java - Java Introduction]
 * https://barclay-reg.github.io/dhbw-slides/lectures/0x-setup.html#/[0x-setup - Project Setup]
