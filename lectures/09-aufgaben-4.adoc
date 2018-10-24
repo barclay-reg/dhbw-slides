@@ -23,7 +23,7 @@
 .. Registrieren bei https://github.com
 .. UserId od. Name PLUS Teammitglied mir mitteilen
 . Ich weise euch auf Github einer _Organisation_ zu
-. jeder _clont_ (nicht _forken_) das Repository `progit2` aus seiner Organisation
+. jeder _clont_ (nicht _forken_) das Repository [.lightgreen]#`progit2`# aus seiner Organisation
 ** nehmt den Link `https://github.com/...` , *nicht* `git@github.com:...`
 ** `git clone` in einen Ordner ausführen, der bisher *nicht* mit Git genutzt wurde
 
