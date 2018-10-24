@@ -65,7 +65,6 @@ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 ----
 
 
-
 === Eclipse
 
 . Eclipse
