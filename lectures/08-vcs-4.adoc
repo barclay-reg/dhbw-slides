@@ -170,7 +170,7 @@ image::git-push-after.png[]
 * Alle commits des lokalen Branches wurden übertragen - nur für den aktiven Branch.
 --
 
-=== Clone & Fork
+== Clone & Fork
 
 * `git clone`
 ** kopieren eines remote Repositories auf den eigenen Rechner
@@ -181,6 +181,69 @@ image::git-push-after.png[]
 ** kein Git Befehl
 ** Findet auf einem Git-Server statt, z.B. auf https://github.com
 ** im Hintergrund wird auch `git clone` ausgeführt
+
+=== Clone & Fork
+
+[.step]
+* Problem: Wie kommen Änderungen des Originals zu meinem Fork?
+* Lösung: weiteres Remote-Repo
+
+=== Ohne Fork
+
+[.stretch]
+image::upstream-1.png[]
+
+[trasitio=fade]
+=== Ohne Fork - Anders
+
+[.stretch]
+image::git-remote-control.png[]
+
+=== Ohne Fork - Remotes
+
+[source, shell]
+----
+$ git remote -v
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (push)
+----
+
+=== Mit Fork
+
+[.stretch]
+image::upstream-2.png[]
+
+=== Mit Fork - Anders
+
+[.stretch]
+image::git-fork-clone.png[]
+
+=== Mit Fork - Remotes
+
+[source, shell]
+----
+$ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
+$ git remote -v
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (push)
+upstream   github.com/barclay-reg/dhbw-painground.git (fetch)
+upstream   github.com/barclay-reg/dhbw-painground.git (push)
+----
+
+=== Mit Fork - Änderungen abholen
+
+[source, shell]
+----
+## Änderungen von Remote "upstream" holen
+$ git fetch upstream
+## auf eigenen Branch "master" wechseln
+$ git checkout master
+## Alle commits von Branch "master" von Remote "upstream" 
+## in aktuellen Branch mergen
+$ git merge upstream/master
+## Änderungen an github senden
+$ git push
+----
 
 == Pull Request
 

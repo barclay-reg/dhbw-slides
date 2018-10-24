@@ -1,5 +1,6 @@
 = Initial Setup
 
+:imagesdir: ../images/0x-setup
 :idprefix: slide_
 :revealjs_slideNumber:
 :revealjs_history:
@@ -23,9 +24,9 @@ Erzeuge zwei Ordner - egal wo, z.B.
 
 . Download http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html[Java JDK 1.8.0_192]
 . Installieren
-  * _Java SE Development Kit 8u191_
-  * Speichern in Order _tools\java_
-  * [.blue]#Public JRE# nur installieren, wenn noch kein JRE installiert ist
+** _Java SE Development Kit 8u191_
+** Speichern in Order _tools\java_
+** [.blue]#Public JRE# nur installieren, wenn noch kein JRE installiert ist
 
 === Eclipse
 
@@ -48,8 +49,8 @@ Erzeuge zwei Ordner - egal wo, z.B.
 === git clone
 
 in [.blue]#Git Bash#
-  * [.small]#die Email muss mit der Email bei der Github Registrierung übereinstimmen#
-  * [.small]#der Platzhalter `<gruppe>` muss durch eine Ziffer ersetzt werden#
+** [.small]#die Email muss mit der Email bei der Github Registrierung übereinstimmen#
+** [.small]#der Platzhalter `<gruppe>` muss durch eine Ziffer ersetzt werden#
 ----
 git config --global user.name "Mona Lisa"
 git config --global user.email "email@example.com"
@@ -60,13 +61,29 @@ cd dhbw
 cd checkout
 git clone \
  https://github.com/fn-tfe16-g<gruppe>/dhbw-painground.git
+git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 ----
 
-=== Eclipse Import
+
+
+=== Eclipse
 
 . Eclipse
-  * _Import_ -> _Existing Maven Projects_
-  * den vorhin erzeugten Ordern `checkout` auswählen
-  * abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
+** Hilfreiche Screenshots sind auf den nächsten Folien
+** _Help_ -> _Eclipse Marketplace..._
+*** Suche nach "editorconfig"; Installiere es
+** _Import_ -> _Existing Maven Projects_
+*** den vorhin erzeugten Ordern `checkout` auswählen
+*** abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
+
+=== Eclipse Hilfe
+
+[.stretch]
+image::eclipse-install-editorconfig.png[]
+
+=== Eclipse Hilfe
+
+[.stretch]
+image::eclipse-after-import.png[]
 
 
