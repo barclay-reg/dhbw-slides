@@ -1,9 +1,10 @@
-= Clean Code 1
+= Clean Code
 
-:imagesdir: ../images/09-cleancode
+:imagesdir: ../images/10-cleancode
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
+:source-highlighter: highlightjs
 
 [background-color="cornflowerblue"]
 [transition=convex]
@@ -84,9 +85,10 @@ ____
 
 === Zweckbeschreibende Namen
 
+[source, java]
 ----
 public List<int[]> getThem() {
-   List<int[]> list1 = new ArrayList<int[]();
+   List<int[]> list1 = new ArrayList<int[]>();
    for (int[] x : theList)
       if (x[0] == 4)
          list1.add(x);
@@ -102,13 +104,15 @@ public List<int[]> getThem() {
 
 [%notitle]
 === Zweckbeschreibende Namen
+
+[source, java]
 ----
 public List<int[]> getFlaggedCells() {
-   List<int[]> flaggedCells = new ArrayList<int[]();
-   for (int[] cell : gameBoard)
+   List<int[]> flaggedCells = new ArrayList<int[]>();
+   for (int[] cell : this.gameBoard)
       if (cell[STATUS_VALUE == FLAGGED)
          flaggedCells.add(cell);
-   return list1;
+   return flaggedCells;
 }
 ----
 
@@ -155,7 +159,7 @@ public static void copyChars(char source[], char destination[]) {
 [%notitle]
 === Unterschiede deutlich machen
 
-* Namen wie `c1` sind *nicht* irreführend, sondern *informationsleer*
+* Namen wie [.lightgreen]#`c1`# sind *nicht* irreführend, sondern *informationsleer*
 * zusammengesetzte Klassennamen können auch informationsleer sein
 ** `Product`
 ** `ProductInfo`
@@ -185,7 +189,7 @@ class DtaRcrd102 {
 ymdhms::
 Year, Month, Day, Hours ...
 
-%notitle]
+[%notitle]
 === Aussprechbare Namen verwenden
 
 ----
@@ -208,6 +212,7 @@ class Customer {
 === Suchbare Namen verwenden
 
 ----
+int s = 0;
 for (int j=0; j<34; j++) {
    s += (t[j]*4)/5;
 }
@@ -248,8 +253,9 @@ public Integer pub_id;
 ** Datentyp oder Geltungsbereich
 ** Ungarische Notation
 ** Sprachen, ohne Typprüfung im Compiler
-* Änderungen müssen nachgezogen werden
-* Präfixe und Suffixe werden bald vom Entwickler ignoriert
+* Nachteile
+** Änderungen müssen überall nachgezogen werden
+** Präfixe und Suffixe werden bald vom Entwickler ignoriert
 
 === Methodennamen
 
@@ -260,14 +266,15 @@ public Integer pub_id;
 
 === Domänen Namen
 
-* Lösungsdomäne
-** Begriffe/Konzepte der Informatik, Algorithmen, Pattern
-** z.B. `AccountVisitor`
-** Bezug auf Visitor-Pattern
+[.step]
 * Problemdomäne
 ** Begriffe/Konzepte des Bereichs, für den die Software bestimmt ist
-** z.B. `BeneficialOwner`
-** Bezug auf wirtschaftlich Berechtigten eines Bankkontos
+** z.B. [.blue]#`BeneficialOwner`#
+*** Bezug auf wirtschaftlich Berechtigten eines Bankkontos
+* Lösungsdomäne
+** Begriffe/Konzepte der Informatik, Algorithmen, Pattern
+** z.B. [.blue]#`AccountVisitor`#
+*** Bezug auf Visitor-Pattern
 
 [background-color="cornflowerblue"]
 [transition=convex]
@@ -310,6 +317,25 @@ public class HtmlUnit {
 *** TearDown
 *** ggf. Suite TearDown
 
+[%notitle]
+=== Code nochmal
+----
+public class HtmlUnit {
+  public static String testableHtml(
+     PageData pageData,
+     boolean includeSuiteSetup
+   ) throws Exception {
+     WikiPage wikiPage = pageData.getWikiPage();
+     StringBuffer buffer = new StringBuffer();
+     if (pageData.hasAttribute("Test")) {
+       if (includeSuiteSetup) {
+         WikiPage suiteSetup =
+           PageCrawlerImpl.getInheritedPage(
+               SuiteResponder.SUITE_SETUP_NAME, wikiPage
+           );
+----
+
+[transition=fade]
 === Erste Verbesserung
 
 ----
@@ -339,7 +365,7 @@ public static String renderPageWithSetupsAndTeardowns(
 [.blue]#Wie kann das erreicht werden?#
 
 * keine verschachtelten Strukturen
-* die _eine erlaubte_ Einrückungstiefe sollte dann möglichst nur eine Anweisung enthalten
+* die _einzig erlaubte_ Einrückungstiefe sollte dann möglichst nur eine Anweisung enthalten
 
 [%notitle]
 === Klein
@@ -367,14 +393,15 @@ public static String renderPageWithSetupsAndTeardowns(
 UM RenderPageWithSetupsAndTeardowns ausZUführen, 
 prüfen wir, ob eine Seite eine Testseite ist, und wenn dies der Fall ist, 
 schließen wir die Setups und Teardowns ein. 
-In beiden Fällen stellen wie die Seite in HTML dar.
+In beiden Fällen stellen wir die Seite in HTML dar.
 ----
 
 
 [state=complex]
 === Beschreibende Namen
 
-* gute Namen für kleine Funktionen finden, die *eine* Aufgabe erledigen
+[.step]
+* gute Namen für kleine Funktionen finden, die [.lightgreen]#eine# Aufgabe erledigen
 * [.blue]#lange beschreibende# Namen sind besser als [.blue]#kurze geheimnisvolle# Namen
 * lange [.blue]#Namen# sind besser als lange [.blue]#Kommentare#
 * mehrere Wörter per Konvention trennen
@@ -382,17 +409,50 @@ In beiden Fällen stellen wie die Seite in HTML dar.
 * verschiedene Namen ausprobieren und Code lesen
 ** IDE unterstützt das
 * Namen sollten in einem Modul konsistent sein
-** z.B. immer `include` verwenden
+** Synonyme vermeiden
 
 === Funktionsargumente
 
-* jedes Argument erfordert konzeptionelle Kraft beim Lesen
-* Name und Typ des Arguments könnten zu anderer Abstraktionsebene gehören
-* das [.blue]#Testen# einer Funktion wird aufwändiger
-** alle Kombinationen der Argumente
+* je weniger Argumente, desto besser
+** jedes Argument erfordert konzeptionelle Kraft beim Lesen
+** Name und Typ des Arguments könnten zu anderer Abstraktionsebene gehören
+** das [.blue]#Testen# einer Funktion wird aufwändiger
+*** die Kombinationen aller Argumente mit allen möglichen Werten
+
+
+=== Funktionsargumente
+
 * Output-Argumente vermeiden, da ungewohnt
 ** Input: Argumente
 ** Output: Rückgabewert
+
+=== Funktionsargumente
+
+* Argument als Output verwendet
+----
+public static void splitToList(String source, List parameter) {
+   String[] array = source.split(",");
+   parameter.addAll(Arrays.asList(array));
+}
+----
+
+[transition=fade]
+=== Funktionsargumente
+
+* Argument als Output verwendet
+----
+public static void splitToList(String source, List parameter) {
+   String[] array = source.split(",");
+   parameter.addAll(Arrays.asList(array));
+}
+----
+* Rückgabewert als Output
+----
+public static List splitToList(String source) {
+   String[] array = source.split(",");
+   return Arrays.asList(array);
+}
+----
 
 === Flag-Argumente
 
@@ -487,12 +547,13 @@ set im Kontext von if könnte auch als Adjektiv verstanden werden.
 ** muss sofort geprüft werden
 * Exception
 ** kann am Ende behandelt werden
-** ist ebenfalls eine Aufgabe -> in separate Funktion
+** ist ebenfalls eine Aufgabe
+*** kann in separate Funktion ausgelagert werden
 
 [%notitle]
 === Fehlercode vs Exceptions
 
-Fehlercode
+Beispiel mit Fehlercodes inkl. Behandlung
 
 ----
 if (deletePage(page) == E_OK) {
@@ -510,10 +571,11 @@ if (deletePage(page) == E_OK) {
 }
 ----
 
+[transition=fade]
 [%notitle]
 === Fehlercode vs Exceptions
 
-Exceptions
+Beispiel mit Exceptionbehandlung
 
 ----
 try {
@@ -564,7 +626,7 @@ public void logError(Exception e) {...}
 
 === Über Kommentare
 
-* Kommentare sind kein Ersatz für schlechten code
+* Kommentare sind kein Ersatz für schlechten Code
 * Kommentare vermeiden durch [.blue]#selbsterklärenden# Code
 
 ----
@@ -597,7 +659,7 @@ if (employee.isEligibleForFullBenefits())
 [%step]
 * Geraune
 * Redundante Kommentare
-** _wiederholung_ des Codes
+** _Wiederholung_ des Codes
 * irreführende Kommentare
 * Positionsbezeichner
 * Kommentare hinter schließenden Klammern
