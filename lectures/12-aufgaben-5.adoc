@@ -1,6 +1,6 @@
-= Aufgabe 4
+= Aufgabe 5
 
-:imagesdir: ../images/11-aufgaben-4
+:imagesdir: ../images/12-aufgaben-5
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
@@ -21,6 +21,11 @@ Continuous Integration::
 * Kompilieren des Code
 * Ausführen der Tests
 
+[source, shell]
+----
+$ mvn clean install
+----
+
 === Maven Wrapper
 
 * Laden der (konfigurierten) Maven version
@@ -28,6 +33,11 @@ Continuous Integration::
 *** Git
 *** JDK
 *** Google Chrome (für UI-Tests)
+
+[source, shell]
+----
+$ mvnw clean install
+----
 
 === JUnit / Selenium
 
@@ -40,9 +50,9 @@ Continuous Integration::
 
 === Travis-CI
 
-* Cloud-CI system
+* Cloud-CI System
 * ein Build pro Commit
-* für jeden Build wird eine neue Linux-VM erzeugt
+* für jeden Build wird eine neue Linux-VM erzeugt und danach gelöscht
 ** immer eine "grüne Wiese"
 
 === Sonarcloud
@@ -66,8 +76,8 @@ Continuous Integration::
 * Account bei travis-ci.org anlegen
 ** _merken_ wer diesen Account angelegt hat
 ** nur dieser User ist _Admin_, Alle haben Lese-Zugriff
-** ggf. während der Registrierung unbedingt den Zugriff auf die github Organisation (eure Gruppe, z.B fn-tfe15-2-g1) beantragen
-** mich direkt ansprechen, diese freizugeben
+** ggf. während der Registrierung unbedingt den Zugriff auf die Github Organisation (eure Gruppe, z.B fn-tfe16-g1) beantragen
+** diese Antrag innerhalb von Github annehmen
 
 === Erster Travis Build
 
@@ -102,7 +112,7 @@ image::travis-ci-setup.png[]
 ** SONAR_TOKEN --> security token einfügen
 ** SONAR_ORGANIZATION --> den organisations-key von vorhin
 ** SONAR_ALTERNATIVE_PROJECTKEY --> Gruppen-Key verwenden
-*** net.kleinschmager.dhbw.tfe15:g [.blue]#1#-painground
+*** net.kleinschmager.dhbw.tfe16:g [.blue]#1#-painground
 
 * _Demo_ siehe nächste Folie
 

@@ -74,6 +74,7 @@ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 ** _Import_ -> _Existing Maven Projects_
 *** den vorhin erzeugten Ordern `checkout` auswählen
 *** abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
+** Schritte 2-6 aus `README.md` Abschnitt _Checkout & Start_ ausführen
 
 === Eclipse Hilfe
 

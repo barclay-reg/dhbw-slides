@@ -26,6 +26,7 @@
 . jeder _clont_ (nicht _forken_) das Repository [.lightgreen]#`progit2`# aus seiner Organisation
 ** nehmt den Link `https://github.com/...` , *nicht* `git@github.com:...`
 ** `git clone` in einen Ordner ausführen, der bisher *nicht* mit Git genutzt wurde
+** danach in den geklonten Ordner wechseln
 
 === Übungen 1
 

@@ -1,4 +1,5 @@
 .rbenv-gemsets
 .ruby-version
 .bundle
+.gems
 output
