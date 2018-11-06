@@ -38,37 +38,45 @@ Shutsuke::
 [%notitle]
 === Inspiration
 
-[quote]
+[quote, Robert “Uncle Bob” Martin]
 ____
 Qualität ist das Ergebnis einer Million selbstloser Akte der Sorgfalt.
 ____
 
-[quote]
-____
-Sauberer Code kann von anderen Entwicklern gelesen und verbessert werden.
-____
+[%notitle]
+=== Inspiration
 
-[quote]
+[quote, Robert “Uncle Bob” Martin]
 ____
 Wir (Entwickler) sind Autoren. Ein Merkmal von Autoren ist es, dass sie Leser haben.
 ____
 
-[NOTE.speaker]
---
-Quellen: 
-1. Robert “Uncle Bob” Martin
-2. Dave Thomas
-3. Robert “Uncle Bob” Martin
--- 
+[%notitle]
+=== Inspiration
+
+[quote, Dave Thomas]
+____
+Sauberer Code kann von anderen Entwicklern gelesen und verbessert werden.
+____
+
 
 === Chaos im Code
 
-* je älter ein Projekt, desto geringer die Produktivität
-* Code verrottet, weil Fokus auf Erhöhen der Produktivität liegt
-* Gesetz von LeBlanc: [.blue]#Später heißt niemals.#
+* je älter ein Projekt, desto höher der Aufwand, neue Funktionen hinzuzufügen
+* damit die Produktivität wenigstens annähernd gleich bleibt, wird Fokus der Arbeit auf neue Funktionen gelegt
+** Folge: Code verrottet - wichtige Basis-Arbeiten werden vernachlässigt
+*** keine neuen Tests
+*** Konzepte werden durch Ausnahmen aufgeweicht
+*** Dokumentation wird nicht nachgezogen
+* Gesetz von LeBlanc: [.blue]#Später heißt niemals#
+
+=== Chaos im Code
+
 * Schlussfolgerung:
+[%step]
 ** es reicht nicht aus, guten Code zu schreiben
 ** Code muss auch _sauber gehalten_ werden
+** sofort & kontinuierlich
 
 [%notitle]
 === Chaos im Code
@@ -81,7 +89,6 @@ ____
 [background-color="cornflowerblue"]
 [transition=convex]
 == Aussagekräftige Namen
-
 
 === Zweckbeschreibende Namen
 
@@ -159,12 +166,11 @@ public static void copyChars(char source[], char destination[]) {
 [%notitle]
 === Unterschiede deutlich machen
 
-* Namen wie [.lightgreen]#`c1`# sind *nicht* irreführend, sondern *informationsleer*
+* Namen wie [.lightgreen]#`c1`# sind nicht [.blue]#irreführend#, sondern [.lightgreen]#informationsleer#
 * zusammengesetzte Klassennamen können auch informationsleer sein
 ** `Product`
 ** `ProductInfo`
 ** `ProductData`
-
 
 === Aussprechbare Namen verwenden
 
@@ -177,7 +183,6 @@ class DtaRcrd102 {
 
 [%notitle]
 === Aussprechbare Namen verwenden
-
 
 ----
 class DtaRcrd102 {
@@ -219,7 +224,7 @@ for (int j=0; j<34; j++) {
 ----
 
 * Die Länge eines Namens sollte der Größe seines Geltungsbereichs entsprechen
-* Suche nach _t_ oder _5_ ergibt sicher viele Treffer
+* Suche nach _t_ oder _5_ ergibt in der gesamten Codebasis viele Treffer
 
 [%notitle]
 === Suchbare Namen verwenden
@@ -240,26 +245,25 @@ for (int j=0; j < NUMBER_OF_TASKS; j++) {
 
 ----
 // Datentypen
-private String s_vorname;
-private Integer i_id;
+private String szVorname;
+private Integer nId;
 // Geltungsbereich
-private String pri_vorname;
-public Integer pub_id;
+private String pri_szVorname;
+public Integer pub_nId;
 ----
 
 [%notitle]
 === Codierung vermeiden
-* Codierung von Informationen in Namen war früher Pflicht
+* Codierung von Informationen in Namen von Variablen
 ** Datentyp oder Geltungsbereich
 ** Ungarische Notation
-** Sprachen, ohne Typprüfung im Compiler
 * Nachteile
 ** Änderungen müssen überall nachgezogen werden
 ** Präfixe und Suffixe werden bald vom Entwickler ignoriert
 
 === Methodennamen
 
-* Verben
+* Verben verwenden, z.B.
 ** `downloadEmailAttachments()`
 * nur ein Wort pro Konzept
 ** _fetch_, _retieve_, _get_ ... sind Synonyme
@@ -279,7 +283,6 @@ public Integer pub_id;
 [background-color="cornflowerblue"]
 [transition=convex]
 == Funktionen
-
 
 === Beispiel
 

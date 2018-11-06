@@ -1,9 +1,10 @@
 = Continuous Integration
 
-:imagesdir: ../images/10-continuous
+:imagesdir: ../images/11-continuous
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
+:source-highlighter: highlightjs
 
 [background-color="cornflowerblue"]
 [transition=convex]
@@ -34,6 +35,8 @@ keine Merge-Konflikte, keine Kompilier-Konflikte, aber die [.blue]#Tests# laufen
 
 [.left]
 HelloWorldApp.java
+
+[source, java]
 ----
 class HelloWorldApp {
     public static void main(String[] args) {
@@ -50,6 +53,8 @@ javac HelloWorldApp.java
 
 [.left]
 Ausführen
+
+[source, shell]
 ----
 java -cp . HelloWorldApp
 java -classpath . HelloWorldApp
@@ -59,6 +64,8 @@ java -classpath . HelloWorldApp
 
 [.left]
 HelloWorldApp.java
+
+[source, java]
 ----
 import org.apache.commons.lang3.StringUtils;
 class HelloWorldApp {
@@ -72,14 +79,18 @@ class HelloWorldApp {
 
 [.left]
 Kompilieren
+
+[source, shell]
 ----
-javac -cp lib/commons-lang.jar HelloWorldApp.java
+$ javac -cp lib/commons-lang.jar HelloWorldApp.java
 ----
 
 [.left]
 Ausführen
+
+[source, shell]
 ----
-java -cp lib/commons-lang.jar;. HelloWorldApp
+$ java -cp lib/commons-lang.jar;. HelloWorldApp
 ----
 
 [NOTE.speaker]
@@ -231,6 +242,8 @@ ____
 ____
 Continuous Delivery is a software development discipline where you build software in such a way that the software can be released to production at any time.
 ____
+
+=== Continuous Delivery
 
 [quote, David Farley]
 ____

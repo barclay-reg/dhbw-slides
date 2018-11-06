@@ -140,7 +140,7 @@ Zusammenfügen von zwei (oder mehr) Branches
 $ git checkout master        # Aktivieren des ‚Ziel‘-Branches
 $ git merge feature          # Startet merge von allen Commits auf
 $                            # Branch feature zu Branch master
-$ git merge –ff-only feature # Starte merge nur, wenn FF möglich ist
+$ git merge --ff-only feature # Starte merge nur, wenn FF möglich ist
 ----
 
 === Fast-Forward-Merge

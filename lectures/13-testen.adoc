@@ -1,6 +1,6 @@
 = Testen
 
-:imagesdir: ../images/12-testen
+:imagesdir: ../images/13-testen
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
@@ -73,13 +73,12 @@ Wie kommen wir zu unseren Testfällen?
 * Whitebox Tests
 ** durch Analyse der Codestruktur
 
-
 [state=complex]
 === Test Driven Development
 
 * Test First
 * Anforderungen werden sofort in Testfällen ausgedrückt
-* nur den Code schreiben, um Test zu bestehen
+* nur den Code schreiben, um Tests zu bestehen
 
 KISS:: Keep it simple, stupid
 YAGNI:: You aren't gonna need it

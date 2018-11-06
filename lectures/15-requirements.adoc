@@ -288,10 +288,3 @@ Andere Dokumente: Commit-Hostorie, Testplan, Testprotokoll
 * Datenflussdiagram [.small]#http://www.ritz-dv.de/beratungsangebot/systemanalyseabb.php#
 * Aktivitätsdiagram [.small]#https://de.wikipedia.org/wiki/Aktivitätsdiagramm#
 * Attributierung von Anforderungen "Basiswissen Requirements Engineering" - Pohl, Rupp
-
-
-
-
-
-
-
