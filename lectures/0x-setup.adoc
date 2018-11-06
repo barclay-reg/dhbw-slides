@@ -4,6 +4,7 @@
 :idprefix: slide_
 :revealjs_slideNumber:
 :revealjs_history:
+:source-highlighter: highlightjs
 
 === Ordner Erstellen
 
@@ -56,12 +57,14 @@ git config --global user.name "Mona Lisa"
 git config --global user.email "email@example.com"
 ----
 [.stretch]
+
+[source, shell]
 ----
-cd dhbw
-cd checkout
-git clone \
+$ cd dhbw
+$ cd checkout
+$ git clone \
  https://github.com/fn-tfe16-g<gruppe>/dhbw-painground.git
-git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
+$ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 ----
 
 

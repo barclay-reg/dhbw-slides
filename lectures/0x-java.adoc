@@ -3,6 +3,7 @@
 :idprefix: slide_
 :revealjs_slideNumber:
 :revealjs_history:
+:source-highlighter: highlightjs
 
 == Was ist Java
 
@@ -22,6 +23,7 @@ Erfunden von [.blue]#Sun#, gehört mittlerweile zu [.blue]#Oracle#
 
 Beispiel
 
+[source, java]
 ----
 String name = null;
 name = "Robert":
@@ -32,8 +34,9 @@ name.substring(2,5) // "ber"
 
 * Bestehende Datentypen und deren Methoden
 
-Beispiel
+Beispiel:
 
+[source, java]
 ----
 Integer.valueOf(...)
 String.join(...)
