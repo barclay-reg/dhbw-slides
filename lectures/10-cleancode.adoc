@@ -117,7 +117,7 @@ public List<int[]> getThem() {
 public List<int[]> getFlaggedCells() {
    List<int[]> flaggedCells = new ArrayList<int[]>();
    for (int[] cell : this.gameBoard)
-      if (cell[STATUS_VALUE == FLAGGED)
+      if (cell[STATUS_VALUE] == FLAGGED)
          flaggedCells.add(cell);
    return flaggedCells;
 }
@@ -234,7 +234,7 @@ int realDaysPerIdealDay = 4;
 const int WORK_DAYS_PER_WEEK = 5;
 int sum = 0;
 for (int j=0; j < NUMBER_OF_TASKS; j++) {
-   int realTaskDays = taslEstimate[j] * realDaysPerIdealDay;
+   int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
    int realTaskWeeks = (realTaskDays / WORK_DAYS_PER_WEEK);
    sum += realTaskWeeks;
 }
@@ -266,7 +266,7 @@ public Integer pub_nId;
 * Verben verwenden, z.B.
 ** `downloadEmailAttachments()`
 * nur ein Wort pro Konzept
-** _fetch_, _retieve_, _get_ ... sind Synonyme
+** _fetch_, _retrieve_, _get_ ... sind Synonyme
 
 === Domänen Namen
 
@@ -527,8 +527,8 @@ Evlt. is login nur möglich, wenn user nicht bereits eingeloggt ist ... (zeitlic
 ** etwas antworten
 
 ----
-public boolean set(String attribut, String value){
-   if (internalList.contains(attribut)) {
+public boolean set(String attribute, String value){
+   if (internalList.contains(attribute)) {
       internalList.set(attribute, value);
       return true;
    } else {
@@ -634,7 +634,7 @@ public void logError(Exception e) {...}
 
 ----
 // Check to see, if the employee is eligible for full benefits
-if ((employee.flaggs & HOURLY_FLAG) &&
+if ((employee.flags & HOURLY_FLAG) &&
    employee.age > 65)
    ...
 ----
