@@ -12,9 +12,20 @@
 
 === Integration
 
-Wenn mehrere Entwickler parallel an einem System arbeiten.
+Integration:: Zusammenfügen von mehreren Komponenten zu einer Software
 
-[.blue]#Wie kann die Software, die jeder separiert erstellt hat, miteinander integriert werden?#
+[%step]
+* [.blue]#FALSCH#: dann würde es eher _Continuous Assembly_ heißen
+
+=== Integration
+
+Integration:: Zusammenfügen der (lokalen) Entwicklung mehrerer Entwicklungszweige
+
+=== Integration
+
+Wenn mehrere Entwickler parallel am gleichen Code arbeiten:
+
+[.blue]#Wie stellen wir sicher, dass die Software, die bisher jeder nur lokal erstellt hat, auch funktioniert wenn alle Änderungen zusammenfließen?#
 
 === Problem Bereiche
 
@@ -108,7 +119,7 @@ Bei Ausführen unter UNIX: java -cp lib/commons-lang.jar:. HelloWorldApp
 [%step]
 * Woher kommt `commons-lang.jar`?
 * Welche Version von `commons-lang.jar` wird verwendet?
-* Wie viele Bibliotheken verwendet `dhbw-painground`?
+* Wie viele Bibliotheken verwendet `dhbw-painground` insgesamt?
 * Antwort: [.blue]#112#
 
 [background-color="cornflowerblue"]
@@ -188,10 +199,15 @@ IDE
 
 === Lösung: Automatisierung
 
+[%step]
 * Build-Tools
-** Ant | Maven | Gradle
+** Ant | Maven | Gradle | CMake
 * Continuous Integration
 ** Mindset
+* Continuous Integration Tools
+** Jenkins
+** Travis-CI
+** Team Foundation Server
 
 [background-color="cornflowerblue"]
 [transition=convex]
@@ -215,8 +231,11 @@ ____
 === Elemente
 
 [start=4]  
-. [.blue]#Tests# werden gleichzeitig entwicklt (als Code)
-. Wichtige Tests sollten [.blue]#immer# ausgeführt werden
+. [.blue]#Tests# werden gleichzeitig entwickelt (als Code)
+  * stehen ebenfalls unter Versionsverwaltung
+  * am besten im gleichen Repository wie der Code selbst
+. Wichtige Tests sollten [.blue]#bei jedem commit# ausgeführt werden
+  * andere wenigstens regelmäßig, z.B. nächtlich
 . eine [.blue]#produktionsnahe# Testumgebung steht immer bereit
 . Einfacher Zugriff auf Ergebnisse auch für [.blue]#Nicht-Entwickler#
 

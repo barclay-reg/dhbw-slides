@@ -4,10 +4,11 @@
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
+:source-highlighter: highlightjs
 
 [background-color="cornflowerblue"]
 [transition=convex]
-== Testarten
+== Arten von Tests
 
 === Unterscheidung
 
@@ -21,9 +22,9 @@
 [%step]
 . Unit Testing
   * _Modul_ wird [.blue]#isoliert# getestet
-  * eine Klasse oder 
-  * eine Gruppe zusammenhängender Klassen
-. Integration Testing
+    ** eine Klasse oder 
+    ** eine Gruppe zusammenhängender Klassen
+. Integrations Testing
   * _Service-Test_
   * Zusammenspiel mehrerer Module
   * z.B. Datenbank & Importer-Modul
@@ -31,9 +32,9 @@
 === Smoke Testing
 
 [%step]
-* Herkunft: Prüfen, dass das Gerät beim ersten Einschalten nicht brennt.
 * alle wesentlichen Funktionen kurz ausprobieren
-* *keine* Detail-Tests
+** *keine* Detail-Tests
+* Herkunft: Prüfen, dass das Gerät beim ersten Einschalten nicht brennt.
 
 === Exploratory Testing
 
@@ -48,12 +49,14 @@
 
 [%step]
 * Perspektive des [.blue]#Nutzers#
-  * Zusammenspiel aller Module
-* sehr umfangreiche Testumgebung
+  * Zusammenspiel [.blue]#aller# Module
+* ggf. sehr umfangreiche Testumgebung
 * Nachteile
 [%step]
 ** langsam; spätes Feedback
-** (meist) instabil
+** Schwer, zu Pflegen
+*** Folge: (meist) instabil
+** Schwer zu automatisieren
 ** gefundene Fehler sind schwer zu lokalisieren
 
 === Testpyramide
@@ -68,6 +71,7 @@ image::test-pyramid.png[]
 
 Wie kommen wir zu unseren Testfällen?
 
+[%step]
 * Blackbox Tests
 ** aus der Spezifikation/Anforderungen
 * Whitebox Tests
@@ -76,9 +80,10 @@ Wie kommen wir zu unseren Testfällen?
 [state=complex]
 === Test Driven Development
 
+[%step]
 * Test First
-* Anforderungen werden sofort in Testfällen ausgedrückt
-* nur den Code schreiben, um Tests zu bestehen
+* Anforderungen werden sofort/zuerst in Testfällen ausgedrückt
+* es muss nur der Code geschrieben werden, der nötig ist um die Tests zu bestehen
 
 KISS:: Keep it simple, stupid
 YAGNI:: You aren't gonna need it
@@ -93,7 +98,7 @@ image::TDD_Global_Lifecycle.png[background]
 
 [%step]
 * Vorteile
-  . Code beschreibt sich selbst
+  . TestCode beschreibt den getesteten Code selbst
   . fördert kleine Module
   . fördert [.blue]#testbare# Software
   . Code-Design wird modularer, flexibler
@@ -105,9 +110,12 @@ image::TDD_Global_Lifecycle.png[background]
 === Testabdeckung
 
 [.left]
+Wie viele Testfälle müssen geschrieben werden?
+
 C0:: Durchlauf jeder Anweisung
 C1:: Durchlauf jedes Zweiges, auch der leeren
 
+[source, java]
 ----
 int z = x;
 if (y > x) {
@@ -118,16 +126,19 @@ z = z * 2;
 
 [NOTE.speaker]
 --
-C0: ein Testfalle reicht aus
+C0: ein Testfall reicht aus
 C0: zwei Testfälle
 --
 
 === Testabdeckung
 
 [.left]
-C2:: Durchlauf aller möglichen Pfade 
-C3:: Durchlauf mit allen möglichen Bedingungen
+Wie viele Testfälle müssen geschrieben werden?
 
+C2:: Durchlauf aller möglichen Pfade;
+Schwierig bei Schleifen
+
+[source, java]
 ----
 if (y > x) {
    z = y;
@@ -143,16 +154,66 @@ if (x == 2 | y == 2 ) {
 
 [NOTE.speaker]
 --
-C0: zwei Testfälle
-C1: zwei Testfälle
-C2: vier Testfälle
-C3: vier Testfälle
+C0: zwei Testfälle x,y: 1,2 3,1
+C1: zwei Testfälle x,y: 1,2 3,1
+C2: vier Testfälle x,y: 1,2 3,2 3,1 1,3
 --
 
 === Testabdeckung
 
+[.left]
+Wie viele Testfälle müssen geschrieben werden?
+
+C3:: Durchlauf mit allen möglichen Bedingungen
+
+C3a:: Jede atomare Bedingung einer Entscheidung muss einmal mit true und einmal mit false getestet werden.
+
+C3b:: Alle Kombinationen der atomare Bedingung einer Entscheidung müssen getestet werden.
+
+=== Testabdeckung
+
+[.left]
+Wie viele Testfälle müssen geschrieben werden?
+
+C3a:: Jede atomare Bedingung einer Entscheidung muss einmal mit true und einmal mit false getestet werden.
+
+[source, java]
+----
+if (x == 2 | y == 2 ) {
+   z = z * 2;
+} else {
+   z = z * 4;
+}
+----
+
+[%step]
+* zwei Testfälle x,y: 1,1 2,2
+
+
+=== Testabdeckung
+
+[.left]
+Wie viele Testfälle müssen geschrieben werden?
+
+C3b:: Alle Kombinationen der atomare Bedingung einer Entscheidung müssen getestet werden.
+
+[source, java]
+----
+if (x == 2 | y == 2 ) {
+   z = z * 2;
+} else {
+   z = z * 4;
+}
+----
+
+[%step]
+* vier Testfälle x,y: 1,2 3,2 3,1 1,3
+
+=== Testabdeckung
+
+[%step]
 * 100% Coverage kein gutes Ziel
-* Messen allein reicht nicht aus
+* Coverage allein reicht nicht aus
 ** Tests müssen den Rückgabewert verifizieren
 
 === Quellen
