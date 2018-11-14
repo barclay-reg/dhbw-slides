@@ -4,6 +4,7 @@
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
+:source-highlighter: highlightjs
 
 
 [background-color="cornflowerblue"]
@@ -58,6 +59,8 @@ ____
 
 [.left] 
 Vorher
+
+[source, java]
 ----
 public String getFullName(String s1, String s2) {
    
@@ -70,6 +73,8 @@ public String getFullName(String s1, String s2) {
 
 [.left] 
 Nachher
+
+[source, java]
 ----
 public String getFullName(String vorname, String nachname) {
    
