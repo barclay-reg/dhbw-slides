@@ -127,7 +127,7 @@ z = z * 2;
 [NOTE.speaker]
 --
 C0: ein Testfall reicht aus
-C0: zwei Testfälle
+C1: zwei Testfälle
 --
 
 === Testabdeckung
@@ -207,7 +207,7 @@ if (x == 2 | y == 2 ) {
 ----
 
 [%step]
-* vier Testfälle x,y: 1,2 3,2 3,1 1,3
+* vier Testfälle x,y: 1,2 3,2 3,1 2,2
 
 === Testabdeckung
 
