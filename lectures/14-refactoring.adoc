@@ -46,7 +46,7 @@ ____
 
 [%step]
 * (automatisierte) Tests
-* IDE mit Support für [.blue]#Mirko-Refactorings#
+* IDE mit Support für [.blue]#Mikro-Refactorings#
 * Typsystem der Programmiersprache
   . strenge Typisierung
   . dynamische Typisierung
@@ -102,7 +102,7 @@ Vorher
 public class Order {
    
    String customer;
-   List<Item> itmes;
+   List<Item> items;
 }
 ----
 
@@ -112,7 +112,7 @@ Nachher
 public class Order {
    
    Customer customer;
-   List<Item> itmes;
+   List<Item> items;
 }
 
 public class Customer {
