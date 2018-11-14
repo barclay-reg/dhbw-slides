@@ -21,7 +21,7 @@ Doppelbedeutung [.blue]#merge#
 * Beides wird mit `git merge` gemacht
 * Begriff: [.blue]#gemeinsamer Vorfahr# (most recent common ancestor) Commit
 ** `git merge-base` Befehl hilft dabei
-Falls automatische Konflikauflösung nicht funktioniert, muss der User eingreifen
+* Falls automatische Konflikauflösung nicht funktioniert, muss der User eingreifen
 
 === Dateikonflikte
 
