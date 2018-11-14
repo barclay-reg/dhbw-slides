@@ -46,7 +46,7 @@ commit:: Übertragen einer Version von der [.blue]#Workcopy# in das [.blue]#Repo
 [%notitle]
 === Begriffe
 
-Branch:: Parallel entwicklete Version
+Branch:: Parallel entwickelte Version
 
 image::basic_branching_vcs_svn.jpg[]
 
@@ -396,6 +396,6 @@ $ git config --global alias.hist "log --pretty=format:'%C(yellow)[%ad]%C(reset) 
 
 === Kommandozeile
 
-* `cd ordern1` -> Wechsel in des Unterverzeichnis _ordner1_
+* `cd ordner1` -> Wechsel in des Unterverzeichnis _ordner1_
 * `cd ..` -> Wechsel in das nächsthöhere Verzeichnis
-* `mkdir ordern2` -> Erstellen eines neuen Unterverzeichnisses
+* `mkdir ordner2` -> Erstellen eines neuen Unterverzeichnisses
