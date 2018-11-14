@@ -38,6 +38,11 @@ keine Merge-Konflikte, aber die [.blue]#merged# Codebasis kompiliert nicht
 Test-Konflikte::
 keine Merge-Konflikte, keine Kompilier-Konflikte, aber die [.blue]#Tests# laufen nicht mehr erfolgreich
 
+=== Integration
+
+Integration::
+Code-Basis zweier Entwickler ineinander [.lightgreen]#integrieren# um alle Arten von Konfliken zu identifizieren.
+
 [background-color="cornflowerblue"]
 [transition=convex]
 == Automatisierungs Probleme
@@ -247,6 +252,12 @@ image::zehner-10er-regel-der-fehlerkosten.png[]
 ____
 Continuous Integration doesn’t get rid of bugs, but it does make them dramatically easier to find and remove.
 ____
+
+=== Vorteile
+
+Continuous Integration::
+regelmäßiges Kompilieren, Verpacken, Testen, Bereitstellen einer Software
+
 
 === Vorteile
 
