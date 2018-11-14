@@ -14,9 +14,12 @@
 * https://barclay-reg.github.io/dhbw-slides/lectures/09-aufgaben-4.html#/[09-aufgaben-4 - Aufgaben für den 4. Praxisteil]
 * https://barclay-reg.github.io/dhbw-slides/lectures/10-cleancode.html#/[10-cleancode - Clean Code]
 * https://barclay-reg.github.io/dhbw-slides/lectures/11-continuous.html#/[11-continuous - Continuous Integration|Delivery]
+* https://barclay-reg.github.io/dhbw-slides/lectures/13-testen.html#/[13-testen - Testen]
+* https://barclay-reg.github.io/dhbw-slides/lectures/14-refactoring.html#/[14-refactoring - Refactoring]
 * https://barclay-reg.github.io/dhbw-slides/lectures/0x-java.html#/[0x-java - Java Introduction]
 * https://barclay-reg.github.io/dhbw-slides/lectures/0x-setup.html#/[0x-setup - Project Setup]
 * https://barclay-reg.github.io/dhbw-slides/lectures/12-aufgaben-5.html#/[12-aufgaben-5 - Aufgaben für den 5. Praxisteil]
+
 //* https://barclay-reg.github.io/dhbw-slides/lectures/05-painground.html#/[05-painground - User Stories]
 //* https://barclay-reg.github.io/dhbw-slides/lectures/06-aufgaben-2.html#/[06-aufgaben-2 - Aufgaben für den 2. Praxisteil]
 //* https://barclay-reg.github.io/dhbw-slides/lectures/07-vcs2.html#/[07-vcs2 - VersionControlSystems - Vertiefung]
