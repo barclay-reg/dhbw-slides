@@ -13,7 +13,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 }</code></pre></div></div></section><section id="slide_zweckbeschreibende_namen_2"><div class="ulist"><ul><li><p>Kontext geht nicht aus dem Code hervor</p></li><li><p>Code ist implizit, sollte aber explizit sein</p></li></ul></div></section><section id="slide_zweckbeschreibende_namen_3"><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="java language-java">public List&lt;int[]&gt; getFlaggedCells() {
    List&lt;int[]&gt; flaggedCells = new ArrayList&lt;int[]&gt;();
    for (int[] cell : this.gameBoard)
-      if (cell[STATUS_VALUE == FLAGGED)
+      if (cell[STATUS_VALUE] == FLAGGED)
          flaggedCells.add(cell);
    return flaggedCells;
 }</code></pre></div></div>
@@ -52,7 +52,7 @@ for (int j=0; j&lt;34; j++) {
 const int WORK_DAYS_PER_WEEK = 5;
 int sum = 0;
 for (int j=0; j &lt; NUMBER_OF_TASKS; j++) {
-   int realTaskDays = taslEstimate[j] * realDaysPerIdealDay;
+   int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
    int realTaskWeeks = (realTaskDays / WORK_DAYS_PER_WEEK);
    sum += realTaskWeeks;
 }</code></pre></div></div></section><section id="slide_codierungen_vermeiden"><h2>Codierungen vermeiden</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape>// Datentypen
@@ -60,7 +60,7 @@ private String szVorname;
 private Integer nId;
 // Geltungsbereich
 private String pri_szVorname;
-public Integer pub_nId;</code></pre></div></div></section><section id="slide_codierung_vermeiden"><div class="ulist"><ul><li><p>Codierung von Informationen in Namen von Variablen</p><div class="ulist"><ul><li><p>Datentyp oder Geltungsbereich</p></li><li><p>Ungarische Notation</p></li></ul></div></li><li><p>Nachteile</p><div class="ulist"><ul><li><p>Änderungen müssen überall nachgezogen werden</p></li><li><p>Präfixe und Suffixe werden bald vom Entwickler ignoriert</p></li></ul></div></li></ul></div></section><section id="slide_methodennamen"><h2>Methodennamen</h2><div class="ulist"><ul><li><p>Verben verwenden, z.B.</p><div class="ulist"><ul><li><p><code>downloadEmailAttachments()</code></p></li></ul></div></li><li><p>nur ein Wort pro Konzept</p><div class="ulist"><ul><li><p><em>fetch</em>, <em>retieve</em>, <em>get</em> &#8230;&#8203; sind Synonyme</p></li></ul></div></li></ul></div></section><section id="slide_domnen_namen"><h2>Domänen Namen</h2><div class="ulist step"><ul><li class="fragment"><p>Problemdomäne</p><div class="ulist"><ul><li><p>Begriffe/Konzepte des Bereichs, für den die Software bestimmt ist</p></li><li><p>z.B. <span class="blue"><code>BeneficialOwner</code></span></p><div class="ulist"><ul><li><p>Bezug auf wirtschaftlich Berechtigten eines Bankkontos</p></li></ul></div></li></ul></div></li><li class="fragment"><p>Lösungsdomäne</p><div class="ulist"><ul><li><p>Begriffe/Konzepte der Informatik, Algorithmen, Pattern</p></li><li><p>z.B. <span class="blue"><code>AccountVisitor</code></span></p><div class="ulist"><ul><li><p>Bezug auf Visitor-Pattern</p></li></ul></div></li></ul></div></li></ul></div></section></section>
+public Integer pub_nId;</code></pre></div></div></section><section id="slide_codierung_vermeiden"><div class="ulist"><ul><li><p>Codierung von Informationen in Namen von Variablen</p><div class="ulist"><ul><li><p>Datentyp oder Geltungsbereich</p></li><li><p>Ungarische Notation</p></li></ul></div></li><li><p>Nachteile</p><div class="ulist"><ul><li><p>Änderungen müssen überall nachgezogen werden</p></li><li><p>Präfixe und Suffixe werden bald vom Entwickler ignoriert</p></li></ul></div></li></ul></div></section><section id="slide_methodennamen"><h2>Methodennamen</h2><div class="ulist"><ul><li><p>Verben verwenden, z.B.</p><div class="ulist"><ul><li><p><code>downloadEmailAttachments()</code></p></li></ul></div></li><li><p>nur ein Wort pro Konzept</p><div class="ulist"><ul><li><p><em>fetch</em>, <em>retrieve</em>, <em>get</em> &#8230;&#8203; sind Synonyme</p></li></ul></div></li></ul></div></section><section id="slide_domnen_namen"><h2>Domänen Namen</h2><div class="ulist step"><ul><li class="fragment"><p>Problemdomäne</p><div class="ulist"><ul><li><p>Begriffe/Konzepte des Bereichs, für den die Software bestimmt ist</p></li><li><p>z.B. <span class="blue"><code>BeneficialOwner</code></span></p><div class="ulist"><ul><li><p>Bezug auf wirtschaftlich Berechtigten eines Bankkontos</p></li></ul></div></li></ul></div></li><li class="fragment"><p>Lösungsdomäne</p><div class="ulist"><ul><li><p>Begriffe/Konzepte der Informatik, Algorithmen, Pattern</p></li><li><p>z.B. <span class="blue"><code>AccountVisitor</code></span></p><div class="ulist"><ul><li><p>Bezug auf Visitor-Pattern</p></li></ul></div></li></ul></div></li></ul></div></section></section>
 <section><section id="slide_funktionen" data-transition="convex" data-background-color="cornflowerblue"><h2>Funktionen</h2></section><section id="slide_beispiel"><h2>Beispiel</h2><div class="paragraph"><p><a href="https://github.com/ludwiggj/CleanCode/blob/master/src/clean/code/chapter03/HtmlUnit.java">HtmlUtil.java</a>
 <a href="https://github.com/ludwiggj/CleanCode/blob/master/src/clean/code/chapter03/SetupTeardownIncluder.java">SetupTeardownIncluder.java</a></p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape>public class HtmlUnit {
@@ -159,8 +159,8 @@ class Assert {
 }</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>Application.loginUser(user) wird hier nicht erwartet.
 Evlt. is login nur möglich, wenn user nicht bereits eingeloggt ist &#8230;&#8203; (zeitliche Kopplung)</p></div></aside></section><section id="slide_anweisung_oder_abfrage"><h2>Anweisung oder Abfrage</h2><div class="ulist"><ul><li><p>Funktion sollte entweder</p><div class="ulist"><ul><li><p>etwas tun, oder</p></li><li><p>etwas antworten</p></li></ul></div></li></ul></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape>public boolean set(String attribut, String value){
-   if (internalList.contains(attribut)) {
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape>public boolean set(String attribute, String value){
+   if (internalList.contains(attribute)) {
       internalList.set(attribute, value);
       return true;
    } else {
@@ -206,7 +206,7 @@ public void deletePageAndAllReferences(Page page) {...}
 public void logError(Exception e) {...}</code></pre></div></div></section><section id="slide_dont_repeat_yourself"><h2>Don&#8217;t Repeat Yourself</h2><div class="ulist"><ul><li><p>Viele Innovationen der Software-Entwicklung haben nur ein Ziel</p><div class="ulist"><ul><li><p>Duplizierung zu vermeiden</p></li><li><p>Wiederverwendung fördern</p></li></ul></div></li><li><p>Duplikate könnten bei einem Umbau vergessen werden</p></li><li><p>Beispiel</p><div class="ulist"><ul><li><p><a href="https://github.com/ludwiggj/CleanCode/blob/master/src/clean/code/chapter03/HtmlUnit.java">HtmlUtil.java</a></p></li></ul></div></li></ul></div></section></section>
 <section><section id="slide_kommentare" data-transition="convex" data-background-color="cornflowerblue"><h2>Kommentare</h2></section><section id="slide_ber_kommentare"><h2>Über Kommentare</h2><div class="ulist"><ul><li><p>Kommentare sind kein Ersatz für schlechten Code</p></li><li><p>Kommentare vermeiden durch <span class="blue">selbsterklärenden</span> Code</p></li></ul></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape>// Check to see, if the employee is eligible for full benefits
-if ((employee.flaggs &amp; HOURLY_FLAG) &amp;&amp;
+if ((employee.flags &amp; HOURLY_FLAG) &amp;&amp;
    employee.age &gt; 65)
    ...</code></pre></div></div>
 <div class="paragraph"><p>Alternative</p></div>
