@@ -180,7 +180,7 @@ Eine weitere Darstellung (verkürzt) von zwei Branches, die auseinandergelaufen 
 . Leichtgewichtiger Tag
 ** == Referenz (genau wie ein Branch)
 . Annotated Tag
-** eigener Objekt-Typ im Git Datenmodel
+** eigener Objekt-Typ im Git Datenmodell
 *** enthält
 *** SHA eines Commits
 *** Datum & Author
