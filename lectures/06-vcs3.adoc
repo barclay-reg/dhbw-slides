@@ -17,8 +17,9 @@ Doppelbedeutung [.blue]#merge#
 . Zusammenfügen von zwei (oder mehr) Branches 
 ** alle Änderungen des einen Branches werden auf den andern Branch übertragen
 
+_
 
-* Beides wird mit `git merge` gemacht
+* Beides wird mit `git merge` angestoßen
 * Begriff: [.blue]#gemeinsamer Vorfahr# (most recent common ancestor) Commit
 ** `git merge-base` Befehl hilft dabei
 * Falls automatische Konflikauflösung nicht funktioniert, muss der User eingreifen
