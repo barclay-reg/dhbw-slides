@@ -545,6 +545,15 @@ $ bundle --path=.bundle/gems --binstubs=.bundle/.bin</pre>
 </div>
 </div>
 <div class="sect3">
+<h4 id="_setup_pdf_processing">Setup PDF processing</h4>
+<div class="listingblock">
+<div class="content">
+<pre>$ npm install -g decktape
+$ brew install ghostscript</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_clone_this_repo">Clone this repo</h4>
 <div class="listingblock">
 <div class="content">
@@ -563,10 +572,8 @@ $ bundle --path=.bundle/gems --binstubs=.bundle/.bin</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>bundle exec asciidoctor-revealjs -D output/\
-       -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0\
-       -a customcss=../styles.css\
-        */*.adoc</pre>
+<pre>$ ./build-slides.sh
+$ ./build-slides.sh -makePdfs</pre>
 </div>
 </div>
 </div>
@@ -576,7 +583,7 @@ $ bundle --path=.bundle/gems --binstubs=.bundle/.bin</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-25 17:43:02 UTC
+Last updated 2018-12-08 17:19:22 UTC
 </div>
 </div>
 </body>

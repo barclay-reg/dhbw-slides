@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Aufgaben 2</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Aufgaben 2</h1></section><section id="slide_ziel" data-state="complex"><h2>Ziel</h2><div class="ulist"><ul><li><p>Sicherer Umgang mit den Befehlen:</p><div class="ulist"><ul><li><p><code>git branch</code></p></li><li><p><code>git checkout</code></p></li><li><p><code>git reset</code></p></li><li><p><code>git stash</code></p></li></ul></div></li><li><p>Zusatzbefehle</p><div class="ulist"><ul><li><p><code>git reflog</code></p></li></ul></div></li></ul></div></section>
+<section><section id="slide_aufgabe"><h2>Aufgabe</h2></section><section id="slide_bungen_branch_12"><h2>Übungen  Branch 1/2</h2><div class="olist arabic"><ol class="arabic"><li><p>Erzeuge einen neuen Branch ohne diesen zu aktivieren</p></li><li><p>Erzeuge zwei neue Commits auf den Branch <code>master</code></p></li><li><p>Aktiviere den Branch aus Schritt 1</p></li><li><p>Erzeuge zwei neue Commits auf den Branch aus Schritt 1</p></li><li><p>Sieh dir mit den Graph der beiden Branches an</p><div class="ulist"><ul><li><p>mit <code>git log</code>, <code>git hist</code>, <code>gitk</code> oder Sourcetree</p></li></ul></div></li></ol></div></section><section id="slide_bungen_branch_22"><h2>Übungen  Branch 2/2</h2><div class="olist arabic"><ol class="arabic" start="6"><li><p>Ändere den Branch aus Schritt 1, sodass er auf den gleichen Commit wie "master" zeigt</p></li><li><p>lösche den Branch aus Schritt 1</p></li><li><p>Versuche dir mit Hilfe des Reflogs einen neuen Branch zu erstellen, der wieder die beiden Commits enthält, die auf dem soeben gelöschten Branch waren</p></li></ol></div></section><section id="slide_bungen_tag"><h2>Übungen Tag</h2><div class="olist arabic"><ol class="arabic"><li><p>Erzeuge zwei Branches, auf jedem Branch drei Commits</p></li><li><p>Erzeuge zwei Tags, die jeweils auf den zweiten Commit eines der Branches zeigen</p><div class="ulist"><ul><li><p>Erzeuge beide Arten von Tags</p></li></ul></div></li></ol></div></section><section id="slide_bungen_stash"><h2>Übungen Stash</h2><div class="olist arabic"><ol class="arabic"><li><p>Erzeuge einen neuen Branch und aktiviere ihn sofort</p></li><li><p>Mache Änderungen in deinem Workspace</p></li><li><p>Füge die Änderungen zum Index hinzu</p></li><li><p>Stashe alle beiden Änderungen</p></li><li><p>Wechsle in den Branch master</p></li><li><p>Änderere hier Dateien und erstelle einen neuen Commit</p></li><li><p>Wechsle zurück auf den Branch aus Schritt 8</p></li><li><p>Hole deine Änderungen aus dem Stash und commite diese auf dem aktuellen Branch</p></li></ol></div></section><section id="slide_bungen_zusatz"><h2>Übungen Zusatz</h2><div class="olist arabic"><ol class="arabic"><li><p>Erstelle drei Commits auf <code>master</code></p></li><li><p>Erzeuge dann einen neuen Branch</p></li><li><p>Erzeuge drei weitere Commits auf diesem neuen Branch</p></li><li><p>Finde den korrekten <code>git log</code> Befehl, der alle Commits des neuen Branches auflistet, die nicht gleichzeitig auf dem Branch <code>master</code> enthalten sind</p></li></ol></div></section></section>
+<section id="slide_hilfen"><h2>Hilfen</h2><div class="ulist"><ul><li><p><a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell" class="bare">https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell</a></p></li><li><p><a href="https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning" class="bare">https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning</a></p></li><li><p><a href="https://www.atlassian.com/git/tutorials/using-branches" class="bare">https://www.atlassian.com/git/tutorials/using-branches</a></p></li></ul></div></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'white',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>

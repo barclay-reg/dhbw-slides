@@ -66,6 +66,13 @@ $ bundle config --local github.https true
 $ bundle --path=.bundle/gems --binstubs=.bundle/.bin
 ----
 
+==== Setup PDF processing
+
+----
+$ npm install -g decktape
+$ brew install ghostscript
+----
+
 ==== Clone this repo
 ----
 $ git clone https://github.com/barclay-reg/dhbw-slides.git
@@ -74,10 +81,8 @@ $ git clone https://github.com/barclay-reg/dhbw-slides.git
 
 * using http://asciidoctor.org/docs/asciidoctor-revealjs/[Asciidoctor Reveal.js]
 ----
-bundle exec asciidoctor-revealjs -D output/\
-       -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0\
-       -a customcss=../styles.css\
-        */*.adoc
+$ ./build-slides.sh
+$ ./build-slides.sh -makePdfs
 ----
 
 

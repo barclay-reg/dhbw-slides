@@ -1,17 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Tipps</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Robert Kleinschmager</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
 link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
-document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Tipps</h1></section><section><section id="slide_git"><h2>Git</h2></section><section id="slide_editor_fr_commit_nachrichten"><h2>Editor für Commit-Nachrichten</h2><div class="ulist"><ul><li><p>Windows &amp; Notepad++</p><div class="ulist"><ul><li><p><em>erspart</em> Editor in der Konsole</p></li><li><p>bei <code>git commit</code> kann das <span class="blue">-m</span> nun weggelassen werden</p></li></ul></div></li></ul></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code>$ git config --global core.editor 'C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin</code></pre></div></div></section><section id="slide_lsungen"><h2>Lösungen</h2><div class="paragraph"><p>für Aufgabe <span class="blue">bringt euer Remote-Repo auf den neuesten Stand</span></p></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code>$ git fetch upstream
-$ git merge upstream/master
-$ git push</code></pre></div></div></section><section id="slide_lsungen_2"><h2>Lösungen</h2><div class="paragraph"><p>falls das <span class="blue">mergen</span> nicht automatisch funktioniert</p></div>
-<div class="ulist"><ul><li><p>Datei manuell bearbeiten, danach</p></li></ul></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code>$ git add &lt;dateiname&gt;
-$ git commit -m "&lt;informative nachricht&gt;"</code></pre></div></div>
-<div class="ulist"><ul><li><p>Hilfe: <a href="http://genomewiki.ucsc.edu/index.php/Resolving_merge_conflicts_in_Git" class="bare">http://genomewiki.ucsc.edu/index.php/Resolving_merge_conflicts_in_Git</a></p></li></ul></div></section></section>
-<section id="slide_eclipse"><h2>Eclipse</h2><div class="ulist"><ul><li><p>Suche nach Dateien</p><div class="ulist"><ul><li><p><code>strg-shift-r</code> (Windows, Linux)</p></li><li><p><code>command-shift-r</code> (Mac)</p></li></ul></div></li></ul></div></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Robert Kleinschmager</h1></section><section id="slide_robert"><div class="ulist"><ul><li><p>Dipl. Ing. (BA) - <span class="blue">2004</span></p></li><li><p>Developer, Projektleiter, Berater</p></li><li><p>Folien
+<a href="https://github.com/barclay-reg/dhbw-slides" class="bare">https://github.com/barclay-reg/dhbw-slides</a></p></li></ul></div></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
   controls: true,
@@ -66,7 +58,7 @@ Reveal.initialize({
   previewLinks: false,
   // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
   // NOTE setting the theme in the config no longer works in reveal.js 3.x
-  //theme: Reveal.getQueryHash().theme || 'black',
+  //theme: Reveal.getQueryHash().theme || 'white',
   // Transition style (e.g., none, fade, slide, convex, concave, zoom)
   transition: Reveal.getQueryHash().transition || 'slide',
   // Transition speed (e.g., default, fast, slow)

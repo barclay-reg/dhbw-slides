@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Java</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Java</h1></section><section><section id="slide_was_ist_java"><h2>Was ist Java</h2><div class="dlist"><dl><dt class="hdlist1">Java == JVM </dt><dd><p>Laufzeitumgebung, API</p></dd><dt class="hdlist1">Java == Sprache </dt><dd><p>Die Programmiersprache</p></dd></dl></div><div class="paragraph"><p>Erfunden von <span class="blue">Sun</span>, gehört mittlerweile zu <span class="blue">Oracle</span></p></div></section><section id="slide_java_die_sprache"><h2>Java, die Sprache</h2><div class="ulist"><ul><li><p>Syntax des Codes</p></li><li><p>Klammern, Semikolon, Methodenaufrufen, Klassendefinition, &#8230;&#8203;</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape>&lt;Object-Instanz&gt;.&lt;methode&gt;(&lt;MethodenSignatur&gt;)
+// kommentar</code></pre></div></div>
+<div class="paragraph"><p>Beispiel</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="java language-java">String name = null;
+name = "Robert":
+name.substring(2,5) // "ber"</code></pre></div></div></section><section id="slide_java_die_api"><h2>Java die API</h2><div class="ulist"><ul><li><p>Bestehende Datentypen und deren Methoden</p></li></ul></div>
+<div class="paragraph"><p>Beispiel:</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="java language-java">Integer.valueOf(...)
+String.join(...)
+List.addAll(...)</code></pre></div></div>
+<div class="paragraph"><p>siehe auch:</p></div>
+<div class="ulist"><ul><li><p><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">https://docs.oracle.com/&#8230;&#8203;/api/../String.html</a></p></li><li><p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">https://docs.oracle.com/&#8230;&#8203;/api/&#8230;&#8203;/ArrayList.html</a></p></li></ul></div></section></section>
+<section id="slide_tutorials"><h2>Tutorials</h2><div class="dlist"><dl><dt class="hdlist1">Allgemein </dt><dd><p><a href="http://docs.oracle.com/javase/tutorial/index.html" class="bare">http://docs.oracle.com/javase/tutorial/index.html</a></p></dd><dt class="hdlist1">Für uns </dt><dd><p><a href="http://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html">http://docs.oracle.com/javase/&#8230;&#8203;/win32.html</a></p></dd></dl></div></section>
+<section id="slide_aufgabe"><h2>Aufgabe</h2><div class="olist arabic"><ol class="arabic"><li><p>Tutorial so durchführen, wie beschrieben</p></li><li><p>Tutorial in Eclipse wiederholen</p><div class="olist loweralpha"><ol class="loweralpha" type="a"><li><p>Neues Java Projekt</p></li><li><p>Neue Klasse</p></li><li><p>Inhalt einfügen</p></li><li><p>Rechtsklick &#8230;&#8203; Ausführen als <em>Java Applikation</em></p><div class="ulist"><ul><li><p>Launcher ansehen</p></li></ul></div></li></ol></div></li></ol></div></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'white',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>

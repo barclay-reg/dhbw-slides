@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>VCS 4</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>VCS 4</h1></section><section><section id="slide_remotes"><h2>Remotes</h2></section><section id="slide_einfhrung_remotes"><div class="dlist"><dl><dt class="hdlist1">GIT </dt><dd><p>Stupid Content Tracker, effizienter Objekt-Speicher mit der Fähigkeit zwei Objektspeicher miteinander zu Synchronisieren.</p></dd></dl></div></section><section id="slide_einfhrung_remotes_2"><div class="paragraph"><p>Synchronsation bei Daten == Replikation</p></div>
+<hr>
+<div class="paragraph"><p>Synchronistion der Git-Objekte == Replikation aller Git-Objekte</p></div></section><section id="slide_remotes_2"><h2>Remotes</h2><div class="ulist"><ul><li><p>Das letzte verbliebene Element in der Liste der Git-Objekte</p></li><li><p>Ein lokales Repository mit vielen verschiedenen Remote Repositories verbunden sein</p></li><li><p>wenn Repo durch <code>git clone</code> entstanden ist, gibt es genau ein Remote mit dem Namen <span class="blue"><code>origin</code></span></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Zeigt alle konfigurierten Remotes an
+$ git remote -v
+origin   https://github.com/barclay-reg/dhbw-slides.git (fetch)
+origin   https://github.com/barclay-reg/dhbw-slides.git (push)</code></pre></div></div></section><section id="slide_branches_synchronisieren"><h2>Branches Synchronisieren</h2><div class="ulist"><ul><li><p>Sync bei GIT-Objekten relativ einfach</p></li><li><p>Sync bei Referenzen etwas komplexer</p><div class="ulist"><ul><li><p>Problem: Referenz wurde auf beiden Seiten verändert</p></li><li><p>Lösung:</p><div class="ulist"><ul><li><p>Speichern aller lokalen und remote Referenzen</p></li><li><p>Speichern der Verbindung zwischen lokaler und remote Referenz</p></li></ul></div></li></ul></div></li></ul></div></section><section id="slide_remote_referenzen"><h2>Remote Referenzen</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Auflistung aller Dateien im Ordner .git/refs
+$ find .git/refs
+.git/refs
+.git/refs/heads
+.git/refs/heads/master
+.git/refs/heads/my-branch-1
+.git/refs/tags
+.git/refs/tags/test-tag-0
+.git/refs/tags/test-tag-1
+.git/refs/remotes
+.git/refs/remotes/origin
+.git/refs/remotes/origin/master
+.git/refs/remotes/origin/other-branch-2</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>unter refs/remotes wird der Stand eines Branch-Zeigers auf Remote abgelegt</p><div class="ulist"><ul><li><p>diese Zeiger können lokal nicht verändert werden</p></li></ul></div></li><li><p>Branch my-branch-1 existiert nur bei mir loka</p></li><li><p>Brnach other-branch-2 existiert nur bei origin</p></li></ul></div></aside></section><section id="slide_remote_tracking_branches"><h2>Remote Tracking Branches</h2><div class="ulist"><ul><li><p>Name der remote Branches setzt sich aus dem Namen des Remote Repository plus dem Namen des Branches zusammen</p><div class="ulist"><ul><li><p>z.B. <code>origin/feature-1</code></p></li></ul></div></li><li><p>Wenn ein lokaler Branch mit einem remote Branch verbunden ist, dann spricht man von einem sog.: Remote-Tracking-Branch</p><div class="ulist"><ul><li><p>manchmal auch von <em>Upstream</em> Branch</p></li><li><p>der Branch <span class="blue"><code>origin/master</code></span> wird von <span class="lightgreen"><code>master</code></span> getracked</p></li></ul></div></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Dies sind die Vorraussetzungen, damit Git eine Synchronisierung durchführen kann</p></li></ul></div></aside></section><section id="slide_kommandos"><h2>Kommandos</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Zeigt alle Remote Branches an
+$ git branch –r
+origin/master
+origin/feature-1
+## Legt neuen Branch an, der origin/feature-1 trackt
+$ git branch feature-1 origin/feature-1
+## Shortcut, legt automatisch lokalen Branch an, falls ein
+## Branch `origin/feature-1` existiert
+$ git checkout feature-1
+## Definiert für den aktuellen lokalen Branch dem
+## Namen des Remote Branches
+$ git branch --set-upstream-to origin/neues-feature</code></pre></div></div></section></section>
+<section><section id="slide_arbeiten_mit_remotes"><h2>Arbeiten mit Remotes</h2></section><section id="slide_transportwege"><h2>Transportwege</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/git-transport.png" alt="git transport" height="100%"></div></section><section id="slide_fetch_und_pull"><h2>Fetch und Pull</h2><div class="ulist"><ul><li><p><code>git fetch</code></p><div class="ulist"><ul><li><p>Holt alle Commits von den remote Repository(ies)</p></li><li><p>keine Änderung an der Workcopy</p></li><li><p>oft ist danach ein Merge notwendig (3WM oder FF)</p></li></ul></div></li><li><p><code>git pull</code></p><div class="ulist"><ul><li><p>Shortcut für <code>git fetch</code> &amp; <code>git merge</code></p></li></ul></div></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## ohne die Angabe von `origin` werden alle Remotes abgefragt
+$ git fetch origin
+## merge des Remote-Branches auf den aktuellen lokalen Branch
+$ git merge origin/master
+## Shortcut für die beiden oberen Befehle
+## auch hier kann `origin` weggelassen werden
+$ git pull origin</code></pre></div></div></section><section id="slide_fetch_und_pull_2"><h2>Fetch und Pull</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/git-fetch-before.png" alt="git fetch before" height="100%"></div></section><section id="slide_fetch_und_pull_3" data-transition="fade"><h2>Fetch und Pull</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/git-fetch-after.png" alt="git fetch after" height="100%"></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Alle commits der beiden Remote Branches wurden übertragen. Auch die Branchzeiger wurden übertragen, aber der Tracking-Branch (master) wurde nicht verändert - nun ist sichtbar, dass dieser von orign/master abweicht (diverged) - die Lösung dafür ist entweder ein 3WM oder ein Rebase+FF-Merge</p></li></ul></div></aside></section><section id="slide_push"><h2>Push</h2><div class="ulist"><ul><li><p><code>git push</code></p><div class="ulist"><ul><li><p>überträgt alle lokalen Commits zu dem Remote Repository</p></li><li><p>Nur erlaubt, wenn (remote) ein <span class="blue">Fast-Forward-Merge</span> möglich ist, ansonstten vorher <code>git pull</code></p></li><li><p>danach ist <span class="blue">KEIN Ändern</span> der Historie/Commits empfohlen</p><div class="ulist"><ul><li><p>Kein Commit-Amend, Reset von Branches, Rebasing</p></li></ul></div></li><li><p>je nach Konfiguration wird nur der lokale Branch oder alle Branches synchronisiert</p><div class="ulist"><ul><li><p><code>config: push.default=simple</code></p></li></ul></div></li></ul></div></li></ul></div></section><section id="slide_push_2"><h2>Push</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/git-push-before.png" alt="git push before" height="100%"></div></section><section id="slide_push_3" data-transition="fade"><h2>Push</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/git-push-after.png" alt="git push after" height="100%"></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Alle commits des lokalen Branches wurden übertragen - nur für den aktiven Branch.</p></li></ul></div></aside></section></section>
+<section><section id="slide_clone_fork"><h2>Clone &amp; Fork</h2><div class="ulist"><ul><li><p><code>git clone</code></p><div class="ulist"><ul><li><p>kopieren eines remote Repositories auf den eigenen Rechner</p></li><li><p>"erste Synchronisieren" plus "Checkout"</p></li><li><p>kein <code>git init</code> mehr nötig</p></li></ul></div></li><li><p><code>fork</code></p><div class="ulist"><ul><li><p>kein Git Befehl</p></li><li><p>Findet auf einem Git-Server statt, z.B. auf <a href="https://github.com" class="bare">https://github.com</a></p></li><li><p>im Hintergrund wird auch <code>git clone</code> ausgeführt</p></li></ul></div></li></ul></div></section><section id="slide_clone_fork_2"><h2>Clone &amp; Fork</h2><div class="ulist step"><ul><li class="fragment"><p>Problem: Wie kommen Änderungen des Originals zu meinem Fork?</p></li><li class="fragment"><p>Lösung: weiteres Remote-Repo</p></li></ul></div></section><section id="slide_ohne_fork"><h2>Ohne Fork</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/upstream-1.png" alt="upstream 1" height="100%"></div></section><section id="slide_ohne_fork_anders"><h2>Ohne Fork - Anders</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/git-remote-control.png" alt="git remote control" height="100%"></div></section><section id="slide_ohne_fork_remotes"><h2>Ohne Fork - Remotes</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">$ git remote -v
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (push)</code></pre></div></div></section><section id="slide_mit_fork"><h2>Mit Fork</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/upstream-2.png" alt="upstream 2" height="100%"></div></section><section id="slide_mit_fork_anders"><h2>Mit Fork - Anders</h2><div class="imageblock stretch" style=""><img src="../images/08-vcs4/git-fork-clone.png" alt="git fork clone" height="100%"></div></section><section id="slide_mit_fork_remotes"><h2>Mit Fork - Remotes</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">$ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
+$ git remote -v
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (fetch)
+origin   github.com/fn-tfe15-2-g1/dhbw-painground.git (push)
+upstream   github.com/barclay-reg/dhbw-painground.git (fetch)
+upstream   github.com/barclay-reg/dhbw-painground.git (push)</code></pre></div></div></section><section id="slide_mit_fork_nderungen_abholen"><h2>Mit Fork - Änderungen abholen</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Änderungen von Remote "upstream" holen
+$ git fetch upstream
+## auf eigenen Branch "master" wechseln
+$ git checkout master
+## Alle commits von Branch "master" von Remote "upstream"
+## in aktuellen Branch mergen
+$ git merge upstream/master
+## Änderungen an github senden
+$ git push</code></pre></div></div></section></section>
+<section id="slide_pull_request"><h2>Pull Request</h2><div class="ulist"><ul><li><p>Antrag, ein oder mehrere Commits von einem Branch in einen anderen Branch zu mergen</p></li><li><p>kann jemandem <em>zugewiesen</em> werden</p></li><li><p>Erlaubt Code-Review, Code-Diskussion</p></li><li><p>wenn Antrag akzeptiert ist, wird ein <span class="blue">Pull</span> (fetch &amp; merge) gemacht</p></li><li><p>Kann per <code>git request-pull</code> gestartet werden, aber</p></li><li><p>besser per Web-Interface (Github, Bitbucket, Gitlab)</p></li></ul></div></section>
+<section id="slide_wieso_pr"><h2>Wieso PR</h2><div class="ulist"><ul><li><p>Warum nicht einfach Mergen?</p><div class="ulist step"><ul><li class="fragment"><p>(Feature)-Branches können länger leben</p><div class="ulist"><ul><li><p>Niemand außer dem Author weiß, wann das Feature <em>fertig</em> ist</p></li></ul></div></li><li class="fragment"><p>Erstellend es <span class="blue">PR</span> ist ein eindeutiger Trigger für</p><div class="ulist"><ul><li><p>Start des Code-Reviews</p></li><li><p>Start von aufwändigeren automatisierten Tests</p></li></ul></div></li></ul></div></li></ul></div></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'white',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>

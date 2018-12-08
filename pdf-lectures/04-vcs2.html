@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>VCS 2</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.css" id="theme"><link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css" : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="../styles.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>VCS 2</h1></section><section><section id="slide_recapitulation"><h2>Recapitulation</h2></section><section id="slide_git_kommandos"><h2>Git Kommandos</h2><div class="imageblock stretch" style=""><img src="../images/04-vcs2/git-transport-local.png" alt="git transport local" height="100%"></div></section><section id="slide_git_kommandos_2" data-state="complex"><h2>Git Kommandos</h2><div class="olist arabic"><ol class="arabic"><li><p>Interaktion zwischem <span class="blue">lokalem Repository</span> und <span class="blue">WorkCopy</span></p><div class="ulist"><ul><li><p><code>git checkout master</code></p></li><li><p><code>git add README.md</code></p></li><li><p><code>git commit -m "Neuer Code"</code></p></li><li><p><code>git checkout&#8201;&#8212;&#8201;README.md</code></p></li><li><p><code>git reset --hard HEAD</code></p></li></ul></div></li></ol></div></section><section id="slide_git_kommandos_2_2"><h2>Git Kommandos 2</h2><div class="olist arabic"><ol class="arabic"><li><p>Hilfe</p><div class="ulist"><ul><li><p><code>git --help</code></p></li><li><p><code>git commit --help</code></p></li><li><p><a href="https://git-scm.com/docs" class="bare">https://git-scm.com/docs</a></p></li></ul></div></li><li><p>Graphische Darstellung</p><div class="ulist"><ul><li><p><code>gitk</code></p></li><li><p><code>log --all --decorate --oneline --graph</code></p></li><li><p>SourceTree, GitKraken</p></li></ul></div></li></ol></div></section><section id="slide_git_speicher"><h2>Git Speicher</h2><div class="dlist"><dl><dt class="hdlist1">Commit</dt><dd><div class="ulist"><ul><li><p>Enthält Verweise auf alle Dateien zu einem bestimmten Zeitpunkt</p></li><li><p>Enthält einen Verweis auf den Vorgänger-Commit</p></li></ul></div></dd></dl></div>
+<aside class="notes"><div class="paragraph"><p>Die Historie, die in GIT gespeichert wird, ist nur die Abfolge der Commits (inkl. der Dateien zu diesem Zeitpunkt). Diese Abfolge kann beliebig manipuliert werden.</p></div></aside></section></section>
+<section><section id="slide_branch"><h2>Branch</h2></section><section id="slide_branching"><h2>Branching</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Branching means you diverge from the main line of development and continue to do work without messing with that main line.</p></div></blockquote></div></section><section id="slide_branch_2"><h2>Branch</h2><div class="ulist"><ul><li><p>Branch <span class="lightgreen"><code>master</code></span> zeigt momentan auf neuesten Commit</p></li></ul></div>
+<div class="imageblock stretch" style=""><img src="../images/04-vcs2/branch1.png" alt="branch1" height="100%"></div>
+<aside class="notes"><div class="paragraph"><p>Ein Branch in Git ist nichts anderes als ein simpler Zeiger auf einen dieser Commits. Der Name der ersten Branches lautet per Default: master. Mit jedem Commit bewegt sicher der Zeiger automatisch vorwärts.</p></div></aside></section><section id="slide_another_branch"><div class="ulist"><ul><li><p>Erstelle einen neuen Branch, der (momentan) gleich ist, wie <code>master</code></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">$ git branch testing master</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/04-vcs2/neuerbranch.png" alt="neuerbranch" height="100%"></div>
+<aside class="notes"><div class="paragraph"><p>Dies erzeugt einen neuen Zeiger, der auf den gleichen Commit zeigt, auf dem Du gerade arbeitest.</p></div></aside></section><section id="slide_head"><h2>HEAD</h2><div class="paragraph"><p><code>HEAD</code> ist ein spezieller Zeiger</p></div>
+<div class="ulist"><ul><li><p>zeigt auf den Branch, mit dem die Workcopy verbunden ist</p></li></ul></div>
+<div class="imageblock stretch" style=""><img src="../images/04-vcs2/head-on-master.png" alt="head on master" height="100%"></div></section><section id="slide_checkout_branch"><div class="paragraph"><p>Auschecken eines anderen Branches</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">$ git checkout testing</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/04-vcs2/head-on-testing.png" alt="head on testing" height="100%"></div></section><section id="slide_list_branches"><div class="paragraph"><p>Anzeige aller Branches</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">$ git branch
+  feature-24
+* master
+  my-branch-1
+  my-branch-2
+$ git status
+On branch master
+...</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Listet alle lokalen Branches auf. Die aktive Branch wird mit einem *-Stern gekennzeichnet. git status zeigt ebenfalls den aktiven Branch an.</p></div></aside></section><section id="slide_branch_entwickeln"><div class="paragraph"><p>Ein weiterer Commit &#8230;&#8203;</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">$ echo 'neuer Text' &gt; neue-datei.txt
+$ git commit -a -m 'Neue Datei auf branch testing'</code></pre></div></div>
+<div class="imageblock stretch" style=""><img src="../images/04-vcs2/commit-on-testing.png" alt="commit on testing" height="100%"></div>
+<aside class="notes"><div class="paragraph"><p>Dies erzeugt einen neuen Commit. Gleichzeitig wird der Branchzeiger des aktuell aktiven Branches weitergeschoben.</p></div></aside></section><section id="slide_branch_auseinander"><div class="paragraph"><p>Die Historie läuft auseinander</p></div>
+<div class="imageblock stretch" style=""><img src="../images/04-vcs2/historie-auseinander.png" alt="historie auseinander" height="100%"></div></section><section id="slide_branch_sichtweisen"><h2>Branch Sichtweisen</h2><div class="imageblock stretch" style=""><img src="../images/04-vcs2/branch-sichtweisen-1.png" alt="branch sichtweisen 1" height="100%"></div>
+<aside class="notes"><div class="paragraph"><p>Ein anderes Bild für zwei Branches, die auseinandergelaufen (diverged) sind.</p></div></aside></section><section id="slide_branch_sichtweisen_2"><h2>Branch Sichtweisen</h2><div class="imageblock stretch" style=""><img src="../images/04-vcs2/branch-sichtweisen-2.png" alt="branch sichtweisen 2" height="100%"></div>
+<aside class="notes"><div class="paragraph"><p>Eine weitere Darstellung (verkürzt) von zwei Branches, die auseinandergelaufen (diverged) sind.</p></div></aside></section></section>
+<section><section id="slide_tag"><h2>Tag</h2><div class="olist arabic"><ol class="arabic"><li><p>Leichtgewichtiger Tag</p><div class="ulist"><ul><li><p>== Referenz (genau wie ein Branch)</p></li></ul></div></li><li><p>Annotated Tag</p><div class="ulist"><ul><li><p>eigener Objekt-Typ im Git Datenmodell</p><div class="ulist"><ul><li><p>enthält</p></li><li><p>SHA eines Commits</p></li><li><p>Datum &amp; Author</p></li><li><p>Nachricht</p></li><li><p>ggf. PGP Signatur</p></li></ul></div></li></ul></div></li></ol></div></section><section id="slide_tag_erzeugen"><h2>Tag erzeugen</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## leichtgewichten Tag erstellen
+$ git tag test-tag-1
+## alle Tags anzeigen
+$ git tag
+release-1
+release-2
+test-tag-1
+## annotated Tag erstellen
+$ git tag -a -m "Noch ein Test tag" test-tag-2
+## Alle Tags inkl. Message anzeigen
+$ git tag -n
+release-1   Commit-Message ...
+release-2   Commit-Message ...
+test-tag-1  Commit-Message ...
+test-tag-2  Noch ein Test tag</code></pre></div></div></section></section>
+<section><section id="slide_referenzen"><h2>Referenzen</h2><div class="olist arabic"><ol class="arabic"><li><p><span class="lightgreen"><code>reference</code></span></p><div class="ulist"><ul><li><p>eine Datei</p></li><li><p>Dateiname entspricht dem Namen der Referenz</p></li><li><p>Inhalt ist der SHA des Commits, auf den die Referenz verweist</p></li></ul></div></li><li><p><span class="lightgreen"><code>symbolic reference</code></span></p><div class="ulist"><ul><li><p>eine Datei</p></li><li><p>Dateiname entspricht dem Namen der Referenz</p></li><li><p>Inhalt ist der Name einer anderen Referenz</p></li><li><p>eigentlich gibt es hier nur <span class="blue"><code>HEAD</code></span></p></li></ul></div></li><li><p>ORIG_HEAD, FETCH_HEAD sind Sonderfälle</p></li></ol></div></section><section id="slide_referenzen_2"><h2>Referenzen</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Auflistung aller Dateien im Ordner .git/refs
+$ find .git/refs
+.git/refs
+.git/refs/heads
+.git/refs/heads/master
+.git/refs/heads/my-branch-1
+.git/refs/tags
+.git/refs/tags/test-tag-0
+.git/refs/tags/test-tag-1
+.git/refs/remotes
+.git/refs/remotes/origin
+.git/refs/remotes/origin/master</code></pre></div></div></section><section id="slide_symbolische_referenzen"><h2>Symbolische Referenzen</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Ausgabe des Inhalts der Datei .git/HEAD
+$ cat .git/HEAD
+ref: refs/heads/master</code></pre></div></div></section><section id="slide_tag_und_branch_referenzen"><div class="olist arabic"><ol class="arabic"><li><p>Branches == Referenzen, die unter <code>.git/refs/heads</code> gespeichert werden</p></li><li><p>Tags == Referenzen, die unter <code>.git/refs/tags</code> gespeichert werden</p><div class="ulist"><ul><li><p>nur lightweight Tags</p></li></ul></div></li><li><p><span class="blue">Ref-Log</span></p><div class="ulist"><ul><li><p>Log für alle Änderungen, die an den Referenzen gemacht wurden (nur lokal)</p></li></ul></div></li></ol></div></section><section id="slide_reflog"><h2>Reflog</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## zeigt die Historie von HEAD
+$ git reflog
+## zeigt den 5. letzten Commit beginnend bei HEAD
+$ git show HEAD@{5}
+## zeigt den letzten Commit von gestern
+$ git show HEAD@{yesterday}
+## zeigt die Logausgaben mit der reflog Syntax
+$ git log –g</code></pre></div></div></section></section>
+<section><section id="slide_stashing"><h2>Stashing</h2><div class="ulist"><ul><li><p>Verstecken der aktuellen Änderungen</p><div class="olist loweralpha"><ol class="loweralpha" type="a"><li><p>alle Änderungen an der Workcopy</p></li><li><p>alles im Stage-Bereich (Index)</p></li></ol></div></li><li><p>Workspace und Stage-Bereich sind danach wieder auf dem Stand des letzten Commits (siehe HEAD)</p></li><li><p>Neue Dateien (untracked) werden per default ignoriert</p></li><li><p>Man kann unzählig viele Stashes anlegen</p></li></ul></div><aside class="notes"><div class="ulist"><ul><li><p>Sinnvoll, um kurfristig auf einen anderen Branch zu wechseln, ohne die aktuelle Arbeit commiten zu müssen</p></li></ul></div></aside></section><section id="slide_stash_kommandos"><h2>Stash Kommandos</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="shell language-shell">## Änderungen auf Stash-Stack verschieben
+$ git stash
+## Änderungen in benannten Stash verschieben
+$ git stash push –m „mein zweiter Stash“
+## Alle Stashes auflisten
+$ git stash list
+## Stash Nr 0 auf den aktuellen Workspace anwenden,
+## aber Stash nicht löschen
+$ git stash apply stash@{0}
+## Stash Nr 0 auf den aktuellen Workspace anwenden
+## und Stash von Stack löschen
+$ git stash pop stash@{0}</code></pre></div></div></section></section></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'white',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>
