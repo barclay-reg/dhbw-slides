@@ -48,7 +48,7 @@ You need https://www.ruby-lang.org/en/documentation/installation[ruby] and http:
 I used http://github.com/Homebrew/homebrew[Homebrew] for MacOsX. Start via 
 ----
 $ brew update
-$ brew install rbenv rbenv-gemset ghostscript
+$ brew install rbenv rbenv-gemset
 ----
 
 and proceed like in the instructions at
@@ -70,7 +70,7 @@ $ bundle --path=.bundle/gems --binstubs=.bundle/.bin
 
 ----
 $ npm install -g decktape
-$ apt-get install poppler
+$ brew install ghostscript
 ----
 
 ==== Clone this repo
