@@ -3,3 +3,4 @@
 .bundle
 .gems
 output
+.DS_Store

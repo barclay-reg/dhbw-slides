@@ -1,12 +1,13 @@
 language: ruby
 before_install: 
   - mkdir -p output
+  - sudo apt-get install -y ghostscript
 install:
   - bundle config --local github.https true
   - bundle --path=.bundle/gems --binstubs=.bundle/.bin
+  - npm install -g decktape
 script:
-  - bundle exec asciidoctor-revealjs -D output/lectures -a customcss=../styles.css -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0 lectures/*.adoc
-  - bundle exec asciidoctor -D output README.adoc
+  - ./build-slides.sh -makePdfs
 after_success:
   - cd output ; mv ../README.adoc . ; cp -R ../images . ; cp ../styles.css .
 

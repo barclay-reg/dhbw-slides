@@ -6,7 +6,7 @@
 :revealjs_history:
 :source-highlighter: highlightjs
 
-=== Ordner Erstellen
+== Ordner Erstellen
 
 Erzeuge zwei Ordner - egal wo, z.B.
 ----

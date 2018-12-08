@@ -35,6 +35,7 @@ falls das [.blue]#mergen# nicht automatisch funktioniert
 ----
 $ git add <dateiname>
 $ git commit -m "<informative nachricht>"
+----
 
 * Hilfe: http://genomewiki.ucsc.edu/index.php/Resolving_merge_conflicts_in_Git
 

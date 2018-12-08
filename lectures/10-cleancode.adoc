@@ -392,12 +392,12 @@ public static String renderPageWithSetupsAndTeardowns(
 ** einen [.blue]#UM-ZU#-Absatz formulieren
 
 [quote]
-----
+____
 UM RenderPageWithSetupsAndTeardowns ausZUführen, 
 prüfen wir, ob eine Seite eine Testseite ist, und wenn dies der Fall ist, 
 schließen wir die Setups und Teardowns ein. 
 In beiden Fällen stellen wir die Seite in HTML dar.
-----
+____
 
 
 [state=complex]
