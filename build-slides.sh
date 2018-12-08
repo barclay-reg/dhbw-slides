@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 makePdfs=${1}
 
@@ -35,7 +35,7 @@ if [ "$makePdfs" = "-makePdfs" ]; then
 	echo "Start creating PDF slides"
 	for filenameWithExtension in ./output/pdf-lectures/*.html; do
 		filename="$(basename $filenameWithExtension .html)"
-		if [[ $filename =~ ^[0-9]{2}-.* ]] && ! [[ $filename =~ .*aufgaben.* ]]; then
+		if [[ $filename  =~ ^[0-9]{2}-.* ]] && ! [[ $filename =~ .*aufgaben.* ]]; then
 			decktape reveal "$filenameWithExtension" ./output/$filename-woNotes.pdf -s 1280x950
 		fi
 	done
