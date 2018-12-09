@@ -1,45 +1,41 @@
-= Slides for DHBW lectures
+:ghpages-base: https://barclay-reg.github.io/dhbw-slides/lectures/
+:source-base: https://github.com/barclay-reg/dhbw-slides/blob/master/lectures/
 
-== View online at github pages
+= Folien für die DHBW Vorlesung
 
-* https://barclay-reg.github.io/dhbw-slides/lectures/00-me.html#/[00-me - About me]
-* https://barclay-reg.github.io/dhbw-slides/lectures/01-start.html#/[01-start - Lecture Introduction]
-* https://barclay-reg.github.io/dhbw-slides/lectures/02-vcs.html#/[02-vcs - Version Control Systems - 1]
-* https://barclay-reg.github.io/dhbw-slides/lectures/03-aufgaben-1.html#/[03-aufgaben-1 - Aufgaben für den 1. Praxisteil]
-* https://barclay-reg.github.io/dhbw-slides/lectures/04-vcs2.html#/[04-vcs2 - Version Control Systems - 2]
-* https://barclay-reg.github.io/dhbw-slides/lectures/05-aufgaben-2.html#/[05-aufgaben-2 - Aufgaben für den 2. Praxisteil]
-* https://barclay-reg.github.io/dhbw-slides/lectures/06-vcs3.html#/[06-vcs3 - Version Control Systems - 3]
-* https://barclay-reg.github.io/dhbw-slides/lectures/07-aufgaben-3.html#/[07-aufgaben-3 - Aufgaben für den 3. Praxisteil]
-* https://barclay-reg.github.io/dhbw-slides/lectures/08-vcs-4.html#/[08-vcs-4 - Version Control Systems - 4]
-* https://barclay-reg.github.io/dhbw-slides/lectures/09-aufgaben-4.html#/[09-aufgaben-4 - Aufgaben für den 4. Praxisteil]
-* https://barclay-reg.github.io/dhbw-slides/lectures/10-cleancode.html#/[10-cleancode - Clean Code]
-* https://barclay-reg.github.io/dhbw-slides/lectures/11-continuous.html#/[11-continuous - Continuous Integration|Delivery]
-* https://barclay-reg.github.io/dhbw-slides/lectures/13-testen.html#/[13-testen - Testen]
-* https://barclay-reg.github.io/dhbw-slides/lectures/14-refactoring.html#/[14-refactoring - Refactoring]
-* https://barclay-reg.github.io/dhbw-slides/lectures/0x-java.html#/[0x-java - Java Introduction]
-* https://barclay-reg.github.io/dhbw-slides/lectures/0x-setup.html#/[0x-setup - Project Setup]
-* https://barclay-reg.github.io/dhbw-slides/lectures/12-aufgaben-5.html#/[12-aufgaben-5 - Aufgaben für den 5. Praxisteil]
+== Alle Kapitel (zusammen)
 
-//* https://barclay-reg.github.io/dhbw-slides/lectures/05-painground.html#/[05-painground - User Stories]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/06-aufgaben-2.html#/[06-aufgaben-2 - Aufgaben für den 2. Praxisteil]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/07-vcs2.html#/[07-vcs2 - VersionControlSystems - Vertiefung]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/08-aufgaben-3.html#/[08-aufgaben-3 - Aufgaben für den 3. Praxisteil]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/09-cleancode.html#/[09-cleancode - Clean Code]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/10-continuous.html#/[10-continuous - Continuous Integration|Delivery]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/11-aufgaben-4.html#/[11-aufgaben-4 - Aufgaben für den 4. Praxisteil]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/12-testen.html#/[12-testen - Testen]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/13-aufgaben-5.html#/[13-aufgaben-5 - Aufgaben für den 5. Praxisteil]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/14-refactoring.html#/[14-refactoring - Refactoring]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/15-requirements.html#/[15-requirements - Requirements]
-//* https://barclay-reg.github.io/dhbw-slides/lectures/16-aufgaben-6.html#/[16-aufgaben-6 - Aufgaben für den 6. Praxisteil]
+Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar.
 
-//* https://barclay-reg.github.io/dhbw-slides/lectures/99-tipps.html#/[99-tipps - Weitergehende Tipps]
+{ghpages-base}all-slides.pdf
+
+== Einzelne Kapitel
+
+|===
+| Kapitel | Online | PDF | Source 
+| About Me | {ghpages-base}00-me.html/[00-me.html] | {ghpages-base}00-me.pdf/[00-me.pdf] | {source-base}/00-me.adoc[00-me.adoc]
+| Einführung | {ghpages-base}01-start.html/[01-start.html] | {ghpages-base}01-start.pdf/[01-start.pdf] | {source-base}/00-me.adoc[01-start.adoc]
+| Version Control Systems - 1 | {ghpages-base}02-vcs.html/[02-vcs.html] | {ghpages-base}02-vcs.pdf/[02-vcs.pdf] | {source-base}/00-me.adoc[02-vcs.adoc]
+| Aufgaben für den 1. Praxisteil | {ghpages-base}03-aufgaben-1/[03-aufgaben-1.html] |  | {source-base}/03-aufgaben-1.adoc[03-aufgaben-1.adoc]
+| Version Control Systems - 2 | {ghpages-base}04-vcs2.html/[04-vcs2.html] | {ghpages-base}04-vcs2.pdf/[04-vcs2.pdf] | {source-base}/04-vcs2.adoc[04-vcs2.adoc]
+| Aufgaben für den 2. Praxisteil | {ghpages-base}05-aufgaben-2/[05-aufgaben-2.html] |  | {source-base}/05-aufgaben-2.adoc[05-aufgaben-2.adoc]
+| Version Control Systems - 3 | {ghpages-base}06-vcs3.html/[06-vcs3.html] | {ghpages-base}06-vcs3.pdf/[06-vcs3.pdf] | {source-base}/06-vcs3.adoc[06-vcs3.adoc]
+| Aufgaben für den 3. Praxisteil | {ghpages-base}07-aufgaben-3.html/[07-aufgaben-3.html] |  | {source-base}/07-aufgaben-3.adoc[07-aufgaben-3.adoc]
+| Version Control Systems - 4 | {ghpages-base}08-vcs4.html/[08-vcs4.html] | {ghpages-base}08-vcs4.pdf/[08-vcs4.pdf] | {source-base}/08-vcs4.adoc[08-vcs4.adoc]
+| Aufgaben für den 4. Praxisteil | {ghpages-base}09-aufgaben-4.html/[09-aufgaben-4.html] |  | {source-base}/09-aufgaben-4.adoc[09-aufgaben-4.adoc]
+| Clean Code | {ghpages-base}10-cleancode.html/[10-cleancode.html] | {ghpages-base}10-cleancode.pdf/[10-cleancode.pdf] | {source-base}/10-cleancode.adoc[10-cleancode.adoc]
+| Continuous Integratin/Delivery | {ghpages-base}11-continuous.html/[11-continuous.html] | | {source-base}/11-continuous.adoc[11-continuousadoc]
+| Java Kurzeinführung | {ghpages-base}0x-java.html/[0x-java.html] | | {source-base}/0x-java.adoc[0x-java.adoc]
+| Projekt Setup | {ghpages-base}0x-setup.html/[0x-setup.html] | | {source-base}/0x-setup.adoc[0x-setup.adoc]
+| Aufgaben für den 5. Praxisteil | {ghpages-base}12-aufgaben-5.html/[12-aufgaben-5.html] | | {source-base}/12-aufgaben-5.adoc[12-aufgaben-5.adoc]
+| Testen | {ghpages-base}13-testen.html/[13-testen.html] | {ghpages-base}13-testen.pdf/[13-testen.pdf] | {source-base}/13-testen.adoc[13-testen.adoc]
+|===
 
 image:https://travis-ci.org/barclay-reg/dhbw-slides.svg?branch=master[link=https://travis-ci.org/barclay-reg/dhbw-slides] image:https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png[Licence Creative Commons, role="left", link="http://creativecommons.org/licenses/by-nc-sa/4.0/"]
 
 All documents within the repository are available under the license http://creativecommons.org/licenses/by-nc-sa/4.0/[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)].
 
-== Generate HTML on your own (locally)
+== Generierung der HTML Präsentation (lokal)
 
 You need https://www.ruby-lang.org/en/documentation/installation[ruby] and http://bundler.io[bundler] installed. This processing is completely inspired by https://github.com/nfrankel[Nicolas Fraenkel]. See also his blog post: https://blog.frankel.ch/automating-generation-asciidoctor-output
 
