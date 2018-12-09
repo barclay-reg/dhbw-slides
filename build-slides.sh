@@ -40,7 +40,7 @@ if [ "$makePdfs" = "-makePdfs" ]; then
 		fi
 	done
 	echo "Start joining PDF files"
-	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=./output/lectures/all-slides.pdf ./output/*.pdf
+	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=./output/lectures/all-slides.pdf ./output/lectures/*.pdf
 fi
 
 echo "Fished"
