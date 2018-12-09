@@ -36,11 +36,11 @@ if [ "$makePdfs" = "-makePdfs" ]; then
 	for filenameWithExtension in ./output/pdf-lectures/*.html; do
 		filename="$(basename $filenameWithExtension .html)"
 		if [[ $filename  =~ ^[0-9]{2}-.* ]] && ! [[ $filename =~ .*aufgaben.* ]]; then
-			decktape reveal "$filenameWithExtension" ./output/$filename-woNotes.pdf -s 1280x950
+			decktape reveal "$filenameWithExtension" ./output/lectures/$filename.pdf -s 1280x950
 		fi
 	done
 	echo "Start joining PDF files"
-	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=./output/all-slides.pdf ./output/*.pdf
+	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=./output/lectures/all-slides.pdf ./output/*.pdf
 fi
 
 echo "Fished"
