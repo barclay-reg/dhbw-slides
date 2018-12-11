@@ -11,6 +11,7 @@ Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar
 
 == Einzelne Kapitel
 
+[cols="1,4,3,3,3", options="header"]
 |===
 | | Kapitel | Online | PDF | Source 
 | | About Me | {ghpages-base}00-me.html[00-me.html] | {ghpages-base}00-me.pdf[00-me.pdf] | {source-base}00-me.adoc[00-me.adoc]
@@ -24,7 +25,7 @@ Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar
 | 8 | Version Control Systems - 4 | {ghpages-base}08-vcs4.html[08-vcs4.html] | {ghpages-base}08-vcs4.pdf[08-vcs4.pdf] | {source-base}08-vcs4.adoc[08-vcs4.adoc]
 | 9 | Aufgaben für den 4. Praxisteil | {ghpages-base}09-aufgaben-4.html[09-aufgaben-4.html] |  | {source-base}09-aufgaben-4.adoc[09-aufgaben-4.adoc]
 | 10 | Clean Code | {ghpages-base}10-cleancode.html[10-cleancode.html] | {ghpages-base}10-cleancode.pdf[10-cleancode.pdf] | {source-base}10-cleancode.adoc[10-cleancode.adoc]
-| 11 | Continuous IntegratinDelivery | {ghpages-base}11-continuous.html[11-continuous.html] | {ghpages-base}11-continuous.pdf[11-continuous.pdf | {source-base}11-continuous.adoc[11-continuousadoc]
+| 11 | Continuous IntegratinDelivery | {ghpages-base}11-continuous.html[11-continuous.html] | {ghpages-base}11-continuous.pdf[11-continuous.pdf] | {source-base}11-continuous.adoc[11-continuousadoc]
 | | Java Kurzeinführung | {ghpages-base}0x-java.html[0x-java.html] | | {source-base}0x-java.adoc[0x-java.adoc]
 | | Projekt Setup | {ghpages-base}0x-setup.html[0x-setup.html] | | {source-base}0x-setup.adoc[0x-setup.adoc]
 | 12 |  Aufgaben für den 5. Praxisteil | {ghpages-base}12-aufgaben-5.html[12-aufgaben-5.html] | | {source-base}12-aufgaben-5.adoc[12-aufgaben-5.adoc]
