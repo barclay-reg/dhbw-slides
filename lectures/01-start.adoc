@@ -131,7 +131,7 @@ image::spannungsfeld-alpha.png[]
 image::vorstellungskraft.jpg[]
 
 [%notitle]
-=== Komplex wird Kompliziert
+=== Kompliziert wird zu Komplex
 
 * Coding [.blue]#wird# zunehmen schwerer
 
