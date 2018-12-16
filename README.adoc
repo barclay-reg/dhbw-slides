@@ -15,8 +15,8 @@ Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar
 |===
 | | Kapitel | Online | PDF | Source 
 | | About Me | {ghpages-base}00-me.html[00-me.html] | {ghpages-base}00-me.pdf[00-me.pdf] | {source-base}00-me.adoc[00-me.adoc]
-| 1 | Einführung | {ghpages-base}01-start.html[01-start.html] | {ghpages-base}01-start.pdf[01-start.pdf] | {source-base}00-me.adoc[01-start.adoc]
-| 2 | Version Control Systems - 1 | {ghpages-base}02-vcs.html[02-vcs.html] | {ghpages-base}02-vcs.pdf[02-vcs.pdf] | {source-base}00-me.adoc[02-vcs.adoc]
+| 1 | Einführung | {ghpages-base}01-start.html[01-start.html] | {ghpages-base}01-start.pdf[01-start.pdf] | {source-base}01-start.adoc[01-start.adoc]
+| 2 | Version Control Systems - 1 | {ghpages-base}02-vcs.html[02-vcs.html] | {ghpages-base}02-vcs.pdf[02-vcs.pdf] | {source-base}02-vcs.adoc[02-vcs.adoc]
 | 3 | Aufgaben für den 1. Praxisteil | {ghpages-base}03-aufgaben-1[03-aufgaben-1.html] |  | {source-base}03-aufgaben-1.adoc[03-aufgaben-1.adoc]
 | 4 | Version Control Systems - 2 | {ghpages-base}04-vcs2.html[04-vcs2.html] | {ghpages-base}04-vcs2.pdf[04-vcs2.pdf] | {source-base}04-vcs2.adoc[04-vcs2.adoc]
 | 5 | Aufgaben für den 2. Praxisteil | {ghpages-base}05-aufgaben-2[05-aufgaben-2.html] |  | {source-base}05-aufgaben-2.adoc[05-aufgaben-2.adoc]
