@@ -148,7 +148,7 @@ image::git-fetch-after.png[]
 
 * `git push`
 ** überträgt alle lokalen Commits zu dem Remote Repository
-** Nur erlaubt, wenn (remote) ein [.blue]#Fast-Forward-Merge# möglich ist, ansonstten vorher `git pull`
+** Nur erlaubt, wenn (remote) ein [.blue]#Fast-Forward-Merge# möglich ist, ansonsten vorher `git pull`
 ** danach ist [.blue]#KEIN Ändern# der Historie/Commits empfohlen
 *** Kein Commit-Amend, Reset von Branches, Rebasing
 ** je nach Konfiguration wird nur der lokale Branch oder alle Branches synchronisiert
