@@ -33,7 +33,7 @@ Hier [.blue]#GIT#
 . Gruppenarbeit vereinfacht (Synchronisierung)
   * inkl. Berechtigungen
 . gleichzeitiges Arbeit an mehreren Entwicklungszweigen
-. für jede Art von Datei 
+  * durch schnellen Wechsel zwischen diesen Zweigen
 
 === Begriffe
 

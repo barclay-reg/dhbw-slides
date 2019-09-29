@@ -24,13 +24,23 @@
 === Setup
 
 . Setup GIT
-** Windows: http://cmder.net (Full Edition)
+** Windows: 
+*** https://git-scm.com/download/win (Git For Windows)
+*** http://cmder.net (Full Edition)
 ** Mac: https://git-scm.com/download/mac
 ** schön Bunt:
+*** https://git-fork.com
 *** https://www.sourcetreeapp.com
 
+=== Setup
+
+. Clone Git Repository
+
+----
+git clone https://github.com/barclay-reg/dhbw-painground.git
+----
+
 === Übungen 1/2
-. lege einen neuen Ordner an und führe darin git init aus
 . Spiele folgende Szenarien durch; nach jedem Szenario sollte git status folgenden Text ausgeben "nothing to commit, working tree clean", mit git-cat und ggf. git ls-tree können die Git-Objekte betrachtet werden
 .. Erstellen einer neuen Datei, Hinzufügen zum Index, danach diesen Commiten
 .. Ändern einer bestehenden Datei, Hinzufügen zum Index, danach diesen Commiten
