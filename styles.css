@@ -68,3 +68,9 @@
     font-size: 28px;
     font-weight: bold;
 }
+
+.reveal code {
+   background: #3f3f3f;
+   color: #dcdcdc;
+
+}

@@ -39,7 +39,7 @@ Hier [.blue]#GIT#
 
 [.small]
 Workcopy:: Dateien, die ich momentan _sehen_ und bearbeiten kann (_Arbeitskopie_)
-Repository:: Behälter für alle Datei-Versionen, die das VCS kennt
+Repository:: Behälter für alle Dateien und deren Versionen, die das VCS kennt
 checkout:: Übertragen einer Version aus dem [.blue]#Repository# in die [.blue]#Workcopy#
 commit:: Übertragen einer Version von der [.blue]#Workcopy# in das [.blue]#Repository#
 
@@ -308,14 +308,14 @@ image::git-status.png[]
 ** „Navigation“ von einem Commit ausgehend, z.B
 *** `HEAD~3` -> dritter Vorfahr von HEAD
 *** `HEAD^` -> erster Vorfahr von HEAD (unter Windows: `HEAD^^`)
-*** `HEAD^1` -> erster vorfahr von HEAD
+*** `HEAD^1` -> erster Vorfahr von HEAD
 *** `HEAD^^` -> zweiter Vorfahr von HEAD, == `HEAD^2` oder `HEAD\^1^1`
 *** `HEAD@{2}` -> zweiter Vorfahr von HEAD
 *** `HEAD@{5.minutes.ago}`
 
 === Änderungen verwerfen
 
-* Der pure reset-Befehl entfernt die Änderungen aus dem Stage-Bereich
+* Der pure `reset`-Befehl entfernt die Änderungen aus dem Stage-Bereich
 ** Der Workcopy bleibt unverändert
 *** außer bei `--hard`
 ** Das Argument HEAD muss angegeben werden
@@ -325,7 +325,8 @@ image::git-status.png[]
 ----
 ## Änderungen im Stage-Bereichs von foo.txt verwerfen
 $ git reset HEAD foo.txt 
-## Alle Änderungen im Stage-Bereichs verwerfen
+## Alle Änderungen im Stage-Bereichs verwerfen 
+## (Workcopy bleibt unverändert)
 $ git reset HEAD 
 ## Alle Änderungen im Stage-Bereichs & Workcopy verwerfen
 $ git reset --hard HEAD 
@@ -351,20 +352,26 @@ $ git checkout HEAD foo.txt
 
 [source, shell]
 ----
-## Commit-Änderung bleiben nur im Workspace
+## Änderung des Commits bleiben im Workspace, aber
+## HEAD wird auf seinen Vorgänger gesetzt
 $ git reset HEAD^
-## Änderungen bleiben im Stage-Bereich und im Workspace
-$ git reset –-soft HEAD^
-## Commit-Änderungen werden verworfen
+## Änderungen des Commits werden verworfen
 $ git reset –-hard HEAD^
+## Änderungen bleiben im Stage-Bereich und im Workspace
+## lediglich HEAD wird auf seinen Vorgänger gesetzt
+$ git reset –-soft HEAD^
 ----
 
 === Commits ansehen
 
-* Anzeige aller bisherigen Commits
-** `git log`
-* Schönere Anzeige
-** `git log --graph --oneline`
+* Liste der Commits
+** Anzeige aller bisherigen Commits
+*** `git log`
+** Schönere Anzeige
+*** `git log --graph --oneline`
+* Einzelnen Commit
+** `git show {commit-sha}`
+** `git cat-file -p {commit-sha}`
 
 == Tipps
 

@@ -32,7 +32,7 @@ image::git-transport-local.png[]
 . Graphische Darstellung
   * `gitk`
   * `log --all --decorate --oneline --graph`
-  * SourceTree, GitKraken
+  * SourceTree, Fork, GitKraken
 
 === Git Speicher
 
@@ -151,6 +151,13 @@ Dies erzeugt einen neuen Commit. Gleichzeitig wird der Branchzeiger des aktuell 
 === Branch auseinander
 
 Die Historie läuft auseinander
+
+[source, shell]
+----
+$ git co master
+$ echo 'neuer anderer Text' > neue-datei-auf-master.txt
+$ git commit -a -m 'Neue Datei auf branch master'
+----
 
 [.stretch]
 image::historie-auseinander.png[]
