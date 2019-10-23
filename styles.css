@@ -1,4 +1,4 @@
-// own classes
+/* own classes */
 
 .reveal .small {
    font-size: 26px;
@@ -52,7 +52,7 @@
    background-color:  white;
 }
 
-// overriding default stuff from reveal
+/* overriding default stuff from reveal */
 
 .reveal section.title h1 {
     text-transform: none;
