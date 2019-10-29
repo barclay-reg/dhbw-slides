@@ -6,7 +6,7 @@
 :idprefix: slide_
 :source-highlighter: highlightjs
 
-== Recapitulation
+== Rekapitulation
 
 === Git Kommandos
 
@@ -19,6 +19,7 @@ image::git-transport-local.png[]
 . Interaktion zwischem [.blue]#lokalem Repository# und [.blue]#WorkCopy#
   * `git checkout master`
   * `git add README.md`
+  * `git rm README.md`
   * `git commit -m "Neuer Code"`
   * `git checkout -- README.md`
   * `git reset --hard HEAD`
@@ -69,11 +70,19 @@ Ein Branch in Git ist nichts anderes als ein simpler Zeiger auf einen dieser Com
 [%notitle]
 === Another Branch
 
-* Erstelle einen neuen Branch, der (momentan) gleich ist, wie `master`
-
 [source, shell]
 ----
+## erstellt einen neuen Branch, der auf den gleichen Commit 
+## wie master zeigt
 $ git branch testing master
+## erstellt einen neuen Branch, der auf den gleichen Commit 
+## wie HEAD zeigt
+$ git branch testing HEAD
+## erstellt einen neuen Branch, der auf den gleichen Commit
+## wie HEAD zeigt
+$ git branch testing
+## erstellt einen neuen Branch, der auf den Commit 23c4fe5 zeigt
+$ git branch 23c4fe5
 ----
 
 [.stretch]
@@ -96,15 +105,30 @@ image::head-on-master.png[]
 [%notitle]
 === Checkout branch
 
-Auschecken eines anderen Branches
+Auschecken (aktivieren) eines anderen Branches
 
 [source, shell]
 ----
+## aktivert einen bereits bestehenden Branch
 $ git checkout testing
+## erzeugt und aktiviert einen neuen Branch, der auf den gleichen 
+## Commit wie HEAD zeigt
+$ git checkout -b testing
 ----
 
 [.stretch]
 image::head-on-testing.png[]
+
+=== (Git) Branch
+
+
+* == Referenz 
+** ein (beweglicher) Zeiger auf einen Commit
+** bei `git commit` wird der Zeiger weitergeschoben
+** genauer: 
+*** der Branch, auf den `HEAD` zeigt, verweist nach dem Committen auf den neuen Commit verschoben
+*** `HEAD` zeigt weiter auf diesen Branch
+*** im RefLog wird der neue (effektive) Wert von `HEAD` protokolliert
 
 [%notitle]
 === List branches
@@ -184,11 +208,16 @@ Eine weitere Darstellung (verkürzt) von zwei Branches, die auseinandergelaufen 
 
 == Tag
 
+* eine _dauerhafte_ Markierung / Kennzeichnung
+* unveränderlich
+* zum _Merken_ von bestimmten Zwischenständen
+
+== Tag
+
 . Leichtgewichtiger Tag
 ** == Referenz (genau wie ein Branch)
 . Annotated Tag
-** eigener Objekt-Typ im Git Datenmodell
-*** enthält
+** eigener Objekt-Typ im Git Datenmodell, enthält
 *** SHA eines Commits
 *** Datum & Author
 *** Nachricht
@@ -262,8 +291,25 @@ ref: refs/heads/master
 . Tags == Referenzen, die unter `.git/refs/tags` gespeichert werden
 ** nur lightweight Tags
 . [.blue]#Ref-Log# 
-** Log für alle Änderungen, die an den Referenzen gemacht wurden (nur lokal)
+** Protokoll für alle Änderungen, die an den Referenzen gemacht wurden (nur lokal)
 
+=== Gut zu wissen
+
+* die meisten Git Kommandos haben mind. einen Parameter, der eine Commit ID (SHA) ist
+
+[source, shell]
+----
+## der ganze SHA 
+$ git show a544751ae3de9965c35b88958b0d219e29f7295d
+## der abgekürzte SHA 
+$ git show a54475
+## eine Referenz 
+$ git show master
+## eine symbolische Referenz 
+$ git show HEAD
+## default ist immer HEAD
+$ git show
+----
 
 === Reflog
 

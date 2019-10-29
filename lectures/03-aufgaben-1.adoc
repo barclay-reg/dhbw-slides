@@ -42,15 +42,15 @@ git clone https://github.com/barclay-reg/dhbw-painground.git
 
 === Übungen 1/2
 . Spiele folgende Szenarien durch; nach jedem Szenario sollte `git status` folgenden Text ausgeben "nothing to commit, working tree clean", mit git-cat und ggf. git ls-tree sollen die Git-Objekte betrachtet werden
-.. Erstellen einer neuen Datei, Hinzufügen zum Index, danach diesen Committen
-.. Ändern einer bestehenden Datei, Hinzufügen zum Index, danach diesen Committen
-.. Hinzufügen einer neuen Datei in einem Unterordner, Hinzufügen zum Index, Committen
+.. Erstellen einer neuen Datei (inkl. Inhalt), Hinzufügen zum Index, danach diesen Committen
+.. Ändern einer bestehenden Datei (inkl. Inhalt), Hinzufügen zum Index, danach diesen Committen
+.. Hinzufügen einer neuen Datei (inkl. Inhalt) in einem Unterordner, Hinzufügen zum Index, Committen
 
 === Übungen 2/2
 
 * Fortsetzung Szenarien
 [start=4]
-.. Umbenennen einer bestehenden Datei, Hinzufügen zum Index, Committen
+.. Umbenennen einer bestehenden Datei, Hinzufügen zum Index (Beides, die Löschung und die neue Datei), Committen
 .. Ändern einer bestehenden Datei, alte Version der Datei wieder herstellen 
-.. Ändern einer bestehenden Datei, Hinzufügen zum Index, Entfernen aus dem Index, Datei nochmals Ändern, Hinzufügen zum Index, Committen
-.. Ändern einer bestehenden Datei, Hinzufügen zum Index, Datei nochmals Ändern, Abermals Hinzufügen zum Index, Committen
+.. Ändern einer bestehenden Datei, Hinzufügen zum Index (nicht committen), Entfernen aus dem Index, Datei nochmals ändern, Hinzufügen zum Index, Committen
+.. Ändern einer bestehenden Datei, Hinzufügen zum Index (nicht committen), Datei nochmals ändern, abermals Hinzufügen zum Index, Committen

@@ -19,18 +19,18 @@
 
 === Übungen  Branch 1/2
 . Erzeuge einen neuen Branch ohne diesen zu aktivieren
-. Erzeuge zwei neue Commits auf den Branch `master`
+. Erzeuge zwei neue Commits auf dem Branch `master`
 . Aktiviere den Branch aus Schritt 1
 . Erzeuge zwei neue Commits auf den Branch aus Schritt 1
-. Sieh dir mit den Graph der beiden Branches an
+. Sieh dir den Graph der beiden Branches an
 ** mit `git log`, `git hist`, `gitk` oder einem anderen UI
 
 === Übungen  Branch 2/2
 
 [start=6]
-. Ändere den Branch aus Schritt 1, sodass er auf den gleichen Commit wie `master` zeigt
+. Ändere den Branch aus Schritt 1, sodass er auf den gleichen Commit wie `master` zeigt (mit `git reset`)
 . lösche den Branch aus Schritt 1
-. Versuche dir mit Hilfe des Reflogs einen neuen Branch zu erstellen, der wieder die beiden Commits enthält, die auf dem soeben gelöschten Branch waren
+. Versuche dir mit Hilfe des Reflogs einen neuen Branch zu erstellen, der wieder die beiden Commits enthält, die auf den soeben gelöschten Branch waren
 
 === Übungen Tag
 

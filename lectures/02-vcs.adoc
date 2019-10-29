@@ -1,4 +1,4 @@
-= Versions- verwaltung
+= Versionsverwaltung
 
 :imagesdir: ../images/02-vcs
 :revealjs_slideNumber:
@@ -277,6 +277,24 @@ image::staging-flow-5.png[]
 
 image::staging-flow-6.png[]
 
+=== Befehle - add/rm
+
+[source, shell]
+----
+## Fügt alle neuen/geänderten vom aktuellen Ordner (rekusiv) 
+## zum Index hinzu
+$ git add .
+## Fügt die neue/geänderte Datei zum Index hinzu
+$ git add folder-1/file.txt
+## Löscht die Datei in der Workcopy und löscht diese Datei im Index
+$ rm folder-1/file.txt
+$ git rm folder-1/file.txt
+## Löscht die Datei in der Workcopy und gleichzeitig im Index
+$ git rm folder-1/file.txt
+## Fügt alle neuen/geänderten/gelöschten Dateien zum Index hinzu
+$ git add -u .
+----
+
 === Befehle - status
 
 `git status`
@@ -306,12 +324,12 @@ image::git-status.png[]
 * Zeiger dereferenzieren 
 ** (https://git-scm.com/docs/gitrevisions)
 ** „Navigation“ von einem Commit ausgehend, z.B
-*** `HEAD~3` -> dritter Vorfahr von HEAD
 *** `HEAD^` -> erster Vorfahr von HEAD (unter Windows: `HEAD^^`)
 *** `HEAD^1` -> erster Vorfahr von HEAD
 *** `HEAD^^` -> zweiter Vorfahr von HEAD, == `HEAD^2` oder `HEAD\^1^1`
-*** `HEAD@{2}` -> zweiter Vorfahr von HEAD
-*** `HEAD@{5.minutes.ago}`
+*** `HEAD~3` -> dritt-letzter Wert von HEAD
+*** `HEAD@{2}` -> zweit-letzter Wert von HEAD
+*** `HEAD@{5.minutes.ago}` -> Wert von HEAD vor 5 Minuten
 
 === Änderungen verwerfen
 
@@ -383,14 +401,23 @@ $ git reset –-soft HEAD^
 
 === Editor für Commit-Nachrichten
 
-* Windows & Notepad++
+* Commit Messages ohne Vim
 ** _erspart_ Editor in der Konsole
 ** bei `git commit` kann das [.blue]#-m# nun weggelassen werden
 
+
+Windows
 [source, shell]
 ----
 $ git config --global core.editor 'C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin
 ----
+
+Mac
+[source, shell]
+----
+$ git config --global core.editor "code --wait"
+----
+
 
 === Alias für Historie
 
@@ -403,6 +430,7 @@ $ git config --global alias.hist "log --pretty=format:'%C(yellow)[%ad]%C(reset) 
 
 === Kommandozeile
 
+* `dir` -> Auflisten aller Dateien in einem Verzeichnis
 * `cd ordner1` -> Wechsel in des Unterverzeichnis _ordner1_
 * `cd ..` -> Wechsel in das nächsthöhere Verzeichnis
 * `mkdir ordner2` -> Erstellen eines neuen Unterverzeichnisses
