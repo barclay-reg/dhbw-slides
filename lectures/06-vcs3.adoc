@@ -8,6 +8,7 @@
 
 == Mergen
 
+[%notitle]
 === Doppelbedeutung
 
 Doppelbedeutung [.blue]#merge#
