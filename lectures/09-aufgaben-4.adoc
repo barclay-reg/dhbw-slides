@@ -23,10 +23,10 @@
 .. Registrieren bei https://github.com
 .. UserId od. Name PLUS Teammitglied mir mitteilen
 . Ich weise euch auf Github einer _Organisation_ zu
-. jeder _clont_ (nicht _forken_) das Repository [.lightgreen]#`progit2`# aus seiner Organisation
+. jeder _clont_ (nicht _forken_) das Repository [.lightgreen]#`dhbw-painground`# aus seiner Organisation
 ** nehmt den Link `https://github.com/...` , *nicht* `git@github.com:...`
 ** `git clone` in einen Ordner ausführen, der bisher *nicht* mit Git genutzt wurde
-** danach in den geklonten Ordner wechseln
+** danach in den geklonten Ordner wechseln (mit `cd`)
 
 === Übungen 1
 
@@ -38,7 +38,7 @@
 === Übungen 2
 
 [.small]
-. Mitglied 1 & 2: jeder erstellt (auf github) einen neuen Branch von `master` (siehe https://help.github.com/articles/creating-and-deleting-branches-within-your-repository[help.github.com])
+. Mitglied 1 & 2: jeder erstellt (auf github) einen neuen Branch, basierend auf `master` (siehe https://help.github.com/articles/creating-and-deleting-branches-within-your-repository[help.github.com])
 . Mitglied 1 & 2: jeder aktiviert lokal seinen erstellten Branch (vorher `git fetch` nötig)
 . Mitglied 1 & 2: jeder erstellt mehrere Commits auf seinem Branch und publiziere diese Änderungen, sodass sie auf github sichtbar sind
 . Mitglied 1 & 2: gemeinsam - integriert die Änderungen eines Branches auf `master` 
@@ -60,11 +60,15 @@
 == Gruppen
 
 [.small]
-. https://github.com/fn-tfe16-g1
-. https://github.com/fn-tfe16-g2
-. https://github.com/fn-tfe16-g3
-. https://github.com/fn-tfe16-g4
-. https://github.com/fn-tfe16-g5
-. https://github.com/fn-tfe16-g6
-. https://github.com/fn-tfe16-g7
-. https://github.com/fn-tfe16-g8
+. https://github.com/fn-tfe17-g1
+. https://github.com/fn-tfe17-g2
+. https://github.com/fn-tfe17-g3
+. https://github.com/fn-tfe17-g4
+. https://github.com/fn-tfe17-g5
+. https://github.com/fn-tfe17-g6
+. https://github.com/fn-tfe17-g7
+. https://github.com/fn-tfe17-g8
+. https://github.com/fn-tfe17-g9
+. https://github.com/fn-tfe17-g10
+. https://github.com/fn-tfe17-g11
+. https://github.com/fn-tfe17-g12

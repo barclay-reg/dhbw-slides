@@ -63,8 +63,8 @@ ____
 === Chaos im Code
 
 * je älter ein Projekt, desto höher der Aufwand, neue Funktionen hinzuzufügen
-* damit die Produktivität wenigstens annähernd gleich bleibt, wird Fokus der Arbeit auf neue Funktionen gelegt
-** Folge: Code verrottet - wichtige Basis-Arbeiten werden vernachlässigt
+* damit die Produktivität wenigstens annähernd gleich bleibt, wird (leider) der Fokus der Arbeit auf neue Funktionen gelegt
+** Folge: [.blue]#Code verrottet# - wichtige Basis-Arbeiten werden vernachlässigt
 *** keine neuen Tests
 *** Konzepte werden durch Ausnahmen aufgeweicht
 *** Dokumentation wird nicht nachgezogen
@@ -294,7 +294,8 @@ public class HtmlUnit {
   public static String testableHtml(
      PageData pageData,
      boolean includeSuiteSetup
-   ) throws Exception {
+   ) throws Exception 
+   {
      WikiPage wikiPage = pageData.getWikiPage();
      StringBuffer buffer = new StringBuffer();
      if (pageData.hasAttribute("Test")) {
@@ -303,6 +304,7 @@ public class HtmlUnit {
            PageCrawlerImpl.getInheritedPage(
                SuiteResponder.SUITE_SETUP_NAME, wikiPage
            );
+     ...      
 ----
 
 [%notitle]
@@ -327,7 +329,8 @@ public class HtmlUnit {
   public static String testableHtml(
      PageData pageData,
      boolean includeSuiteSetup
-   ) throws Exception {
+   ) throws Exception 
+   {
      WikiPage wikiPage = pageData.getWikiPage();
      StringBuffer buffer = new StringBuffer();
      if (pageData.hasAttribute("Test")) {
@@ -343,7 +346,7 @@ public class HtmlUnit {
 
 ----
 public static String renderPageWithSetupsAndTeardowns(
-   PageData pageData, bool isSuite
+   PageData pageData, boolean isSuite
 ) throws Exception {
    
    boolean isTestPage = pageData.hasAttribute("Test");

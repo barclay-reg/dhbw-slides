@@ -25,8 +25,8 @@ Synchronistion der Git-Objekte == Replikation aller Git-Objekte
 === Remotes
 
 * Das letzte verbliebene Element in der Liste der Git-Objekte
-* Ein lokales Repository mit vielen verschiedenen Remote Repositories verbunden sein
-* wenn Repo durch `git clone` entstanden ist, gibt es genau ein Remote mit dem Namen [.blue]#`origin`#
+* Ein [.green]#lokales# [.blue]#Repository# kann mit vielen verschiedenen [.lightgreen]#entfernten# [.blue]#Repositories# verbunden sein
+* wenn Repo durch `git clone` entstanden ist, gibt es genau ein Remote mit dem Namen `origin`
 
 [source, shell]
 ----
@@ -72,16 +72,25 @@ $ find .git/refs
 
 === Remote Tracking Branches
 
-* Name der remote Branches setzt sich aus dem Namen des Remote Repository plus dem Namen des Branches zusammen
+* Wenn ein [.lightgreen]#lokaler# Branch mit einem [.lightgreen]#remote# Branch verbunden ist, dann spricht man von einem sog.:
+** [.blue]#Remote-Tracking-Branch#
+** oder Upstream-Branch
+** Git weiss, dass der lokale Branch dem remote Branch _folgt_
+** z.B. der Branch [.blue]#`origin/master`# wird von [.lightgreen]#`master`# getracked
+* Name der remote Branches == Namen des Remote Repository plus dem Namen des Branches zusammen
 ** z.B. `origin/feature-1`
-* Wenn ein lokaler Branch mit einem remote Branch verbunden ist, dann spricht man von einem sog.: Remote-Tracking-Branch 
-** manchmal auch von _Upstream_ Branch
-** der Branch [.blue]#`origin/master`# wird von [.lightgreen]#`master`# getracked
+
 
 [NOTE.speaker]
 --
 * Dies sind die Vorraussetzungen, damit Git eine Synchronisierung durchführen kann
 --
+
+=== Remote Tracking Branches
+
+[.dark-background-color-image]
+[.stretch]
+image::remote-branches-1.png[]
 
 === Kommandos
 
@@ -96,7 +105,7 @@ $ git branch feature-1 origin/feature-1
 ## Shortcut, legt automatisch lokalen Branch an, falls ein 
 ## Branch `origin/feature-1` existiert
 $ git checkout feature-1
-## Definiert für den aktuellen lokalen Branch dem 
+## Definiert für den aktuellen lokalen Branch den
 ## Namen des Remote Branches
 $ git branch --set-upstream-to origin/neues-feature
 ----

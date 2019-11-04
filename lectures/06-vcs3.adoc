@@ -130,6 +130,28 @@ Zusammenfügen von zwei (oder mehr) Branches
 .. 3-Way-Merge
 .. Fast-Forward-Merge
 
+
+== Fast-Forward-Merge
+
+[source, shell]
+----
+$ git checkout master        # Aktivieren des ‚Ziel‘-Branches
+----
+
+[.stretch]
+image::ff-before-merge.png[]
+
+=== Fast-Forward-Merge
+
+[source, shell]
+----
+$ git merge feature  # Startet merge von allen Commits auf
+$                    # Branch feature zu Branch master
+----
+
+[.stretch]
+image::ff-after-merge.png[]
+
 === Fast-Forward-Merge
 
 * ein Merge führt zwei Branches zusammen
@@ -139,54 +161,116 @@ Zusammenfügen von zwei (oder mehr) Branches
 
 [source, shell]
 ----
-$ git checkout master        # Aktivieren des ‚Ziel‘-Branches
-$ git merge feature          # Startet merge von allen Commits auf
-$                            # Branch feature zu Branch master
+$ git checkout master         # Aktivieren des ‚Ziel‘-Branches
+$ git merge feature           # Startet merge von allen Commits auf
+$                             # Branch feature zu Branch master
 $ git merge --ff-only feature # Starte merge nur, wenn FF möglich ist
 ----
 
-=== Fast-Forward-Merge
+== 3-Way-Merge
 
-image::ff-before-merge.png[]
-
-=== Fast-Forward-Merge
-
-image::ff-after-merge.png[]
-
-=== 3-Way-Merge
-
-* ein Merge führt zwei Branches zusammen
-* ein Merge wird immer zu dem aktiven Branch hin ausgeführt
-* wurden in beiden Branches Änderungen vorgenommen, entsteht ein [.blue]#neuer Commit#
 
 [source, shell]
 ----
-$ git checkout master         # Aktivieren des ‚Ziel‘-Branches
-$ git merge feature           # Startet merge von ‚Quell‘-Branch
-$ git merge --abort           # Abbrechen eines begonnenen Merges 
-$                             # (der Konflikte hat)
-$ git reset --hard ORIG_HEAD  # Macht ein versehentlichen und
-$                             # abgeschlossenen Merge rückgängig
+$ git checkout master        # Aktivieren des ‚Ziel‘-Branches
 ----
-
-=== 3-Way-Merge
 
 [.stretch]
 image::3wm-before-merge.png[]
 
 === 3-Way-Merge
 
+----
+$ git merge feature           # Startet merge von ‚Quell‘-Branch
+----
+
 [.stretch]
 image::3wm-after-merge.png[]
 
-=== Rebase
+=== 3-Way-Merge
+
+* ein Merge führt zwei Branches zusammen
+* ein Merge wird immer zu dem aktiven Branch hin ausgeführt (wie FF)
+* es entsteht ein [.blue]#neuer Commit#
+
+[source, shell]
+----
+$ git checkout master  # Aktivieren des ‚Ziel‘-Branches
+$ git merge feature    # Startet merge von ‚Quell‘-Branch
+$ git merge --abort    # Abbrechen eines begonnenen Merges 
+$                      # (der Konflikte hat)
+$ git commit           # abschliessen eines Merges, 
+$                      # bei dem Konflikte manuell behoben wurden
+$ git reset --hard ORIG_HEAD  # Macht ein versehentlichen und
+$                             # abgeschlossenen Merge rückgängig
+----
+
+== Rebase
 
 * Ist einer Alternative zum 3-Way-Merge
 ** Vermeidet den Merge-Commit, indem die Vorraussetzung für ein Fast-Forward geschaffen wird
+
+=== Rebase Start
+
+[.stretch]
+image::rebase-before.png[]
+
+[%notitle]
+=== Rebase Alternative
+
+So würde ein _3-Way-Merge_ aussehen
+
+[source, shell]
+----
+$ git checkout master   # aktivieren des Ziel-Branches
+$ git merge experiment  # Starten des Merge von experiment 
+$                       # in master hinein
+----
+
+[.stretch]
+image::rebase-alternative-merge.png[]
+
+
+[%notitle]
+=== Rebase
+
+Stattdessen: Vorbereitung per _rebase_
+
+[source, shell]
+----
+$ git checkout experiment  # aktivieren des Quell-Branches 
+$       # die "Quelle" des Merges, den wir per rebase vorbereiten
+$ git rebase master        # Starten des Rebasing 
+$       # "master" als neue Basis für alle Commits 
+$       # auf branch "experiment"
+----
+
+[.stretch]
+image::rebase.png[]
+
+[%notitle]
+=== Rebase
+
+gefolgt von: _fast-forward_ Merge
+
+[source, shell]
+----
+$ git checkout master   # aktivieren des Ziel-Branches
+$ git merge experiment  # Starten des Merge von experiment 
+$                       # in master hinein
+----
+
+[.stretch]
+image::ff-after-rebase.png[]
+
+=== Rebase
+
 * ein Rebase wird immer auf dem aktiven Branch durchführt
 ** Verändert alle Commits, die bisher auf dem aktiven Branch gemacht wurden
-** Ziel und Quelle sind hier anders, als beim Merge
+** Ziel und Quelle sind hier anders, als beim (folgenden) Merge
 ** ggf. manuelle Konfliktbehebung, wie beim Merge nötig
+* Verändert alle Commits des Quelle-Branches
+
 
 === Rebase Kommandos
 
@@ -205,50 +289,6 @@ $ git rebase –-continue
 ## Abbruch des Rebasing (jederzeit möglich)
 $ git rebase --abort
 ----
-
-=== Rebase Start
-
-[.stretch]
-image::rebase-before.png[]
-
-[%notitle]
-=== Rebase Alternative
-
-So würde ein _3-Way-Merge_ aussehen
-
-----
-$ git merge master
-----
-
-[.stretch]
-image::rebase-alternative-merge.png[]
-
-
-[%notitle]
-=== Rebase
-
-Stattdessen: _rebase_
-
-----
-$ git checkout experiment
-$ git rebase master
-----
-
-[.stretch]
-image::rebase.png[]
-
-
-[%notitle]
-=== Rebase
-
-gefolgt von: _fast-forward_
-
-----
-$ git merge master
-----
-
-[.stretch]
-image::ff-after-rebase.png[]
 
 
 === Rebase Vorteile
