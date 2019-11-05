@@ -22,7 +22,7 @@ Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar
 | 5 | Aufgaben für den 2. Praxisteil | {ghpages-base}05-aufgaben-2[05-aufgaben-2.html] |  | {source-base}05-aufgaben-2.adoc[05-aufgaben-2.adoc]
 | 6 | Version Control Systems - 3 | {ghpages-base}06-vcs3.html[06-vcs3.html] | {ghpages-base}06-vcs3.pdf[06-vcs3.pdf] | {source-base}06-vcs3.adoc[06-vcs3.adoc]
 | 7 | Aufgaben für den 3. Praxisteil | {ghpages-base}07-aufgaben-3.html[07-aufgaben-3.html] |  | {source-base}07-aufgaben-3.adoc[07-aufgaben-3.adoc]
-| 8 | Version Control Systems - 4 | {ghpages-base}08-vcs4.html[08-vcs4.html] | {ghpages-base}08-vcs4.pdf[08-vcs4.pdf] | {source-base}08-vcs4.adoc[08-vcs4.adoc]
+| 8 | Version Control Systems - 4 | {ghpages-base}08-vcs-4.html[08-vcs-4.html] | {ghpages-base}08-vcs-4.pdf[08-vcs-4.pdf] | {source-base}08-vcs-4.adoc[08-vcs-4.adoc]
 | 9 | Aufgaben für den 4. Praxisteil | {ghpages-base}09-aufgaben-4.html[09-aufgaben-4.html] |  | {source-base}09-aufgaben-4.adoc[09-aufgaben-4.adoc]
 | 10 | Clean Code | {ghpages-base}10-cleancode.html[10-cleancode.html] | {ghpages-base}10-cleancode.pdf[10-cleancode.pdf] | {source-base}10-cleancode.adoc[10-cleancode.adoc]
 | 11 | Continuous IntegratinDelivery | {ghpages-base}11-continuous.html[11-continuous.html] | {ghpages-base}11-continuous.pdf[11-continuous.pdf] | {source-base}11-continuous.adoc[11-continuousadoc]
