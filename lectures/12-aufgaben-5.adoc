@@ -76,9 +76,13 @@ $ mvnw clean install
 * 1x pro Gruppe
 * Account bei travis-ci.org anlegen
 ** _merken_ wer diesen Account angelegt hat
-** nur dieser User ist _Admin_, Alle haben Lese-Zugriff
-** ggf. während der Registrierung unbedingt den Zugriff auf die Github Organisation (eure Gruppe, z.B fn-tfe16-g1) beantragen
+** nur dieser User ist _Admin_, Alle anderen haben Lese-Zugriff
+** ggf. während der Registrierung unbedingt den Zugriff auf die Github Organisation (eure Gruppe, z.B fn-tfe17-g1) beantragen
 ** diese Antrag innerhalb von Github annehmen
+
+[%notitle]
+[background-video="../images/12-aufgaben-5/travis-ci-request-orga-access.mp4",background-video-loop=true,background-video-muted=true]
+=== Travic-CI grant Organisation
 
 === Erster Travis Build
 
@@ -88,9 +92,9 @@ $ mvnw clean install
 ** ggf. durch einen extra commit
 * Fehler bzgl. Sonar abwarten
 
+[%notitle]
+[background-video="../images/12-aufgaben-5/travis-ci-connect-repo.mp4",background-video-loop=true,background-video-muted=true]
 === Erster Travis Build
-
-image::travis-ci-setup.png[]
 
 === Sonarcloud
 
@@ -98,13 +102,13 @@ image::travis-ci-setup.png[]
 * Account bei sonarcloud.io anlegen
 ** _merken_ wer diesen Account angelegt hat
 ** nur dieser User ist _Admin_, Alle haben Lese-Zugriff
-* organisations-key merken
-* neues security token anlegen & kopieren
-
-* _Demo_ siehe nächste Folie
+* Organisation und Access-Token erstellen
+** siehe nächste Folie
+** organisations-key merken
+** security token anlegen & kopieren
 
 [%notitle]
-[background-video="https://media.giphy.com/media/3ohjV953ANHdCAOQqQ/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+[background-video="../images/12-aufgaben-5/sonarcloud-io-create-organisation-and-token.mp4",background-video-loop=true,background-video-muted=true]
 === Sonarcloud
 
 === Travis-CI Konfigurieren
@@ -113,10 +117,20 @@ image::travis-ci-setup.png[]
 ** SONAR_TOKEN --> security token einfügen
 ** SONAR_ORGANIZATION --> den organisations-key von vorhin
 ** SONAR_ALTERNATIVE_PROJECTKEY --> Gruppen-Key verwenden
-*** net.kleinschmager.dhbw.tfe16:g [.blue]#1#-painground
+*** z.B. net.kleinschmager.dhbw.tfe17:g [.blue]#1#-painground
 
 * _Demo_ siehe nächste Folie
 
 [%notitle]
-[background-video="https://media.giphy.com/media/3o6nVcbVMiLSmzWgO4/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+[background-video="../images/12-aufgaben-5/travis-ci-add-settings.mp4",background-video-loop=true,background-video-muted=true]
 === Travis-CI Konfigurieren
+
+=== Los gehts
+
+* einen neuen Commit in das Git-Repo pushen
+* in travis-ci.org sehen, das der build startet
+* in sonarcloud.io das Ergebnis sehen
+
+[%notitle]
+[background-video="../images/12-aufgaben-5/sonarcloud-io-success.mp4",background-video-loop=true,background-video-muted=true]
+=== Los gehts

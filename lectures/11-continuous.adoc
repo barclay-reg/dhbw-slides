@@ -231,6 +231,7 @@ ____
 === Elemente
 
 [start=4]  
+[%step]
 . [.blue]#Tests# werden gleichzeitig entwickelt (als Code)
   * stehen ebenfalls unter Versionsverwaltung
   * am besten im gleichen Repository wie der Code selbst

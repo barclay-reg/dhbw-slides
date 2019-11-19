@@ -63,7 +63,7 @@ git config --global user.email "email@example.com"
 $ cd dhbw
 $ cd checkout
 $ git clone \
- https://github.com/fn-tfe16-g<gruppe>/dhbw-painground.git
+ https://github.com/fn-tfe17-g<gruppe>/dhbw-painground.git
 $ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 ----
 
