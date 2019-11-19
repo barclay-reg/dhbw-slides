@@ -162,7 +162,7 @@ IDE
 
 
 [%notitle]
-[background-video="https://media.giphy.com/media/xUNd9KYIG40h6ImAg0/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+[background-video="../images/11-continuous/eclipse-export-jar.mp4",background-video-loop=true,background-video-muted=true]
 === Verpacken IDE
 
 === Nachteile

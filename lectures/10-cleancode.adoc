@@ -633,7 +633,7 @@ public void logError(Exception e) {...}
 === Über Kommentare
 
 * Kommentare sind kein Ersatz für schlechten Code
-* Kommentare vermeiden durch [.blue]#selbsterklärenden# Code
+* Kommentare können durch [.blue]#selbsterklärenden# Code vermieden werden
 
 ----
 // Check to see, if the employee is eligible for full benefits
@@ -658,7 +658,6 @@ if (employee.isEligibleForFullBenefits())
 * Klarstellungen
 * Warnung vor Konsequenzen
 * TODO-Kommentare
-* Verstärkung
 
 === Schlechte Kommentare
 

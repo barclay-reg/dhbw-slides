@@ -69,6 +69,7 @@ $ mvnw clean install
 
 * 1x pro Gruppe
 * bringt euer Remote-Repo auf den neuesten Stand
+** `git pull -f`
 
 === Travis Account
 

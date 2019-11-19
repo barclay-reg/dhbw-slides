@@ -5,6 +5,8 @@
 :revealjs_history:
 :idprefix: slide_
 
+include::../overlay.adoc[]
+
 [.small]#Robert Kleinschmager  |  github.com/barclay-reg#
 
 [background-color="cornflowerblue"]
