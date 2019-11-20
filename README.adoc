@@ -26,11 +26,14 @@ Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar
 | 9 | Aufgaben für den 4. Praxisteil | {ghpages-base}09-aufgaben-4.html[09-aufgaben-4.html] |  | {source-base}09-aufgaben-4.adoc[09-aufgaben-4.adoc]
 | 10 | Clean Code | {ghpages-base}10-cleancode.html[10-cleancode.html] | {ghpages-base}10-cleancode.pdf[10-cleancode.pdf] | {source-base}10-cleancode.adoc[10-cleancode.adoc]
 | 11 | Continuous IntegrationDelivery | {ghpages-base}11-continuous.html[11-continuous.html] | {ghpages-base}11-continuous.pdf[11-continuous.pdf] | {source-base}11-continuous.adoc[11-continuousadoc]
-| | Java Kurzeinführung | {ghpages-base}0x-java.html[0x-java.html] | | {source-base}0x-java.adoc[0x-java.adoc]
-| | Projekt Setup | {ghpages-base}0x-setup.html[0x-setup.html] | | {source-base}0x-setup.adoc[0x-setup.adoc]
-| 12 |  Aufgaben für den 5. Praxisteil | {ghpages-base}12-aufgaben-5.html[12-aufgaben-5.html] | | {source-base}12-aufgaben-5.adoc[12-aufgaben-5.adoc]
+| 12 | Aufgaben für den 5. Praxisteil | {ghpages-base}12-aufgaben-5.html[12-aufgaben-5.html] | | {source-base}12-aufgaben-5.adoc[12-aufgaben-5.adoc]
 | 13 | Testen | {ghpages-base}13-testen.html[13-testen.html] | {ghpages-base}13-testen.pdf[13-testen.pdf] | {source-base}13-testen.adoc[13-testen.adoc]
 | 14 | Refactoring | {ghpages-base}14-refactoring.html[14-refactoring.html] | {ghpages-base}14-refactoring.pdf[14-refactoring.pdf] | {source-base}14-refactoring.adoc[14-refactoring.adoc]
+| | Java Kurzeinführung | {ghpages-base}0x-java.html[0x-java.html] | | {source-base}0x-java.adoc[0x-java.adoc]
+| | Projekt Setup | {ghpages-base}0x-setup.html[0x-setup.html] | | {source-base}0x-setup.adoc[0x-setup.adoc]
+| 15 | Requirement Engineering | {ghpages-base}15-requirements.html[15-requirements.html] | {ghpages-base}15-requirements.pdf[15-requirements.pdf] | {source-base}15-requirements.adoc[15-requirements.adoc]
+| 16 | Aufgaben für den 6. Praxisteil | {ghpages-base}16-aufgaben-6.html[16-aufgaben-6.html] | | {source-base}16-aufgaben-6.adoc[16-aufgaben-6.adoc]
+
 |===
 
 image:https://travis-ci.org/barclay-reg/dhbw-slides.svg?branch=master[link=https://travis-ci.org/barclay-reg/dhbw-slides] image:https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png[Licence Creative Commons, role="left", link="http://creativecommons.org/licenses/by-nc-sa/4.0/"]
