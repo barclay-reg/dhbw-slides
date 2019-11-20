@@ -43,7 +43,7 @@ Erzeuge zwei Ordner - egal wo, z.B.
 
 == Vorbereitung
 
-[.blue]#während downloads laufen#
+[.blue]#während Downloads laufen#
 
 == Projekt einrichten
 

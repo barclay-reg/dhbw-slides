@@ -34,7 +34,7 @@ Qualitätsanforderungen::
 * Performance, Verfügbarkeit, Zuverlässigkeit, ...
 Rahmenbedingungen::
 * können (von den Beteiligten) nicht verändert werden
-* werden nicht umgesetzt, sondern schränken die Umsetzungmöglichkeiten ein
+* werden nicht umgesetzt, sondern schränken die Umsetzungsmöglichkeiten ein
 
 
 

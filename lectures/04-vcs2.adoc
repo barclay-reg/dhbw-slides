@@ -16,7 +16,7 @@ image::git-transport-local.png[]
 [state=complex]
 === Git Kommandos
 
-. Interaktion zwischem [.blue]#lokalem Repository# und [.blue]#WorkCopy#
+. Interaktion zwischen [.blue]#lokalem Repository# und [.blue]#WorkCopy#
   * `git checkout master`
   * `git add README.md`
   * `git rm README.md`
@@ -227,7 +227,7 @@ Eine weitere Darstellung (verkürzt) von zwei Branches, die auseinandergelaufen 
 
 [source, shell]
 ----
-## leichtgewichten Tag erstellen
+## leichtgewichteten Tag erstellen
 $ git tag test-tag-1
 ## alle Tags anzeigen
 $ git tag
@@ -336,7 +336,7 @@ $ git log –g
 
 [NOTE.speaker]
 --
-* Sinnvoll, um kurfristig auf einen anderen Branch zu wechseln, ohne die aktuelle Arbeit commiten zu müssen
+* Sinnvoll, um kurzfristig auf einen anderen Branch zu wechseln, ohne die aktuelle Arbeit committen zu müssen
 --
 
 === Stash Kommandos

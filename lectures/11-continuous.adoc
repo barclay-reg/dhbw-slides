@@ -41,7 +41,7 @@ keine Merge-Konflikte, keine Kompilier-Konflikte, aber die [.blue]#Tests# laufen
 === Integration
 
 Integration::
-Code-Basis zweier Entwickler ineinander [.lightgreen]#integrieren# um alle Arten von Konfliken zu identifizieren.
+Code-Basis zweier Entwickler ineinander [.lightgreen]#integrieren# um alle Arten von Konflikten zu identifizieren.
 
 [background-color="cornflowerblue"]
 [transition=convex]

@@ -7,7 +7,7 @@
 [state=complex]
 == Ziel
 
-* Verständis von 3-Way-Merge, Fast-Forward-Merge und Rebasing
+* Verständnis von 3-Way-Merge, Fast-Forward-Merge und Rebasing
 * Sicherer Umgang mit den Befehlen
 ** `git merge`
 ** `git rebase`

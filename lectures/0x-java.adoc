@@ -18,7 +18,7 @@ Erfunden von [.blue]#Sun#, gehört mittlerweile zu [.blue]#Oracle#
 * Klammern, Semikolon, Methodenaufrufen, Klassendefinition, ...
 ----
 <Object-Instanz>.<methode>(<MethodenSignatur>)
-// kommentar
+// Kommentar
 ----
 
 Beispiel

@@ -60,10 +60,10 @@ image::team.jpg[]
 ** konstantes Verhalten
 | 
 ==== Komplex
-* das Maß der Menge an Überaschungen
+* das Maß der Menge an Überraschungen
 * Kontext-abhängig
 * Komplexes System
-** "lebendig", erzeugt Überaschungen
+** "lebendig", erzeugt Überraschungen
 ** von außen nur beobachtbar
 ** dynamisches Verhalten
 |===
@@ -270,7 +270,7 @@ image::bugfixing.jpg[]
 === Analytisches Talent
 
 [.left]
-* Analyse von Kundenwüschen
+* Analyse von Kundenwünschen
 ** Was will der Kunde und WARUM?
 * Analyse von Fehlern/Bugs
 * Debugging

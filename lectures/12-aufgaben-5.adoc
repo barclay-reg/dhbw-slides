@@ -29,7 +29,7 @@ $ mvn clean install
 === Maven Wrapper
 
 * Laden der (konfigurierten) Maven version
-** d.h. einzige Vorrausetzung für Setup bleibt
+** d.h. einzige Voraussetzungen für Setup bleibt
 *** Git
 *** JDK
 *** Google Chrome (für UI-Tests)

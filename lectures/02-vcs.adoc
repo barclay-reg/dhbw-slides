@@ -60,7 +60,7 @@ image::central-vs-distributed-2.png[]
 * auf dem lokalen Rechner sind ist nur die aktuelle Version aller Dateien
 * für alle anderen Funktionen muss das Remote-Repo (auf einem Server) kontaktiert werden, z.B.
 ** alte Version Anzeigen/Wiederherstellen
-** Blame-Funktion - Wer hat wann welche Zeile hinzugefügt, inkl. des zugehöringen Kommentars
+** Blame-Funktion - Wer hat wann welche Zeile hinzugefügt, inkl. des zugehörigen Kommentars
 ** Wechsel auf einen anderen Branch
 ** Mergen von zwei Branches
 --
@@ -281,7 +281,7 @@ image::staging-flow-6.png[]
 
 [source, shell]
 ----
-## Fügt alle neuen/geänderten vom aktuellen Ordner (rekusiv) 
+## Fügt alle neuen/geänderten vom aktuellen Ordner (rekursiv) 
 ## zum Index hinzu
 $ git add .
 ## Fügt die neue/geänderte Datei zum Index hinzu

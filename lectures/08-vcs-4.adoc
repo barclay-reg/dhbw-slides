@@ -16,7 +16,7 @@ GIT :: Stupid Content Tracker, effizienter Objekt-Speicher mit der Fähigkeit zw
 [%notitle]
 === Einführung Remotes
 
-Synchronsation bei Daten == Replikation
+Synchronisation bei Daten == Replikation
 
 ---
 
@@ -66,8 +66,8 @@ $ find .git/refs
 --
 * unter refs/remotes wird der Stand eines Branch-Zeigers auf Remote abgelegt
 ** diese Zeiger können lokal nicht verändert werden
-* Branch my-branch-1 existiert nur bei mir loka
-* Brnach other-branch-2 existiert nur bei origin
+* Branch my-branch-1 existiert nur bei mir lokal
+* Branch other-branch-2 existiert nur bei origin
 --
 
 === Remote Tracking Branches
@@ -80,7 +80,7 @@ $ find .git/refs
 
 [NOTE.speaker]
 --
-* Dies sind die Vorraussetzungen, damit Git eine Synchronisierung durchführen kann
+* Dies sind die Voraussetzungen, damit Git eine Synchronisierung durchführen kann
 --
 
 === Kommandos
@@ -141,14 +141,14 @@ image::git-fetch-after.png[]
 
 [NOTE.speaker]
 --
-* Alle commits der beiden Remote Branches wurden übertragen. Auch die Branchzeiger wurden übertragen, aber der Tracking-Branch (master) wurde nicht verändert - nun ist sichtbar, dass dieser von orign/master abweicht (diverged) - die Lösung dafür ist entweder ein 3WM oder ein Rebase+FF-Merge
+* Alle commits der beiden Remote Branches wurden übertragen. Auch die Branchzeiger wurden übertragen, aber der Tracking-Branch (master) wurde nicht verändert - nun ist sichtbar, dass dieser von origin/master abweicht (diverged) - die Lösung dafür ist entweder ein 3WM oder ein Rebase+FF-Merge
 --
 
 === Push
 
 * `git push`
 ** überträgt alle lokalen Commits zu dem Remote Repository
-** Nur erlaubt, wenn (remote) ein [.blue]#Fast-Forward-Merge# möglich ist, ansonstten vorher `git pull`
+** Nur erlaubt, wenn (remote) ein [.blue]#Fast-Forward-Merge# möglich ist, ansonsten vorher `git pull`
 ** danach ist [.blue]#KEIN Ändern# der Historie/Commits empfohlen
 *** Kein Commit-Amend, Reset von Branches, Rebasing
 ** je nach Konfiguration wird nur der lokale Branch oder alle Branches synchronisiert

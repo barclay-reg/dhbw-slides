@@ -23,7 +23,7 @@ _
 * Beides wird mit `git merge` angestoßen
 * Begriff: [.blue]#gemeinsamer Vorfahr# (most recent common ancestor) Commit
 ** `git merge-base` Befehl hilft dabei
-* Falls automatische Konflikauflösung nicht funktioniert, muss der User eingreifen
+* Falls automatische Konfliktauflösung nicht funktioniert, muss der User eingreifen
 
 === Dateikonflikte
 
@@ -88,7 +88,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 * Git ändert die Datei und speichert alle nicht-gemergten Stellen innerhalb der Datei ab.
 ** mit sog. Standard [.blue]#Konflikt-Markern#
 * `git add datei.txt` Markiert die Datei als "Konflikte gelöst"
-* `git merge --abort` Versetz alles in den Zustand vorher
+* `git merge --abort` Versetzt alles in den Zustand vorher
 * `git mergetool` kann eine bessere Sicht auf die Konflikte liefern
 
 === Manuelle Dateikonflikte
@@ -182,7 +182,7 @@ image::3wm-after-merge.png[]
 === Rebase
 
 * Ist einer Alternative zum 3-Way-Merge
-** Vermeidet den Merge-Commit, indem die Vorraussetzung für ein Fast-Forward geschaffen wird
+** Vermeidet den Merge-Commit, indem die Voraussetzungen für ein Fast-Forward geschaffen wird
 * ein Rebase wird immer auf dem aktiven Branch durchführt
 ** Verändert alle Commits, die bisher auf dem aktiven Branch gemacht wurden
 ** Ziel und Quelle sind hier anders, als beim Merge
