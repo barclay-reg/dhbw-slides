@@ -76,8 +76,9 @@ $ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 *** Suche nach "editorconfig"; Installiere es
 ** _Import_ -> _Existing Maven Projects_
 *** den vorhin erzeugten Ordern `checkout` auswählen
+** _Window_ -> _Show View_ -> _Navigator_ öffnen
 *** abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
-** Schritte 2-6 aus `README.md` Abschnitt _Checkout & Start_ ausführen
+** Schritte 2-4 aus `README.md` Abschnitt _Checkout & Start_ ausführen
 
 === Eclipse Hilfe
 

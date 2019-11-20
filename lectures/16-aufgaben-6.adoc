@@ -1,4 +1,4 @@
-= Aufgaben 5
+= Aufgaben 6
 
 :imagesdir: ../images/16-aufgaben-6
 :revealjs_slideNumber:
@@ -21,14 +21,12 @@
 === Code
 
 * [.blue]#Fachlichkeit#
-** `MemberProfileCsvImporter.java`
-** `MemberProfileCsvTransformator.java`
+** `BadMemberProfileCsvImporter.java`
+** Getrennt durch ein Interface `CsvImporter.java`
 * [.blue]#Verwendung#
 ** `PaingroundApplication.java`
 * [.blue]#Tests#
-** `MemberProfileCsvImporterTest.java`
-** `MemberProfileCsvTransformatorTest.java`
-*** Komplizierter
+** `BadMemberProfileCsvImporterTest.java`
 
 [state=complex]
 === Code Hinweise
@@ -58,7 +56,7 @@ when(mockedTransformator.transform(anyObject())
 Test Ausführen
 
 [%notitle]
-[background-video="https://media.giphy.com/media/3o6nV8NCJefDqXj6s8/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+[background-video="../images/16-aufgaben-6/eclipse-run-as-junit-test.mp4",background-video-loop=true,background-video-muted=true]
 === Test Ausführen
 
 === Eclipse Hinweise
@@ -66,12 +64,15 @@ Test Ausführen
 Code Coverage Messen
 
 [%notitle]
-[background-video="https://media.giphy.com/media/xUNd9BYtninL2vDjB6/giphy-hd.mp4",background-video-loop=true,background-video-muted=true]
+[background-video="../images/16-aufgaben-6/eclipse-run-with-code-coverage.mp4",background-video-loop=true,background-video-muted=true]
 === Code Coverage Messen
 
 === Aufgaben
 
 . bringt euer Remote-Repo auf den neuesten Stand
+  * Holt alle Änderungen von meinem Repo 
+  * merged alle Änderungen von meinem Repo (`upstream:master`) auf euren `master`
+  * pushed diese Änderungen zu GitHub
 . Testfälle für CSV Import überlegen (Black & White)
 . Tests schreiben und Coverage Messen
   * zuerst `@Ignore` entfernen
