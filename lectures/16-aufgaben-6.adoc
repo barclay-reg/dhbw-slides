@@ -39,18 +39,6 @@
 ** im `//THEN` Teil
 ** mit Methoden `assertEquals` oder `assertTrue`
 
-[state=complex]
-=== Code Hinweise 2
-
-* _Mocken_ von Objekten
-** eine leere Hülle/Puppe, der ich spontan sagen kann, wie sie reagieren soll
-** sog. _to stub_
-** Beispiele: http://site.mockito.org/
-----
-when(mockedTransformator.transform(anyObject())
- .thenReturn(Collections.emptyList());
-----
-
 === Eclipse Hinweise
 
 Test Ausführen
@@ -73,7 +61,7 @@ Code Coverage Messen
   * Holt alle Änderungen von meinem Repo 
   * merged alle Änderungen von meinem Repo (`upstream:master`) auf euren `master`
   * pushed diese Änderungen zu GitHub
-. Testfälle für CSV Import überlegen (Black & White)
+. Testfälle für `BadMemberProfileCsvImporter` überlegen (Black & White)
 . Tests schreiben und Coverage Messen
-  * zuerst `@Ignore` entfernen
   * eine Testmethode pro Testfall
+. Refactoring von `BadMemberProfileCsvImporter`

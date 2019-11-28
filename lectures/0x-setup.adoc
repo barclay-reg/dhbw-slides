@@ -67,18 +67,18 @@ $ git clone \
 $ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 ----
 
-
+[]
+[state=complex]
 === Eclipse
 
-. Eclipse
-** Hilfreiche Screenshots sind auf den nächsten Folien
-** _Help_ -> _Eclipse Marketplace..._
-*** Suche nach "editorconfig"; Installiere es
-** _Import_ -> _Existing Maven Projects_
-*** den vorhin erzeugten Ordern `checkout` auswählen
-** _Window_ -> _Show View_ -> _Navigator_ öffnen
-*** abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
-** Schritte 2-4 aus `README.md` Abschnitt _Checkout & Start_ ausführen
+* Hilfreiche Screenshots sind auf den nächsten Folien
+* _Help_ -> _Eclipse Marketplace..._
+** Suche nach "editorconfig"; Installiere es
+* _Import_ -> _Existing Maven Projects_
+** den vorhin erzeugten Ordern `checkout` auswählen
+* _Window_ -> _Show View_ -> _Navigator_ öffnen
+** abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
+* Schritte 2-4 aus `README.md` Abschnitt _Checkout & Start_ ausführen
 
 === Eclipse Hilfe
 
