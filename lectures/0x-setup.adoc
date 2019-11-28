@@ -6,40 +6,6 @@
 :revealjs_history:
 :source-highlighter: highlightjs
 
-== Ordner Erstellen
-
-Erzeuge zwei Ordner - egal wo, z.B.
-----
-<my folder>
-|  \-- tools
-|  |   \-- eclipse
-|  |   \-- java
-|  \-- dhbw
-|  |  \-- checkout
-|  |  \-- workspace
-----
-
-== Download 
-
-=== Java
-
-. Download http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html[Java JDK 1.8.0_192]
-. Installieren
-** _Java SE Development Kit 8u191_
-** Speichern in Order _tools\java_
-** [.blue]#Public JRE# nur installieren, wenn noch kein JRE installiert ist
-
-=== Eclipse
-
-. Download http://www.eclipse.org/downloads/[Eclipse Installer]
-  * Wenn Sie Windows 32bit haben, dann Vorsicht! und melden
-. [.blue]#Eclipse IDE for Java EE Developers# auswählen
-. restliche Fragen selbst entscheiden
-.. Eclipse in Ordern _tools\eclipse\ speichern 
-.. Installieren
-.. warten
-. das Installierte Eclipse starten
-. beim [.blue]#Popup# bzgl. Workspace den vorhin erzeugten Ordner `workspace` angeben
 
 == Vorbereitung
 
@@ -60,34 +26,25 @@ git config --global user.email "email@example.com"
 
 [source, shell]
 ----
-$ cd dhbw
-$ cd checkout
 $ git clone \
  https://github.com/fn-tfe17-g<gruppe>/dhbw-painground.git
 $ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 ----
 
-[]
 [state=complex]
-=== Eclipse
+=== IntelliJ
 
-* Hilfreiche Screenshots sind auf den nächsten Folien
-* _Help_ -> _Eclipse Marketplace..._
-** Suche nach "editorconfig"; Installiere es
-* _Import_ -> _Existing Maven Projects_
-** den vorhin erzeugten Ordern `checkout` auswählen
-* _Window_ -> _Show View_ -> _Navigator_ öffnen
-** abwarten, bis _Progress_ (unten rechtes im Eclipse) fertig ist
-* Schritte 2-4 aus `README.md` Abschnitt _Checkout & Start_ ausführen
+. Download und Installieren https://www.jetbrains.com/idea/download[IntelliJ IDEA]
+  * Community Edition
+. `Ìmport Project` Wizard starten
+  * wählen Sie den Ordner, in dem dhwb-painground gecloned wurde
+  * Wählen Sie `Import Project from external model` -> Maven
+  * Immer `Next` klicken und dann `Finish`
 
-=== Eclipse Hilfe
 
-[.stretch]
-image::eclipse-install-editorconfig.png[]
-
-=== Eclipse Hilfe
+=== Intellij Hilfe
 
 [.stretch]
-image::eclipse-after-import.png[]
+image::intellij-after-import.png[]
 
 
