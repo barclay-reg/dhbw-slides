@@ -11,6 +11,15 @@
 
 [.blue]#während downloads laufen#
 
+=== Ordner Erstellen
+
+Erzeuge zwei Ordner - egal wo, z.B.
+----
+<my folder>
+|  \-- dhbw
+|  |  \-- checkout
+----
+
 == Projekt einrichten
 
 === git clone
@@ -28,6 +37,7 @@ git config --global user.email "email@example.com"
 ----
 $ git clone \
  https://github.com/fn-tfe17-g<gruppe>/dhbw-painground.git
+$ cd dhbw-painground
 $ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 ----
 
@@ -37,7 +47,7 @@ $ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
 . Download und Installieren https://www.jetbrains.com/idea/download[IntelliJ IDEA]
   * Community Edition
 . `Ìmport Project` Wizard starten
-  * wählen Sie den Ordner, in dem dhwb-painground gecloned wurde
+  * wählen Sie den Ordner `dhbw\checkout\dhbw-painground`
   * Wählen Sie `Import Project from external model` -> Maven
   * Immer `Next` klicken und dann `Finish`
 
