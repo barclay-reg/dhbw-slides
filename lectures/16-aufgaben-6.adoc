@@ -59,7 +59,7 @@ Code Coverage Messen
 
 . bringt euer Remote-Repo auf den neuesten Stand
   * Holt alle Änderungen von meinem Repo 
-  * merged alle Änderungen von meinem Repo (`upstream:master`) auf euren `master`
+  * merged alle Änderungen von meinem Repo (`upstream/master`) auf euren `master`
   * pushed diese Änderungen zu GitHub
 . Testfälle für `BadMemberProfileCsvImporter` überlegen (Black & White)
 . Tests schreiben und Coverage Messen

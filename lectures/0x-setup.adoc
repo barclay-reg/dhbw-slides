@@ -39,6 +39,7 @@ $ git clone \
  https://github.com/fn-tfe17-g<gruppe>/dhbw-painground.git
 $ cd dhbw-painground
 $ git remote add upstream https://github.com/barclay-reg/dhbw-painground.git
+$ git fetch upstream
 ----
 
 [state=complex]
