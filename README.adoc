@@ -15,8 +15,8 @@ Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar
 |===
 | | Kapitel | Online | PDF | Source 
 | | About Me | {ghpages-base}00-me.html[00-me.html] | {ghpages-base}00-me.pdf[00-me.pdf] | {source-base}00-me.adoc[00-me.adoc]
-| 1 | Einführung | {ghpages-base}01-start.html[01-start.html] | {ghpages-base}01-start.pdf[01-start.pdf] | {source-base}00-me.adoc[01-start.adoc]
-| 2 | Version Control Systems - 1 | {ghpages-base}02-vcs.html[02-vcs.html] | {ghpages-base}02-vcs.pdf[02-vcs.pdf] | {source-base}00-me.adoc[02-vcs.adoc]
+| 1 | Einführung | {ghpages-base}01-start.html[01-start.html] | {ghpages-base}01-start.pdf[01-start.pdf] | {source-base}01-start.adoc[01-start.adoc]
+| 2 | Version Control Systems - 1 | {ghpages-base}02-vcs.html[02-vcs.html] | {ghpages-base}02-vcs.pdf[02-vcs.pdf] | {source-base}02-vcs.adoc[02-vcs.adoc]
 | 3 | Aufgaben für den 1. Praxisteil | {ghpages-base}03-aufgaben-1[03-aufgaben-1.html] |  | {source-base}03-aufgaben-1.adoc[03-aufgaben-1.adoc]
 | 4 | Version Control Systems - 2 | {ghpages-base}04-vcs2.html[04-vcs2.html] | {ghpages-base}04-vcs2.pdf[04-vcs2.pdf] | {source-base}04-vcs2.adoc[04-vcs2.adoc]
 | 5 | Aufgaben für den 2. Praxisteil | {ghpages-base}05-aufgaben-2[05-aufgaben-2.html] |  | {source-base}05-aufgaben-2.adoc[05-aufgaben-2.adoc]
@@ -25,7 +25,7 @@ Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar
 | 8 | Version Control Systems - 4 | {ghpages-base}08-vcs-4.html[08-vcs-4.html] | {ghpages-base}08-vcs-4.pdf[08-vcs-4.pdf] | {source-base}08-vcs-4.adoc[08-vcs-4.adoc]
 | 9 | Aufgaben für den 4. Praxisteil | {ghpages-base}09-aufgaben-4.html[09-aufgaben-4.html] |  | {source-base}09-aufgaben-4.adoc[09-aufgaben-4.adoc]
 | 10 | Clean Code | {ghpages-base}10-cleancode.html[10-cleancode.html] | {ghpages-base}10-cleancode.pdf[10-cleancode.pdf] | {source-base}10-cleancode.adoc[10-cleancode.adoc]
-| 11 | Continuous IntegrationDelivery | {ghpages-base}11-continuous.html[11-continuous.html] | {ghpages-base}11-continuous.pdf[11-continuous.pdf] | {source-base}11-continuous.adoc[11-continuousadoc]
+| 11 | Continuous Integration & Delivery | {ghpages-base}11-continuous.html[11-continuous.html] | {ghpages-base}11-continuous.pdf[11-continuous.pdf] | {source-base}11-continuous.adoc[11-continuous.adoc]
 | 12 | Aufgaben für den 5. Praxisteil | {ghpages-base}12-aufgaben-5.html[12-aufgaben-5.html] | | {source-base}12-aufgaben-5.adoc[12-aufgaben-5.adoc]
 | 13 | Testen | {ghpages-base}13-testen.html[13-testen.html] | {ghpages-base}13-testen.pdf[13-testen.pdf] | {source-base}13-testen.adoc[13-testen.adoc]
 | 14 | Refactoring | {ghpages-base}14-refactoring.html[14-refactoring.html] | {ghpages-base}14-refactoring.pdf[14-refactoring.pdf] | {source-base}14-refactoring.adoc[14-refactoring.adoc]
