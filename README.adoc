@@ -84,5 +84,3 @@ $ git clone https://github.com/barclay-reg/dhbw-slides.git
 $ ./build-slides.sh
 $ ./build-slides.sh -makePdfs
 ----
-
-
