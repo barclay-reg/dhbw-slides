@@ -1,0 +1,20 @@
+{
+  "name": "dhbw-slides",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barclay-reg/dhbw-slides.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "by-nc-sa/4.0",
+  "bugs": {
+    "url": "https://github.com/barclay-reg/dhbw-slides/issues"
+  },
+  "homepage": "https://github.com/barclay-reg/dhbw-slides#readme",
+  "dependencies": {
+    "@asciidoctor/reveal.js": "^4.0.1",
+    "asciidoctor": "^2.2.0",
+    "decktape": "^3.1.0"
+  }
+}
