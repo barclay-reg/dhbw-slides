@@ -1,11 +1,12 @@
-language: ruby
+dist: bionic
+language: node_js
+node_js:
+  - lts/*
 before_install: 
   - mkdir -p output
   - sudo apt-get install -y ghostscript
 install:
-  - bundle config --local github.https true
-  - bundle --path=.bundle/gems --binstubs=.bundle/.bin
-  - npm install -g decktape
+  - npm install
 script:
   - ./build-slides.sh -makePdfs
 after_success:

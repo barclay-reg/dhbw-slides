@@ -1,10 +1,12 @@
-= VCS 3
+= Versionsverwaltung 3
 
 :imagesdir: ../images/06-vcs3
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
 :source-highlighter: highlightjs
+
+include::../overlay.adoc[]
 
 == Mergen
 
@@ -88,7 +90,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 * Git ändert die Datei und speichert alle nicht-gemergten Stellen innerhalb der Datei ab.
 ** mit sog. Standard [.blue]#Konflikt-Markern#
 * `git add datei.txt` Markiert die Datei als "Konflikte gelöst"
-* `git merge --abort` Versetz alles in den Zustand vorher
+* `git merge --abort` Versetzt alles in den Zustand vorher
 * `git mergetool` kann eine bessere Sicht auf die Konflikte liefern
 
 === Manuelle Dateikonflikte

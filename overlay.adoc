@@ -1,14 +1,19 @@
+[subs="attributes"]
 ++++
 <script type="text/javascript">
     window.addEventListener("load", function() {
 
         revealDiv = document.querySelector("body div.reveal")
-        footer = document.getElementById("dhbw-footer");
-        revealDiv.appendChild(footer);
+        slideName = document.getElementById("slide-name");
+        revealDiv.appendChild(slideName);
+
+        //slideNumberLink = document.querySelector("div.slide-number a")
+        //slideName = document.getElementById("slide-name");
+        //slideNumberLink.parentNode.insertBefore(slideName, slideNumberLink);
 
     } );
 </script>
-<div id="dhbw-footer" class="footer" style="display: none">
-    <span class="element">einfacher footer {docname}</span>
+<div id="slide-name" class="slide-number" style="right: 0; left: 8px">
+    <span>{doctitle} ({docname})</span>
 </div>
 ++++

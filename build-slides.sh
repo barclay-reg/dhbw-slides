@@ -12,22 +12,27 @@ cp -R ./images ./output
 cp ./styles.css ./output
 
 echo "Start creating HTML slides for online publishing"
-bundle exec asciidoctor-revealjs -D output/lectures \
-       -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0 \
+#bundle exec asciidoctor-revealjs \
+npx asciidoctor-revealjs \
+       -D output/lectures \
+       -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2 \
        -a customcss=../styles.css \
         lectures/*.adoc
 
 echo "Start creating README.html"
-bundle exec asciidoctor -D ./output README.adoc
-
+#bundle exec asciidoctor \
+npx asciidoctor-revealjs \
+       -D ./output README.adoc
 
 if [ "$makePdfs" = "-makePdfs" ]; then
 
 	echo "Start creating HTML slides for PDF publishing"
 
-	bundle exec asciidoctor-revealjs -D output/pdf-lectures \
+	#bundle exec asciidoctor-revealjs \
+	npx asciidoctor-revealjs \
+	   -D output/pdf-lectures \
        -a revealjs_theme=white \
-       -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0 \
+       -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2 \
        -a customcss=../styles.css \
         lectures/*.adoc
 
@@ -36,11 +41,11 @@ if [ "$makePdfs" = "-makePdfs" ]; then
 	for filenameWithExtension in ./output/pdf-lectures/*.html; do
 		filename="$(basename $filenameWithExtension .html)"
 		if [[ $filename  =~ ^[0-9]{2}-.* ]] && ! [[ $filename =~ .*aufgaben.* ]]; then
-			decktape reveal "$filenameWithExtension" ./output/lectures/$filename.pdf -s 1280x950
+			npx decktape reveal "$filenameWithExtension" ./output/lectures/$filename.pdf -s 1280x950
 		fi
 	done
 	echo "Start joining PDF files"
 	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=./output/lectures/all-slides.pdf ./output/lectures/*.pdf
 fi
 
-echo "Fished"
+echo "Finished"
