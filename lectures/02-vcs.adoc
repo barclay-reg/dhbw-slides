@@ -6,6 +6,8 @@
 :idprefix: slide_
 :source-highlighter: highlightjs
 
+include::../overlay.adoc[]
+
 == VCS
 
 [.blue]#V# ersion [.blue]#C# ontrol [.blue]#S# ystem

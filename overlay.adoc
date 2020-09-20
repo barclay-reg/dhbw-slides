@@ -14,6 +14,6 @@
     } );
 </script>
 <div id="slide-name" class="slide-number" style="right: 0; left: 8px">
-    <span>"{doctitle}" ({docname})</span>
+    <span>{doctitle} ({docname})</span>
 </div>
 ++++

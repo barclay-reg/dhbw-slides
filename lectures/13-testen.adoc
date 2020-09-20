@@ -6,6 +6,8 @@
 :idprefix: slide_
 :source-highlighter: highlightjs
 
+include::../overlay.adoc[]
+
 [background-color="cornflowerblue"]
 [transition=convex]
 == Arten von Tests

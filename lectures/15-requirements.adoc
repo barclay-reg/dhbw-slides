@@ -5,6 +5,8 @@
 :revealjs_history:
 :idprefix: slide_
 
+include::../overlay.adoc[]
+
 [background-color="cornflowerblue"]
 [transition=convex]
 == Begriffe

@@ -1,10 +1,12 @@
-= VCS 4
+= Versionsverwaltung 4
 
 :imagesdir: ../images/08-vcs4
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
 :source-highlighter: highlightjs
+
+include::../overlay.adoc[]
 
 == Remotes
 

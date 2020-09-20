@@ -1,10 +1,12 @@
-= VCS 3
+= Versionsverwaltung 3
 
 :imagesdir: ../images/06-vcs3
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
 :source-highlighter: highlightjs
+
+include::../overlay.adoc[]
 
 == Mergen
 
