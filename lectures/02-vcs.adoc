@@ -303,7 +303,7 @@ $ git add -u .
 
 image::git-status.png[]
 
-=== HEAD, ORIG_HEAD, HEAD@{1}
+=== HEAD, ORIG_HEAD
 
 * Zeiger auf Commits
 ** HEAD
@@ -321,15 +321,23 @@ image::git-status.png[]
 * wenn keine Commit-ID angegeben wird, wird automatisch HEAD verwendet
 --
 
-=== HEAD, ORIG_HEAD, HEAD@{1}
+=== Specifying Revisions
 
-* Zeiger dereferenzieren 
+* Zeiger (auf Commits) dereferenzieren 
 ** (https://git-scm.com/docs/gitrevisions)
-** „Navigation“ von einem Commit ausgehend, z.B
-*** `HEAD^` -> erster Vorfahr von HEAD (unter Windows: `HEAD^^`)
-*** `HEAD^1` -> erster Vorfahr von HEAD
-*** `HEAD^^` -> zweiter Vorfahr von HEAD, == `HEAD^2` oder `HEAD\^1^1`
-*** `HEAD~3` -> dritt-letzter Wert von HEAD
+** „Navigation“ von einem Commit ausgehend, auf Basis dessen Vorgängern
+*** `HEAD^` -> erster Parent von HEAD (unter Windows: `HEAD^^`)
+*** `HEAD^1` -> erster Parent von HEAD
+*** `HEAD~` -> erster Parent von HEAD
+*** `HEAD~2` -> zweiter Parent von HEAD 
+*** `master~`--> erster Parent von master 
+*** `HEAD^^` -> Parent der zweiten Generation von HEAD (== `HEAD\^1^1`)
+
+=== Specifying Revisions
+
+* Zeiger (auf Commits) dereferenzieren 
+** (https://git-scm.com/docs/gitrevisions)
+** „Navigation“ von einem Commit ausgehend, auf Basis dessen vorheriger Werte
 *** `HEAD@{2}` -> zweit-letzter Wert von HEAD
 *** `HEAD@{5.minutes.ago}` -> Wert von HEAD vor 5 Minuten
 
@@ -343,12 +351,12 @@ image::git-status.png[]
 
 [source, shell]
 ----
-## Änderungen im Stage-Bereichs von foo.txt verwerfen
+## Änderungen im Stage-Bereich von foo.txt verwerfen
 $ git reset HEAD foo.txt 
-## Alle Änderungen im Stage-Bereichs verwerfen 
+## Alle Änderungen im Stage-Bereich verwerfen 
 ## (Workcopy bleibt unverändert)
 $ git reset HEAD 
-## Alle Änderungen im Stage-Bereichs & Workcopy verwerfen
+## Alle Änderungen im Stage-Bereich & Workcopy verwerfen
 $ git reset --hard HEAD 
 ----
 
