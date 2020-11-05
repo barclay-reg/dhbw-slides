@@ -214,7 +214,7 @@ Eine weitere Darstellung (verkürzt) von zwei Branches, die auseinandergelaufen 
 * unveränderlich
 * zum _Merken_ von bestimmten Zwischenständen
 
-== Tag
+=== Tag
 
 . Leichtgewichtiger Tag
 ** == Referenz (genau wie ein Branch)
