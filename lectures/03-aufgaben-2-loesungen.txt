@@ -1,0 +1,37 @@
+#### Teillösung 1d #####
+mv text.txt text_new.txt
+git add text.txt
+git add text_new.txt
+git commit -m "datei umbenannt V1"
+### oder
+mv text.txt text_new.txt
+git rm text.txt
+git add text_new.txt
+git commit -m "datei umbenannt V2"
+### oder
+git mv text.txt text_new.txt
+git commit -m "datei umbenannt V3"
+### oder
+mv text.txt text_new.txt
+git add -u
+git commit -m "datei umbenannt V4"
+### oder
+mv text.txt text_new.txt
+git add .
+git commit -m "datei umbenannt V5"
+
+##### Teillösung 1e #####
+changeFile text_new.txt
+git reset --hard HEAD
+### oder
+changeFile text_new.txt
+git checkout -- text_new.txt
+
+##### Teillösung 1f #####
+changeFile text_new.txt
+git add text_new.txt
+git rm --cached text_new.txt
+### oder git reset HEAD text_new.txt
+changeFile text_new.txt
+git add text_new.txt
+git commit -m "Changed"

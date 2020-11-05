@@ -41,7 +41,7 @@ git clone https://github.com/barclay-reg/dhbw-painground.git
 ----
 
 === Übungen 1/2
-. Spiele folgende Szenarien durch; nach jedem Szenario sollte `git status` folgenden Text ausgeben "nothing to commit, working tree clean", mit git-cat und ggf. git ls-tree sollen die Git-Objekte betrachtet werden
+. Spiele folgende Szenarien durch; nach jedem Szenario sollte `git status` folgenden Text ausgeben "nothing to commit, working tree clean", mit git cat-file und ggf. git ls-tree sollen die Git-Objekte betrachtet werden
 .. Erstellen einer neuen Datei (inkl. Inhalt), Hinzufügen zum Index, danach diesen Committen
 .. Ändern einer bestehenden Datei (inkl. Inhalt), Hinzufügen zum Index, danach diesen Committen
 .. Hinzufügen einer neuen Datei (inkl. Inhalt) in einem Unterordner, Hinzufügen zum Index, Committen

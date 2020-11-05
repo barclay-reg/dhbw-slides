@@ -29,13 +29,13 @@
 
 [start=6]
 . Ändere den Branch aus Schritt 1, sodass er auf den gleichen Commit wie `master` zeigt (mit `git reset`)
-. lösche den Branch aus Schritt 1
-. Versuche dir mit Hilfe des Reflogs einen neuen Branch zu erstellen, der wieder die beiden Commits enthält, die auf den soeben gelöschten Branch waren
+. Lösche den Branch aus Schritt 1
+. Versuche dir mit Informationen aus dem Reflog einen neuen Branch zu erstellen, der wieder die beiden Commits enthält, die auf den soeben gelöschten Branch waren
 
 === Übungen Tag
 
 . Erzeuge zwei Branches, auf jedem Branch drei Commits
-. Erzeuge zwei Tags, die jeweils auf den zweiten Commit eines der Branches zeigen
+. Erzeuge zwei Tags, die jeweils auf den zweiten Commit der Branches zeigen
 ** Erzeuge beide Arten von Tags
 
 === Übungen Stash 

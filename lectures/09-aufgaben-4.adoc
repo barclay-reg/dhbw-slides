@@ -25,13 +25,13 @@
 . Ich weise euch auf Github einer _Organisation_ zu
 . jeder _clont_ (nicht _forken_) das Repository [.lightgreen]#`dhbw-painground`# aus seiner Organisation
 ** nehmt den Link `https://github.com/...` , *nicht* `git@github.com:...`
-** `git clone` in einen Ordner ausführen, der bisher *nicht* mit Git genutzt wurde
+** `git clone https://github.com/...` in einen Ordner ausführen, der bisher *nicht* mit Git genutzt wurde
 ** danach in den geklonten Ordner wechseln (mit `cd`)
 
 === Übungen 1
 
 . Mitglied 1: ändere mehrere Dateien auf `master` und publiziere diese Änderungen, sodass sie auf github sichtbar sind
-. Mitglied 2: hole diese Änderungen auf in deine Workcopy
+. Mitglied 2: hole diese Änderungen in deine Workcopy
 . Mitglied 1 & 2: ändert gleichzeitig mehrere Dateien auf `master` und publiziere diese Änderungen, sodass sie auf github sichtbar sind
 . Mitglied 1 & 2: ändert gleichzeitig die gleiche Dateien, die gleiche Zeile auf `master` und publiziere diese Änderungen, sodass sie auf github Sichtbar sind
 
@@ -60,15 +60,15 @@
 == Gruppen
 
 [.small]
-. https://github.com/fn-tfe17-g1
-. https://github.com/fn-tfe17-g2
-. https://github.com/fn-tfe17-g3
-. https://github.com/fn-tfe17-g4
-. https://github.com/fn-tfe17-g5
-. https://github.com/fn-tfe17-g6
-. https://github.com/fn-tfe17-g7
-. https://github.com/fn-tfe17-g8
-. https://github.com/fn-tfe17-g9
-. https://github.com/fn-tfe17-g10
-. https://github.com/fn-tfe17-g11
-. https://github.com/fn-tfe17-g12
+. https://github.com/fn-tfe18-g1
+. https://github.com/fn-tfe18-g2
+. https://github.com/fn-tfe18-g3
+. https://github.com/fn-tfe18-g4
+. https://github.com/fn-tfe18-g5
+. https://github.com/fn-tfe18-g6
+. https://github.com/fn-tfe18-g7
+. https://github.com/fn-tfe18-g8
+. https://github.com/fn-tfe18-g9
+. https://github.com/fn-tfe18-g10
+. https://github.com/fn-tfe18-g11
+. https://github.com/fn-tfe18-g12
