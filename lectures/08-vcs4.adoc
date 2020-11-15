@@ -184,7 +184,7 @@ image::git-push-after.png[]
 == Clone & Fork
 
 * `git clone`
-** kopieren eines remote Repositories auf den eigenen Rechner
+** Kopieren eines remote Repositories auf den eigenen Rechner
 ** "erste Synchronisieren" plus "Checkout"
 ** kein `git init` mehr nötig
 
@@ -197,7 +197,7 @@ image::git-push-after.png[]
 
 [.step]
 * Problem: Wie kommen Änderungen des Originals zu meinem Fork?
-* Lösung: weiteres Remote-Repo
+* Lösung: Original als weiteres Remote-Repo anlegen
 
 === Ohne Fork
 
@@ -259,19 +259,28 @@ $ git push
 == Pull Request
 
 * Antrag, ein oder mehrere Commits von einem Branch in einen anderen Branch zu mergen
+** sinnvoll von einem Fork zum Original
+** auch sinnvoll "innerhalb" eines einzigen Repos
 * kann jemandem _zugewiesen_ werden
 * Erlaubt Code-Review, Code-Diskussion
 * wenn Antrag akzeptiert ist, wird ein [.blue]#Pull# (fetch & merge) gemacht
 * Kann per `git request-pull` gestartet werden, aber
 * besser per Web-Interface (Github, Bitbucket, Gitlab)
 
-== Wieso PR
+=== Wieso PR
 
 * Warum nicht einfach Mergen?
 [.step]
-** (Feature)-Branches können länger leben
+** (Feature)-Branches bestehen manchmal länger
 *** Niemand außer dem Author weiß, wann das Feature _fertig_ ist
-** Erstellend es [.blue]#PR# ist ein eindeutiger Trigger für
-*** Start des Code-Reviews
-*** Start von aufwändigeren automatisierten Tests
+*** Erstellen des [.blue]#PR# ist ein eindeutiger Trigger für
+**** Start des Code-Reviews
+**** Start von (langwierigen) automatisierten Tests
 
+=== Wieso PR
+
+* [.blue]#PR# im Umfeld von Original & Fork sind extrem hilfreich
+[.step]
+** Maintainer des Originals erlaubt nur wenigen das direkte Committen (und vor allem das Pushen) in das eigene Repo
+** mit Forks kann jeder Freiwillige trotzdem an dem Code arbeiten
+** mit dem Annehmen des [.blue]#PR# erlaubt der Maintainer, die "fremden" Commits in sein Repo aufzunehmen 
