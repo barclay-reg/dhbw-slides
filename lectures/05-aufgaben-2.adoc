@@ -28,7 +28,7 @@
 === Übungen  Branch 2/2
 
 [start=6]
-. Ändere den Branch aus Schritt 1, sodass er auf den gleichen Commit wie `master` zeigt (mit `git reset`)
+. Ändere den Branch aus Schritt 1, sodass er auf den gleichen Commit wie `master` zeigt (mit Hilfe von `git reset ...`)
 . Lösche den Branch aus Schritt 1
 . Versuche dir mit Informationen aus dem Reflog einen neuen Branch zu erstellen, der wieder die beiden Commits enthält, die auf den soeben gelöschten Branch waren
 

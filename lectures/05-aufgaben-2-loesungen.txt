@@ -1,0 +1,4 @@
+Zusatz:
+
+https://git-scm.com/docs/git-log#Documentation/git-log.txt-ltrevisionrangegt
+https://git-scm.com/docs/gitrevisions#Documentation/gitrevisions.txt-Theememtwo-dotRangeNotation
