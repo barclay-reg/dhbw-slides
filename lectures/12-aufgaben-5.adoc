@@ -54,7 +54,7 @@ $ mvnw clean install
 * ein Build pro Commit
 * für jeden Build wird eine neue Linux-VM erzeugt und danach gelöscht
 ** immer eine "grüne Wiese"
-* Automatisierungs-Code steht in datei `.travis.yml`
+* Automatisierungs-Code steht in Datei `.travis.yml`
 
 === Sonarcloud
 

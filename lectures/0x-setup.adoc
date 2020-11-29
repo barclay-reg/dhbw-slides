@@ -47,7 +47,7 @@ $ git fetch upstream
 
 . Download und Installieren https://www.jetbrains.com/idea/download[IntelliJ IDEA]
   * Community Edition
-. `Ìmport Project` Wizard starten
+. `Import Project` Wizard starten
   * wählen Sie den Ordner `dhbw\checkout\dhbw-painground`
   * Wählen Sie `Import Project from external model` -> Maven
   * Immer `Next` klicken und dann `Finish`

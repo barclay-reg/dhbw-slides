@@ -39,20 +39,12 @@
 ** im `//THEN` Teil
 ** mit Methoden `assertEquals` oder `assertTrue`
 
-=== Eclipse Hinweise
+=== IntelliJ Hinweise
 
-Test Ausführen
-
-[%notitle]
-[background-video="../images/16-aufgaben-6/eclipse-run-as-junit-test.mp4",background-video-loop=true,background-video-muted=true]
-=== Test Ausführen
-
-=== Eclipse Hinweise
-
-Code Coverage Messen
+Test ausführuen & Code Coverage Messen
 
 [%notitle]
-[background-video="../images/16-aufgaben-6/eclipse-run-with-code-coverage.mp4",background-video-loop=true,background-video-muted=true]
+[background-video="../images/16-aufgaben-6/run-code-coverage-intellij.mp4",background-video-loop=true,background-video-muted=true]
 === Code Coverage Messen
 
 === Aufgaben
