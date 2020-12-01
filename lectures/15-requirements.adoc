@@ -24,7 +24,6 @@ sehr viel schon bekannt
 * die ein System oder Systemteile erfüllen oder besitzen muss, um einen Vertrag zu erfüllen oder [.blue]#einer Norm#, einer Spezifikation oder anderen, formell vorgegebenen Dokumenten zu entsprechen
 
 [state=complex]
-[%notitle]
 === Arten von Anforderungen
 
 Funktionale Anforderungen::
@@ -34,10 +33,14 @@ Qualitätsanforderungen::
 * [.blue]#Wie gut# soll ein Produkt seine Leistung erbringen
 * [.blue]#non-functional-requirement# 
 * Performance, Verfügbarkeit, Zuverlässigkeit, ...
+
+[state=complex]
+[%notitle]
+=== Rahmenbedingungen
+
 Rahmenbedingungen::
 * können (von den Beteiligten) nicht verändert werden
 * werden nicht umgesetzt, sondern schränken die Umsetzungmöglichkeiten ein
-
 
 
 [%notitle]
@@ -121,26 +124,33 @@ image::Bereiche_Kontextabgrenzung.png[]
 
 === Fallen vermeiden
 
-* Stakeholder systematisch identifizieren und einbeziehen
+* Stakeholder systematisch identifizieren und [.blue]#einbeziehen#
 * aus [.blue]#Projektbetroffenen# sollen [.blue]#Projektbeteiligte# werden
-** Individuelle "Verträge"
+** Stakeholder regelmäßig abholen 
+** Individuelle "Verträge" vereinbaren
+
+
+=== Fallen vermeiden - Kano
+
+Welche Bedeutung hat ein Anforderung für die Zufriedenheit eines Stakeholders?
+
+* Unterscheidung: 
+** unterbewusst
+** unbewusst
+** bewusst
+* mit der Zeit können [.blue]#Begeisterungsanforderungen# zu [.blue]#Leistungsanforderungen# und später zu [.blue]#Basisanforderungen# werden
 
 [%notitle]
 === Fallen vermeiden - Kano
 
 image::KANO.jpg[]
 
-=== Fallen vermeiden - Kano
-
-Welche Bedeutung hat ein Anforderung für die Zufriedenheit eines Stakeholders?
-
-* Unterscheidung: unterbewusst, unbewusst, bewusst
-* mit der Zeit werden [.blue]#Begeisterungsanforderungen# zu [.blue]#Leistungsanforderungen# und später zu [.blue]#Basisanforderungen#
-
 === Detektiv sein
 
+[%step]
 * Kommunikations-Geschick im Umgang mit dem Stakeholder
 * Auswahl der richtigen [.blue]#Ermittlungstechnik#
+[%step]
 ** Befragungstechniken (Interview, Fragebogen)
 ** Kreativitätstechniken (Brainstorming, Brainstorming Paradox, Perspektivenwechsel, Analogietechnik/Bisoziation)
 ** Beobachtungstechniken (Feldbeobachtung, Apprenticing)
@@ -151,7 +161,7 @@ Welche Bedeutung hat ein Anforderung für die Zufriedenheit eines Stakeholders?
 * Erstellung eines Glossars
 [%step]
 ** Fachbegriffe, Abkürzungen, Synonyme
-** alltägliche Begriffe, die im Kontext eine andere Bedeutung haben
+** alltägliche Begriffe, die im Kontext eine andere Bedeutung haben (Problemdomäne)
 * Verwalten des Glossars
 ** [.blue]#ein# Verantwortlicher
 ** zentral zugänglich
@@ -184,17 +194,19 @@ Anforderungsdokument muss::
 === Wie dokumentieren ?
 
 Natürliche Sprache::
-* "Transformation im Kopf" findet immer statt
 * ggf. Satzschablonen verwenden
 * Kurze Sätze, kurze Absätze
 * nur eine Anforderung pro Satz
 ** Aktiv formulieren, nur ein Prozesswort (Verb)
+* Gefahr der Mehrdeutigkeit
 
 === Natürliche Sprache - Beispiel
 
 ----
 Zur Anmeldung des Benutzers werden die Login-Daten eingegeben
 ----
+
+oder
 
 ----
 Das System soll dem Benutzer ermöglichen, 
@@ -216,7 +228,7 @@ Modellbasiert::
 ** Use-Case-Diagrame
 ** Datenflussdiagramme
 ** Aktivitätsdiagramme
-
+** ...
 
 [%notitle]
 === Use-Case-Diagram
@@ -251,12 +263,13 @@ Kriterien nach IEEE 830-1998::
 
 === Requirements-Management als Rahmen
 
-Verwalten und Kontrollieren aller Aufgaben des Requirements Engineering während der komplette Lebenszeit des Produktes.
+Verwalten und Kontrollieren aller Aufgaben des Requirements Engineering während der kompletten Lebenszeit des Produktes.
 
 * [.blue]#Attributierung# der Anforderungen
 * [.blue]#Priorisierung# der Anforderungen
 * [.blue]#Verfolgbarkeit# der Anforderungen
 * [.blue]#Versionierung# der Anforderungen
+* Steuern des Lebenszyklus aller Anforderungen
 
 === Attributierung Beispiel
 
