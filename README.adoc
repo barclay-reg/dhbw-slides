@@ -32,8 +32,8 @@ Alle Kapitel, außer die Aufgaben sind als ein zusammenhängendes PDF verfügbar
 | | Java Kurzeinführung | {ghpages-base}0x-java.html[0x-java.html] | | {source-base}0x-java.adoc[0x-java.adoc]
 | | Projekt Setup | {ghpages-base}0x-setup.html[0x-setup.html] | | {source-base}0x-setup.adoc[0x-setup.adoc]
 | 15 | Aufgaben für den 6. Praxisteil | {ghpages-base}15-aufgaben-6.html[16-aufgaben-6.html] | | {source-base}15-aufgaben-6.adoc[15-aufgaben-6.adoc]
-| 17 | Requirements Engineering | {ghpages-base}17-requirements.html[17-requirements.html] | | {source-base}17-requirements.adoc[17-requirements.adoc]
-| 18 | Agile & Scrum | {ghpages-base}18-agile-scrum.html[18-agile-scrum.html] | | {source-base}18-agile-scrum.adoc[18-agile-scrum.adoc]
+| 17 | Requirements Engineering | {ghpages-base}17-requirements.html[17-requirements.html] | {ghpages-base}17-requirements.pdf[17-requirements.pdf] | {source-base}17-requirements.adoc[17-requirements.adoc]
+| 18 | Agile & Scrum | {ghpages-base}18-agile-scrum.html[18-agile-scrum.html] | {ghpages-base}18-agile-scrum.pdf[18-agile-scrum.pdf] | {source-base}18-agile-scrum.adoc[18-agile-scrum.adoc]
 
 |===
 
