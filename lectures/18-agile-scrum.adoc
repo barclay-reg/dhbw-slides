@@ -1,0 +1,126 @@
+= Agile & Scrum
+
+:imagesdir: ../images/18-agile-scrum
+:revealjs_slideNumber:
+:revealjs_history:
+:idprefix: slide_
+:source-highlighter: highlightjs
+
+include::../overlay.adoc[]
+
+== Agile
+
+=== Agile Manifesto
+
+[quote, Agile Manifesto]
+____
+Wir erschließen bessere Wege, Software zu entwickeln,
+indem wir es selbst tun und anderen dabei helfen.
+Durch diese Tätigkeit haben wir diese Werte zu schätzen gelernt:
+____
+
+=== Agile Manifesto
+
+image::agile-manifesto.svg[]
+
+[%step]
+* Das heißt, obwohl wir die Werte auf der rechten Seite wichtig finden, schätzen wir die Werte auf der linken Seite höher ein.
+
+[NOTE.speaker]
+--
+20 Jahre alt, von 17 führenden Consultants, Entwicklern und Architekten aus der Softwarebranche
+-- 
+
+=== Agile Manifesto Prinzipien
+
+[%step]
+* Prio 1: [.blue]#Kundenzufriedenheit# durch frühe & kontinuierliche Auslieferung von [.blue]#wertvoller# Software 
+* Anforderungsänderungen sind immer willkommen
+* regelmäßige Auslieferung von [.blue]#funktionierender# Software; je öfter, desto besser
+* Fachexperten und Entwickler arbeiten [.blue]#täglich zusammen#
+* Errichte Projekte rund um [.blue]#motivierte Individuen#. Gib ihnen das Umfeld und die [.blue]#Unterstützung#, die sie benötigen und [.blue]#vertraue# darauf, dass sie die Aufgabe erledigen.
+
+[%notitle]
+=== Agile Manifesto Prinzipien
+
+[%step]
+* [.blue]#Funktionierende Software# ist das wichtigste Fortschrittsmaß.
+* für nachhalte Entwicklung: gleichmäßiges Tempo, dass unbegrenzt gehalten werden kann
+* Ständiges [.blue]#Augenmerk# auf technische Exzellenz und gutes Design fördert Agilität.
+* Einfachheit -- die Kunst, die [.blue]#Menge nicht getaner Arbeit# zu maximieren -- ist essenziell
+* Die besten Architekturen, Anforderungen und Entwürfe entstehen durch [.blue]#selbstorganisierte Teams#.
+* Team [.blue]#reflektiert# regelmäßig, wie es effektiver werden kann und passt sein Verhalten entsprechend an.
+
+== Scrum
+
+[%notitle]
+=== Scrum
+
+[%stretch]
+image::scrum-rugby.jpg[background, size=auto auto]
+
+[%notitle]
+=== Scrum
+
+[%stretch]
+image::the-agile-scrum-framework.jpg[background, size=auto auto]
+
+=== Scrum vs. Agile Manifesto
+
+[%notitle]
+=== Scrum vs. Agile Manifesto
+
+[.blue]#Individuen & Interaktionen# mehr als [.lightgreen]#Prozesse & Werkzeuge#::
+[%step]
+* Team basierter Ansatz um Mehrwert zu schaffen
+* effektive Interaktion werden gefördert
+
+[%notitle]
+=== Scrum vs. Agile Manifesto
+
+[.blue]#Funktionierende Software# mehr als [.lightgreen]#Umfassende Dokumentation#::
+[%step]
+* fertiges Inkrement ist primäres Zeil
+* auslieferbar
+[%step]
+** nicht: alle Funktionen enthalten
+** sondern: auslieferbare Qualität
+
+[%notitle]
+=== Scrum vs. Agile Manifesto
+
+[.blue]#Zusammenarbeit mit Kunden# mehr als [.lightgreen]#Vertragsverhandlungen#::
+[%step]
+* Produkt Owner repräsentiert den Kunden
+* Produkt Owner ist Teil des Teams
+
+[%notitle]
+=== Scrum vs. Agile Manifesto
+
+[.blue]#Reagieren auf Veränderung# mehr als [.lightgreen]#Befolgen eines Plans#::
+[%step]
+* Viel Planen - z.B: im Produkt Backlog oder Sprint Planning
+* Aber: ist eher ein kontinuierliches Planen
+* der einzige feste Plan ist: Sprint Backlog
+
+=== Definition of Done
+
+[%step]
+* [.blue]#Done# == Auslieferbar
+* [.blue]#Done# == Erfüllung der 
+[%step]
+** Funktionale Anforderungen (Akzeptanzkriterien einer Story)
+** Qualität
+** Nicht-Funktionale Anforderungen
+* "wächst" im Laufe eines Projektes
+
+== Quellen
+
+* Inhalt: Agile Manifest
+[.small]#https://agilemanifesto.org#
+* Bild: Agile Manifest
+[.small]#https://medium.com/@warren2lynch/how-is-scrum-related-to-agile-manifesto-d1960a1cccba#
+* Bild & Inhalt: The Agile - Scrum Framework
+[.small]#http://kshitijyelkar.blogspot.com/2015/11/the-agile-scrum-framework.html#
+* Bild & Inhalt: DoD
+[.small]#https://www.scrum.org/resources/blog/done-understanding-definition-done#

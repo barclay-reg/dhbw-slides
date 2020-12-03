@@ -1,6 +1,6 @@
 = Requirements Engineering
 
-:imagesdir: ../images/15-requirements
+:imagesdir: ../images/17-requirements
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_

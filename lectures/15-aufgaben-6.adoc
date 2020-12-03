@@ -1,6 +1,6 @@
 = Aufgaben 6
 
-:imagesdir: ../images/16-aufgaben-6
+:imagesdir: ../images/15-aufgaben-6
 :revealjs_slideNumber:
 :revealjs_history:
 :idprefix: slide_
